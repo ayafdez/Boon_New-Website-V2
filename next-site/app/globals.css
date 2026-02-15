@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for fonts */
+:root {
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-dm-serif: 'DM Serif Text', serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+/* Custom selection styling */
+::selection {
+  background: #466FF6;
+  color: white;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font utility classes */
+.font-sans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.font-serif {
+  font-family: 'DM Serif Text', serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Signature headline emphasis - DM Serif Text Italic */
+.headline-emphasis {
+  font-family: 'DM Serif Text', serif;
+  font-style: italic;
+}
+
+/* Subtext / Labels - Inter ExtraBold, ALL CAPS */
+.label-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation utilities */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Intersection Observer reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}

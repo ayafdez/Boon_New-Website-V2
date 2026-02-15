@@ -1,0 +1,181 @@
+import Link from 'next/link';
+
+function ImpactMetricRow({
+  label,
+  before,
+  after,
+  change,
+  width,
+}: {
+  label: string;
+  before: string;
+  after: string;
+  change: string;
+  width: string;
+}) {
+  return (
+    <div className="grid grid-cols-[1.5fr_0.5fr_0.5fr_0.5fr_1fr] items-center py-5 border-b border-gray-50 text-[10px] font-body font-bold tracking-tight group">
+      <div className="text-boon-charcoal group-hover:text-boon-blue transition-colors">{label}</div>
+      <div className="text-gray-300">{before}</div>
+      <div className="text-boon-blue">{after}</div>
+      <div className="text-boon-green">{change}</div>
+      <div className="pl-6">
+        <div className="h-1.5 bg-gray-50 rounded-full w-full overflow-hidden">
+          <div
+            className="h-full bg-boon-green rounded-full transition-all duration-1000"
+            style={{ width }}
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function LeadershipIntelligence() {
+  return (
+    <section className="py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+      {/* Soft gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-tl from-boon-soft-coral/10 via-white to-boon-light-blue/15"></div>
+
+      {/* Soft radial gradient accent - right side */}
+      <div
+        className="absolute top-[20%] -right-[5%] w-[45%] h-[70%] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(204, 217, 255, 0.15) 40%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
+      ></div>
+
+      {/* Secondary blue accent - bottom left */}
+      <div
+        className="absolute -bottom-[10%] -left-[5%] w-[35%] h-[50%] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.15) 0%, transparent 60%)',
+          filter: 'blur(50px)',
+        }}
+      ></div>
+
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-32 items-center relative z-10">
+        <div>
+          <p className="label-text text-[10px] text-boon-blue mb-10">
+            Boon&apos;s Data and Insights
+          </p>
+          <h2 className="font-sans text-5xl md:text-[84px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
+            See what&apos;s actually <span className="font-serif italic text-boon-blue">changing</span>.
+          </h2>
+          <div className="space-y-8 max-w-xl">
+            <p className="text-xl text-gray-500 font-body font-medium leading-relaxed">
+              Track participation, progress, and growth across your leadership population—without compromising confidentiality.
+            </p>
+            <p className="text-xl text-boon-charcoal font-body font-semibold leading-relaxed">
+              Give your exec team the data they need to see development is working.
+            </p>
+            <div className="pt-4">
+              <Link
+                href="/solutions"
+                className="inline-flex items-center gap-2 text-sm font-body font-bold text-boon-blue hover:gap-4 transition-all uppercase tracking-widest"
+              >
+                See how leadership signal compounds over time <span>→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 w-full relative">
+          <p className="label-text text-[10px] text-gray-300 ml-12">
+            Aggregated cohort deltas measured across coached leaders over time.
+          </p>
+
+          {/* Organic gradient blob behind chart - signature Boon visual */}
+          <div className="absolute -inset-12 z-0 pointer-events-none">
+            {/* Blue accent - top left */}
+            <div
+              className="absolute -top-20 -left-20 w-[380px] h-[420px]"
+              style={{
+                background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.5) 0%, rgba(70, 111, 246, 0.25) 40%, transparent 70%)',
+                filter: 'blur(50px)',
+              }}
+            ></div>
+            {/* Coral accent - bottom right */}
+            <div
+              className="absolute -bottom-16 -right-16 w-[350px] h-[380px]"
+              style={{
+                background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.55) 0%, rgba(255, 141, 128, 0.3) 40%, transparent 70%)',
+                filter: 'blur(50px)',
+              }}
+            ></div>
+            {/* Center blend for smooth transition */}
+            <div
+              className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[450px]"
+              style={{
+                background: 'radial-gradient(ellipse at center, rgba(204, 217, 255, 0.4) 0%, rgba(255, 187, 187, 0.25) 50%, transparent 80%)',
+                filter: 'blur(55px)',
+              }}
+            ></div>
+          </div>
+
+          <div className="bg-white p-12 md:p-20 rounded-[80px] shadow-2xl border border-gray-100 relative z-10 overflow-hidden">
+            <div className="relative z-10">
+              <div className="flex justify-between items-center mb-16">
+                <div>
+                  <h3 className="font-sans text-3xl font-bold text-boon-charcoal tracking-tight">Competency Growth</h3>
+                  <p className="label-text text-[10px] text-gray-400 mt-2">
+                    Aggregate Cohort Performance • Q3-Q4 2025
+                  </p>
+                </div>
+                <div className="label-text text-[10px] text-boon-green bg-boon-green/10 px-4 py-2 rounded-full border border-boon-green/10">
+                  VERIFIED
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <ImpactMetricRow
+                  label="Giving and Receiving Feedback"
+                  before="2.1"
+                  after="3.3"
+                  change="+53%"
+                  width="100%"
+                />
+                <ImpactMetricRow
+                  label="Delegation and Accountability"
+                  before="2.4"
+                  after="3.4"
+                  change="+41%"
+                  width="77%"
+                />
+                <ImpactMetricRow
+                  label="Time Management"
+                  before="2.5"
+                  after="3.5"
+                  change="+40%"
+                  width="75%"
+                />
+                <ImpactMetricRow
+                  label="Self Confidence"
+                  before="2.6"
+                  after="3.4"
+                  change="+33%"
+                  width="62%"
+                />
+                <ImpactMetricRow
+                  label="Planning and Execution"
+                  before="2.7"
+                  after="3.3"
+                  change="+25%"
+                  width="47%"
+                />
+                <ImpactMetricRow
+                  label="Emotional Intelligence"
+                  before="3.0"
+                  after="3.7"
+                  change="+24%"
+                  width="45%"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
