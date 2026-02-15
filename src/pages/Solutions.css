@@ -1,0 +1,238 @@
+/* SOLUTIONS PAGE STYLES */
+.hero-alt {
+  padding: var(--spacing-5xl) 0;
+  background: linear-gradient(135deg, rgba(255,221,220,0.2) 0%, rgba(204,217,255,0.3) 100%);
+}
+
+.hero-bg-alt {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(70,111,246,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.configurator-section {
+  padding: var(--spacing-5xl) 0;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-3xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.config-sidebar h3 {
+  font-size: var(--text-sm);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: var(--spacing-md);
+  color: rgba(46,53,61,0.6);
+}
+
+.scenario-list {
+  list-style: none;
+  padding: 0;
+}
+
+.scenario-list li {
+  padding: var(--spacing-md);
+  margin-bottom: 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scenario-list li:hover {
+  background: var(--off-white);
+}
+
+.scenario-list li.active {
+  background: var(--boon-blue);
+  color: white;
+  font-weight: 600;
+}
+
+.config-box {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4xl);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.problem-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.prob-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.prob-card h3 {
+  color: white;
+  font-size: var(--text-xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.prob-card p {
+  color: rgba(255,255,255,0.75);
+}
+
+.ecosystem-section {
+  padding: var(--spacing-5xl) 0;
+  background: white;
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.eco-card {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.eco-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.eco-icon {
+  font-size: 36px;
+  margin-bottom: var(--spacing-md);
+}
+
+.eco-card h3 {
+  font-size: var(--text-xl);
+  margin-bottom: 4px;
+}
+
+.eco-card .subtitle {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--boon-blue);
+  margin-bottom: var(--spacing-sm);
+}
+
+.eco-card p {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: rgba(46,53,61,0.75);
+  margin-bottom: var(--spacing-md);
+}
+
+.eco-card a {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--boon-blue);
+}
+
+.evolution-section {
+  padding: var(--spacing-5xl) 0;
+  background: var(--off-white);
+}
+
+.timeline {
+  max-width: 700px;
+  margin: var(--spacing-3xl) auto 0;
+}
+
+.timeline-item {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.timeline-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--boon-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content h4 {
+  font-size: var(--text-md);
+  margin-bottom: 8px;
+}
+
+.timeline-content .arrow {
+  font-size: 24px;
+}
+
+.expectations-section {
+  padding: var(--spacing-5xl) 0;
+}
+
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.expect-card {
+  background: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.step-num {
+  width: 48px;
+  height: 48px;
+  background: var(--boon-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin: 0 auto var(--spacing-md);
+}
+
+.expect-card h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.expect-card p {
+  color: rgba(46,53,61,0.75);
+  line-height: 1.6;
+}
+
+.lead.light {
+  color: rgba(255,255,255,0.85);
+}
+
+@media (max-width: 1024px) {
+  .config-grid {
+    grid-template-columns: 1fr;
+  }
+}
