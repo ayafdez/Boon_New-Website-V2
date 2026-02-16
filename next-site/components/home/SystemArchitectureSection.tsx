@@ -106,7 +106,7 @@ export function SystemArchitectureSection() {
           {/* Section label - H6 */}
           <h6 className="label-text text-[10px] text-boon-blue mb-8">
             The System Architecture
-          </h6>
+          </p>
           
           {/* Main section heading - H2 */}
           <h2 className="font-sans text-6xl md:text-[110px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
