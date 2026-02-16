@@ -1,5 +1,5 @@
-import { HomeHero } from "@/components/home/HomeHero";
-import { TrustSection } from "@/components/home/TrustSection";
+import HomeHero from "@/components/home/HomeHero";
+import TrustSection from "@/components/home/TrustSection";
 
 export default function HomePage() {
   return (
