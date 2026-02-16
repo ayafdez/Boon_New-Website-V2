@@ -128,7 +128,7 @@ export default function ExecPage() {
               </div>
             </div>
             <div className="relative hidden lg:block h-full min-h-[600px]">
-              <div className="relative w-full h-full min-h-[400px] bg-[#1A1F24] overflow-hidden rounded-[80px] shadow-2xl border border-white/5">
+              <div className="relative w-full h-full min-h-[400px] bg-[#1A1F24] overflow-hidden rounded-[35px] shadow-2xl border border-white/5">
                 <Image
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000"
                   width={800}
@@ -394,7 +394,7 @@ export default function ExecPage() {
               ].map((item) => (
                 <div
                   key={item.t}
-                  className="p-16 border border-gray-100 rounded-[64px] bg-white hover:shadow-xl transition-all"
+                  className="p-16 border border-gray-100 rounded-[35px] bg-white hover:shadow-xl transition-all"
                 >
                   <h5 className="text-2xl font-black mb-8 tracking-tight leading-tight">{item.t}</h5>
                   <p className="text-gray-400 font-medium leading-relaxed text-sm">{item.d}</p>
@@ -441,7 +441,7 @@ export default function ExecPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-full font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
+              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-[15px] font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>

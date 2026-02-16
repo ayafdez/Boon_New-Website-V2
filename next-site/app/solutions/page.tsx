@@ -145,9 +145,9 @@ export default function SolutionsPage() {
 
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
             <div>
-              <p className="label-text text-[10px] text-boon-coral mb-6">
+              <h6 className="label-text text-[10px] text-boon-coral mb-6">
                 The Case for Integration
-              </p>
+              </h6>
               <h2 className="font-sans text-4xl md:text-6xl font-bold text-white leading-tight mb-8 tracking-tight">
                 Fragmented support is no support at all.
               </h2>
@@ -283,9 +283,9 @@ export default function SolutionsPage() {
           <div className="absolute top-0 right-1/4 w-[500px] h-[400px] bg-gradient-to-bl from-boon-soft-coral/20 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none"></div>
 
           <div className="max-w-5xl mx-auto text-center mb-20 relative z-10">
-            <p className="label-text text-[10px] text-boon-blue mb-6">
+            <h6 className="label-text text-[10px] text-boon-blue mb-6">
               Getting Started
-            </p>
+            </h6>
             <h2 className="font-sans text-5xl md:text-7xl font-bold text-boon-charcoal tracking-tight leading-[0.9]">
               What to expect <span className="font-serif italic text-boon-blue">next</span>.
             </h2>
@@ -311,7 +311,7 @@ export default function SolutionsPage() {
             ].map((step) => (
               <div
                 key={step.num}
-                className="bg-white p-12 rounded-[40px] border border-gray-100 text-center"
+                className="bg-white p-12 rounded-[35px] border border-gray-100 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-boon-blue/10 flex items-center justify-center mx-auto mb-8">
                   <span className="label-text text-[14px] text-boon-blue">{step.num}</span>

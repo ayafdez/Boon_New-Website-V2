@@ -142,7 +142,7 @@ export default function StoryPage() {
 
         {/* What We Built Section */}
         <section className="py-32 px-6 md:px-12 lg:px-24">
-          <div className="max-w-5xl mx-auto border-2 border-dashed border-green-300 rounded-3xl bg-[#F6FBF6] p-12 md:p-20">
+          <div className="max-w-5xl mx-auto border-2 border-dashed border-green-300 rounded-[35px] bg-[#F6FBF6] p-12 md:p-20">
             <div className="text-center">
               <SectionLabel>What We Built</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8">
@@ -265,7 +265,7 @@ export default function StoryPage() {
                 ))}
               </ul>
             </div>
-            <div className="aspect-[4/5] bg-gray-50 rounded-[80px] overflow-hidden flex items-center justify-center p-20">
+            <div className="aspect-[4/5] bg-gray-50 rounded-[35px] overflow-hidden flex items-center justify-center p-20">
               <div className="w-full h-full bg-white rounded-[60px] shadow-inner border border-dashed border-gray-200 flex flex-col items-center justify-center gap-4 text-gray-300">
                 <svg
                   className="w-24 h-24 opacity-20"

@@ -38,7 +38,7 @@ export function GlobalCTA() {
         </p>
         <Link
           href="/demo"
-          className="inline-block bg-boon-coral text-white px-12 py-6 rounded-full font-sans font-bold text-2xl hover:scale-105 transition-all shadow-2xl shadow-boon-coral/30"
+          className="inline-block bg-boon-coral text-white px-12 py-6 rounded-[15px] font-sans font-bold text-2xl hover:scale-105 transition-all shadow-2xl shadow-boon-coral/30"
         >
           Schedule a Conversation
         </Link>

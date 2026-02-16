@@ -259,7 +259,7 @@ export default function CoachesPage() {
               {partnershipBenefits.map((item) => (
                 <div
                   key={item.title}
-                  className="p-10 bg-[#F9FAFB] border border-gray-100 rounded-[40px] shadow-sm"
+                  className="p-10 bg-[#F9FAFB] border border-gray-100 rounded-[35px] shadow-sm"
                 >
                   <h4 className="text-xl font-black mb-4">{item.title}</h4>
                   <p className="text-gray-400 text-sm leading-relaxed font-medium">{item.description}</p>
@@ -286,7 +286,7 @@ export default function CoachesPage() {
             {platformFeatures.map((item) => (
               <div
                 key={item.title}
-                className="p-10 bg-[#F9FAFB] border border-gray-100 rounded-[40px] shadow-sm"
+                className="p-10 bg-[#F9FAFB] border border-gray-100 rounded-[35px] shadow-sm"
               >
                 <h4 className="text-xl font-black mb-4">{item.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed font-medium">{item.description}</p>
@@ -312,7 +312,7 @@ export default function CoachesPage() {
             {scopeItems.map((item) => (
               <div
                 key={item.label}
-                className="p-10 bg-white/5 border border-white/10 rounded-[40px] hover:bg-white/10 transition-all"
+                className="p-10 bg-white/5 border border-white/10 rounded-[35px] hover:bg-white/10 transition-all"
               >
                 <div className="text-xs font-black tracking-widest text-[#466FF6] uppercase mb-4">{item.label}</div>
                 <p className="text-white/60 font-medium leading-relaxed text-sm">{item.description}</p>
@@ -338,7 +338,7 @@ export default function CoachesPage() {
               {barItems.map((item) => (
                 <div
                   key={item.title}
-                  className="bg-[#F9FAFB] p-10 rounded-[40px] border border-gray-100"
+                  className="bg-[#F9FAFB] p-10 rounded-[35px] border border-gray-100"
                 >
                   <h5 className="text-xl font-black mb-4">{item.title}</h5>
                   <p className="text-gray-400 text-sm leading-relaxed font-medium">{item.description}</p>
@@ -351,7 +351,7 @@ export default function CoachesPage() {
         {/* 6. Clear Alignment */}
         <section className="py-32 px-6 md:px-12 lg:px-24 bg-white">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-start">
-            <div className="rounded-[80px] overflow-hidden grayscale brightness-75 aspect-[4/5] shadow-2xl relative">
+            <div className="rounded-[35px] overflow-hidden grayscale brightness-75 aspect-[4/5] shadow-2xl relative">
               <Image
                 src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200"
                 alt="Professional Focus"
@@ -411,7 +411,7 @@ export default function CoachesPage() {
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.author}
-                  className="bg-[#F9FAFB] p-10 rounded-[40px] border border-gray-100 flex flex-col justify-between h-full"
+                  className="bg-[#F9FAFB] p-10 rounded-[35px] border border-gray-100 flex flex-col justify-between h-full"
                 >
                   <div>
                     <QuoteIcon />
@@ -496,7 +496,7 @@ export default function CoachesPage() {
             <div className="flex flex-col items-center gap-6 justify-center">
               <Link
                 href="/demo"
-                className="bg-boon-coral text-white px-12 py-6 rounded-full font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
+                className="bg-boon-coral text-white px-12 py-6 rounded-[15px] font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
               >
                 Apply to the Partnership
               </Link>

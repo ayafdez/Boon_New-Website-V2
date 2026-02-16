@@ -103,17 +103,21 @@ export function SystemArchitectureSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-24 max-w-6xl mx-auto">
-          <p className="label-text text-[10px] text-boon-blue mb-8">
+          {/* Section label - H6 */}
+          <h6 className="label-text text-[10px] text-boon-blue mb-8">
             The System Architecture
-          </p>
+          </h6>
+          
+          {/* Main section heading - H2 */}
           <h2 className="font-sans text-6xl md:text-[110px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
             One leadership system. <br />
             <span className="font-serif italic">Not four disconnected programs.</span>
           </h2>
+          
           <p className="text-xl md:text-2xl font-body font-medium text-gray-500 leading-relaxed max-w-4xl mx-auto">
             Boon unifies coaching, manager development, executive support, and shared capability into a
             single system designed to compound as organizations scale.
-          </p>
+          </h6>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -121,7 +125,7 @@ export function SystemArchitectureSection() {
             <Link
               key={item.id}
               href={`/solutions/${item.id}`}
-              className="p-14 bg-boon-off-white rounded-[64px] text-left border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all h-full flex flex-col justify-between group overflow-hidden relative"
+              className="p-14 bg-boon-off-white rounded-[35px] text-left border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all h-full flex flex-col justify-between group overflow-hidden relative"
             >
               <div
                 className="absolute top-10 left-14 w-10 h-[2px]"
@@ -131,12 +135,13 @@ export function SystemArchitectureSection() {
                 <div className="text-boon-charcoal mb-12 group-hover:scale-110 group-hover:text-boon-blue transition-all origin-left">
                   {item.icon}
                 </div>
-                <h3 className="font-sans text-3xl font-bold">
+                {/* Card title - H3 */}
+                <h3 className="font-sans text-3xl font-bold mb-3">
                   Boon <span style={{ color: item.color }}>{item.name}</span>
                 </h3>
                 <p className="text-gray-500 font-body font-medium text-base leading-relaxed">{item.desc}</p>
               </div>
-              <div className="mt-16 flex items-center gap-2 label-text text-[10px] text-gray-300 group-hover:text-boon-blue">
+              <div className="mt-16 flex items-center gap-2 label-text text-[10px] text-gray-300 group-hover:text-boon-blue transition-colors">
                 Explore Pillar <span>→</span>
               </div>
             </Link>

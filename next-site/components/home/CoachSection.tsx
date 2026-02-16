@@ -36,9 +36,9 @@ export function CoachSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="label-text text-[10px] text-boon-blue mb-8">
+          <h6 className="label-text text-[10px] text-boon-blue mb-8">
             Boon&apos;s Coaching Bench
-          </p>
+          </h6>
           <h2 className="font-sans text-5xl md:text-7xl lg:text-[84px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
             Coaches who&apos;ve done the <span className="font-serif italic text-boon-blue">job before</span>.
           </h2>
@@ -48,18 +48,18 @@ export function CoachSection() {
         </div>
 
         {/* Coaches Label */}
-        <p className="label-text text-[10px] text-gray-400 text-center mb-10">
+        <h6 className="label-text text-[10px] text-gray-400 text-center mb-10">
           A Few of Our Operators
-        </p>
+        </h6>
 
         {/* Coach Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {FEATURED_COACHES.map((coach, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[40px] p-8 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-[35px] p-8 hover:shadow-2xl transition-all duration-300"
             >
-              <div className="aspect-square rounded-3xl bg-gray-100 mb-6 overflow-hidden relative">
+              <div className="aspect-square rounded-[35px] bg-gray-100 mb-6 overflow-hidden relative">
                 <Image
                   src={coach.img}
                   alt={coach.name}
@@ -68,9 +68,9 @@ export function CoachSection() {
                 />
               </div>
               <h4 className="font-sans text-2xl font-bold text-boon-charcoal mb-1">{coach.name}</h4>
-              <p className="label-text text-xs text-boon-blue mb-1">
+              <h6 className="label-text text-xs text-boon-blue mb-1">
                 {coach.title}
-              </p>
+              </h6>
               <p className="text-xs font-body text-gray-400 mb-4">{coach.details}</p>
               <p className="text-gray-600 text-sm font-serif italic leading-relaxed">
                 &quot;{coach.quote}&quot;

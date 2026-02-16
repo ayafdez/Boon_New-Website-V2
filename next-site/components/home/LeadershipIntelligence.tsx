@@ -57,9 +57,9 @@ export function LeadershipIntelligence() {
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-32 items-center relative z-10">
         <div>
-          <p className="label-text text-[10px] text-boon-blue mb-10">
+          <h6 className="label-text text-[10px] text-boon-blue mb-10">
             Boon&apos;s Data and Insights
-          </p>
+          </h6>
           <h2 className="font-sans text-5xl md:text-[84px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
             See what&apos;s actually <span className="font-serif italic text-boon-blue">changing</span>.
           </h2>
@@ -82,9 +82,9 @@ export function LeadershipIntelligence() {
         </div>
 
         <div className="flex flex-col gap-8 w-full relative">
-          <p className="label-text text-[10px] text-gray-300 ml-12">
+          <h6 className="label-text text-[10px] text-gray-300 ml-12">
             Aggregated cohort deltas measured across coached leaders over time.
-          </p>
+          </h6>
 
           {/* Organic gradient blob behind chart - signature Boon visual */}
           <div className="absolute -inset-12 z-0 pointer-events-none">
@@ -114,16 +114,16 @@ export function LeadershipIntelligence() {
             ></div>
           </div>
 
-          <div className="bg-white p-12 md:p-20 rounded-[80px] shadow-2xl border border-gray-100 relative z-10 overflow-hidden">
+          <div className="bg-white p-12 md:p-20 rounded-[35px] shadow-2xl border border-gray-100 relative z-10 overflow-hidden">
             <div className="relative z-10">
               <div className="flex justify-between items-center mb-16">
                 <div>
                   <h3 className="font-sans text-3xl font-bold text-boon-charcoal tracking-tight">Competency Growth</h3>
-                  <p className="label-text text-[10px] text-gray-400 mt-2">
+                  <h6 className="label-text text-[10px] text-gray-400 mt-2">
                     Aggregate Cohort Performance • Q3-Q4 2025
-                  </p>
+                  </h6>
                 </div>
-                <div className="label-text text-[10px] text-boon-green bg-boon-green/10 px-4 py-2 rounded-full border border-boon-green/10">
+                <div className="label-text text-[10px] text-boon-green bg-boon-green/10 px-4 py-2 rounded-[15px] border border-boon-green/10">
                   VERIFIED
                 </div>
               </div>

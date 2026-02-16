@@ -49,7 +49,7 @@ function IconWrapper({ children }: { children: React.ReactNode }) {
 // Signal Contrast Visual
 function SignalContrast() {
   return (
-    <div className="grid md:grid-cols-2 gap-px bg-gray-100 border border-gray-100 rounded-[64px] overflow-hidden">
+    <div className="grid md:grid-cols-2 gap-px bg-gray-100 border border-gray-100 rounded-[35px] overflow-hidden">
       <div className="bg-white p-20 flex flex-col items-center justify-center relative group">
         <div className="absolute top-8 left-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">
           Fragmented Signals
@@ -150,7 +150,7 @@ export default function TogetherPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-[80px] overflow-hidden shadow-2xl relative border border-[#FDB022]/5">
+              <div className="rounded-[35px] overflow-hidden shadow-2xl relative border border-[#FDB022]/5">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
                   width={600}
@@ -254,7 +254,7 @@ export default function TogetherPage() {
               ].map((item) => (
                 <div
                   key={item.t}
-                  className="p-10 border border-gray-100 rounded-[40px] shadow-sm hover:border-[#FDB022]/20 transition-all"
+                  className="p-10 border border-gray-100 rounded-[35px] shadow-sm hover:border-[#FDB022]/20 transition-all"
                 >
                   <h4 className="text-xl font-black mb-4">{item.t}</h4>
                   <p className="text-gray-400 text-sm leading-relaxed font-medium">{item.d}</p>
@@ -497,7 +497,7 @@ export default function TogetherPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-full font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
+              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-[15px] font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>

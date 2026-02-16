@@ -120,7 +120,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
 
           {/* Video Embed */}
           {videoId && (
-            <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl mb-10">
+            <div className="relative w-full aspect-video rounded-[35px] overflow-hidden shadow-2xl mb-10">
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}`}
                 title={title}
@@ -137,7 +137,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
               {episode.categories.map((category) => (
                 <span
                   key={category}
-                  className="inline-flex items-center bg-boon-blue/10 text-boon-blue text-[10px] tracking-[0.2em] font-black px-4 py-2 rounded-full uppercase"
+                  className="inline-flex items-center bg-boon-blue/10 text-boon-blue text-[10px] tracking-[0.2em] font-black px-4 py-2 rounded-[15px] uppercase"
                 >
                   {category}
                 </span>
@@ -153,7 +153,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
           {/* Episode Meta */}
           <div className="flex flex-wrap items-center gap-4 text-gray-500 text-sm font-medium mb-8">
             {episode.episodeNumber && (
-              <span className="bg-boon-coral/10 text-boon-coral px-3 py-1 rounded-full font-bold">
+              <span className="bg-boon-coral/10 text-boon-coral px-3 py-1 rounded-[15px] font-bold">
                 Episode {episode.episodeNumber}
               </span>
             )}
@@ -174,7 +174,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
       {episode.guest && (
         <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-gradient-to-r from-boon-blue/5 to-boon-coral/5 rounded-3xl p-8 md:p-10 border border-gray-100">
+            <div className="bg-gradient-to-r from-boon-blue/5 to-boon-coral/5 rounded-[35px] p-8 md:p-10 border border-gray-100">
               <h2 className="text-sm font-black text-boon-blue uppercase tracking-wider mb-6">
                 Featured Guest
               </h2>
@@ -209,7 +209,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
       {timestamps.length > 0 && (
         <section className="py-12 px-6 md:px-12 lg:px-24 bg-gray-50">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-sm">
+            <div className="bg-white rounded-[35px] p-8 md:p-10 border border-gray-100 shadow-sm">
               <h2 className="font-sans text-2xl font-black text-boon-charcoal mb-6 flex items-center gap-3">
                 <svg className="w-6 h-6 text-boon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -457,7 +457,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center gap-2 bg-boon-coral text-white px-10 py-5 rounded-full font-sans font-bold text-lg shadow-xl hover:scale-105 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-boon-coral text-white px-10 py-5 rounded-[15px] font-sans font-bold text-lg shadow-xl hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>

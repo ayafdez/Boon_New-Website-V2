@@ -44,26 +44,30 @@ export default function HomePage() {
         ></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <p className="label-text text-[10px] text-gray-500 mb-8">
+          {/* Section label - H6 for SEO */}
+          <h6 className="label-text text-[10px] text-gray-500 mb-8">
             The Problem
-          </p>
+          </h6>
+          
+          {/* Main section heading - H2 */}
           <h2 className="font-sans text-5xl md:text-7xl lg:text-[84px] font-bold tracking-tight leading-[0.9] text-white mb-20 max-w-5xl">
             Leadership development fails for <span className="font-serif italic text-boon-coral">three predictable reasons</span>.
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Card 1: Fragmented */}
-            <div className="group bg-boon-charcoal rounded-3xl p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
+            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">01</span>
                 <span className="label-text text-[10px] text-boon-coral">Fragmented</span>
               </div>
+              {/* Subsection heading - H3 */}
               <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                 You&apos;re managing four vendors for one job.
               </h3>
               <p className="text-gray-500 font-body font-medium mb-6">
                 No one owns the system.
-              </p>
+              </h6>
               <div className="border-t border-gray-700/50 pt-6 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
                 <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
                   Organizations stitch together coaching, training, assessments, and wellbeing tools. None of them talk to each other. Progress stalls because responsibility is diffused.
@@ -75,11 +79,12 @@ export default function HomePage() {
             </div>
 
             {/* Card 2: Lopsided */}
-            <div className="group bg-boon-charcoal rounded-3xl p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
+            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">02</span>
                 <span className="label-text text-[10px] text-boon-coral">Lopsided</span>
               </div>
+              {/* Subsection heading - H3 */}
               <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                 Executives get coaching. Everyone else gets a workshop and a prayer.
               </h3>
@@ -97,11 +102,12 @@ export default function HomePage() {
             </div>
 
             {/* Card 3: Invisible */}
-            <div className="group bg-boon-charcoal rounded-3xl p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
+            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">03</span>
                 <span className="label-text text-[10px] text-boon-coral">Invisible</span>
               </div>
+              {/* Subsection heading - H3 */}
               <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                 Your CEO asks what&apos;s changing. You don&apos;t have an answer.
               </h3>
@@ -125,15 +131,20 @@ export default function HomePage() {
       <section className="py-32 px-6 md:px-12 lg:px-24 bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div>
-            <p className="label-text text-[10px] text-boon-blue mb-8">
+            {/* Section label - H6 */}
+            <h6 className="label-text text-[10px] text-boon-blue mb-8">
               The Boon Difference
-            </p>
+            </h6>
+            
+            {/* Section heading - H2 */}
             <h2 className="font-sans text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-10">
               What if leadership development worked like a cohesive, <span className="font-serif italic text-boon-blue">customized system</span>?
             </h2>
+            
             <p className="text-xl text-gray-500 font-body font-medium mb-10 leading-relaxed">
               One streamlined solution that replaces the patchwork—coaching, cohorts, and team development, all connected.
-            </p>
+            </h6>
+            
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-boon-blue mt-2.5"></div>
@@ -147,26 +158,26 @@ export default function HomePage() {
           </div>
 
           {/* Visual Diagram */}
-          <div className="bg-boon-off-white rounded-3xl p-10 border border-gray-100">
+          <div className="bg-boon-off-white rounded-[35px] p-10 border border-gray-100">
             {/* Before/After */}
             <div className="grid grid-cols-2 gap-8 mb-10 pb-10 border-b border-gray-200">
               <div>
-                <p className="label-text text-[10px] text-gray-400 mb-4">Before</p>
+                <h5 className="label-text text-[10px] text-gray-400 mb-4">Before</h5>
                 <div className="space-y-2">
                   <div className="flex gap-2">
-                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-body text-gray-400">Vendor</span>
-                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-body text-gray-400">Vendor</span>
+                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-[15px] text-xs font-body text-gray-400">Vendor</span>
+                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-[15px] text-xs font-body text-gray-400">Vendor</span>
                   </div>
                   <div className="flex gap-2">
-                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-body text-gray-400">Vendor</span>
-                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-body text-gray-400">Vendor</span>
+                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-[15px] text-xs font-body text-gray-400">Vendor</span>
+                    <span className="px-3 py-1.5 bg-white border border-gray-200 rounded-[15px] text-xs font-body text-gray-400">Vendor</span>
                   </div>
                 </div>
                 <p className="text-xs font-body text-gray-400 mt-3">Too many. Zero integration.</p>
               </div>
               <div>
-                <p className="label-text text-[10px] text-gray-400 mb-4">After</p>
-                <div className="w-24 h-24 bg-boon-charcoal rounded-2xl flex items-center justify-center">
+                <h5 className="label-text text-[10px] text-gray-400 mb-4">After</h5>
+                <div className="w-24 h-24 bg-boon-charcoal rounded-[15px] flex items-center justify-center">
                   <span className="text-white font-sans font-bold text-lg">Boon</span>
                 </div>
               </div>
@@ -174,9 +185,9 @@ export default function HomePage() {
 
             {/* Coverage Levels */}
             <div>
-              <p className="label-text text-[10px] text-gray-400 mb-6 text-center">
+              <h5 className="label-text text-[10px] text-gray-400 mb-6 text-center">
                 Coverage Across Every Level
-              </p>
+              </h5>
               <div className="flex items-center justify-between">
                 {[
                   { label: 'IC', size: 'w-10 h-10' },
@@ -236,22 +247,25 @@ export default function HomePage() {
         ></div>
 
         <div className="max-w-4xl mx-auto relative z-10">
+          {/* CTA Heading - H2 */}
           <h2 className="font-sans text-6xl md:text-[110px] font-bold text-white mb-8 tracking-tight leading-[0.9]">
             Built to help people and teams <br /> <span className="font-serif italic text-boon-blue">actually grow</span>.
           </h2>
+          
           <p className="text-xl md:text-2xl text-white/60 font-body font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
             Boon delivers leadership infrastructure designed around real human behavior. Ready for a better leadership system? Get in touch today.
           </p>
+          
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link
               href="/demo"
-              className="bg-boon-coral text-white px-16 py-8 rounded-full font-sans font-bold text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
+              className="bg-boon-coral text-white px-16 py-8 rounded-[15px] font-sans font-bold text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
             >
               Book a Strategy Call
             </Link>
             <Link
               href="/solutions"
-              className="bg-white/5 border border-white/10 text-white px-16 py-8 rounded-full font-sans font-bold text-2xl hover:bg-white/10 transition-all"
+              className="bg-white/5 border border-white/10 text-white px-16 py-8 rounded-[15px] font-sans font-bold text-2xl hover:bg-white/10 transition-all"
             >
               See how it works
             </Link>

@@ -47,7 +47,7 @@ export function DemoForm() {
 
   if (formState === 'SUCCESS') {
     return (
-      <div className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center bg-white p-16 rounded-[64px] border border-gray-100">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center bg-white p-16 rounded-[35px] border border-gray-100">
         <div className="w-24 h-24 bg-[#E6F8F0] rounded-full flex items-center justify-center text-[#4CD995] mb-12 animate-bounce">
           <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
@@ -71,7 +71,7 @@ export function DemoForm() {
   }
 
   return (
-    <div className="bg-white p-8 md:p-16 rounded-[64px] border border-gray-100 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)]">
+    <div className="bg-white p-8 md:p-16 rounded-[35px] border border-gray-100 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.05)]">
       <div className="flex justify-between items-center mb-12">
         <div className="flex gap-2">
           <div className="h-1.5 w-12 rounded-full bg-[#466FF6]"></div>

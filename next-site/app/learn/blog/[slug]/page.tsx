@@ -99,7 +99,7 @@ export default function BlogPostPage({ params }: PageProps) {
               {post.categories.map((category) => (
                 <span
                   key={category}
-                  className="inline-flex items-center bg-boon-blue/20 text-boon-light-blue text-[10px] tracking-[0.2em] font-black px-4 py-2 rounded-full uppercase border border-boon-blue/30"
+                  className="inline-flex items-center bg-boon-blue/20 text-boon-light-blue text-[10px] tracking-[0.2em] font-black px-4 py-2 rounded-[15px] uppercase border border-boon-blue/30"
                 >
                   {category}
                 </span>
@@ -163,7 +163,7 @@ export default function BlogPostPage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/demo"
-              className="inline-block bg-boon-coral text-white px-10 py-5 rounded-full font-sans font-bold text-lg shadow-xl shadow-boon-coral/20 hover:scale-105 transition-all"
+              className="inline-block bg-boon-coral text-white px-10 py-5 rounded-[15px] font-sans font-bold text-lg shadow-xl shadow-boon-coral/20 hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>
