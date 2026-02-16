@@ -104,21 +104,17 @@ export function SystemArchitectureSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-24 max-w-6xl mx-auto">
           {/* Section label - H6 */}
+          {/* Small label */}
           <h6 className="label-text text-[10px] text-boon-blue mb-8">
             The System Architecture
           </h6>
-          
-          {/* Main section heading - H2 */}
-          <h2 className="font-sans text-6xl md:text-[110px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
-            One leadership system. <br />
-            <span className="font-serif italic">Not four disconnected programs.</span>
-          </h2>
-          
-          <p className="text-xl md:text-2xl font-body font-medium text-gray-500 leading-relaxed max-w-4xl mx-auto">
-            Boon unifies coaching, manager development, executive support, and shared capability into a
-            single system designed to compound as organizations scale.
-          </h6>
-        </div>
+
+          {/* Description paragraph */}
+          <p className="text-base text-boon-charcoal/70 max-w-xl">
+            Boon unifies coaching, manager development, executive support,
+            and shared capability into a single system designed to compound
+            as organizations scale.
+          </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {systemItems.map((item) => (
