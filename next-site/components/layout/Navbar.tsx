@@ -194,9 +194,9 @@ export function Navbar() {
             </button>
           </div>
           <div className="space-y-6">
-            <h6 className="label-text text-[10px] text-gray-400 border-b border-gray-100 pb-2">
+            <p className="label-text text-[10px] text-gray-400 border-b border-gray-100 pb-2">
               Solutions
-            </h6>
+            </p>
             <Link
               href="/solutions"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -214,9 +214,9 @@ export function Navbar() {
                 Boon {p.toUpperCase()}
               </Link>
             ))}
-            <h6 className="label-text text-[10px] text-gray-400 border-b border-gray-100 pb-2 mt-8">
+            <p className="label-text text-[10px] text-gray-400 border-b border-gray-100 pb-2 mt-8">
               Learn
-            </h6>
+            </p>
             <Link
               href="/learn"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -224,9 +224,9 @@ export function Navbar() {
             >
               Learn Hub
             </Link>
-            <h6 className="label-text text-[10px] text-gray-400 border-b border-gray-100 pb-2 mt-12">
+            <p className="label-text text-[10px] text-gray-400 border-b border-gray-100 pb-2 mt-12">
               Company
-            </h6>
+            </p>
             <Link
               href="/story"
               onClick={() => setIsMobileMenuOpen(false)}

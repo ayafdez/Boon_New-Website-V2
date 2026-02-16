@@ -103,7 +103,7 @@ export default function BoonLiveEventPage({ params }: PageProps) {
 
           {/* Video Embed */}
           {videoId && (
-            <div className="relative w-full aspect-video rounded-[35px] overflow-hidden shadow-2xl mb-10">
+            <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl mb-10">
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}`}
                 title={title}
@@ -138,7 +138,7 @@ export default function BoonLiveEventPage({ params }: PageProps) {
                 href={event.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-boon-coral text-white px-8 py-4 rounded-[15px] font-bold text-base shadow-lg hover:scale-105 transition-all"
+                className="inline-flex items-center gap-2 bg-boon-coral text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:scale-105 transition-all"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -167,7 +167,7 @@ export default function BoonLiveEventPage({ params }: PageProps) {
       {speakers.length > 0 && (
         <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-boon-light-blue/20 rounded-[35px] p-8 md:p-12 border border-boon-blue/10">
+            <div className="bg-boon-light-blue/20 rounded-3xl p-8 md:p-12 border border-boon-blue/10">
               <h2 className="font-sans text-2xl md:text-3xl font-black text-boon-charcoal mb-8">
                 {speakers.map((s, i) => (
                   <span key={s.name}>
@@ -209,7 +209,7 @@ export default function BoonLiveEventPage({ params }: PageProps) {
       {event.topicSummary && (
         <section className="py-12 px-6 md:px-12 lg:px-24 bg-white">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-gradient-to-r from-boon-blue/5 to-boon-coral/5 rounded-[35px] p-8 md:p-12 border-l-4 border-boon-blue">
+            <div className="bg-gradient-to-r from-boon-blue/5 to-boon-coral/5 rounded-3xl p-8 md:p-12 border-l-4 border-boon-blue">
               <h3 className="font-sans text-xl font-black text-boon-charcoal mb-4">What We Covered</h3>
               <p className="text-gray-600 font-medium leading-relaxed text-lg">
                 {event.topicSummary}
@@ -278,7 +278,7 @@ export default function BoonLiveEventPage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center gap-2 bg-boon-coral text-white px-10 py-5 rounded-[15px] font-sans font-bold text-lg shadow-xl hover:scale-105 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-boon-coral text-white px-10 py-5 rounded-full font-sans font-bold text-lg shadow-xl hover:scale-105 transition-all"
             >
               Let&apos;s Talk
             </Link>

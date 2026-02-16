@@ -313,7 +313,7 @@ export default function IndividualsPage() {
             </div>
             <div className="grid grid-cols-1 gap-6">
               {opportunityMoments.map((item) => (
-                <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[35px] border border-gray-100 shadow-sm">
+                <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[40px] border border-gray-100 shadow-sm">
                   <h4 className="text-xl font-black mb-4">{item.title}</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
@@ -336,7 +336,7 @@ export default function IndividualsPage() {
           </div>
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
             {platformFeatures.map((item) => (
-              <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[35px] border border-gray-100 shadow-sm">
+              <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[40px] border border-gray-100 shadow-sm">
                 {item.icon}
                 <h4 className="text-xl font-black mb-4">{item.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
@@ -421,7 +421,7 @@ export default function IndividualsPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-[#F9FAFB] p-10 md:p-12 rounded-[35px] space-y-8">
+            <div className="bg-[#F9FAFB] p-10 md:p-12 rounded-[40px] space-y-8">
               {privacyItems.map((item) => (
                 <div key={item.title} className="flex gap-6">
                   <CheckCircleIcon />

@@ -110,7 +110,7 @@ export default function GrowPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-[35px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 vignette">
+              <div className="rounded-[64px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 vignette">
                 <Image
                   src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200"
                   width={600}
@@ -120,7 +120,7 @@ export default function GrowPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                 <div className="absolute top-8 left-8 animate-badge">
-                  <div className="bg-white/95 backdrop-blur-sm p-5 rounded-[35px] shadow-xl flex items-center gap-3">
+                  <div className="bg-white/95 backdrop-blur-sm p-5 rounded-3xl shadow-xl flex items-center gap-3">
                     <div className="w-2 h-2 bg-[#FF8D80] rounded-full"></div>
                     <p className="text-[10px] font-black text-[#2E353D] uppercase tracking-widest">
                       Cohort Active
@@ -286,7 +286,7 @@ export default function GrowPage() {
                   {/* Timeline node */}
                   <div className="absolute left-1.5 md:left-2.5 top-8 w-5 h-5 rounded-full bg-[#466FF6] border-4 border-white shadow-sm hidden md:block z-10"></div>
 
-                  <div className="md:ml-16 bg-[#F0F3F7] rounded-[35px] p-8 md:p-12">
+                  <div className="md:ml-16 bg-[#F0F3F7] rounded-3xl p-8 md:p-12">
                     <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 items-start">
                       <div>
                         <div className="flex items-baseline gap-4 mb-2">
@@ -337,7 +337,7 @@ export default function GrowPage() {
                   {/* Timeline node */}
                   <div className="absolute left-1.5 md:left-2.5 top-8 w-5 h-5 rounded-full bg-[#466FF6] border-4 border-white shadow-sm hidden md:block z-10"></div>
 
-                  <div className="md:ml-16 bg-[#F0F3F7] rounded-[35px] p-8 md:p-12">
+                  <div className="md:ml-16 bg-[#F0F3F7] rounded-3xl p-8 md:p-12">
                     <div>
                       <div className="flex items-baseline gap-4 mb-2">
                         <p className="text-[#466FF6] font-black text-sm tracking-[0.15em] uppercase">
@@ -376,7 +376,7 @@ export default function GrowPage() {
                   {/* Timeline node */}
                   <div className="absolute left-1.5 md:left-2.5 top-8 w-5 h-5 rounded-full bg-[#466FF6] border-4 border-white shadow-sm hidden md:block z-10"></div>
 
-                  <div className="md:ml-16 bg-[#F0F3F7] rounded-[35px] p-8 md:p-12">
+                  <div className="md:ml-16 bg-[#F0F3F7] rounded-3xl p-8 md:p-12">
                     <div>
                       <div className="flex items-baseline gap-4 mb-2">
                         <p className="text-[#466FF6] font-black text-sm tracking-[0.15em] uppercase">
@@ -416,7 +416,7 @@ export default function GrowPage() {
         {/* 7. Leadership Muscles / Competency Cards */}
         <section
           id="leadership-muscles"
-          className="py-48 px-6 md:px-12 lg:px-24 bg-white rounded-[35px] mx-4 md:mx-10"
+          className="py-48 px-6 md:px-12 lg:px-24 bg-white rounded-[80px] mx-4 md:mx-10"
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-24">
@@ -494,7 +494,7 @@ export default function GrowPage() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl md:rounded-[35px] border border-gray-200 shadow-sm relative overflow-visible">
+            <div className="bg-white rounded-2xl md:rounded-3xl border border-gray-200 shadow-sm relative overflow-visible">
               <ProgramCopyButton />
               <div className="p-6 md:p-10">
                 <div className="divide-y divide-gray-100">
@@ -650,7 +650,7 @@ export default function GrowPage() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className={`p-10 rounded-[35px] border transition-all flex flex-col justify-center relative min-h-[220px] ${
+                    className={`p-10 rounded-[40px] border transition-all flex flex-col justify-center relative min-h-[220px] ${
                       item.active
                         ? 'bg-[#FF8D80] text-white border-[#FF8D80] shadow-[0_40px_80px_-15px_rgba(255,141,128,0.3)] z-10 scale-105'
                         : 'bg-white text-[#2E353D] border-slate-100 hover:border-slate-200'
@@ -744,7 +744,7 @@ export default function GrowPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-[15px] font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
+              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-full font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>

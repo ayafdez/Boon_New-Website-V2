@@ -6,7 +6,7 @@ export function FounderVideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <div className="aspect-video bg-[#2E353D] rounded-[35px] shadow-2xl relative overflow-hidden group cursor-pointer border border-white/5">
+    <div className="aspect-video bg-[#2E353D] rounded-[40px] shadow-2xl relative overflow-hidden group cursor-pointer border border-white/5">
       {isPlaying ? (
         <video
           src="https://storage.googleapis.com/boon-public-assets/the_boon_story.mp4"

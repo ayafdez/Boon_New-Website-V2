@@ -180,7 +180,7 @@ export default function DemoPage() {
         <DemoFAQ faqs={faqs} />
 
         {/* Final CTA */}
-        <section className="py-40 px-6 md:px-12 lg:px-24 bg-[#466FF6] text-white text-center rounded-[35px] mx-4 md:mx-10 mb-24 relative overflow-hidden">
+        <section className="py-40 px-6 md:px-12 lg:px-24 bg-[#466FF6] text-white text-center rounded-[80px] mx-4 md:mx-10 mb-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter leading-[0.85]">

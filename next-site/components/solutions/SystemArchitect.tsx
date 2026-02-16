@@ -33,9 +33,9 @@ export function SystemArchitect() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-32 items-center">
           <div>
-            <h6 className="label-text text-[10px] text-boon-blue mb-10">
+            <p className="label-text text-[10px] text-boon-blue mb-10">
               System Configuration
-            </h6>
+            </p>
             <h2 className="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-12 text-boon-charcoal">
               Map the system to the right <br />
               <span className="font-serif italic text-boon-blue">pressure point</span>.
@@ -46,7 +46,7 @@ export function SystemArchitect() {
                 <button
                   key={k}
                   onClick={() => setStage(k)}
-                  className={`text-left p-10 rounded-[35px] border transition-all duration-500 ${
+                  className={`text-left p-10 rounded-[40px] border transition-all duration-500 ${
                     stage === k
                       ? 'bg-boon-light-blue/30 border-boon-blue shadow-xl'
                       : 'bg-white border-gray-100 opacity-40 hover:opacity-100'
@@ -100,9 +100,9 @@ export function SystemArchitect() {
 
             <div className="mt-20 p-12 bg-white rounded-[48px] shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-center gap-10">
               <div className="max-w-xs">
-                <h6 className="label-text text-[10px] text-gray-300 mb-2">
+                <p className="label-text text-[10px] text-gray-300 mb-2">
                   System Focus
-                </h6>
+                </p>
                 <h4 className="font-sans text-3xl font-bold text-boon-charcoal tracking-tight">
                   {configs[stage].focus}
                 </h4>

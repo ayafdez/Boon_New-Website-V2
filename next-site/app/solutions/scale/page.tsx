@@ -185,7 +185,7 @@ export default function ScalePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-[35px] overflow-hidden shadow-2xl relative">
+              <div className="rounded-[80px] overflow-hidden shadow-2xl relative">
                 <Image
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200"
                   width={600}
@@ -194,7 +194,7 @@ export default function ScalePage() {
                   className="w-full h-full object-cover aspect-square"
                 />
                 <div className="absolute top-8 right-8">
-                  <div className="bg-white/95 backdrop-blur-sm p-5 rounded-[35px] shadow-2xl flex items-start gap-4 max-w-[320px]">
+                  <div className="bg-white/95 backdrop-blur-sm p-5 rounded-3xl shadow-2xl flex items-start gap-4 max-w-[320px]">
                     <div className="w-10 h-10 bg-[#E6F8F0] rounded-full flex items-center justify-center flex-shrink-0 text-[#4CD995]">
                       <CheckIcon className="text-[#4CD995]" />
                     </div>
@@ -279,7 +279,7 @@ export default function ScalePage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="bg-white/5 border border-white/10 p-10 rounded-[35px] hover:bg-white/10 transition-all group"
+                  className="bg-white/5 border border-white/10 p-10 rounded-[40px] hover:bg-white/10 transition-all group"
                 >
                   <div className="mb-8 text-[#FF8D80]">
                     <div className="w-10 h-10 border-2 border-current rounded-xl flex items-center justify-center font-black text-xs">
@@ -527,7 +527,7 @@ export default function ScalePage() {
               Usage-based pricing that works for people leaders and finance teams.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto bg-white p-12 md:p-20 rounded-[35px] shadow-sm relative overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-white p-12 md:p-20 rounded-[80px] shadow-sm relative overflow-hidden">
             <div className="space-y-12 mb-16 relative z-10">
               {[
                 { t: 'Usage-Based Model', d: 'Pay only for completed sessions. No unused licenses.' },
@@ -674,7 +674,7 @@ export default function ScalePage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-[15px] font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
+              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-full font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>
