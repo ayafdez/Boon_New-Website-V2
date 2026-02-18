@@ -26,63 +26,59 @@ const FEATURED_COACHES = [
 
 export function CoachSection() {
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      {/* Soft gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-boon-off-white via-white to-boon-light-blue/20"></div>
+    <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#F4F6FB]">
+      <div className="max-w-7xl mx-auto">
 
-      {/* Decorative gradient blob */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-gradient-to-br from-boon-soft-coral/20 to-transparent rounded-full blur-3xl opacity-50"></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="label-text text-[10px] text-boon-blue mb-8">
+        <div className="mb-16">
+          <p className="label-text text-[10px] text-[#466FF6] mb-6 tracking-[0.25em]">
             Boon&apos;s Coaching Bench
           </p>
-          <h2 className="font-sans text-5xl md:text-7xl lg:text-[84px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
-            Coaches who&apos;ve done the <span className="font-serif italic text-boon-blue">job before</span>.
+          <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-black text-[#1A253B] leading-[1.05] tracking-tight mb-6">
+            Coaches who&apos;ve{' '}
+            <span className="font-serif italic text-[#466FF6]">done the job before.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-500 font-body font-medium leading-relaxed max-w-4xl mx-auto">
-            Boon matches your people with coaches who&apos;ve done the job—former execs, functional leaders, and operators who understand the decisions your team is actually facing.
+          <p className="text-base text-gray-500 font-sans font-normal leading-relaxed">
+            A Few of Our Operators
           </p>
         </div>
 
-        {/* Coaches Label */}
-        <p className="label-text text-[10px] text-gray-400 text-center mb-10">
-          A Few of Our Operators
-        </p>
-
         {/* Coach Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {FEATURED_COACHES.map((coach, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-[40px] p-8 hover:shadow-2xl transition-all duration-300"
-            >
-              <div className="aspect-square rounded-3xl bg-gray-100 mb-6 overflow-hidden relative">
+            <div key={idx} className="flex flex-col gap-5">
+              {/* Photo */}
+              <div className="rounded-[35px] overflow-hidden relative w-full aspect-[4/3]">
                 <Image
                   src={coach.img}
                   alt={coach.name}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
-              <h4 className="font-sans text-2xl font-bold text-boon-charcoal mb-1">{coach.name}</h4>
-              <p className="label-text text-xs text-boon-blue mb-1">
-                {coach.title}
-              </p>
-              <p className="text-xs font-body text-gray-400 mb-4">{coach.details}</p>
-              <p className="text-gray-600 text-sm font-serif italic leading-relaxed">
-                &quot;{coach.quote}&quot;
-              </p>
+
+              {/* Info */}
+              <div>
+                <h3 className="font-sans text-2xl font-black text-[#466FF6] mb-1">
+                  {coach.name}
+                </h3>
+                <p className="label-text text-[10px] text-[#1A253B] tracking-[0.15em] mb-1">
+                  {coach.title}
+                </p>
+                <p className="text-xs font-sans text-gray-400 mb-4">{coach.details}</p>
+                <p className="text-[#2E353D] text-sm font-sans font-normal leading-relaxed">
+                  &quot;{coach.quote}&quot;
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Footer tagline */}
-        <p className="text-center text-gray-500 font-body font-medium">
+        <p className="text-[#466FF6] font-sans font-semibold text-sm">
           Vetted and matched so that every coach brings relevant operational experience to the table.
         </p>
+
       </div>
     </section>
   );
