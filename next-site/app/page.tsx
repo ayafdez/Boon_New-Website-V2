@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { generatePageMetadata } from '@/lib/seo';
 import { HomeHero } from '@/components/home/HomeHero';
+import { HomeProblem } from '@/components/home/HomeProblem';
 import { TrustSection } from '@/components/home/TrustSection';
 import { SystemArchitectureSection } from '@/components/home/SystemArchitectureSection';
 import { CoachSection } from '@/components/home/CoachSection';
@@ -21,105 +22,7 @@ export default function HomePage() {
       <HomeHero />
       <TrustSection />
 
-      {/* THE TRUTH - Three Failure Modes */}
-      <section className="py-32 px-6 md:px-12 lg:px-24 bg-boon-navy relative overflow-hidden">
-        {/* Dotted texture overlay - fading from right */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(70, 111, 246, 0.15) 1px, transparent 1px)',
-            backgroundSize: '20px 20px',
-            maskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
-            WebkitMaskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
-          }}
-        ></div>
-
-        {/* Soft coral gradient glow from bottom-left */}
-        <div
-          className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[60%] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
-        ></div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <p className="label-text text-[10px] text-gray-500 mb-8">
-            The Problem
-          </p>
-          <h2 className="font-sans text-5xl md:text-7xl lg:text-[84px] font-bold tracking-tight leading-[0.9] text-white mb-20 max-w-5xl">
-            Leadership development fails for <span className="font-serif italic text-boon-coral">three predictable reasons</span>.
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Card 1: Fragmented */}
-            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">01</span>
-                <span className="label-text text-[10px] text-boon-coral">Fragmented</span>
-              </div>
-              <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
-                You&apos;re managing four vendors for one job.
-              </h3>
-              <p className="text-gray-500 font-body font-medium mb-6">
-                No one owns the system.
-              </p>
-              <div className="border-t border-gray-700/50 pt-6 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
-                <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
-                  Organizations stitch together coaching, training, assessments, and wellbeing tools. None of them talk to each other. Progress stalls because responsibility is diffused.
-                </p>
-                <p className="text-gray-500 text-sm font-serif italic">
-                  &quot;We have five vendors and still can&apos;t tell you what&apos;s working.&quot;
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2: Lopsided */}
-            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">02</span>
-                <span className="label-text text-[10px] text-boon-coral">Lopsided</span>
-              </div>
-              <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
-                Executives get coaching. Everyone else gets a workshop and a prayer.
-              </h3>
-              <p className="text-gray-500 font-body font-medium mb-6">
-                The middle is carrying the load.
-              </p>
-              <div className="border-t border-gray-700/50 pt-6 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
-                <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
-                  Most solutions are designed for a handful of senior leaders. Managers and emerging leaders, the people actually running the business, get generic training or nothing at all. The result is burnout, inconsistency, and quiet failure in the middle.
-                </p>
-                <p className="text-gray-500 text-sm font-serif italic">
-                  &quot;Our top 5% gets coaching. The other 95% gets a workshop link.&quot;
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3: Invisible */}
-            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">03</span>
-                <span className="label-text text-[10px] text-boon-coral">Invisible</span>
-              </div>
-              <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
-                Your CEO asks what&apos;s changing. You don&apos;t have an answer.
-              </h3>
-              <p className="text-gray-500 font-body font-medium mb-6">
-                Impact becomes guesswork.
-              </p>
-              <div className="border-t border-gray-700/50 pt-6 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-96 transition-all duration-500 overflow-hidden">
-                <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
-                  HR leaders are asked to defend spend without real insight into behavior change, adoption, or momentum. Data lives in silos. Outcomes are inferred, not observed.
-                </p>
-                <p className="text-gray-500 text-sm font-serif italic">
-                  &quot;The board wants ROI. I have engagement scores.&quot;
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeProblem />
 
       {/* THE SHIFT - System Solution */}
       <section className="py-32 px-6 md:px-12 lg:px-24 bg-white">
