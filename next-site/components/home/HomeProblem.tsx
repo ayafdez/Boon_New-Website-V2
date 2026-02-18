@@ -52,7 +52,7 @@ export function HomeProblem() {
           <p className="label-text text-[10px] text-[#466FF6] mb-6 tracking-[0.25em]">
             The Problem
           </p>
-          <h2 className="font-sans text-4xl md:text-5xl lg:text-[64px] font-black text-white leading-[1.05] tracking-tight max-w-3xl">
+          <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-black text-white leading-[1.05] tracking-tight max-w-3xl">
             Leadership development fails{' '}
             <span className="font-serif italic text-[#466FF6]">
               for three predictable reasons.
