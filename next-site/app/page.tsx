@@ -32,52 +32,42 @@ export default function HomePage() {
       <LeadershipIntelligence />
 
       {/* Final CTA */}
-      <section className="py-64 bg-boon-navy px-6 text-center relative overflow-hidden">
-        {/* Overlapping gradient blobs */}
-        <div
-          className="absolute top-[10%] right-[5%] w-[40%] h-[50%] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.3) 0%, rgba(70, 111, 246, 0.1) 40%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
-        ></div>
-        <div
-          className="absolute bottom-[10%] left-[10%] w-[45%] h-[55%] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
-        ></div>
-
-        {/* Subtle grid line pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-100"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-          }}
-        ></div>
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="font-sans text-6xl md:text-[110px] font-bold text-white mb-8 tracking-tight leading-[0.9]">
-            Built to help people and teams <br /> <span className="font-serif italic text-boon-blue">actually grow</span>.
-          </h2>
-          <p className="text-xl md:text-2xl text-white/60 font-body font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
-            Boon delivers leadership infrastructure designed around real human behavior. Ready for a better leadership system? Get in touch today.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Link
-              href="/demo"
-              className="bg-boon-coral text-white px-8 py-4 rounded-[15px] font-sans font-bold text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
-            >
-              Book a Strategy Call
-            </Link>
-            <Link
-              href="/solutions"
-              className="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-[15px] font-sans font-bold text-2xl hover:bg-white/10 transition-all"
-            >
-              See how it works
-            </Link>
+      <section className="py-12 px-6 md:px-12 lg:px-16 bg-[#F4F6FB]">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative overflow-hidden rounded-[35px] py-20 px-8 md:px-16 text-center">
+            {/* Background image */}
+            <Image
+              src="/cta_bg.png"
+              alt=""
+              fill
+              className="object-cover object-center"
+              aria-hidden="true"
+            />
+            {/* Content */}
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-black text-white leading-[1.05] tracking-tight mb-6">
+                Built to help people and teams{' '}
+                <span className="font-serif italic">actually grow.</span>
+              </h2>
+              <p className="text-base md:text-lg text-white/70 font-sans font-normal mb-10 leading-relaxed">
+                Boon delivers leadership infrastructure designed around real human behavior.{' '}
+                Ready for a better leadership system? Get in touch today.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link
+                  href="/demo"
+                  className="bg-[#FF6D6A] text-white px-8 py-4 rounded-[15px] font-sans font-bold text-base hover:brightness-110 active:scale-95 transition-all"
+                >
+                  Book a Strategy Call
+                </Link>
+                <Link
+                  href="/solutions"
+                  className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-[15px] font-sans font-bold text-base hover:bg-white/20 transition-all"
+                >
+                  See how it works
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
