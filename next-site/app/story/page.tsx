@@ -89,7 +89,7 @@ export default function StoryPage() {
             <div className="flex items-center gap-6">
               <Link
                 href="/demo"
-                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all"
+                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-bold text-lg hover:bg-blue-700 transition-all"
               >
                 Book a Strategy Call
               </Link>
@@ -142,7 +142,7 @@ export default function StoryPage() {
 
         {/* What We Built Section */}
         <section className="py-32 px-6 md:px-12 lg:px-24">
-          <div className="max-w-5xl mx-auto border-2 border-dashed border-green-300 rounded-3xl bg-[#F6FBF6] p-12 md:p-20">
+          <div className="max-w-5xl mx-auto border-2 border-dashed border-green-300 rounded-[35px] bg-[#F6FBF6] p-12 md:p-20">
             <div className="text-center">
               <SectionLabel>What We Built</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8">
@@ -213,19 +213,19 @@ export default function StoryPage() {
           <div className="max-w-7xl mx-auto flex flex-col items-center">
             <SectionLabel>Impact</SectionLabel>
             <div className="grid md:grid-cols-3 gap-12 w-full mt-10 text-center">
-              <div className="p-12 bg-white rounded-[50px] shadow-sm border border-gray-100">
+              <div className="p-12 bg-white rounded-[35px] shadow-sm border border-gray-100">
                 <div className="text-6xl font-black text-[#466FF6] mb-4">100+</div>
                 <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">
                   Organizations, from Series A to Fortune 500
                 </p>
               </div>
-              <div className="p-12 bg-white rounded-[50px] shadow-sm border border-gray-100">
+              <div className="p-12 bg-white rounded-[35px] shadow-sm border border-gray-100">
                 <div className="text-6xl font-black text-[#466FF6] mb-4">Thousands</div>
                 <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">
                   Leaders developed across every level
                 </p>
               </div>
-              <div className="p-12 bg-white rounded-[50px] shadow-sm border border-gray-100">
+              <div className="p-12 bg-white rounded-[35px] shadow-sm border border-gray-100">
                 <div className="text-6xl font-black mb-4">
                   <span className="text-[#466FF6]">Real</span><br />
                   <span className="text-[#466FF6]">visibility</span>
@@ -265,8 +265,8 @@ export default function StoryPage() {
                 ))}
               </ul>
             </div>
-            <div className="aspect-[4/5] bg-gray-50 rounded-[80px] overflow-hidden flex items-center justify-center p-20">
-              <div className="w-full h-full bg-white rounded-[60px] shadow-inner border border-dashed border-gray-200 flex flex-col items-center justify-center gap-4 text-gray-300">
+            <div className="aspect-[4/5] bg-gray-50 rounded-[35px] overflow-hidden flex items-center justify-center p-20">
+              <div className="w-full h-full bg-white rounded-[35px] shadow-inner border border-dashed border-gray-200 flex flex-col items-center justify-center gap-4 text-gray-300">
                 <svg
                   className="w-24 h-24 opacity-20"
                   fill="none"
@@ -343,7 +343,7 @@ export default function StoryPage() {
             <div className="flex items-center justify-center gap-6">
               <Link
                 href="/demo"
-                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all"
+                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-bold text-lg hover:bg-blue-700 transition-all"
               >
                 Book a Strategy Call
               </Link>

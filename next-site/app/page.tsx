@@ -53,7 +53,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Card 1: Fragmented */}
-            <div className="group bg-boon-charcoal rounded-3xl p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
+            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">01</span>
                 <span className="label-text text-[10px] text-boon-coral">Fragmented</span>
@@ -75,7 +75,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2: Lopsided */}
-            <div className="group bg-boon-charcoal rounded-3xl p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
+            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">02</span>
                 <span className="label-text text-[10px] text-boon-coral">Lopsided</span>
@@ -97,7 +97,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 3: Invisible */}
-            <div className="group bg-boon-charcoal rounded-3xl p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
+            <div className="group bg-boon-charcoal rounded-[35px] p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">03</span>
                 <span className="label-text text-[10px] text-boon-coral">Invisible</span>
@@ -147,7 +147,7 @@ export default function HomePage() {
           </div>
 
           {/* Visual Diagram */}
-          <div className="bg-boon-off-white rounded-3xl p-10 border border-gray-100">
+          <div className="bg-boon-off-white rounded-[35px] p-10 border border-gray-100">
             {/* Before/After */}
             <div className="grid grid-cols-2 gap-8 mb-10 pb-10 border-b border-gray-200">
               <div>
@@ -245,13 +245,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link
               href="/demo"
-              className="bg-boon-coral text-white px-16 py-8 rounded-full font-sans font-bold text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
+              className="bg-boon-coral text-white px-8 py-4 rounded-[15px] font-sans font-bold text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
             >
               Book a Strategy Call
             </Link>
             <Link
               href="/solutions"
-              className="bg-white/5 border border-white/10 text-white px-16 py-8 rounded-full font-sans font-bold text-2xl hover:bg-white/10 transition-all"
+              className="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-[15px] font-sans font-bold text-2xl hover:bg-white/10 transition-all"
             >
               See how it works
             </Link>

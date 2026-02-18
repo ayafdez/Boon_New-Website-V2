@@ -93,7 +93,7 @@ export function HomeHero() {
 
         {/* Right: Video — untouched */}
         <div className="reveal stagger-2 relative hidden lg:block">
-          <div className="rounded-[40px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 group z-10">
+          <div className="rounded-[35px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 group z-10">
             <video
               autoPlay
               muted

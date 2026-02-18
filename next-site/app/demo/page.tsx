@@ -161,7 +161,7 @@ export default function DemoPage() {
               />
             </div>
 
-            <div className="max-w-2xl bg-white p-12 rounded-[56px] border border-gray-100 shadow-sm text-center">
+            <div className="max-w-2xl bg-white p-12 rounded-[35px] border border-gray-100 shadow-sm text-center">
               <p className="text-lg font-bold text-gray-500 italic leading-relaxed mb-8">
                 &ldquo;Boon has become a core part of our leadership infrastructure. The level of support they
                 provide our managers is unmatched by any generic L&D tool we&apos;ve used.&rdquo;
@@ -180,7 +180,7 @@ export default function DemoPage() {
         <DemoFAQ faqs={faqs} />
 
         {/* Final CTA */}
-        <section className="py-40 px-6 md:px-12 lg:px-24 bg-[#466FF6] text-white text-center rounded-[80px] mx-4 md:mx-10 mb-24 relative overflow-hidden">
+        <section className="py-40 px-6 md:px-12 lg:px-24 bg-[#466FF6] text-white text-center rounded-[35px] mx-4 md:mx-10 mb-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter leading-[0.85]">
@@ -189,7 +189,7 @@ export default function DemoPage() {
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link
                 href="mailto:hello@boon.coach"
-                className="bg-white text-[#466FF6] px-14 py-7 rounded-full font-black text-2xl hover:scale-105 transition-all shadow-2xl"
+                className="bg-white text-[#466FF6] px-8 py-4 rounded-[15px] font-black text-2xl hover:scale-105 transition-all shadow-2xl"
               >
                 Email our team
               </Link>

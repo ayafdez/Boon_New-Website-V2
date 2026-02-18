@@ -259,13 +259,13 @@ export default function IndividualsPage() {
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
                 href="/demo"
-                className="bg-[#466FF6] text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all text-center"
+                className="bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all text-center"
               >
                 Find Your Coach
               </Link>
               <a
                 href="#how-it-works"
-                className="border border-gray-200 px-10 py-5 rounded-2xl font-black text-xl hover:bg-white transition-all text-center"
+                className="border border-gray-200 px-8 py-4 rounded-[15px] font-black text-xl hover:bg-white transition-all text-center"
               >
                 See How It Works
               </a>
@@ -313,7 +313,7 @@ export default function IndividualsPage() {
             </div>
             <div className="grid grid-cols-1 gap-6">
               {opportunityMoments.map((item) => (
-                <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[40px] border border-gray-100 shadow-sm">
+                <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[35px] border border-gray-100 shadow-sm">
                   <h4 className="text-xl font-black mb-4">{item.title}</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
@@ -336,7 +336,7 @@ export default function IndividualsPage() {
           </div>
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
             {platformFeatures.map((item) => (
-              <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[40px] border border-gray-100 shadow-sm">
+              <div key={item.title} className="p-10 bg-[#F9FAFB] rounded-[35px] border border-gray-100 shadow-sm">
                 {item.icon}
                 <h4 className="text-xl font-black mb-4">{item.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
@@ -362,7 +362,7 @@ export default function IndividualsPage() {
               {competencies.map((item) => (
                 <div
                   key={item.title}
-                  className="flex gap-6 p-8 bg-gray-50 rounded-[32px] border border-gray-100 hover:bg-white hover:border-[#466FF6]/20 transition-all group"
+                  className="flex gap-6 p-8 bg-gray-50 rounded-[35px] border border-gray-100 hover:bg-white hover:border-[#466FF6]/20 transition-all group"
                 >
                   <CheckCircleIcon />
                   <div>
@@ -378,7 +378,7 @@ export default function IndividualsPage() {
         </section>
 
         {/* 6. How It Works Section */}
-        <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#2E353D] text-white rounded-[60px] mx-4 md:mx-10 my-10" id="how-it-works">
+        <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#2E353D] text-white rounded-[35px] mx-4 md:mx-10 my-10" id="how-it-works">
           <div className="max-w-5xl mx-auto text-center mb-24">
             <p className="text-[#466FF6] font-black text-[10px] tracking-widest uppercase mb-6">How It Works</p>
             <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8 tracking-tighter">
@@ -421,7 +421,7 @@ export default function IndividualsPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-[#F9FAFB] p-10 md:p-12 rounded-[40px] space-y-8">
+            <div className="bg-[#F9FAFB] p-10 md:p-12 rounded-[35px] space-y-8">
               {privacyItems.map((item) => (
                 <div key={item.title} className="flex gap-6">
                   <CheckCircleIcon />
@@ -444,7 +444,7 @@ export default function IndividualsPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-12">
               {steps.map((step) => (
-                <div key={step.number} className="flex flex-col items-center text-center p-12 bg-gray-50 rounded-[60px]">
+                <div key={step.number} className="flex flex-col items-center text-center p-12 bg-gray-50 rounded-[35px]">
                   <div className="w-16 h-16 rounded-full bg-[#466FF6] text-white flex items-center justify-center font-black text-2xl mb-8 shadow-xl shadow-blue-100">
                     {step.number}
                   </div>
@@ -469,11 +469,11 @@ export default function IndividualsPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-[#466FF6] text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all mb-12"
+              className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-black text-lg shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all mb-12"
             >
               Share Boon with Your HR Team
             </Link>
-            <div className="bg-[#F9FAFB] p-10 rounded-[32px] border border-gray-100 max-w-2xl">
+            <div className="bg-[#F9FAFB] p-10 rounded-[35px] border border-gray-100 max-w-2xl">
               <p className="text-gray-500 font-medium leading-relaxed text-sm">
                 Organizations choose Boon because it&apos;s not just coaching, it&apos;s a leadership development
                 system. One platform for 1:1 coaching, cohort programs, executive development, and team
@@ -521,7 +521,7 @@ export default function IndividualsPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-white text-boon-navy px-12 py-6 rounded-full font-sans font-bold text-2xl shadow-2xl hover:scale-105 transition-all"
+              className="inline-block bg-white text-boon-navy px-8 py-4 rounded-[15px] font-sans font-bold text-2xl shadow-2xl hover:scale-105 transition-all"
             >
               Find Your Coach
             </Link>
