@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 
 const problems = [
   {
@@ -28,6 +31,8 @@ const problems = [
 ];
 
 export function HomeProblem() {
+  const [active, setActive] = useState(0);
+
   return (
     <section className="relative overflow-hidden py-24 px-6 md:px-12 lg:px-24">
       {/* Background image */}
@@ -57,51 +62,72 @@ export function HomeProblem() {
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-5">
-          {problems.map((p, i) => (
-            <div
-              key={p.number}
-              className={`rounded-[35px] p-8 border border-white/10 flex flex-col gap-6 transition-all duration-300 hover:border-[#466FF6]/40 ${
-                i === 0
-                  ? 'bg-[#1e2c45]/80 backdrop-blur-sm'
-                  : 'bg-[#1a2540]/60 backdrop-blur-sm'
-              }`}
-            >
-              {/* Label row */}
-              <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-[#466FF6] flex items-center justify-center text-white text-xs font-black font-sans flex-shrink-0">
-                  {p.number}
-                </span>
-                <span className="label-text text-[10px] text-[#466FF6] tracking-[0.2em]">
-                  {p.label}
-                </span>
-              </div>
+          {problems.map((p, i) => {
+            const isActive = active === i;
+            return (
+              <div
+                key={p.number}
+                onMouseEnter={() => setActive(i)}
+                className={`rounded-[35px] p-8 border flex flex-col gap-5 cursor-default transition-all duration-300 ${
+                  isActive
+                    ? 'bg-[#1e2c45]/90 border-[#466FF6]/40 backdrop-blur-sm'
+                    : 'bg-[#151f30]/60 border-white/[0.08] backdrop-blur-sm'
+                }`}
+              >
+                {/* Label row */}
+                <div className="flex items-center gap-3">
+                  <span className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black font-sans flex-shrink-0 transition-colors duration-300 ${
+                    isActive ? 'bg-[#466FF6] text-white' : 'bg-white/10 text-white/40'
+                  }`}>
+                    {p.number}
+                  </span>
+                  <span className={`label-text text-[10px] tracking-[0.2em] transition-colors duration-300 ${
+                    isActive ? 'text-[#466FF6]' : 'text-white/30'
+                  }`}>
+                    {p.label}
+                  </span>
+                </div>
 
-              {/* Headline */}
-              <h3 className="font-sans text-xl font-black text-white leading-snug">
-                {p.headline}
-              </h3>
+                {/* Headline */}
+                <h3 className={`font-sans text-xl font-black leading-snug transition-colors duration-300 ${
+                  isActive ? 'text-white' : 'text-white/40'
+                }`}>
+                  {p.headline}
+                </h3>
 
-              {/* Subline */}
-              <p className="text-white/40 text-sm font-sans font-medium">
-                {p.subline}
-              </p>
-
-              {/* Divider */}
-              <div className="border-t border-white/10" />
-
-              {/* Body */}
-              <p className="text-white/70 text-sm font-sans font-bold leading-relaxed">
-                {p.body}
-              </p>
-
-              {/* Quote */}
-              <blockquote className="border-l-2 border-white/20 pl-4">
-                <p className="text-white/40 text-sm font-serif italic leading-relaxed">
-                  {p.quote}
+                {/* Subline — always visible but fades */}
+                <p className={`text-sm font-sans font-medium transition-colors duration-300 ${
+                  isActive ? 'text-white/40' : 'text-white/20'
+                }`}>
+                  {p.subline}
                 </p>
-              </blockquote>
-            </div>
-          ))}
+
+                {/* Expanded content — only visible when active */}
+                <div
+                  className="flex flex-col gap-5 overflow-hidden transition-all duration-500 ease-in-out"
+                  style={{
+                    maxHeight: isActive ? '300px' : '0px',
+                    opacity: isActive ? 1 : 0,
+                  }}
+                >
+                  {/* Divider */}
+                  <div className="border-t border-white/10" />
+
+                  {/* Body */}
+                  <p className="text-white/70 text-sm font-sans font-bold leading-relaxed">
+                    {p.body}
+                  </p>
+
+                  {/* Quote */}
+                  <blockquote className="border-l-2 border-white/20 pl-4">
+                    <p className="text-white/40 text-sm font-serif italic leading-relaxed">
+                      {p.quote}
+                    </p>
+                  </blockquote>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
