@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 
 const FEATURED_COACHES = [
   {
@@ -7,6 +10,7 @@ const FEATURED_COACHES = [
     details: 'Old Navy, Banana Republic, Gap',
     quote: "I help operators stop carrying decisions they shouldn't have to make alone.",
     img: 'https://storage.googleapis.com/boon-public-assets/amykellylauer.jpg',
+    objectPosition: 'center center',
   },
   {
     name: 'Colin Cosgrove',
@@ -14,6 +18,7 @@ const FEATURED_COACHES = [
     details: '11 years at Google',
     quote: 'I coach GTM leaders to scale without losing their human edge.',
     img: 'https://storage.googleapis.com/boon-public-assets/Colin%20Cosgrove.png',
+    objectPosition: 'center center',
   },
   {
     name: 'Olga Volgin',
@@ -21,10 +26,13 @@ const FEATURED_COACHES = [
     details: '20 years in Azure UX',
     quote: 'I coach leaders promoted for results who were never taught how to lead people.',
     img: 'https://storage.googleapis.com/boon-public-assets/Olga%20Volgin_New.png',
+    objectPosition: 'center center',
   },
 ];
 
 export function CoachSection() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#F4F6FB]">
       <div className="max-w-7xl mx-auto">
@@ -45,33 +53,65 @@ export function CoachSection() {
 
         {/* Coach Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {FEATURED_COACHES.map((coach, idx) => (
-            <div key={idx} className="flex flex-col gap-5">
-              {/* Photo */}
-              <div className="rounded-[35px] overflow-hidden relative w-full aspect-[4/3]">
-                <Image
-                  src={coach.img}
-                  alt={coach.name}
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
+          {FEATURED_COACHES.map((coach, idx) => {
+            const isHovered = hovered === idx;
+            return (
+              <div
+                key={idx}
+                className="flex flex-col gap-5 cursor-default"
+                onMouseEnter={() => setHovered(idx)}
+                onMouseLeave={() => setHovered(null)}
+              >
+                {/* Photo */}
+                <div
+                  className="rounded-[35px] overflow-hidden relative w-full transition-all duration-300"
+                  style={{
+                    aspectRatio: '1/1',
+                    boxShadow: isHovered
+                      ? '0 20px 60px rgba(70, 111, 246, 0.18)'
+                      : '0 4px 20px rgba(0,0,0,0.06)',
+                    transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
+                  }}
+                >
+                  <Image
+                    src={coach.img}
+                    alt={coach.name}
+                    fill
+                    className="object-cover transition-transform duration-500"
+                    style={{
+                      objectPosition: coach.objectPosition,
+                      transform: isHovered ? 'scale(1.04)' : 'scale(1)',
+                    }}
+                  />
+                  {/* Subtle blue overlay on hover */}
+                  <div
+                    className="absolute inset-0 transition-opacity duration-300"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(70,111,246,0.15) 0%, transparent 50%)',
+                      opacity: isHovered ? 1 : 0,
+                    }}
+                  />
+                </div>
 
-              {/* Info */}
-              <div>
-                <h3 className="font-sans text-2xl font-black text-[#466FF6] mb-1">
-                  {coach.name}
-                </h3>
-                <p className="label-text text-[10px] text-[#1A253B] tracking-[0.15em] mb-1">
-                  {coach.title}
-                </p>
-                <p className="text-xs font-sans text-gray-400 mb-4">{coach.details}</p>
-                <p className="text-[#2E353D] text-sm font-sans font-normal leading-relaxed">
-                  &quot;{coach.quote}&quot;
-                </p>
+                {/* Info */}
+                <div>
+                  <h3
+                    className="font-sans text-2xl font-black mb-1 transition-colors duration-200"
+                    style={{ color: isHovered ? '#2E56D6' : '#466FF6' }}
+                  >
+                    {coach.name}
+                  </h3>
+                  <p className="label-text text-[10px] text-[#1A253B] tracking-[0.15em] mb-1">
+                    {coach.title}
+                  </p>
+                  <p className="text-xs font-sans text-gray-400 mb-4">{coach.details}</p>
+                  <p className="text-[#2E353D] text-sm font-sans font-normal leading-relaxed">
+                    &quot;{coach.quote}&quot;
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Footer tagline */}
