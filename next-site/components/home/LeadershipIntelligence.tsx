@@ -13,7 +13,7 @@ export function LeadershipIntelligence() {
             alt="Competency Growth dashboard showing aggregate cohort performance"
             width={800}
             height={800}
-            className="w-full h-auto rounded-[35px]"
+            className="w-full h-auto"
             quality={100}
             sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: 'contain' }}
