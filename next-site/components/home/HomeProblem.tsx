@@ -31,7 +31,7 @@ const problems = [
 ];
 
 export function HomeProblem() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number | null>(null);
 
   return (
     <section className="relative overflow-hidden py-24 px-6 md:px-12 lg:px-24">
@@ -61,9 +61,14 @@ export function HomeProblem() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-5">
+        <div
+          className="grid md:grid-cols-3 gap-5"
+          onMouseLeave={() => setActive(null)}
+        >
           {problems.map((p, i) => {
             const isActive = active === i;
+            const isAnyActive = active !== null;
+
             return (
               <div
                 key={p.number}
@@ -71,6 +76,8 @@ export function HomeProblem() {
                 className={`rounded-[35px] p-8 border flex flex-col gap-5 cursor-default transition-all duration-300 ${
                   isActive
                     ? 'bg-[#1e2c45]/90 border-[#466FF6]/40 backdrop-blur-sm'
+                    : isAnyActive
+                    ? 'bg-[#151f30]/40 border-white/[0.05] backdrop-blur-sm opacity-60'
                     : 'bg-[#151f30]/60 border-white/[0.08] backdrop-blur-sm'
                 }`}
               >
@@ -90,19 +97,19 @@ export function HomeProblem() {
 
                 {/* Headline */}
                 <h3 className={`font-sans text-xl font-black leading-snug transition-colors duration-300 ${
-                  isActive ? 'text-white' : 'text-white/40'
+                  isActive ? 'text-white' : 'text-white/70'
                 }`}>
                   {p.headline}
                 </h3>
 
-                {/* Subline — always visible but fades */}
+                {/* Subline — always visible */}
                 <p className={`text-sm font-sans font-medium transition-colors duration-300 ${
-                  isActive ? 'text-white/40' : 'text-white/20'
+                  isActive ? 'text-white/40' : 'text-white/30'
                 }`}>
                   {p.subline}
                 </p>
 
-                {/* Expanded content — only visible when active */}
+                {/* Expanded content — only when hovered */}
                 <div
                   className="flex flex-col gap-5 overflow-hidden transition-all duration-500 ease-in-out"
                   style={{
@@ -110,15 +117,12 @@ export function HomeProblem() {
                     opacity: isActive ? 1 : 0,
                   }}
                 >
-                  {/* Divider */}
                   <div className="border-t border-white/10" />
 
-                  {/* Body */}
                   <p className="text-white/70 text-sm font-sans font-bold leading-relaxed">
                     {p.body}
                   </p>
 
-                  {/* Quote */}
                   <blockquote className="border-l-2 border-white/20 pl-4">
                     <p className="text-white/40 text-sm font-serif italic leading-relaxed">
                       {p.quote}
