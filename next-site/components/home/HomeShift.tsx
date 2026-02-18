@@ -38,6 +38,8 @@ export function HomeShift() {
             width={800}
             height={900}
             className="w-full h-auto rounded-[35px]"
+            quality={100}
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: 'contain' }}
             priority
           />

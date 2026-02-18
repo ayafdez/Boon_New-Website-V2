@@ -78,6 +78,8 @@ export function CoachSection() {
                     alt={coach.name}
                     fill
                     className="object-cover transition-transform duration-500"
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     style={{
                       objectPosition: coach.objectPosition,
                       transform: isHovered ? 'scale(1.04)' : 'scale(1)',

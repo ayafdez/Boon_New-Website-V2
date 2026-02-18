@@ -40,7 +40,11 @@ export default function HomePage() {
               src="/cta_bg.png"
               alt=""
               fill
+              quality={100}
+              sizes="100vw"
               className="object-cover object-center"
+            quality={100}
+            sizes="100vw"
               aria-hidden="true"
             />
             {/* Content */}

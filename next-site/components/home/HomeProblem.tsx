@@ -41,6 +41,8 @@ export function HomeProblem() {
         alt=""
         fill
         className="object-cover object-center"
+            quality={100}
+            sizes="100vw"
         aria-hidden="true"
         priority
       />
