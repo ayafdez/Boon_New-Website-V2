@@ -47,20 +47,6 @@ export function HomeHero() {
         }}
       ></div>
 
-      {/* Subtle blue grid overlay — center-left area matching Figma */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(70, 111, 246, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 111, 246, 0.12) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-          maskImage:
-            'radial-gradient(ellipse 35% 60% at 42% 50%, black 0%, transparent 100%)',
-          WebkitMaskImage:
-            'radial-gradient(ellipse 35% 60% at 42% 50%, black 0%, transparent 100%)',
-        }}
-      ></div>
-
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center relative z-10">
         {/* Left: Text content */}
         <div>
