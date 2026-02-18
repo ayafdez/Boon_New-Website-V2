@@ -43,8 +43,6 @@ export default function HomePage() {
               quality={100}
               sizes="100vw"
               className="object-cover object-center"
-            quality={100}
-            sizes="100vw"
               aria-hidden="true"
             />
             {/* Content */}
