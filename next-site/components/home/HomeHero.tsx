@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export function HomeHero() {
@@ -45,18 +44,27 @@ export function HomeHero() {
       <div
         ref={bgRef}
         className="absolute inset-0 w-full h-[120%] -top-[10%] pointer-events-none will-change-transform"
+        style={{ zIndex: 0 }}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/hp_hero_bg.png"
           alt=""
-          fill
-          priority
-          className="object-cover object-center"
+          fetchPriority="high"
+          decoding="async"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
         />
       </div>
 
       {/* Subtle white overlay to keep text readable */}
-      <div className="absolute inset-0 bg-white/20 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-white/10 pointer-events-none" style={{ zIndex: 1 }}></div>
 
       <style jsx>{`
         .font-architectural {
@@ -70,7 +78,7 @@ export function HomeHero() {
         .stagger-3 { transition-delay: 0.3s; }
       `}</style>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-8 md:gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-8 md:gap-16 items-center relative" style={{ zIndex: 2 }}>
         <div>
           <h1 className="reveal stagger-1 font-architectural text-4xl md:text-6xl lg:text-[72px] text-boon-charcoal mb-12">
             The leadership development system you won&apos;t <span className="font-serif italic text-boon-blue">outgrow</span>.
