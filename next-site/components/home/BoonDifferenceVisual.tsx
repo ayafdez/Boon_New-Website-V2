@@ -18,9 +18,9 @@ const content = {
     image: '/without-boon.jpg',
     fallbackGradient: 'from-gray-100 to-gray-200',
     timeline: [
-      { year: '2021', role: 'IC', event: 'Onboarding webinar', color: '#CBD5E1' },
-      { year: '2023', role: 'Manager', event: 'Leadership 101 workshop', color: '#CBD5E1' },
-      { year: '2025', role: 'VP', event: 'Executive Coach', color: '#C47ACC' },
+      { year: '2021', role: 'IC', event: 'Onboarding webinar' },
+      { year: '2023', role: 'Manager', event: 'Leadership 101 workshop' },
+      { year: '2025', role: 'VP', event: 'Executive Coach', isLilac: true },
     ],
   },
   'WITH BOON': {
@@ -34,9 +34,9 @@ const content = {
     image: '/with-boon.jpg',
     fallbackGradient: 'from-blue-50 to-blue-100',
     timeline: [
-      { year: '2021', role: 'IC', event: 'Boon SCALE', color: '#466FF6', tone: 'blue', description: 'Builds Self-Awareness' },
-      { year: '2023', role: 'Manager', event: 'Boon GROW', color: '#FF8D80', tone: 'red', description: 'Applies IC Insights To Leadership' },
-      { year: '2025', role: 'VP', event: 'Boon EXEC', color: '#D077D2', tone: 'purple', description: 'Accelerates With Strong Foundation' },
+      { year: '2021', role: 'IC', event: 'Boon SCALE', tone: 'blue', description: 'Builds Self-Awareness' },
+      { year: '2023', role: 'Manager', event: 'Boon GROW', tone: 'red', description: 'Applies IC Insights To Leadership' },
+      { year: '2025', role: 'VP', event: 'Boon EXEC', tone: 'purple', description: 'Accelerates With Strong Foundation' },
     ],
   },
 } as const;
@@ -56,7 +56,7 @@ export function BoonDifferenceVisual() {
           {tabs.map((tab) => (
             <button
               key={tab}
-              onClick={() => setActive(tab)}
+              onClick={() => { setActive(tab); setHoveredCard(null); }}
               className={`px-8 py-3 text-xs font-body font-extrabold tracking-widest transition-all duration-200 border-b-2 -mb-px ${
                 active === tab
                   ? 'border-boon-blue text-boon-charcoal'
@@ -72,7 +72,7 @@ export function BoonDifferenceVisual() {
       {/* Two-column layout */}
       <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
 
-        {/* Left — text content */}
+        {/* Left */}
         <div>
           <h3 className={`text-2xl font-sans font-bold mb-4 ${isWithBoon ? 'text-boon-blue' : 'text-boon-charcoal'}`}>
             {c.heading}
@@ -98,71 +98,60 @@ export function BoonDifferenceVisual() {
           </ul>
         </div>
 
-        {/* Right — image with timeline overlay */}
+        {/* Right — image + overlay */}
         <div className="relative pt-32">
-          {/* Photo */}
+
           <div className={`rounded-[24px] overflow-hidden aspect-[4/3] bg-gradient-to-br ${c.fallbackGradient} relative`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={c.image}
-              alt={c.heading}
-              className="w-full h-full object-cover absolute inset-0"
-            />
+            <img src={c.image} alt={c.heading} className="w-full h-full object-cover absolute inset-0" />
           </div>
 
-          {/* Timeline overlay — different design per tab */}
-          {!isWithBoon ? (
-            /* WITHOUT BOON — gray shell, dashed connector, neutral pills */
-            <div
-              className="absolute"
-              style={{
-                top: '40px', right: '-200px', width: 400, borderRadius: 28,
-                backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
-                backgroundColor: 'rgba(255,255,255,0.15)',
-                boxShadow: '0 18px 40px rgba(10,10,10,0.15)',
-                padding: 18, zIndex: 10,
-              }}
-            >
+          {/* WITHOUT BOON overlay */}
+          {!isWithBoon && (
+            <div className="absolute" style={{
+              top: 40, right: -200, width: 400, zIndex: 10,
+              borderRadius: 28, padding: 18,
+              backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
+              backgroundColor: 'rgba(255,255,255,0.15)',
+            }}>
               <div style={{ borderRadius: 22, padding: 10 }}>
-                <div className="flex flex-col gap-5">
-                  {c.timeline.map((item, i) => {
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                  {c.timeline.map((item: any, i) => {
                     const isLast = i === c.timeline.length - 1;
-                    const isLilac = isLast;
                     const isHovered = hoveredCard === i;
                     const isDimmed = hoveredCard !== null && !isHovered;
                     return (
-                      <div key={i} className="relative"
+                      <div key={i} style={{ position: 'relative', cursor: 'pointer' }}
                         onMouseEnter={() => setHoveredCard(i)}
                         onMouseLeave={() => setHoveredCard(null)}
-                        style={{ cursor: 'pointer' }}
                       >
-                        <div className="flex items-center gap-4" style={{
-                          background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
+                        <div style={{
+                          display: 'flex', alignItems: 'center', gap: 16,
                           borderRadius: 22, padding: '14px 16px',
+                          background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
                           boxShadow: isHovered ? '0 16px 36px rgba(10,10,10,0.18)' : '0 10px 22px rgba(10,10,10,0.10)',
                           border: isHovered ? '1px solid rgba(70,111,246,0.3)' : '1px solid rgba(0,0,0,0.04)',
                           opacity: isDimmed ? 0.45 : 1,
                           transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
                           transition: 'all 0.2s ease',
                         }}>
-                          <div className="flex flex-col items-center" style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}>
+                          <div style={{ width: 48, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#8C8F97', fontSize: 11, fontWeight: 600, lineHeight: 1.1 }}>
                             <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
                           </div>
-                          <div style={{ position: 'relative', width: 18, display: 'flex', justifyContent: 'center' }}>
+                          <div style={{ width: 18, flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
                             <div style={{
-                              width: 14, height: 14, borderRadius: 999,
+                              width: 14, height: 14, borderRadius: 999, transition: 'all 0.2s ease',
                               background: isHovered ? '#466FF6' : '#7C7F88',
                               boxShadow: isHovered ? '0 0 0 4px rgba(70,111,246,0.15)' : '0 2px 6px rgba(0,0,0,0.15)',
-                              flexShrink: 0, transition: 'all 0.2s ease',
                             }} />
                           </div>
                           <div style={{ flex: 1 }}>
                             <div style={{
-                              borderRadius: 999, padding: '9px 14px',
-                              background: isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
-                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)', textAlign: 'center',
+                              borderRadius: 999, padding: '9px 18px', textAlign: 'left',
+                              background: item.isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
+                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)',
                             }}>
-                              <span style={{ fontSize: 13, fontWeight: 700, color: isLilac ? '#B06AF2' : '#8A8F98', whiteSpace: 'nowrap' }}>
+                              <span style={{ fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap', color: item.isLilac ? '#B06AF2' : '#8A8F98' }}>
                                 {item.event}
                               </span>
                             </div>
@@ -170,104 +159,9 @@ export function BoonDifferenceVisual() {
                         </div>
                         {!isLast && (
                           <div style={{
-                            position: 'absolute', left: 48 + 16 + 9, top: '100%',
-                            width: 2, height: 22,
+                            position: 'absolute', top: '100%', left: 10 + 48 + 16 + 9,
+                            width: 2, height: 20, borderRadius: 999,
                             backgroundImage: 'repeating-linear-gradient(to bottom, rgba(124,127,136,0.55) 0 4px, rgba(124,127,136,0) 4px 9px)',
-                            borderRadius: 999,
-                          }} />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          ) : (
-            /* WITH BOON — gradient shell, white inner, SAME card structure as WITHOUT BOON */
-            <div
-              className="absolute"
-              style={{
-                top: '40px', right: '-200px', width: 400, borderRadius: 35,
-                background: 'linear-gradient(180deg, rgba(246,248,255,0) 0%, rgba(70,111,246,0.20) 100%)',
-                padding: 18, zIndex: 10, overflow: 'hidden',
-              }}
-            >
-              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 10 }}>
-                <div className="flex flex-col" style={{ gap: 0 }}>
-                  {c.timeline.map((item: any, i: number) => {
-                    const isLast = i === c.timeline.length - 1;
-                    const isHovered = hoveredCard === i;
-                    const isDimmed = hoveredCard !== null && !isHovered;
-                    const connectorGradient = i === 0
-                      ? 'linear-gradient(180deg, #466FF6 0%, #FF8D80 100%)'
-                      : 'linear-gradient(180deg, #FF8D80 0%, #D077D2 100%)';
-                    const badgeBg = item.tone === 'blue'
-                      ? 'rgba(70,111,246,0.10)' : item.tone === 'red'
-                      ? 'rgba(255,141,128,0.15)' : 'rgba(208,119,210,0.12)';
-                    const dotColor = item.tone === 'blue' ? '#466FF6' : item.tone === 'red' ? '#FF8D80' : '#D077D2';
-                    const textColor = item.tone === 'blue' ? '#466FF6' : item.tone === 'red' ? '#FF8D80' : '#D077D2';
-                    return (
-                      <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
-                        {/* Card — identical structure to WITHOUT BOON */}
-                        <div
-                          onMouseEnter={() => setHoveredCard(i)}
-                          onMouseLeave={() => setHoveredCard(null)}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          <div className="flex items-center gap-4" style={{
-                            background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
-                            borderRadius: 22, padding: '14px 16px',
-                            boxShadow: isHovered ? `0 16px 36px ${dotColor}30` : '0 10px 22px rgba(10,10,10,0.10)',
-                            border: isHovered ? `1px solid ${dotColor}55` : '1px solid rgba(0,0,0,0.04)',
-                            opacity: isDimmed ? 0.45 : 1,
-                            transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
-                            transition: 'all 0.2s ease',
-                          }}>
-                            {/* Label */}
-                            <div className="flex flex-col items-center" style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}>
-                              <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
-                            </div>
-                            {/* Dot */}
-                            <div style={{ position: 'relative', width: 18, display: 'flex', justifyContent: 'center' }}>
-                              <div style={{
-                                width: 14, height: 14, borderRadius: 999,
-                                background: dotColor,
-                                boxShadow: isHovered ? `0 0 0 4px ${dotColor}30` : `0 2px 6px ${dotColor}55`,
-                                flexShrink: 0, transition: 'all 0.2s ease',
-                                transform: isHovered ? 'scale(1.2)' : 'scale(1)',
-                              }} />
-                            </div>
-                            {/* Full-width pill */}
-                            <div style={{ flex: 1 }}>
-                              <div style={{
-                                borderRadius: 999, padding: '9px 14px',
-                                background: badgeBg,
-                                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)', textAlign: 'center',
-                              }}>
-                                <span style={{ fontSize: 13, fontWeight: 700, color: textColor, whiteSpace: 'nowrap' }}>
-                                  {item.event}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        {/* Description */}
-                        {item.description && (
-                          <div style={{
-                            fontSize: 12, fontWeight: 600, color: 'rgba(80,88,112,0.65)',
-                            paddingLeft: 48 + 16 + 18 + 16 + 4,
-                            paddingTop: 5, paddingBottom: 2, lineHeight: 1.4,
-                          }}>
-                            {item.description}
-                          </div>
-                        )}
-                        {/* Gradient connector */}
-                        {!isLast && (
-                          <div style={{
-                            marginLeft: 48 + 16 + 9 - 2,
-                            width: 5, height: 18, borderRadius: 999,
-                            background: connectorGradient,
-                            flexShrink: 0,
                           }} />
                         )}
                       </div>
@@ -277,6 +171,74 @@ export function BoonDifferenceVisual() {
               </div>
             </div>
           )}
+
+          {/* WITH BOON overlay */}
+          {isWithBoon && (
+            <div className="absolute" style={{
+              top: 40, right: -200, width: 400, zIndex: 10,
+              borderRadius: 35, padding: 18, overflow: 'hidden',
+              background: 'linear-gradient(180deg, rgba(246,248,255,0) 0%, rgba(70,111,246,0.20) 100%)',
+            }}>
+              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 10 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                  {c.timeline.map((item: any, i: number) => {
+                    const isLast = i === c.timeline.length - 1;
+                    const isHovered = hoveredCard === i;
+                    const isDimmed = hoveredCard !== null && !isHovered;
+                    const dotColor = item.tone === 'blue' ? '#466FF6' : item.tone === 'red' ? '#FF8D80' : '#D077D2';
+                    const badgeBg = item.tone === 'blue' ? 'rgba(70,111,246,0.10)' : item.tone === 'red' ? 'rgba(255,141,128,0.15)' : 'rgba(208,119,210,0.12)';
+                    const connectorGradient = i === 0
+                      ? 'linear-gradient(180deg, #466FF6 0%, #FF8D80 100%)'
+                      : 'linear-gradient(180deg, #FF8D80 0%, #D077D2 100%)';
+                    return (
+                      <div key={i} style={{ position: 'relative', cursor: 'pointer' }}
+                        onMouseEnter={() => setHoveredCard(i)}
+                        onMouseLeave={() => setHoveredCard(null)}
+                        style={{ opacity: isDimmed ? 0.45 : 1, transition: 'opacity 0.2s ease' }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                          <div style={{ width: 48, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#8C8F97', fontSize: 11, fontWeight: 600, lineHeight: 1.1 }}>
+                            <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
+                          </div>
+                          <div style={{ width: 18, flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
+                            <div style={{
+                              width: 14, height: 14, borderRadius: 999, transition: 'all 0.2s ease',
+                              background: dotColor,
+                              boxShadow: isHovered ? `0 0 0 4px ${dotColor}30` : `0 2px 6px ${dotColor}55`,
+                              transform: isHovered ? 'scale(1.35)' : 'scale(1)',
+                            }} />
+                          </div>
+                          <div style={{ flex: 1 }}>
+                            <div style={{
+                              borderRadius: 999, padding: '9px 18px', textAlign: 'center',
+                              background: badgeBg,
+                            }}>
+                              <span style={{ fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap', color: dotColor }}>
+                                {item.event}
+                              </span>
+                            </div>
+                            {item.description && (
+                              <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(80,88,112,0.70)', marginTop: 5, paddingLeft: 4, lineHeight: 1.4 }}>
+                                {item.description}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                        {!isLast && (
+                          <div style={{
+                            position: 'absolute', top: '100%', left: 10 + 48 + 16 + 9,
+                            width: 5, height: 20, borderRadius: 999,
+                            background: connectorGradient,
+                          }} />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+
         </div>
       </div>
     </div>
