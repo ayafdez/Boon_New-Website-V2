@@ -1,13 +1,12 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 
 export function HomeHero() {
-  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Reveal observer
+    // Reveal observer only
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,28 +21,16 @@ export function HomeHero() {
     const elements = document.querySelectorAll('.reveal');
     elements.forEach((el) => observer.observe(el));
 
-    // Parallax on scroll
-    const handleScroll = () => {
-      if (bgRef.current) {
-        const scrollY = window.scrollY;
-        bgRef.current.style.transform = `translateY(${scrollY * 0.4}px)`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <section className="pt-40 pb-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      {/* Parallax background image */}
+      {/* Static background image — full cover, no parallax */}
       <div
-        ref={bgRef}
-        className="absolute inset-0 w-full h-[120%] -top-[10%] pointer-events-none will-change-transform"
+        className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ zIndex: 0 }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -58,13 +45,10 @@ export function HomeHero() {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            objectPosition: 'center',
+            objectPosition: 'center center',
           }}
         />
       </div>
-
-      {/* Subtle white overlay to keep text readable */}
-      <div className="absolute inset-0 bg-white/10 pointer-events-none" style={{ zIndex: 1 }}></div>
 
       <style jsx>{`
         .font-architectural {
@@ -126,7 +110,7 @@ export function HomeHero() {
             ></div>
           </div>
 
-          {/* Video container — larger, 35px border radius */}
+          {/* Video container */}
           <div className="w-full max-w-[560px] rounded-[35px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 border border-gray-100 group z-10">
             <video
               autoPlay
