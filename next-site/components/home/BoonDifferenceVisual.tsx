@@ -183,84 +183,79 @@ export function BoonDifferenceVisual() {
               </div>
             </div>
           ) : (
-            /* WITH BOON — blue gradient shell, solid colored connector, colored badges */
+            /* WITH BOON — gradient shell, white inner container, per-segment connectors */
             <div
               className="absolute"
               style={{
-                top: '40px', right: '-200px', width: 400, borderRadius: 22,
-                background: 'linear-gradient(180deg, rgba(246,248,255,1) 0%, rgba(212,221,255,1) 100%)',
+                top: '40px', right: '-200px', width: 400, borderRadius: 35,
+                background: 'linear-gradient(180deg, rgba(246,248,255,0) 0%, rgba(70,111,246,0.20) 100%)',
                 boxShadow: '0 18px 40px rgba(20,40,120,0.18)',
                 padding: 22, zIndex: 10, overflow: 'hidden',
               }}
             >
-              <div className="flex flex-col gap-4">
-                {c.timeline.map((item: any, i: number) => {
-                  const isLast = i === c.timeline.length - 1;
-                  const isHovered = hoveredCard === i;
-                  const isDimmed = hoveredCard !== null && !isHovered;
-                  const badgeBg = item.tone === 'blue'
-                    ? 'rgba(47,102,255,0.12)' : item.tone === 'red'
-                    ? 'rgba(255,88,88,0.14)' : 'rgba(165,90,255,0.14)';
-                  return (
-                    <div key={i} className="relative flex items-center gap-4"
-                      onMouseEnter={() => setHoveredCard(i)}
-                      onMouseLeave={() => setHoveredCard(null)}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      {/* Label */}
-                      <div className="flex flex-col items-center" style={{ width: 74, color: 'rgba(85,92,115,0.75)', fontSize: 12, lineHeight: 1.1, fontWeight: 600 }}>
-                        <span>{item.year}</span><span style={{ marginTop: 6 }}>{item.role}</span>
-                      </div>
+              {/* White inner container */}
+              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 20 }}>
+                <div className="flex flex-col gap-4">
+                  {c.timeline.map((item: any, i: number) => {
+                    const isLast = i === c.timeline.length - 1;
+                    const isHovered = hoveredCard === i;
+                    const isDimmed = hoveredCard !== null && !isHovered;
+                    const connectorGradient = i === 0
+                      ? 'linear-gradient(180deg, #466FF6 0%, #FF8D80 100%)'
+                      : 'linear-gradient(180deg, #FF8D80 0%, #D077D2 100%)';
+                    const badgeBg = item.tone === 'blue'
+                      ? 'rgba(70,111,246,0.10)' : item.tone === 'red'
+                      ? 'rgba(255,141,128,0.15)' : 'rgba(208,119,210,0.12)';
+                    return (
+                      <div key={i}
+                        className="relative flex items-start gap-4"
+                        onMouseEnter={() => setHoveredCard(i)}
+                        onMouseLeave={() => setHoveredCard(null)}
+                        style={{ cursor: 'pointer', opacity: isDimmed ? 0.4 : 1, transition: 'opacity 0.2s ease' }}
+                      >
+                        {/* Label */}
+                        <div className="flex flex-col items-end" style={{ width: 64, color: 'rgba(85,92,115,0.75)', fontSize: 11, lineHeight: 1.2, fontWeight: 600, paddingTop: 6, flexShrink: 0 }}>
+                          <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
+                        </div>
 
-                      {/* Dot + line */}
-                      <div style={{ position: 'relative', width: 22, display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
-                        <div style={{
-                          width: 14, height: 14, borderRadius: 999,
-                          background: item.color,
-                          boxShadow: `0 6px 14px ${item.color}55`,
-                          marginTop: 10, position: 'relative', zIndex: 1,
-                          transform: isHovered ? 'scale(1.3)' : 'scale(1)',
-                          transition: 'all 0.2s ease',
-                        }} />
-                        {!isLast && (
+                        {/* Dot + connector */}
+                        <div style={{ position: 'relative', width: 20, display: 'flex', justifyContent: 'center', alignItems: 'flex-start', flexShrink: 0 }}>
                           <div style={{
-                            position: 'absolute', top: 26, left: '50%',
-                            transform: 'translateX(-50%)',
-                            width: 6, height: 74, borderRadius: 999,
-                            background: 'rgba(47,102,255,0.75)',
-                            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.55)',
+                            width: 16, height: 16, borderRadius: 999,
+                            background: item.color,
+                            boxShadow: `0 6px 14px ${item.color}55`,
+                            marginTop: 6, position: 'relative', zIndex: 1,
+                            transform: isHovered ? 'scale(1.35)' : 'scale(1)',
+                            transition: 'transform 0.2s ease',
                           }} />
-                        )}
-                      </div>
+                          {!isLast && (
+                            <div style={{
+                              position: 'absolute', top: 24, left: '50%',
+                              transform: 'translateX(-50%)',
+                              width: 5, height: 90, borderRadius: 999,
+                              background: connectorGradient,
+                            }} />
+                          )}
+                        </div>
 
-                      {/* Card */}
-                      <div style={{
-                        flex: 1,
-                        background: 'rgba(255,255,255,0.95)',
-                        borderRadius: 18, padding: '12px 14px',
-                        boxShadow: isHovered ? '0 16px 30px rgba(20,40,120,0.20)' : '0 10px 20px rgba(20,40,120,0.12)',
-                        border: isHovered ? `1px solid ${item.color}44` : '1px solid rgba(0,0,0,0.04)',
-                        opacity: isDimmed ? 0.45 : 1,
-                        transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
-                        transition: 'all 0.2s ease',
-                      }}>
-                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>
-                          <span style={{
-                            fontSize: 12, fontWeight: 800, padding: '6px 12px',
-                            borderRadius: 999, letterSpacing: 0.2,
+                        {/* Badge + description */}
+                        <div style={{ flex: 1, transform: isHovered ? 'translateX(-4px)' : 'translateX(0)', transition: 'transform 0.2s ease' }}>
+                          <div style={{
+                            fontSize: 13, fontWeight: 800, padding: '7px 18px',
+                            borderRadius: 999, display: 'inline-block',
                             background: badgeBg, color: item.color,
-                            whiteSpace: 'nowrap',
+                            marginBottom: 6, whiteSpace: 'nowrap',
                           }}>
                             {item.event}
-                          </span>
-                        </div>
-                        <div style={{ textAlign: 'center', fontSize: 13, fontWeight: 700, color: 'rgba(80,88,112,0.85)' }}>
-                          {item.description}
+                          </div>
+                          <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(80,88,112,0.80)', paddingLeft: 4, lineHeight: 1.4 }}>
+                            {(item as any).description}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}
