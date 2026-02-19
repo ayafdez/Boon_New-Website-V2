@@ -109,29 +109,55 @@ export function BoonDifferenceVisual() {
             />
           </div>
 
-          {/* Timeline cards overlay — top right */}
-          <div className="absolute top-4 right-4 space-y-2 w-52">
-            {c.timeline.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white/95 backdrop-blur-sm rounded-xl px-3 py-2 shadow-lg flex items-center gap-2.5"
-              >
-                <div className="text-right flex-shrink-0 min-w-[32px]">
-                  <div className="text-[10px] font-body font-bold text-gray-400 leading-none">{item.year}</div>
-                  <div className="text-[10px] font-body text-gray-400 leading-none mt-0.5">{item.role}</div>
-                </div>
-                <div
-                  className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: item.color }}
-                />
-                <div
-                  className="text-xs font-body font-semibold"
-                  style={{ color: item.color }}
-                >
-                  {item.event}
-                </div>
-              </div>
-            ))}
+          {/* Timeline cards overlay — centered right, with dashed connector */}
+          <div className="absolute top-1/2 -translate-y-1/2 right-4 w-60">
+            <div className="relative flex flex-col gap-0">
+              {c.timeline.map((item, i) => {
+                const isLast = i === c.timeline.length - 1;
+                const isHighlighted = isLast && active === 'WITHOUT BOON';
+                return (
+                  <div key={i} className="relative flex items-start gap-0">
+                    {/* Left: year/role + dot + dashed line */}
+                    <div className="flex flex-col items-center mr-3 pt-3">
+                      <div className="text-right mb-1.5">
+                        <div className="text-[10px] font-body font-bold text-gray-400 leading-none">{item.year}</div>
+                        <div className="text-[10px] font-body text-gray-400 leading-none mt-0.5">{item.role}</div>
+                      </div>
+                      <div
+                        className="w-4 h-4 rounded-full flex-shrink-0 border-2 border-white shadow-sm z-10"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      {/* Dashed connector */}
+                      {i < c.timeline.length - 1 && (
+                        <div
+                          className="w-px flex-1 my-1"
+                          style={{
+                            minHeight: '24px',
+                            backgroundImage: 'repeating-linear-gradient(to bottom, #CBD5E1 0, #CBD5E1 4px, transparent 4px, transparent 8px)',
+                          }}
+                        />
+                      )}
+                    </div>
+
+                    {/* Card */}
+                    <div
+                      className={`flex-1 mb-3 rounded-2xl px-4 py-3 shadow-md ${
+                        isHighlighted
+                          ? 'bg-boon-soft-coral/30 border border-boon-coral/20'
+                          : 'bg-white/95 backdrop-blur-sm border border-gray-100'
+                      }`}
+                    >
+                      <div
+                        className="text-sm font-body font-semibold"
+                        style={{ color: item.color }}
+                      >
+                        {item.event}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
