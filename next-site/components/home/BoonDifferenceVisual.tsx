@@ -109,66 +109,102 @@ export function BoonDifferenceVisual() {
             />
           </div>
 
-          {/* Timeline container — overlaps image, extends outside right edge */}
+          {/* Timeline overlay — matches Figma spec exactly */}
           <div
-            className="absolute top-1/2 -translate-y-1/2 -right-6 w-64 rounded-[20px] p-4"
+            className="absolute top-1/2 -translate-y-1/2 -right-8"
             style={{
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(240,243,247,0.90) 100%)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)',
-              border: '1px solid rgba(255,255,255,0.6)',
+              width: 280,
+              borderRadius: 28,
+              background: 'linear-gradient(180deg, rgba(245,246,248,1) 0%, rgba(206,208,213,1) 100%)',
+              boxShadow: '0 18px 40px rgba(10,10,10,0.15)',
+              padding: 18,
             }}
           >
-            <div className="relative flex flex-col">
-              {c.timeline.map((item, i) => {
-                const isLast = i === c.timeline.length - 1;
-                const isHighlighted = isLast && active === 'WITHOUT BOON';
-                return (
-                  <div key={i} className="relative flex items-start gap-3">
-                    {/* Left: dot + dashed line column */}
-                    <div className="flex flex-col items-center flex-shrink-0">
+            <div style={{ borderRadius: 22, padding: 10 }}>
+              <div className="flex flex-col gap-5">
+                {c.timeline.map((item, i) => {
+                  const isLast = i === c.timeline.length - 1;
+                  const isLilac = isLast && active === 'WITHOUT BOON';
+
+                  return (
+                    <div key={i} className="relative">
+                      {/* Row card */}
                       <div
-                        className="w-4 h-4 rounded-full border-2 border-white shadow-sm z-10 mt-3"
-                        style={{ backgroundColor: item.color }}
-                      />
-                      {i < c.timeline.length - 1 && (
+                        className="flex items-center gap-4"
+                        style={{
+                          background: 'rgba(255,255,255,0.95)',
+                          borderRadius: 22,
+                          padding: '14px 16px',
+                          boxShadow: '0 10px 22px rgba(10,10,10,0.10)',
+                          border: '1px solid rgba(0,0,0,0.04)',
+                        }}
+                      >
+                        {/* Year / Role label */}
                         <div
-                          className="w-px my-1"
+                          className="flex flex-col items-center"
+                          style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}
+                        >
+                          <span>{item.year}</span>
+                          <span style={{ marginTop: 3 }}>{item.role}</span>
+                        </div>
+
+                        {/* Dot */}
+                        <div style={{ position: 'relative', width: 18, display: 'flex', justifyContent: 'center' }}>
+                          <div
+                            style={{
+                              width: 14,
+                              height: 14,
+                              borderRadius: 999,
+                              background: '#7C7F88',
+                              boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+                              flexShrink: 0,
+                            }}
+                          />
+                        </div>
+
+                        {/* Pill */}
+                        <div style={{ flex: 1 }}>
+                          <div
+                            style={{
+                              borderRadius: 999,
+                              padding: '9px 14px',
+                              background: isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
+                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)',
+                              textAlign: 'center',
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontSize: 13,
+                                fontWeight: 700,
+                                color: isLilac ? '#B06AF2' : '#8A8F98',
+                                whiteSpace: 'nowrap',
+                              }}
+                            >
+                              {item.event}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Dashed connector between cards */}
+                      {!isLast && (
+                        <div
                           style={{
-                            height: '28px',
-                            backgroundImage: 'repeating-linear-gradient(to bottom, #CBD5E1 0, #CBD5E1 4px, transparent 4px, transparent 8px)',
+                            position: 'absolute',
+                            left: 48 + 16 + 9, // label width + gap + dot center
+                            top: '100%',
+                            width: 2,
+                            height: 22,
+                            backgroundImage: 'repeating-linear-gradient(to bottom, rgba(124,127,136,0.55) 0 4px, rgba(124,127,136,0) 4px 9px)',
+                            borderRadius: 999,
                           }}
                         />
                       )}
                     </div>
-
-                    {/* Year/role + card */}
-                    <div className="flex-1 mb-3">
-                      <div className="flex items-center gap-1 mb-1.5">
-                        <div className="text-[10px] font-body font-bold text-gray-400 leading-none">{item.year}</div>
-                        <div className="text-[10px] font-body text-gray-300 leading-none">·</div>
-                        <div className="text-[10px] font-body text-gray-400 leading-none">{item.role}</div>
-                      </div>
-                      <div
-                        className={`rounded-xl px-4 py-2.5 ${
-                          isHighlighted
-                            ? 'bg-boon-soft-coral/40 border border-boon-coral/20'
-                            : 'bg-white border border-gray-100'
-                        }`}
-                        style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
-                      >
-                        <div
-                          className="text-sm font-body font-semibold"
-                          style={{ color: item.color }}
-                        >
-                          {item.event}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
