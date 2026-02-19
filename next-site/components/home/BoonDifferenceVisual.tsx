@@ -1,188 +1,135 @@
-import { ArrowDown, X, Check } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import { X, Check } from 'lucide-react';
+
+const tabs = ['WITHOUT BOON', 'WITH BOON'] as const;
+type Tab = typeof tabs[number];
+
+const content = {
+  'WITHOUT BOON': {
+    heading: "Maria's fragmented journey",
+    subheading: 'No development for years. Then suddenly, premium coaching with no foundation to build on.',
+    bullets: [
+      { icon: 'x', text: 'Generic, one-off trainings' },
+      { icon: 'x', text: 'Not personalized' },
+      { icon: 'x', text: 'Nothing to build on' },
+    ],
+    image: 'https://storage.googleapis.com/boon-public-assets/Website%20Images/without-boon.jpg',
+    fallbackGradient: 'from-gray-100 to-gray-200',
+    timeline: [
+      { year: '2021', role: 'IC', event: 'Onboarding webinar', color: '#CBD5E1' },
+      { year: '2023', role: 'Manager', event: 'Leadership 101 workshop', color: '#CBD5E1' },
+      { year: '2025', role: 'VP', event: 'Executive Coach', color: '#C47ACC' },
+    ],
+  },
+  'WITH BOON': {
+    heading: "Maria's continuous journey",
+    subheading: 'Scaffolded development from day one. Each stage builds on the last.',
+    bullets: [
+      { icon: 'check', text: 'Development from day one' },
+      { icon: 'check', text: 'Growth compounds over time' },
+      { icon: 'check', text: 'Context carries forward' },
+    ],
+    image: 'https://storage.googleapis.com/boon-public-assets/Website%20Images/with-boon.jpg',
+    fallbackGradient: 'from-boon-light-blue to-boon-soft-coral/30',
+    timeline: [
+      { year: '2021', role: 'IC', event: 'Boon SCALE', color: '#466FF6' },
+      { year: '2023', role: 'Manager', event: 'Boon GROW', color: '#FF6D6A' },
+      { year: '2025', role: 'VP', event: 'Boon EXEC', color: '#C47ACC' },
+    ],
+  },
+} as const;
 
 export function BoonDifferenceVisual() {
+  const [active, setActive] = useState<Tab>('WITHOUT BOON');
+  const c = content[active];
+  const isWithBoon = active === 'WITH BOON';
+
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-16">
+    <div className="w-full max-w-5xl mx-auto">
 
-      {/* BEFORE - Fragmented Journey */}
-      <div>
-        <div className="mb-8 text-center">
-          <div className="text-xs font-body font-extrabold text-slate-400 tracking-[0.1em] mb-2">
-            BEFORE
-          </div>
-          <h3 className="text-2xl font-sans font-bold text-boon-charcoal mb-3">
-            Maria&apos;s fragmented journey
+      {/* Tabs */}
+      <div className="flex justify-center mb-12">
+        <div className="flex border-b border-gray-200">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActive(tab)}
+              className={`px-8 py-3 text-xs font-body font-extrabold tracking-widest transition-all duration-200 border-b-2 -mb-px ${
+                active === tab
+                  ? 'border-boon-blue text-boon-charcoal'
+                  : 'border-transparent text-gray-400 hover:text-gray-600'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Two-column layout */}
+      <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+        {/* Left — text content */}
+        <div>
+          <h3 className={`text-2xl font-sans font-bold mb-4 ${isWithBoon ? 'text-boon-blue' : 'text-boon-charcoal'}`}>
+            {c.heading}
           </h3>
-          <p className="text-sm font-body text-slate-500 max-w-2xl mx-auto">
-            Maria sat through an onboarding webinar in 2021. She didn&apos;t get development again until she was already managing a team.
+          <p className="text-base font-body text-slate-500 mb-8 leading-relaxed">
+            {c.subheading}
           </p>
+          <ul className="space-y-4">
+            {c.bullets.map((b, i) => (
+              <li key={i} className="flex items-center gap-3">
+                {b.icon === 'x' ? (
+                  <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                    <X className="w-3 h-3 text-boon-coral" strokeWidth={3} />
+                  </span>
+                ) : (
+                  <span className="w-5 h-5 rounded-full bg-boon-blue/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3 h-3 text-boon-blue" strokeWidth={3} />
+                  </span>
+                )}
+                <span className="text-sm font-body text-slate-600 font-medium">{b.text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Timeline with gaps */}
+        {/* Right — image with timeline overlay */}
         <div className="relative">
-          {/* Dashed connector line (desktop) */}
-          <div className="hidden sm:block absolute top-2 left-[16.67%] right-[16.67%] h-0.5" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #E2E8F0 0, #E2E8F0 6px, transparent 6px, transparent 12px)' }} />
+          {/* Photo */}
+          <div className={`rounded-[24px] overflow-hidden aspect-[4/3] bg-gradient-to-br ${c.fallbackGradient} relative`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={c.image}
+              alt={c.heading}
+              className="w-full h-full object-cover absolute inset-0"
+            />
+          </div>
 
-          <div className="grid sm:grid-cols-3 gap-0 sm:gap-6">
-            {[
-              { role: 'IC', year: '2021', offering: 'Onboarding webinar', isEmpty: true, pain: 'Generic, forgotten in a week' },
-              { role: 'Manager', year: '2023', offering: 'Leadership 101 workshop', isEmpty: true, pain: 'Too late, too basic' },
-              { role: 'VP', year: '2025', offering: 'Executive Coach', isEmpty: false, pain: 'Expensive, no foundation to build on' },
-            ].map((stage, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                {/* Vertical dashed connector (mobile only) */}
-                {i > 0 && (
-                  <div className="sm:hidden w-0.5 h-8 my-1" style={{ backgroundImage: 'repeating-linear-gradient(180deg, #E2E8F0 0, #E2E8F0 4px, transparent 4px, transparent 8px)' }} />
-                )}
-
-                {/* Dot */}
+          {/* Timeline cards overlay — top right */}
+          <div className="absolute top-4 right-4 space-y-2 w-52">
+            {c.timeline.map((item, i) => (
+              <div
+                key={i}
+                className="bg-white/95 backdrop-blur-sm rounded-xl px-3 py-2 shadow-lg flex items-center gap-2.5"
+              >
+                <div className="text-right flex-shrink-0 min-w-[32px]">
+                  <div className="text-[10px] font-body font-bold text-gray-400 leading-none">{item.year}</div>
+                  <div className="text-[10px] font-body text-gray-400 leading-none mt-0.5">{item.role}</div>
+                </div>
                 <div
-                  className={`w-4 h-4 rounded-full mb-3 border-2 relative z-10 ${
-                    stage.isEmpty
-                      ? 'bg-white border-slate-200'
-                      : 'bg-boon-purple border-boon-purple'
-                  }`}
+                  className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: item.color }}
                 />
-
-                {/* Role */}
-                <div className="text-sm font-sans font-bold text-boon-charcoal mb-0.5">
-                  {stage.role}
-                </div>
-
-                {/* Year */}
-                <div className="text-xs font-body text-slate-400 mb-3">
-                  {stage.year}
-                </div>
-
-                {/* Offering badge */}
                 <div
-                  className={`px-3 py-1.5 rounded border ${
-                    stage.isEmpty
-                      ? 'border-slate-200 bg-slate-50 opacity-50'
-                      : 'border-boon-purple/25 bg-boon-purple/10'
-                  }`}
+                  className="text-xs font-body font-semibold"
+                  style={{ color: item.color }}
                 >
-                  <div className={`text-xs font-body font-semibold ${
-                    stage.isEmpty ? 'text-slate-400' : 'text-boon-purple'
-                  }`}>
-                    {stage.offering}
-                  </div>
+                  {item.event}
                 </div>
-
-                {/* Pain point */}
-                <div className="flex items-center gap-1.5 mt-2">
-                  <X className="w-3.5 h-3.5 text-boon-coral flex-shrink-0" />
-                  <span className="text-xs font-body text-slate-400 italic">{stage.pain}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Divider arrow */}
-      <div className="flex items-center justify-center">
-        <div className="w-12 h-12 rounded-full bg-boon-blue flex items-center justify-center">
-          <ArrowDown className="w-6 h-6 text-white" />
-        </div>
-      </div>
-
-      {/* AFTER - With Boon */}
-      <div className="rounded-2xl border border-boon-blue/15 bg-boon-blue/[0.03] p-8 md:p-12">
-        <div className="mb-8 text-center">
-          <div className="text-xs font-body font-extrabold text-boon-blue tracking-[0.1em] mb-2">
-            WITH BOON
-          </div>
-          <h3 className="text-2xl font-sans font-bold text-boon-charcoal mb-3">
-            Maria&apos;s continuous journey
-          </h3>
-          <p className="text-sm font-body text-boon-charcoal max-w-2xl mx-auto">
-            Scaffolded development from day one.{' '}
-            <span className="font-serif italic font-semibold text-boon-blue">
-              Each stage builds on the last.
-            </span>
-          </p>
-        </div>
-
-        {/* Continuous timeline */}
-        <div className="relative">
-          {/* Continuous gradient line (desktop) */}
-          <div
-            className="hidden sm:block absolute top-2.5 left-[16.67%] right-[16.67%] h-1 rounded-full"
-            style={{ background: 'linear-gradient(to right, #466FF6, #FF6D6A, #C47ACC)' }}
-          />
-
-          {/* Timeline stages */}
-          <div className="grid sm:grid-cols-3 gap-0 sm:gap-6 mb-6 relative">
-            {[
-              { role: 'IC', year: '2021', product: 'SCALE', color: '#466FF6', context: 'Builds self-awareness' },
-              { role: 'Manager', year: '2023', product: 'GROW', color: '#FF6D6A', context: 'Applies IC insights to leadership' },
-              { role: 'VP', year: '2025', product: 'EXEC', color: '#C47ACC', context: 'Accelerates with strong foundation' },
-            ].map((stage, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                {/* Vertical gradient connector (mobile only) */}
-                {i > 0 && (
-                  <div className="sm:hidden w-1 h-8 my-1 rounded-full" style={{
-                    background: i === 1
-                      ? 'linear-gradient(to bottom, #466FF6, #FF6D6A)'
-                      : 'linear-gradient(to bottom, #FF6D6A, #C47ACC)',
-                  }} />
-                )}
-
-                {/* Dot with glow */}
-                <div
-                  className="w-5 h-5 rounded-full mb-3 relative z-10"
-                  style={{
-                    backgroundColor: stage.color,
-                    boxShadow: `0 0 0 4px ${stage.color}20`,
-                  }}
-                />
-
-                {/* Role */}
-                <div className="text-sm font-sans font-bold text-boon-charcoal mb-0.5">
-                  {stage.role}
-                </div>
-
-                {/* Year */}
-                <div className="text-xs font-body text-slate-400 mb-3">
-                  {stage.year}
-                </div>
-
-                {/* Product badge */}
-                <div className="px-3 py-1.5 rounded mb-2" style={{ backgroundColor: `${stage.color}15` }}>
-                  <div className="text-xs font-body font-bold" style={{ color: stage.color }}>
-                    Boon {stage.product}
-                  </div>
-                </div>
-
-                {/* Context note */}
-                <div className="text-xs font-body text-slate-500 italic px-2">
-                  {stage.context}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* TOGETHER persistent bar */}
-          <div className="mt-4 mx-auto rounded-lg bg-emerald-50 border border-emerald-200/50 px-4 py-2.5 text-center" style={{ width: 'calc(100% - 2rem)' }}>
-            <span className="text-xs font-body font-bold text-emerald-600 tracking-wide">
-              Boon TOGETHER
-            </span>
-            <span className="text-xs font-body text-emerald-600/70 ml-2">
-              Team workshops available at every stage
-            </span>
-          </div>
-
-          {/* Benefits */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-3 pt-6">
-            {[
-              'Development from day one',
-              'Growth compounds over time',
-              'Context carries forward',
-            ].map((benefit, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-boon-green" />
-                <span className="text-sm font-body font-medium text-boon-charcoal">{benefit}</span>
               </div>
             ))}
           </div>
