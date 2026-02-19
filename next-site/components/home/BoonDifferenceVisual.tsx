@@ -112,7 +112,7 @@ export function BoonDifferenceVisual() {
               top: 40, right: -200, width: 400, zIndex: 10,
               borderRadius: 28, padding: 18,
               backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
-              backgroundColor: 'rgba(255,255,255,0.15)',
+              backgroundColor: 'rgba(255,255,255,1)',
             }}>
               <div style={{ borderRadius: 22, padding: 10 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -178,7 +178,7 @@ export function BoonDifferenceVisual() {
               borderRadius: 35, padding: 18, overflow: 'hidden',
               background: 'linear-gradient(180deg, rgba(246,248,255,0) 0%, rgba(70,111,246,0.20) 100%)',
             }}>
-              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 10 }}>
+              <div style={{ background: '#ffffff', borderRadius: 35, padding: 10 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                   {c.timeline.map((item: any, i: number) => {
                     const isLast = i === c.timeline.length - 1;
