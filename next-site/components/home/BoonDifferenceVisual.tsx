@@ -99,7 +99,7 @@ export function BoonDifferenceVisual() {
         </div>
 
         {/* Right — image with timeline overlay */}
-        <div className="relative pt-16">
+        <div className="relative pt-32">
           {/* Photo */}
           <div className={`rounded-[24px] overflow-hidden aspect-[4/3] bg-gradient-to-br ${c.fallbackGradient} relative`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -114,7 +114,7 @@ export function BoonDifferenceVisual() {
           <div
             className="absolute"
             style={{
-              top: '0px',
+              top: '40px',
               right: '-200px',
               width: 400,
               borderRadius: 28,
