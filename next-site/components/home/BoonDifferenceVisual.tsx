@@ -109,49 +109,61 @@ export function BoonDifferenceVisual() {
             />
           </div>
 
-          {/* Timeline cards overlay — centered right, with dashed connector */}
-          <div className="absolute top-1/2 -translate-y-1/2 right-4 w-60">
-            <div className="relative flex flex-col gap-0">
+          {/* Timeline container — overlaps image, extends outside right edge */}
+          <div
+            className="absolute top-1/2 -translate-y-1/2 -right-6 w-64 rounded-[20px] p-4"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(240,243,247,0.90) 100%)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)',
+              border: '1px solid rgba(255,255,255,0.6)',
+            }}
+          >
+            <div className="relative flex flex-col">
               {c.timeline.map((item, i) => {
                 const isLast = i === c.timeline.length - 1;
                 const isHighlighted = isLast && active === 'WITHOUT BOON';
                 return (
-                  <div key={i} className="relative flex items-start gap-0">
-                    {/* Left: year/role + dot + dashed line */}
-                    <div className="flex flex-col items-center mr-3 pt-3">
-                      <div className="text-right mb-1.5">
-                        <div className="text-[10px] font-body font-bold text-gray-400 leading-none">{item.year}</div>
-                        <div className="text-[10px] font-body text-gray-400 leading-none mt-0.5">{item.role}</div>
-                      </div>
+                  <div key={i} className="relative flex items-start gap-3">
+                    {/* Left: dot + dashed line column */}
+                    <div className="flex flex-col items-center flex-shrink-0">
                       <div
-                        className="w-4 h-4 rounded-full flex-shrink-0 border-2 border-white shadow-sm z-10"
+                        className="w-4 h-4 rounded-full border-2 border-white shadow-sm z-10 mt-3"
                         style={{ backgroundColor: item.color }}
                       />
-                      {/* Dashed connector */}
                       {i < c.timeline.length - 1 && (
                         <div
-                          className="w-px flex-1 my-1"
+                          className="w-px my-1"
                           style={{
-                            minHeight: '24px',
+                            height: '28px',
                             backgroundImage: 'repeating-linear-gradient(to bottom, #CBD5E1 0, #CBD5E1 4px, transparent 4px, transparent 8px)',
                           }}
                         />
                       )}
                     </div>
 
-                    {/* Card */}
-                    <div
-                      className={`flex-1 mb-3 rounded-2xl px-4 py-3 shadow-md ${
-                        isHighlighted
-                          ? 'bg-boon-soft-coral/30 border border-boon-coral/20'
-                          : 'bg-white/95 backdrop-blur-sm border border-gray-100'
-                      }`}
-                    >
+                    {/* Year/role + card */}
+                    <div className="flex-1 mb-3">
+                      <div className="flex items-center gap-1 mb-1.5">
+                        <div className="text-[10px] font-body font-bold text-gray-400 leading-none">{item.year}</div>
+                        <div className="text-[10px] font-body text-gray-300 leading-none">·</div>
+                        <div className="text-[10px] font-body text-gray-400 leading-none">{item.role}</div>
+                      </div>
                       <div
-                        className="text-sm font-body font-semibold"
-                        style={{ color: item.color }}
+                        className={`rounded-xl px-4 py-2.5 ${
+                          isHighlighted
+                            ? 'bg-boon-soft-coral/40 border border-boon-coral/20'
+                            : 'bg-white border border-gray-100'
+                        }`}
+                        style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
                       >
-                        {item.event}
+                        <div
+                          className="text-sm font-body font-semibold"
+                          style={{ color: item.color }}
+                        >
+                          {item.event}
+                        </div>
                       </div>
                     </div>
                   </div>
