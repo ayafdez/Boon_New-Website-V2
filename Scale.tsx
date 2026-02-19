@@ -133,10 +133,10 @@ export const BoonScalePage: React.FC = () => {
               Your people shouldn't have to wait for a crisis, or a promotion, to get support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#466FF6] text-white px-8 py-4 rounded-2xl font-black text-lg shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
+              <button className="bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-black text-lg shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
                 See How Boon SCALE Works <span className="text-xl">→</span>
               </button>
-              <button className="border border-gray-100 text-[#2E353D] px-8 py-4 rounded-2xl font-black text-lg hover:bg-gray-50 transition-all">
+              <button className="border border-gray-100 text-[#2E353D] px-8 py-4 rounded-[15px] font-black text-lg hover:bg-gray-50 transition-all">
                 View Pricing & Use Cases
               </button>
             </div>
@@ -338,7 +338,7 @@ export const BoonScalePage: React.FC = () => {
           <div>
             <h2 className="text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter mb-10">A strategic lever for retention and engagement.</h2>
             <p className="text-xl text-white/70 font-medium mb-12 leading-relaxed">Boon SCALE is not a perk. It is an investment in your people’s ability to navigate complexity, change, and growth.</p>
-            <button className="bg-white text-blue-600 px-10 py-5 rounded-2xl font-black text-xl hover:scale-[1.02] transition-all shadow-2xl">
+            <button className="bg-white text-blue-600 px-10 py-5 rounded-[15px] font-black text-xl hover:scale-[1.02] transition-all shadow-2xl">
               Download the HR Impact Report
             </button>
           </div>
@@ -375,7 +375,7 @@ export const BoonScalePage: React.FC = () => {
                 <p className="text-3xl font-black text-[#2E353D]">No upfront fees.</p>
                 <p className="text-[10px] font-black uppercase tracking-widest text-gray-300">Launch in under 1 week</p>
               </div>
-              <button className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all">
+              <button className="bg-blue-600 text-white px-10 py-5 rounded-[15px] font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all">
                 Get a Quote
               </button>
            </div>
@@ -463,7 +463,7 @@ export const BoonScalePage: React.FC = () => {
         <div className="max-w-4xl mx-auto relative z-10">
           <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-10">Support every employee without blowing up your budget.</h2>
           <p className="text-xl text-white/70 font-medium mb-16 max-w-2xl mx-auto leading-relaxed">A short conversation to understand your organization and see if Boon SCALE is a fit. No pressure. No obligation.</p>
-          <button className="bg-white text-blue-600 px-12 py-6 rounded-full font-black text-2xl shadow-2xl hover:scale-105 transition-all">
+          <button className="bg-white text-blue-600 px-12 py-6 rounded-[15px] font-black text-lg shadow-2xl hover:scale-105 transition-all">
             Talk to Our Team
           </button>
         </div>

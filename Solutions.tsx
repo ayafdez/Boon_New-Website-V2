@@ -461,7 +461,7 @@ export const SolutionsPage: React.FC<{ setPage: (p: Page) => void }> = ({ setPag
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-7xl font-black mb-10 tracking-tighter leading-[0.85]">Built for how people actually grow.</h2>
           <p className="text-xl mb-16 opacity-80 font-medium max-w-2xl mx-auto leading-relaxed">Leadership infrastructure designed around human behavior, so growth holds up as organizations scale.</p>
-          <button className="bg-white text-[#466FF6] px-12 py-6 rounded-full font-black text-2xl hover:scale-105 transition-all shadow-2xl">
+          <button className="bg-white text-[#466FF6] px-12 py-6 rounded-[15px] font-black text-lg hover:scale-105 transition-all shadow-2xl">
             Schedule a Conversation
           </button>
         </div>

@@ -184,13 +184,13 @@ export default function BlogPostPage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/demo"
-              className="inline-block bg-boon-coral text-white px-10 py-5 rounded-full font-sans font-bold text-lg shadow-xl shadow-boon-coral/20 hover:scale-105 transition-all"
+              className="inline-block bg-boon-coral text-white px-10 py-5 rounded-[15px] font-sans font-bold text-lg shadow-xl shadow-boon-coral/20 hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>
             <Link
               href="/learn/blog"
-              className="inline-block bg-white text-boon-charcoal px-10 py-5 rounded-full font-sans font-bold text-lg border border-gray-200 hover:border-gray-300 transition-all"
+              className="inline-block bg-white text-boon-charcoal px-10 py-5 rounded-[15px] font-sans font-bold text-lg border border-gray-200 hover:border-gray-300 transition-all"
             >
               Read More Articles
             </Link>

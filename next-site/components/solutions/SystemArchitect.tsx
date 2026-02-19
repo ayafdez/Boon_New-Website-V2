@@ -104,9 +104,9 @@ export function SystemArchitect() {
                 <p className="label-text text-[10px] text-gray-300 mb-2">
                   System Focus
                 </p>
-                <h4 className="font-sans text-3xl font-bold text-boon-charcoal tracking-tight">
+                <h3 className="font-sans text-3xl font-bold text-boon-charcoal tracking-tight">
                   {configs[stage].focus}
-                </h4>
+                </h3>
               </div>
               <Link href="/demo" className="flex items-center gap-4 label-text text-[11px] text-boon-blue group hover:gap-6 transition-all">
                 Get Full Blueprint{' '}

@@ -67,7 +67,7 @@ export function CoachSection() {
                   className="object-cover"
                 />
               </div>
-              <h4 className="font-sans text-2xl font-bold text-boon-charcoal mb-1">{coach.name}</h4>
+              <h3 className="font-sans text-2xl font-bold text-boon-charcoal mb-1">{coach.name}</h3>
               <p className="label-text text-xs text-boon-blue mb-1">
                 {coach.title}
               </p>

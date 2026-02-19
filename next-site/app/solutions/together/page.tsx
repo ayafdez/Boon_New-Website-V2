@@ -142,13 +142,13 @@ export default function TogetherPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/demo"
-                className="bg-[#FDB022] text-white px-10 py-5 rounded-2xl font-black text-lg hover:opacity-90 transition-all shadow-xl text-center"
+                className="bg-[#FDB022] text-white px-10 py-5 rounded-[15px] font-black text-lg hover:opacity-90 transition-all shadow-xl text-center"
               >
                 Start a Conversation About Alignment
               </Link>
               <a
                 href="#formats"
-                className="border-2 border-gray-200 text-[#2E353D] px-10 py-5 rounded-2xl font-black text-lg hover:border-gray-300 transition-all text-center"
+                className="border-2 border-gray-200 text-[#2E353D] px-10 py-5 rounded-[15px] font-black text-lg hover:border-gray-300 transition-all text-center"
               >
                 See Formats
               </a>
@@ -398,7 +398,7 @@ export default function TogetherPage() {
             </div>
             <Link
               href="/demo"
-              className="bg-[#FDB022] text-white px-10 py-4 rounded-2xl font-black text-lg hover:opacity-90 transition-all shadow-xl"
+              className="bg-[#FDB022] text-white px-10 py-4 rounded-[15px] font-black text-lg hover:opacity-90 transition-all shadow-xl"
             >
               Get a Quote
             </Link>
@@ -508,7 +508,7 @@ export default function TogetherPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-[#FDB022] text-white px-14 py-6 rounded-full font-black text-xl hover:opacity-90 transition-all shadow-2xl"
+              className="inline-block bg-[#FDB022] text-white px-14 py-6 rounded-[15px] font-black text-xl hover:opacity-90 transition-all shadow-2xl"
             >
               Book a Strategy Call
             </Link>

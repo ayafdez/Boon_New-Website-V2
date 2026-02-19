@@ -74,7 +74,7 @@ export function CaseStudyHero({ study }: Props) {
 
               <Link
                 href="/demo"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-boon-blue text-white font-bold text-lg hover:scale-105 transition-all group"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-[15px] bg-boon-blue text-white font-bold text-lg hover:scale-105 transition-all group"
               >
                 Get Similar Results
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -91,7 +91,7 @@ export function CaseStudyHero({ study }: Props) {
                 priority
               />
               {study.logo && (
-                <div className="absolute bottom-6 left-6 bg-white rounded-lg px-6 py-4 shadow-xl">
+                <div className="absolute bottom-6 left-6 bg-white rounded-[15px] px-6 py-4 shadow-xl">
                   <Image
                     src={study.logo}
                     alt={`${study.title} logo`}

@@ -92,10 +92,10 @@ export const BoonTogetherPage: React.FC = () => {
               TOGETHER is not a replacement for 1:1 coaching. It’s what makes 1:1 coaching stick.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="bg-[#FDB022] text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-[#e89c10] transition-all shadow-xl shadow-amber-900/5">
+              <button className="bg-[#FDB022] text-white px-10 py-5 rounded-[15px] font-black text-xl hover:bg-[#e89c10] transition-all shadow-xl shadow-amber-900/5">
                 Start a Conversation About Alignment
               </button>
-              <button className="border border-gray-100 px-10 py-5 rounded-2xl font-black text-xl hover:bg-white transition-all">
+              <button className="border border-gray-100 px-10 py-5 rounded-[15px] font-black text-xl hover:bg-white transition-all">
                 Explore Group Themes
               </button>
             </div>
@@ -279,7 +279,7 @@ export const BoonTogetherPage: React.FC = () => {
           <p className="text-xl text-white/80 font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
             Every Boon TOGETHER engagement is custom-designed around your team’s real dynamics, not generic content.
           </p>
-          <button className="bg-white text-[#FDB022] px-12 py-6 rounded-full font-black text-2xl shadow-2xl hover:scale-105 transition-all">
+          <button className="bg-white text-[#FDB022] px-12 py-6 rounded-[15px] font-black text-lg shadow-2xl hover:scale-105 transition-all">
             Start a Conversation About Alignment
           </button>
           <div className="mt-12 text-[10px] font-black uppercase tracking-[0.2em] text-white/50">

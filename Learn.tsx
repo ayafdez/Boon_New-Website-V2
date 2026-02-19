@@ -83,6 +83,7 @@ export const LearnPage: React.FC<{ setPage: (p: Page) => void }> = ({ setPage })
 
       {/* Grid of Sub-sections */}
       <section className="py-24 px-6 md:px-12 lg:px-24">
+        <h2 className="sr-only">Explore Our Resources</h2>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { id: 'LEARN_BLOG', t: 'Boon Blog', d: 'Insights on leadership, culture, and resilience.', icon: LEARN_ICONS.BLOG },
@@ -160,17 +161,17 @@ export const LivePage: React.FC = () => (
             <div className="bg-[#466FF6] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Live Next Tuesday</div>
             <h3 className="text-4xl md:text-6xl font-black mb-4">Navigating the Feedback Gap</h3>
             <p className="text-white/60 font-medium max-w-xl">Join Dr. James Aris to discuss why managers avoid hard conversations and how coaching fixes it.</p>
-            <button className="mt-10 bg-white text-[#2E353D] px-10 py-4 rounded-2xl font-black text-lg">Reserve My Seat</button>
+            <button className="mt-10 bg-white text-[#2E353D] px-10 py-4 rounded-[15px] font-black text-lg">Reserve My Seat</button>
           </div>
         </div>
-        <h4 className="text-2xl font-black mb-12">Past Sessions</h4>
+        <h3 className="text-2xl font-black mb-12">Past Sessions</h3>
         <div className="grid md:grid-cols-3 gap-8">
           {["Sustainable Scaling", "The Resilience Index", "Managing HR Burnout"].map(t => (
             <div key={t} className="bg-white/5 p-8 rounded-[40px] border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
               <div className="aspect-video bg-white/5 rounded-2xl mb-6 flex items-center justify-center">
                 <svg className="w-8 h-8 text-white/20" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" /></svg>
               </div>
-              <h5 className="text-xl font-black mb-2">{t}</h5>
+              <h4 className="text-xl font-black mb-2">{t}</h4>
               <p className="text-white/40 text-sm">60 mins • Webinar</p>
             </div>
           ))}
@@ -237,7 +238,7 @@ export const ResourcesPage: React.FC = () => (
                 <DownloadIcon />
               </div>
               <div className="text-[10px] font-black text-[#466FF6] uppercase tracking-widest mb-4">{res.type}</div>
-              <h4 className="text-2xl font-black mb-4 leading-tight">{res.title}</h4>
+              <h3 className="text-2xl font-black mb-4 leading-tight">{res.title}</h4>
               <p className="text-gray-400 font-medium text-sm leading-relaxed mb-10 flex-1">{res.d}</p>
               <button className="bg-[#2E353D] text-white py-4 rounded-2xl font-black text-sm hover:bg-[#466FF6] transition-colors">Download</button>
             </div>

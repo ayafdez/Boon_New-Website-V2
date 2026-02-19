@@ -200,7 +200,7 @@ export const DemoPage: React.FC = () => {
                       value={formData.firstName}
                       onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                       placeholder="Jane" 
-                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
+                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
                     />
                   </div>
                   <div className="space-y-2">
@@ -211,7 +211,7 @@ export const DemoPage: React.FC = () => {
                       value={formData.lastName}
                       onChange={(e) => setFormData({...formData, lastName: e.target.value})}
                       placeholder="Doe" 
-                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
+                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
                     />
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export const DemoPage: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     placeholder="jane@company.com" 
-                    className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
+                    className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
                   />
                 </div>
 
@@ -237,7 +237,7 @@ export const DemoPage: React.FC = () => {
                       value={formData.company}
                       onChange={(e) => setFormData({...formData, company: e.target.value})}
                       placeholder="Company Name" 
-                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
+                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
                     />
                   </div>
                   <div className="space-y-2">
@@ -248,7 +248,7 @@ export const DemoPage: React.FC = () => {
                       value={formData.role}
                       onChange={(e) => setFormData({...formData, role: e.target.value})}
                       placeholder="VP People" 
-                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
+                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold"
                     />
                   </div>
                 </div>
@@ -260,7 +260,7 @@ export const DemoPage: React.FC = () => {
                       required
                       value={formData.employeeCount}
                       onChange={(e) => setFormData({...formData, employeeCount: e.target.value})}
-                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold appearance-none"
+                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold appearance-none"
                     >
                       <option value="">Select Range</option>
                       <option value="1-100">1 - 100</option>
@@ -276,7 +276,7 @@ export const DemoPage: React.FC = () => {
                       required
                       value={formData.interest}
                       onChange={(e) => setFormData({...formData, interest: e.target.value})}
-                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold appearance-none"
+                      className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold appearance-none"
                     >
                       <option value="">Select Priority</option>
                       <option value="SCALE">Broad Support (Boon SCALE)</option>
@@ -295,7 +295,7 @@ export const DemoPage: React.FC = () => {
                     required
                     value={formData.timeline}
                     onChange={(e) => setFormData({...formData, timeline: e.target.value})}
-                    className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold appearance-none"
+                    className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold appearance-none"
                   >
                     <option value="">Select Timeline</option>
                     <option value="IMMEDIATE">Immediate / Urgent</option>
@@ -311,7 +311,7 @@ export const DemoPage: React.FC = () => {
                     onChange={(e) => setFormData({...formData, notes: e.target.value})}
                     rows={4}
                     placeholder="Tell us about your specific goals or challenges."
-                    className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-2xl focus:outline-none focus:border-[#466FF6] transition-colors font-bold resize-none"
+                    className="w-full bg-gray-50 border border-gray-100 px-8 py-5 rounded-[15px] focus:outline-none focus:border-[#466FF6] transition-colors font-bold resize-none"
                   ></textarea>
                 </div>
 
@@ -337,7 +337,7 @@ export const DemoPage: React.FC = () => {
                  <p className="text-sm text-gray-400 font-medium max-w-xs leading-relaxed">
                    Book directly if your schedule requires immediate coordination.
                  </p>
-                 <button className="mt-8 bg-white border border-gray-200 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-white/50 transition-all">Open calendar</button>
+                 <button className="mt-8 bg-white border border-gray-200 px-8 py-3 rounded-[15px] font-black text-xs uppercase tracking-widest hover:bg-white/50 transition-all">Open calendar</button>
               </div>
             )}
           </div>
@@ -396,7 +396,7 @@ export const DemoPage: React.FC = () => {
             Prefer to reach out directly?
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <button className="bg-white text-[#466FF6] px-14 py-7 rounded-full font-black text-2xl hover:scale-105 transition-all shadow-2xl">
+            <button className="bg-white text-[#466FF6] px-14 py-7 rounded-[15px] font-black text-lg hover:scale-105 transition-all shadow-2xl">
               Email our team
             </button>
           </div>

@@ -119,7 +119,7 @@ export default function BlogPage({
                   {currentPage > 1 && (
                     <Link
                       href={currentPage === 2 ? '/learn/blog' : `/learn/blog?page=${currentPage - 1}`}
-                      className="px-6 py-3 rounded-full border border-gray-200 text-sm font-bold text-[#2E353D] hover:border-[#466FF6] hover:text-[#466FF6] transition-all"
+                      className="px-6 py-3 rounded-[15px] border border-gray-200 text-sm font-bold text-[#2E353D] hover:border-[#466FF6] hover:text-[#466FF6] transition-all"
                     >
                       Previous
                     </Link>
@@ -140,7 +140,7 @@ export default function BlogPage({
                   {currentPage < totalPages && (
                     <Link
                       href={`/learn/blog?page=${currentPage + 1}`}
-                      className="px-6 py-3 rounded-full border border-gray-200 text-sm font-bold text-[#2E353D] hover:border-[#466FF6] hover:text-[#466FF6] transition-all"
+                      className="px-6 py-3 rounded-[15px] border border-gray-200 text-sm font-bold text-[#2E353D] hover:border-[#466FF6] hover:text-[#466FF6] transition-all"
                     >
                       Next
                     </Link>

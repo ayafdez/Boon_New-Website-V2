@@ -222,7 +222,7 @@ function CTABanner({ title, description, primaryLabel, primaryHref, secondaryLab
       <p className="text-white/85 max-w-lg mx-auto mb-6">{description}</p>
       <Link
         href={primaryHref}
-        className="inline-block bg-boon-coral text-white px-8 py-3 rounded-lg font-semibold text-base transition-all hover:bg-boon-light-coral hover:-translate-y-0.5"
+        className="inline-block bg-boon-coral text-white px-8 py-3 rounded-[15px] font-semibold text-base transition-all hover:bg-boon-light-coral hover:-translate-y-0.5"
       >
         {primaryLabel}
       </Link>
@@ -327,7 +327,7 @@ export default function LeadershipDevelopmentPage() {
         <div className="max-w-3xl mx-auto px-6">
 
           {/* Table of Contents */}
-          <nav className="bg-boon-off-white rounded-xl p-8 md:px-10 my-12">
+          <nav className="bg-boon-off-white rounded-[15px] p-8 md:px-10 my-12">
             <h3 className="font-sans font-semibold text-lg text-boon-navy mb-4">What we&apos;ll cover</h3>
             <ol className="list-decimal pl-5 space-y-2">
               {TOC_ITEMS.map((item) => (

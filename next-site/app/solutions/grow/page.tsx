@@ -163,7 +163,7 @@ export default function GrowPage() {
               Every program is configured to your org. This is a typical structure.
             </p>
             <div className="text-center mt-8">
-              <Link href="/demo" className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all">
+              <Link href="/demo" className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-black text-lg hover:bg-blue-700 transition-all">
                 Book a Strategy Call
               </Link>
             </div>
@@ -185,7 +185,7 @@ export default function GrowPage() {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-12 mt-16 pt-16 border-t border-slate-100">
                   <div>
-                    <h4 className="text-sm font-black text-[#FF8D80] uppercase tracking-widest mb-6">What we measure</h4>
+                    <h3 className="text-sm font-black text-[#FF8D80] uppercase tracking-widest mb-6">What we measure</h3>
                     <ul className="space-y-4">
                       {['Core leadership competencies', 'Change over time at cohort level'].map((item) => (
                         <li key={item} className="flex gap-3 text-sm font-bold text-slate-600">
@@ -196,7 +196,7 @@ export default function GrowPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-sm font-black text-[#FF8D80] uppercase tracking-widest mb-6">Verification</h4>
+                    <h3 className="text-sm font-black text-[#FF8D80] uppercase tracking-widest mb-6">Verification</h3>
                     <ul className="space-y-4">
                       {['Pre/Post assessments', 'Ongoing coach observation'].map((item) => (
                         <li key={item} className="flex gap-3 text-sm font-bold text-slate-600">

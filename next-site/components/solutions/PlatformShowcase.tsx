@@ -108,7 +108,7 @@ function ManagerCard() {
         </div>
       </div>
       <div className="px-6 py-5 space-y-4">
-        <div className="flex items-center gap-2.5 bg-boon-off-white rounded-xl px-4 py-3 border border-gray-100">
+        <div className="flex items-center gap-2.5 bg-boon-off-white rounded-[15px] px-4 py-3 border border-gray-100">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="flex-shrink-0">
             <circle cx="8" cy="8" r="7" stroke="#466FF6" strokeWidth="1.5" />
             <path d="M8 5v3M8 10.5v.5" stroke="#466FF6" strokeWidth="1.5" strokeLinecap="round" />
@@ -118,7 +118,7 @@ function ManagerCard() {
             Session content is private. You see progress, not conversations.
           </p>
         </div>
-        <div className="rounded-2xl border-2 border-emerald-200 bg-emerald-50/50 px-5 py-4 text-center">
+        <div className="rounded-[15px] border-2 border-emerald-200 bg-emerald-50/50 px-5 py-4 text-center">
           <p className="text-2xl font-sans font-bold text-emerald-600">+18%</p>
           <p className="text-xs font-body font-medium text-emerald-600">in leadership competencies</p>
         </div>

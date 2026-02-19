@@ -230,7 +230,7 @@ function CTABanner({
       <p className="text-white/85 max-w-lg mx-auto mb-6 text-[15px]">{body}</p>
       <Link
         href={primaryHref}
-        className="inline-block bg-boon-coral hover:bg-boon-light-coral text-white font-semibold px-8 py-3 rounded-lg transition-all hover:-translate-y-0.5"
+        className="inline-block bg-boon-coral hover:bg-boon-light-coral text-white font-semibold px-8 py-3 rounded-[15px] transition-all hover:-translate-y-0.5"
       >
         {primaryLabel}
       </Link>
@@ -290,7 +290,7 @@ export default function RemoteLeadershipDevPage() {
       <div className="max-w-3xl mx-auto px-6 pt-12">
 
         {/* TOC */}
-        <nav className="bg-boon-off-white rounded-xl px-8 py-6 mb-12">
+        <nav className="bg-boon-off-white rounded-[15px] px-8 py-6 mb-12">
           <h3 className="font-sans font-semibold text-boon-navy text-base mb-4">What we&apos;ll cover</h3>
           <ol className="list-decimal pl-5 space-y-2 text-[15px]">
             {TOC_ITEMS.map((item) => (

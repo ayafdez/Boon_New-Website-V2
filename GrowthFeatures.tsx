@@ -162,7 +162,7 @@ export const SystemArchitect: React.FC = () => {
              <div className="mt-20 p-12 bg-white rounded-[48px] shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-center gap-10">
                 <div className="max-w-xs">
                   <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-2">System Focus</p>
-                  <h4 className="text-3xl font-black text-[#2E353D] tracking-tighter">{configs[stage].focus}</h4>
+                  <h3 className="text-3xl font-black text-[#2E353D] tracking-tighter">{configs[stage].focus}</h4>
                 </div>
                 <button className="flex items-center gap-4 text-[#466FF6] font-black uppercase text-[11px] tracking-[0.3em] group hover:gap-6 transition-all">
                   Get Full Blueprint <span className="text-2xl group-hover:translate-x-2 transition-transform">→</span>

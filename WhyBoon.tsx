@@ -131,7 +131,7 @@ export const WhyBoonPage: React.FC = () => {
     <main className="bg-white text-[#2E353D] overflow-hidden selection:bg-[#466FF6] selection:text-white">
       <section className="pt-48 pb-32 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
-          <div className="inline-flex items-center bg-[#F4F7FF] text-[#466FF6] text-[10px] tracking-[0.5em] font-black px-6 py-2.5 rounded-full mb-16 uppercase border border-blue-50">
+          <div className="inline-flex items-center bg-[#F4F7FF] text-[#466FF6] text-[10px] tracking-[0.5em] font-black px-6 py-2.5 rounded-[15px] mb-16 uppercase border border-blue-50">
             Strategic Infrastructure
           </div>
           <h1 className="text-7xl md:text-[110px] font-black leading-[0.85] tracking-tighter mb-16 max-w-6xl">
@@ -142,11 +142,11 @@ export const WhyBoonPage: React.FC = () => {
             Most leadership programs develop individuals. We build the system that makes them effective <em className="italic text-[#2E353D]">together</em>, so growth actually sticks when pressure hits.
           </p>
           <div className="flex flex-col sm:flex-row gap-8">
-            <button className="bg-[#466FF6] text-white px-14 py-7 rounded-2xl font-black text-xl shadow-2xl shadow-[#466FF6]/20 hover:bg-blue-700 transition-all">
+            <button className="bg-[#466FF6] text-white px-14 py-7 rounded-[15px] font-black text-xl shadow-2xl shadow-[#466FF6]/20 hover:bg-blue-700 transition-all">
               Explore Your System Fit
             </button>
             <button 
-              className="border border-gray-100 text-[#2E353D] px-14 py-7 rounded-2xl font-black text-xl hover:bg-gray-50 transition-all"
+              className="border border-gray-100 text-[#2E353D] px-14 py-7 rounded-[15px] font-black text-xl hover:bg-gray-50 transition-all"
             >
               See our Comparison
             </button>
@@ -233,7 +233,7 @@ export const WhyBoonPage: React.FC = () => {
           <h2 className="text-6xl md:text-[110px] font-architectural text-[#2E353D] mb-16">
             Design a system <br /> <span className="text-[#466FF6] italic font-serif">that holds</span>.
           </h2>
-          <button className="bg-[#466FF6] text-white px-20 py-8 rounded-full font-black text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
+          <button className="bg-[#466FF6] text-white px-20 py-8 rounded-[15px] font-black text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
             Schedule a Conversation
           </button>
         </div>

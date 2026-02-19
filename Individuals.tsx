@@ -31,10 +31,10 @@ export const ForIndividualsPage: React.FC = () => {
             Boon provides you with a professional 1:1 coach to help you navigate the complexity of your career. It’s a practical, private resource for your growth, supported by your organization.
           </p>
           <div className="flex flex-col sm:flex-row gap-6">
-            <button className="bg-[#466FF6] text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all">
+            <button className="bg-[#466FF6] text-white px-10 py-5 rounded-[15px] font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all">
               Find Your Coach
             </button>
-            <button className="border border-gray-200 px-10 py-5 rounded-2xl font-black text-xl hover:bg-white transition-all">
+            <button className="border border-gray-200 px-10 py-5 rounded-[15px] font-black text-xl hover:bg-white transition-all">
               How It Works
             </button>
           </div>
@@ -184,7 +184,7 @@ export const ForIndividualsPage: React.FC = () => {
           <p className="text-xl text-white/70 font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
             Take a moment for yourself. If your company offers Boon, you have access to world-class coaching today.
           </p>
-          <button className="bg-white text-[#466FF6] px-12 py-6 rounded-full font-black text-2xl shadow-2xl hover:scale-105 transition-all">
+          <button className="bg-white text-[#466FF6] px-12 py-6 rounded-[15px] font-black text-lg shadow-2xl hover:scale-105 transition-all">
             Find Your Coach
           </button>
           <div className="mt-12 text-[10px] font-black uppercase tracking-[0.2em] text-white/40">

@@ -53,7 +53,7 @@ export const Navbar: React.FC<{ currentPage: Page; setPage: (p: Page) => void }>
               <svg className={`w-3.5 h-3.5 transition-transform ${isSolutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {isSolutionsOpen && (
-              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl border border-gray-100 py-4 px-2 flex flex-col gap-1">
+              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-[15px] border border-gray-100 py-4 px-2 flex flex-col gap-1">
                 <button onClick={() => handleNav('SOLUTIONS')} className="flex flex-col text-left p-3 hover:bg-[#F4F7FF] rounded-xl transition-all border-b border-gray-50 mb-1">
                   <span className="text-[#2E353D] text-sm font-black">Overview</span>
                   <span className="text-gray-400 text-[10px] lowercase italic">The unified leadership system</span>
@@ -95,7 +95,7 @@ export const Navbar: React.FC<{ currentPage: Page; setPage: (p: Page) => void }>
               <svg className={`w-3 h-3 transition-transform ${isLearnOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {isLearnOpen && (
-              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl border border-gray-100 py-4 px-2 flex flex-col gap-1">
+              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-[15px] border border-gray-100 py-4 px-2 flex flex-col gap-1">
                 <button onClick={() => handleNav('LEARN')} className="flex flex-col text-left p-3 hover:bg-[#F4F7FF] rounded-xl transition-all border-b border-gray-50 mb-1">
                   <span className="text-[#2E353D] text-sm font-black">Learn Hub</span>
                   <span className="text-gray-400 text-[10px] lowercase italic">Resource Center</span>
@@ -126,7 +126,7 @@ export const Navbar: React.FC<{ currentPage: Page; setPage: (p: Page) => void }>
         <button className="hidden sm:block text-[#2E353D] font-bold text-sm hover:text-[#466FF6] px-4 transition-colors">Log In</button>
         <button 
           onClick={() => handleNav('DEMO')}
-          className="bg-[#466FF6] text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all font-bold shadow-lg shadow-blue-100 text-sm"
+          className="bg-[#466FF6] text-white px-6 py-2.5 rounded-[15px] hover:bg-blue-700 transition-all font-bold shadow-lg shadow-blue-100 text-sm"
         >
           Book Demo
         </button>
@@ -169,7 +169,7 @@ export const Footer: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) =>
         <p className="text-gray-400 text-sm font-medium leading-relaxed">Coaching that scales with your people.</p>
       </div>
       <div>
-        <h5 className="font-black text-[#2E353D] text-[10px] tracking-widest uppercase mb-6">Solutions</h5>
+        <h3 className="font-black text-[#2E353D] text-[10px] tracking-widest uppercase mb-6">Solutions</h3>
         <div className="flex flex-col gap-4 text-sm font-bold text-gray-500">
           <button onClick={() => setPage('SOLUTIONS')} className="text-left hover:text-[#466FF6]">Overview</button>
           <button onClick={() => setPage('SCALE')} className="text-left hover:text-[#466FF6]">Boon SCALE</button>
@@ -179,7 +179,7 @@ export const Footer: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) =>
         </div>
       </div>
       <div>
-        <h5 className="font-black text-[#2E353D] text-[10px] tracking-widest uppercase mb-6">Why Boon</h5>
+        <h3 className="font-black text-[#2E353D] text-[10px] tracking-widest uppercase mb-6">Why Boon</h3>
         <div className="flex flex-col gap-4 text-sm font-bold text-gray-500">
           <button onClick={() => setPage('WHY_BOON')} className="text-left hover:text-[#466FF6]">Comparison</button>
           <button onClick={() => setPage('STORY')} className="text-left hover:text-[#466FF6]">Our Story</button>
@@ -188,7 +188,7 @@ export const Footer: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) =>
         </div>
       </div>
       <div>
-        <h5 className="font-black text-[#2E353D] text-[10px] tracking-widest uppercase mb-6">Connect</h5>
+        <h3 className="font-black text-[#2E353D] text-[10px] tracking-widest uppercase mb-6">Connect</h3>
         <div className="flex flex-col gap-4 text-sm font-bold text-gray-500">
           <a href="#" className="hover:text-[#466FF6]">LinkedIn</a>
           <a href="#" className="hover:text-[#466FF6]">Twitter</a>
@@ -203,7 +203,7 @@ export const GlobalCTA: React.FC = () => (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-5xl md:text-7xl font-black mb-10 tracking-tighter leading-[0.85]">Built for how people actually grow.</h2>
       <p className="text-xl mb-16 opacity-80 font-medium max-w-2xl mx-auto leading-relaxed">Boon is leadership infrastructure designed around human behavior, not tools or programs. So growth holds up as organizations scale.</p>
-      <button className="bg-white text-[#466FF6] px-12 py-6 rounded-full font-black text-2xl hover:scale-105 transition-all shadow-2xl">
+      <button className="bg-white text-[#466FF6] px-12 py-6 rounded-[15px] font-black text-lg hover:scale-105 transition-all shadow-2xl">
         Schedule a Conversation
       </button>
     </div>

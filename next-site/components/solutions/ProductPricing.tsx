@@ -66,7 +66,7 @@ export function ProductPricing({
           </div>
           <Link
             href={ctaHref}
-            className="text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl transition-all hover:opacity-90"
+            className="text-white px-10 py-5 rounded-[15px] font-black text-xl shadow-xl transition-all hover:opacity-90"
             style={{ backgroundColor: accentColor }}
           >
             {ctaText}
