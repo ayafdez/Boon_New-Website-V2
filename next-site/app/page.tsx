@@ -163,15 +163,15 @@ export default function HomePage() {
         ></div>
 
         <div className="max-w-4xl mx-auto relative z-10">
-          <h3 className="font-sans text-2xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="font-sans text-2xl md:text-4xl font-bold text-white mb-4 tracking-tight">
             Ready to see it in action?
-          </h3>
+          </h2>
           <p className="text-base md:text-lg text-white/60 font-body font-medium max-w-2xl mx-auto mb-8 leading-relaxed">
             See how Boon can replace your fragmented vendor stack with one unified leadership system.
           </p>
           <Link
             href="/demo"
-            className="inline-flex items-center bg-boon-coral text-white px-8 py-4 rounded-xl font-sans font-bold text-lg hover:bg-boon-light-coral transition-all shadow-lg shadow-boon-coral/20 active:scale-95"
+            className="inline-flex items-center bg-boon-coral text-white px-8 py-4 rounded-[15px] font-sans font-bold text-lg hover:bg-boon-light-coral transition-all shadow-lg shadow-boon-coral/20 active:scale-95"
           >
             Book a Strategy Call
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -222,13 +222,13 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link
               href="/demo"
-              className="bg-boon-coral text-white px-8 py-4 md:px-16 md:py-8 rounded-full font-sans font-bold text-lg md:text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
+              className="bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
             >
               Book a Strategy Call
             </Link>
             <Link
               href="/solutions"
-              className="bg-white/5 border border-white/10 text-white px-8 py-4 md:px-16 md:py-8 rounded-full font-sans font-bold text-lg md:text-2xl hover:bg-white/10 transition-all"
+              className="bg-white/5 border border-white/10 text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl hover:bg-white/10 transition-all"
             >
               See how it works
             </Link>
