@@ -32,11 +32,11 @@ const content = {
       { icon: 'check', text: 'Context carries forward' },
     ],
     image: '/with-boon.jpg',
-    fallbackGradient: 'from-boon-light-blue to-boon-soft-coral/30',
+    fallbackGradient: 'from-blue-50 to-blue-100',
     timeline: [
-      { year: '2021', role: 'IC', event: 'Boon SCALE', color: '#466FF6' },
-      { year: '2023', role: 'Manager', event: 'Boon GROW', color: '#FF6D6A' },
-      { year: '2025', role: 'VP', event: 'Boon EXEC', color: '#C47ACC' },
+      { year: '2021', role: 'IC', event: 'Boon SCALE', color: '#2F66FF', tone: 'blue', description: 'Builds Self-Awareness' },
+      { year: '2023', role: 'Manager', event: 'Boon GROW', color: '#FF5858', tone: 'red', description: 'Applies IC Insights To Leadership' },
+      { year: '2025', role: 'VP', event: 'Boon EXEC', color: '#A55AFF', tone: 'purple', description: 'Accelerates With Strong Foundation' },
     ],
   },
 } as const;
@@ -110,123 +110,160 @@ export function BoonDifferenceVisual() {
             />
           </div>
 
-          {/* Timeline overlay — overlaps only ~20% of image, extends right */}
-          <div
-            className="absolute"
-            style={{
-              top: '40px',
-              right: '-200px',
-              width: 400,
-              borderRadius: 28,
-              backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
-              backgroundColor: 'rgba(255,255,255,0.15)',
-              boxShadow: '0 18px 40px rgba(10,10,10,0.15)',
-              padding: 18,
-              zIndex: 10,
-            }}
-          >
-            <div style={{ borderRadius: 22, padding: 10 }}>
-              <div className="flex flex-col gap-5">
-                {c.timeline.map((item, i) => {
+          {/* Timeline overlay — different design per tab */}
+          {!isWithBoon ? (
+            /* WITHOUT BOON — gray shell, dashed connector, neutral pills */
+            <div
+              className="absolute"
+              style={{
+                top: '40px', right: '-200px', width: 400, borderRadius: 28,
+                backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
+                backgroundColor: 'rgba(255,255,255,0.15)',
+                boxShadow: '0 18px 40px rgba(10,10,10,0.15)',
+                padding: 18, zIndex: 10,
+              }}
+            >
+              <div style={{ borderRadius: 22, padding: 10 }}>
+                <div className="flex flex-col gap-5">
+                  {c.timeline.map((item, i) => {
+                    const isLast = i === c.timeline.length - 1;
+                    const isLilac = isLast;
+                    const isHovered = hoveredCard === i;
+                    const isDimmed = hoveredCard !== null && !isHovered;
+                    return (
+                      <div key={i} className="relative"
+                        onMouseEnter={() => setHoveredCard(i)}
+                        onMouseLeave={() => setHoveredCard(null)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <div className="flex items-center gap-4" style={{
+                          background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
+                          borderRadius: 22, padding: '14px 16px',
+                          boxShadow: isHovered ? '0 16px 36px rgba(10,10,10,0.18)' : '0 10px 22px rgba(10,10,10,0.10)',
+                          border: isHovered ? '1px solid rgba(70,111,246,0.3)' : '1px solid rgba(0,0,0,0.04)',
+                          opacity: isDimmed ? 0.45 : 1,
+                          transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
+                          transition: 'all 0.2s ease',
+                        }}>
+                          <div className="flex flex-col items-center" style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}>
+                            <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
+                          </div>
+                          <div style={{ position: 'relative', width: 18, display: 'flex', justifyContent: 'center' }}>
+                            <div style={{
+                              width: 14, height: 14, borderRadius: 999,
+                              background: isHovered ? '#466FF6' : '#7C7F88',
+                              boxShadow: isHovered ? '0 0 0 4px rgba(70,111,246,0.15)' : '0 2px 6px rgba(0,0,0,0.15)',
+                              flexShrink: 0, transition: 'all 0.2s ease',
+                            }} />
+                          </div>
+                          <div style={{ flex: 1 }}>
+                            <div style={{
+                              borderRadius: 999, padding: '9px 14px',
+                              background: isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
+                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)', textAlign: 'center',
+                            }}>
+                              <span style={{ fontSize: 13, fontWeight: 700, color: isLilac ? '#B06AF2' : '#8A8F98', whiteSpace: 'nowrap' }}>
+                                {item.event}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        {!isLast && (
+                          <div style={{
+                            position: 'absolute', left: 48 + 16 + 9, top: '100%',
+                            width: 2, height: 22,
+                            backgroundImage: 'repeating-linear-gradient(to bottom, rgba(124,127,136,0.55) 0 4px, rgba(124,127,136,0) 4px 9px)',
+                            borderRadius: 999,
+                          }} />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* WITH BOON — blue gradient shell, solid colored connector, colored badges */
+            <div
+              className="absolute"
+              style={{
+                top: '40px', right: '-200px', width: 400, borderRadius: 22,
+                background: 'linear-gradient(180deg, rgba(246,248,255,1) 0%, rgba(212,221,255,1) 100%)',
+                boxShadow: '0 18px 40px rgba(20,40,120,0.18)',
+                padding: 22, zIndex: 10, overflow: 'hidden',
+              }}
+            >
+              <div className="flex flex-col gap-4">
+                {c.timeline.map((item: any, i: number) => {
                   const isLast = i === c.timeline.length - 1;
-                  const isLilac = isLast && active === 'WITHOUT BOON';
-
                   const isHovered = hoveredCard === i;
                   const isDimmed = hoveredCard !== null && !isHovered;
-
+                  const badgeBg = item.tone === 'blue'
+                    ? 'rgba(47,102,255,0.12)' : item.tone === 'red'
+                    ? 'rgba(255,88,88,0.14)' : 'rgba(165,90,255,0.14)';
                   return (
-                    <div key={i} className="relative"
+                    <div key={i} className="relative flex items-center gap-4"
                       onMouseEnter={() => setHoveredCard(i)}
                       onMouseLeave={() => setHoveredCard(null)}
                       style={{ cursor: 'pointer' }}
                     >
-                      {/* Row card */}
-                      <div
-                        className="flex items-center gap-4"
-                        style={{
-                          background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
-                          borderRadius: 22,
-                          padding: '14px 16px',
-                          boxShadow: isHovered
-                            ? '0 16px 36px rgba(10,10,10,0.18)'
-                            : '0 10px 22px rgba(10,10,10,0.10)',
-                          border: isHovered
-                            ? '1px solid rgba(70,111,246,0.3)'
-                            : '1px solid rgba(0,0,0,0.04)',
-                          opacity: isDimmed ? 0.45 : 1,
-                          transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
-                          transition: 'all 0.2s ease',
-                        }}
-                      >
-                        {/* Year / Role label */}
-                        <div
-                          className="flex flex-col items-center"
-                          style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}
-                        >
-                          <span>{item.year}</span>
-                          <span style={{ marginTop: 3 }}>{item.role}</span>
-                        </div>
-
-                        {/* Dot */}
-                        <div style={{ position: 'relative', width: 18, display: 'flex', justifyContent: 'center' }}>
-                          <div
-                            style={{
-                              width: 14,
-                              height: 14,
-                              borderRadius: 999,
-                              background: isHovered ? '#466FF6' : '#7C7F88',
-                              boxShadow: isHovered ? '0 0 0 4px rgba(70,111,246,0.15)' : '0 2px 6px rgba(0,0,0,0.15)',
-                              flexShrink: 0,
-                              transition: 'all 0.2s ease',
-                            }}
-                          />
-                        </div>
-
-                        {/* Pill */}
-                        <div style={{ flex: 1 }}>
-                          <div
-                            style={{
-                              borderRadius: 999,
-                              padding: '9px 14px',
-                              background: isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
-                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)',
-                              textAlign: 'center',
-                            }}
-                          >
-                            <span
-                              style={{
-                                fontSize: 13,
-                                fontWeight: 700,
-                                color: isLilac ? '#B06AF2' : '#8A8F98',
-                                whiteSpace: 'nowrap',
-                              }}
-                            >
-                              {item.event}
-                            </span>
-                          </div>
-                        </div>
+                      {/* Label */}
+                      <div className="flex flex-col items-center" style={{ width: 74, color: 'rgba(85,92,115,0.75)', fontSize: 12, lineHeight: 1.1, fontWeight: 600 }}>
+                        <span>{item.year}</span><span style={{ marginTop: 6 }}>{item.role}</span>
                       </div>
 
-                      {/* Dashed connector between cards */}
-                      {!isLast && (
-                        <div
-                          style={{
-                            position: 'absolute',
-                            left: 48 + 16 + 9, // label width + gap + dot center
-                            top: '100%',
-                            width: 2,
-                            height: 22,
-                            backgroundImage: 'repeating-linear-gradient(to bottom, rgba(124,127,136,0.55) 0 4px, rgba(124,127,136,0) 4px 9px)',
-                            borderRadius: 999,
-                          }}
-                        />
-                      )}
+                      {/* Dot + line */}
+                      <div style={{ position: 'relative', width: 22, display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }}>
+                        <div style={{
+                          width: 14, height: 14, borderRadius: 999,
+                          background: item.color,
+                          boxShadow: `0 6px 14px ${item.color}55`,
+                          marginTop: 10, position: 'relative', zIndex: 1,
+                          transform: isHovered ? 'scale(1.3)' : 'scale(1)',
+                          transition: 'all 0.2s ease',
+                        }} />
+                        {!isLast && (
+                          <div style={{
+                            position: 'absolute', top: 26, left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: 6, height: 74, borderRadius: 999,
+                            background: 'rgba(47,102,255,0.75)',
+                            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.55)',
+                          }} />
+                        )}
+                      </div>
+
+                      {/* Card */}
+                      <div style={{
+                        flex: 1,
+                        background: 'rgba(255,255,255,0.95)',
+                        borderRadius: 18, padding: '12px 14px',
+                        boxShadow: isHovered ? '0 16px 30px rgba(20,40,120,0.20)' : '0 10px 20px rgba(20,40,120,0.12)',
+                        border: isHovered ? `1px solid ${item.color}44` : '1px solid rgba(0,0,0,0.04)',
+                        opacity: isDimmed ? 0.45 : 1,
+                        transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
+                        transition: 'all 0.2s ease',
+                      }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}>
+                          <span style={{
+                            fontSize: 12, fontWeight: 800, padding: '6px 12px',
+                            borderRadius: 999, letterSpacing: 0.2,
+                            background: badgeBg, color: item.color,
+                            whiteSpace: 'nowrap',
+                          }}>
+                            {item.event}
+                          </span>
+                        </div>
+                        <div style={{ textAlign: 'center', fontSize: 13, fontWeight: 700, color: 'rgba(80,88,112,0.85)' }}>
+                          {item.description}
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
