@@ -1,10 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export function HomeHero() {
+  const bgRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
+    // Reveal observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,63 +22,54 @@ export function HomeHero() {
     const elements = document.querySelectorAll('.reveal');
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    // Parallax on scroll
+    const handleScroll = () => {
+      if (bgRef.current) {
+        const scrollY = window.scrollY;
+        bgRef.current.style.transform = `translateY(${scrollY * 0.4}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <section className="pt-40 pb-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      {/* Soft gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-boon-light-blue/30 via-white to-boon-soft-coral/15"></div>
+      {/* Parallax background image */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 w-full h-[120%] -top-[10%] pointer-events-none will-change-transform"
+        style={{
+          backgroundImage: 'url(/hp_hero_bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      ></div>
+
+      {/* Subtle white overlay to keep text readable */}
+      <div className="absolute inset-0 bg-white/20 pointer-events-none"></div>
 
       <style jsx>{`
-        @keyframes float-coral {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(30px, -20px) scale(1.05); }
-          66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-        @keyframes float-blue {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-25px, 15px) scale(0.95); }
-          66% { transform: translate(15px, -25px) scale(1.05); }
-        }
-        .floating-coral {
-          animation: float-coral 20s ease-in-out infinite;
-        }
-        .floating-blue {
-          animation: float-blue 25s ease-in-out infinite;
-        }
         .font-architectural {
           font-family: 'DM Sans', sans-serif;
           font-weight: 700;
           letter-spacing: -0.04em;
-          line-height: 0.9;
+          line-height: 1.05;
         }
         .stagger-1 { transition-delay: 0.1s; }
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
       `}</style>
 
-      {/* Animated floating gradient blob - Coral (top right) */}
-      <div
-        className="floating-coral absolute -top-[10%] -right-[10%] w-[50%] h-[70%] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.4) 0%, rgba(255, 141, 128, 0.2) 30%, transparent 70%)',
-          filter: 'blur(60px)',
-        }}
-      ></div>
-
-      {/* Animated floating gradient blob - Blue (bottom left) */}
-      <div
-        className="floating-blue absolute -bottom-[15%] -left-[10%] w-[45%] h-[60%] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.35) 0%, rgba(70, 111, 246, 0.15) 30%, transparent 70%)',
-          filter: 'blur(70px)',
-        }}
-      ></div>
-
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.3fr_0.7fr] gap-8 md:gap-24 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-8 md:gap-16 items-center relative z-10">
         <div>
-          <h1 className="reveal stagger-1 font-architectural text-4xl md:text-7xl lg:text-[115px] text-boon-charcoal mb-12">
+          <h1 className="reveal stagger-1 font-architectural text-4xl md:text-6xl lg:text-[72px] text-boon-charcoal mb-12">
             The leadership development system you won&apos;t <span className="font-serif italic text-boon-blue">outgrow</span>.
           </h1>
 
@@ -102,36 +96,27 @@ export function HomeHero() {
           </div>
         </div>
 
-        <div className="reveal stagger-2 relative hidden lg:block">
-          {/* Organic gradient blob behind video - coral to blue accent */}
+        <div className="reveal stagger-2 relative hidden lg:flex lg:justify-end lg:items-center">
+          {/* Glow accents behind video */}
           <div className="absolute -inset-12 z-0 pointer-events-none">
-            {/* Blue accent - top right */}
             <div
               className="absolute -top-8 -right-8 w-[350px] h-[300px]"
               style={{
-                background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.5) 0%, rgba(70, 111, 246, 0.2) 40%, transparent 70%)',
+                background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.4) 0%, rgba(70, 111, 246, 0.15) 40%, transparent 70%)',
                 filter: 'blur(40px)',
               }}
             ></div>
-            {/* Coral accent - bottom left */}
             <div
               className="absolute -bottom-8 -left-8 w-[300px] h-[280px]"
               style={{
-                background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.5) 0%, rgba(255, 141, 128, 0.25) 40%, transparent 70%)',
+                background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.4) 0%, rgba(255, 141, 128, 0.2) 40%, transparent 70%)',
                 filter: 'blur(40px)',
-              }}
-            ></div>
-            {/* Center blend */}
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[350px]"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(204, 217, 255, 0.4) 0%, rgba(255, 187, 187, 0.2) 50%, transparent 80%)',
-                filter: 'blur(50px)',
               }}
             ></div>
           </div>
 
-          <div className="rounded-[100px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 border border-gray-100 group z-10">
+          {/* Video container — larger, 35px border radius */}
+          <div className="w-full max-w-[560px] rounded-[35px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 border border-gray-100 group z-10">
             <video
               autoPlay
               muted
