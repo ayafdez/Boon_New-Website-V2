@@ -21,10 +21,15 @@ export function TrustSection() {
         <p className="text-[10px] font-black text-gray-300 uppercase tracking-[0.2em] md:tracking-[0.4em] mb-12 text-center">
           Trusted by teams building leaders at scale
         </p>
-        <div className="relative overflow-hidden group py-4">
-          <div className="flex animate-scroll">
-            {[0, 1].map((copy) => (
-              <div key={copy} className="flex items-center gap-12 md:gap-24 shrink-0 pr-12 md:pr-24">
+        <div className="relative overflow-hidden py-4">
+          {/* Edge fade masks */}
+          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          <div className="flex animate-marquee">
+            {/* Three copies — translateX(-33.333%) resets seamlessly to the start */}
+            {[0, 1, 2].map((copy) => (
+              <div key={copy} aria-hidden={copy > 0 ? true : undefined} className="flex items-center gap-12 md:gap-24 shrink-0 pr-12 md:pr-24">
                 {LOGOS.map((logo, idx) => (
                   <div key={idx} className="flex-shrink-0 w-28 h-10 flex items-center justify-center">
                     <Image
@@ -32,7 +37,7 @@ export function TrustSection() {
                       alt={`${logo.name} logo`}
                       width={120}
                       height={40}
-                      className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                     />
                   </div>
                 ))}
@@ -42,16 +47,15 @@ export function TrustSection() {
         </div>
       </div>
       <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+        @keyframes marquee {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
         }
-        .animate-scroll {
-          animation: scroll 25s linear infinite;
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </section>
