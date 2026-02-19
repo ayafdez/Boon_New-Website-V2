@@ -2,178 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─────────────────────────────────────────────
-   CSS Variables
-───────────────────────────────────────────── */
+/* CSS Variables for fonts */
 :root {
   --font-dm-sans: 'DM Sans', sans-serif;
   --font-dm-serif: 'DM Serif Text', serif;
   --font-inter: 'Inter', sans-serif;
-
-  /* Design tokens */
-  --radius-container: 35px;
-  --radius-btn: 15px;
-  --btn-px: 2rem;   /* 32px */
-  --btn-py: 1rem;   /* 16px */
 }
 
-/* ─────────────────────────────────────────────
-   Base Reset & Selection
-───────────────────────────────────────────── */
+/* Custom selection styling */
 ::selection {
   background: #466FF6;
   color: white;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Base body styles */
 body {
-  font-family: var(--font-inter);
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2E353D;
 }
 
-/* ─────────────────────────────────────────────
-   Semantic Typography Hierarchy  (H1 → H6, p)
-   • H1–H4: DM Sans bold — page/section headlines
-   • H5–H6: Inter semibold — labels, micro-headings
-   • p, li: Inter medium — body copy
-───────────────────────────────────────────── */
-
-h1, h2, h3, h4 {
-  font-family: var(--font-dm-sans);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: #2E353D;
+/* Font utility classes */
+.font-sans {
+  font-family: 'DM Sans', sans-serif;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);   /* 40px → 80px */
-  font-weight: 900;
+.font-serif {
+  font-family: 'DM Serif Text', serif;
 }
 
-h2 {
-  font-size: clamp(2rem, 4.5vw, 3.75rem); /* 32px → 60px */
-  font-weight: 800;
+.font-body {
+  font-family: 'Inter', sans-serif;
 }
 
-h3 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);  /* 24px → 40px */
-  font-weight: 700;
-}
-
-h4 {
-  font-size: clamp(1.25rem, 2vw, 1.75rem); /* 20px → 28px */
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h5 {
-  font-family: var(--font-inter);
-  font-size: 0.875rem;                    /* 14px */
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  line-height: 1.4;
-  color: #2E353D;
-}
-
-h6 {
-  font-family: var(--font-inter);
-  font-size: 0.75rem;                     /* 12px */
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
-  color: #6B7280;
-}
-
-p {
-  font-family: var(--font-inter);
-  font-weight: 500;
-  line-height: 1.7;
-  color: #6B7280;
-}
-
-li {
-  font-family: var(--font-inter);
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-/* ─────────────────────────────────────────────
-   Font Utility Classes
-───────────────────────────────────────────── */
-.font-sans  { font-family: var(--font-dm-sans);  }
-.font-serif { font-family: var(--font-dm-serif); }
-.font-body  { font-family: var(--font-inter);    }
-
-/* Italic headline accent — DM Serif Text Italic */
+/* Signature headline emphasis - DM Serif Text Italic */
 .headline-emphasis {
-  font-family: var(--font-dm-serif);
+  font-family: 'DM Serif Text', serif;
   font-style: italic;
 }
 
-/* Labels — Inter ExtraBold ALL CAPS */
+/* Subtext / Labels - Inter ExtraBold, ALL CAPS */
 .label-text {
-  font-family: var(--font-inter);
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-/* ─────────────────────────────────────────────
-   Global Button Token
-───────────────────────────────────────────── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--btn-py) var(--btn-px);
-  border-radius: var(--radius-btn);
-  font-family: var(--font-dm-sans);
-  font-weight: 700;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  text-align: center;
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
 
-.btn-primary {
-  background: #466FF6;
-  color: white;
-}
-.btn-primary:hover { background: #365ABD; }
-
-.btn-coral {
-  background: #FF6D6A;
-  color: white;
-}
-.btn-coral:hover { background: #e05a58; }
-
-.btn-outline {
-  border: 1px solid #D1D5DB;
-  background: transparent;
-  color: #2E353D;
-}
-.btn-outline:hover { background: #F0F3F7; }
-
-/* ─────────────────────────────────────────────
-   Animation Utilities
-───────────────────────────────────────────── */
+/* Animation utilities */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
 
-/* Intersection Observer reveal */
+/* Intersection Observer reveal animations */
 .reveal {
   opacity: 0;
   transform: translateY(20px);

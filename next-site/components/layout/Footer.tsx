@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="bg-white py-24 px-6 md:px-12 lg:px-24 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+    <footer className="bg-white py-12 md:py-24 px-6 md:px-12 lg:px-24 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-20">
         <div className="col-span-1">
           <Image
             src="https://res.cloudinary.com/djbo6r080/image/upload/v1764863780/Wordmark_Blue_16_aw7lvc.png"
@@ -61,20 +61,12 @@ export function Footer() {
           </h5>
           <div className="flex flex-col gap-4 text-sm font-body font-semibold text-gray-500">
             <a
-              href="https://www.linkedin.com/company/boon-coach"
+              href="https://www.linkedin.com/company/boon-health/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-boon-blue"
             >
               LinkedIn
-            </a>
-            <a
-              href="https://twitter.com/booncoach"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-boon-blue"
-            >
-              Twitter
             </a>
           </div>
         </div>
@@ -87,8 +79,8 @@ export function Footer() {
           <Link href="/privacy" className="hover:text-boon-blue">
             Privacy Policy
           </Link>
-          <Link href="/terms" className="hover:text-boon-blue">
-            Terms of Service
+          <Link href="/acceptable-use" className="hover:text-boon-blue">
+            Acceptable Use Policy
           </Link>
         </div>
       </div>

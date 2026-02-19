@@ -196,7 +196,7 @@ export const ForCoachesPage: React.FC = () => {
           <SectionHeading overline="Support" title="A better way to practice." />
           <div className="grid md:grid-cols-3 gap-12">
              {[
-               { t: "Admin Freedom", d: "A seamless platform for scheduling, session notes, and billing—managed entirely by the Boon team." },
+               { t: "Admin Freedom", d: "A seamless platform for scheduling, session notes, and billing, managed entirely by the Boon team." },
                { t: "Fair Compensation", d: "Transparent, professional rates that reflect your experience and the value of your judgment." },
                { t: "Community Depth", d: "Access to a global network of peers who share our commitment to rigorous, systemic development." }
              ].map(item => (

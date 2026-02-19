@@ -33,7 +33,7 @@ export const EconomicImpactModel: React.FC = () => {
             Quantify your <span className="text-[#466FF6]">Human Capital Drag</span>.
           </h2>
           <p className="text-white/40 text-xl font-medium leading-relaxed mb-16 max-w-xl">
-            Turnover is only the visible surface. The true cost lies in "Organizational Drift"—the efficiency lost when leadership is reactive instead of synchronized.
+            Turnover is only the visible surface. The true cost lies in "Organizational Drift": the efficiency lost when leadership is reactive instead of synchronized.
           </p>
           
           <div className="space-y-16">

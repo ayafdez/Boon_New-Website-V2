@@ -23,7 +23,7 @@ export const TriNetStudy: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       approach={
         <>
           <p><strong>Boon Exec</strong> provided senior leaders with elite operator-coaches who had managed similar enterprise-level complexity. These engagements were strictly confidential and prioritized strategic sparring and presence.</p>
-          <p>The program focused on 'Cognitive Leverage'—sharpening the ability to think clearly under pressure and navigate board dynamics without the cognitive erosion that often follows prolonged periods of high stress.</p>
+          <p>The program focused on 'Cognitive Leverage': sharpening the ability to think clearly under pressure and navigate board dynamics without the cognitive erosion that often follows prolonged periods of high stress.</p>
         </>
       }
       whatChanged={[

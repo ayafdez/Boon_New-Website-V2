@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { allBlogs } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { format, parseISO } from 'date-fns';
+import { generateArticleJsonLd, generateBreadcrumbJsonLd, siteUrl } from '@/lib/seo';
 
 interface PageProps {
   params: { slug: string };
@@ -13,6 +14,7 @@ interface PageProps {
 const authorNames: Record<string, string> = {
   'bretamanda@gmail.com': 'Amanda Bret',
   'Boon_Alex': 'Alex Simmons',
+  'boonhealthstg': 'Boon',
   'alex@boon.coach': 'Alex Simmons',
   'chris@boon.coach': 'Chris Henrichs',
   'jessica@boon.coach': 'Jessica Taylor',
@@ -56,7 +58,26 @@ export default function BlogPostPage({ params }: PageProps) {
   const body = post.body as unknown as { code?: string; raw?: string };
   const bodyCode = body?.code;
 
+  const articleJsonLd = generateArticleJsonLd({
+    title: post.title,
+    description: post.excerpt || post.description || '',
+    url: `${siteUrl}/learn/blog/${post.slug}`,
+    publishedTime: post.date,
+    authorName: authorDisplayName || 'Boon',
+    image: post.featuredImage,
+  });
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Learn', path: '/learn' },
+    { name: 'Blog', path: '/learn/blog' },
+    { name: post.title, path: `/learn/blog/${post.slug}` },
+  ]);
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     <main className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-boon-navy">
@@ -177,5 +198,6 @@ export default function BlogPostPage({ params }: PageProps) {
         </div>
       </section>
     </main>
+    </>
   );
 }

@@ -25,9 +25,9 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center py-8 text-left group"
       >
-        <h4 className="text-xl font-bold text-[#2E353D] group-hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-[#2E353D] group-hover:text-blue-600 transition-colors">
           {question}
-        </h4>
+        </h3>
         <PlusIcon isOpen={isOpen} />
       </button>
       <div
@@ -41,38 +41,34 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
-const faqs = [
-  {
-    q: 'Is this therapy?',
-    a: "No. While our coaches are trained in mental health principles, Boon focuses on professional growth, personal resilience, and goal-attainment. It is proactive support rather than clinical treatment.",
-  },
-  {
-    q: 'How is this different from an EAP?',
-    a: 'Most EAPs are reactive (used during a crisis) and clinical. Boon is proactive, usage-based, and highly engaging. Our utilization rates are typically 5-10x higher than traditional EAPs.',
-  },
-  {
-    q: 'Will managers see session content?',
-    a: "Absolutely not. Privacy is the foundation of Boon. Employers receive aggregate theme reports (e.g., '15% of sessions focused on conflict') but individual data is strictly confidential.",
-  },
-  {
-    q: 'How do we ensure ROI?',
-    a: "Through our 'Resilience Index™'. We track anonymous workforce sentiment and combine it with utilization data to show you exactly how the program is impacting burnout and retention.",
-  },
-];
+interface FAQ {
+  question: string;
+  answer: string;
+}
 
-export function ScaleFAQ() {
+interface ProductFAQProps {
+  faqs: FAQ[];
+  headline?: string;
+  subline?: string;
+}
+
+export function ProductFAQ({
+  faqs,
+  headline = 'FAQs',
+  subline = '',
+}: ProductFAQProps) {
   return (
     <section className="py-32 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-7xl font-black text-[#2E353D] tracking-tighter mb-4">
-            Answers to your questions.
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#2E353D] tracking-tighter mb-4">
+            {headline}
           </h2>
-          <p className="text-gray-400 font-bold italic">Grounded, honest, and direct.</p>
+          <p className="text-gray-400 font-bold italic">{subline}</p>
         </div>
         <div className="border-t border-gray-100">
           {faqs.map((faq) => (
-            <FAQItem key={faq.q} question={faq.q} answer={faq.a} />
+            <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
           ))}
         </div>
       </div>

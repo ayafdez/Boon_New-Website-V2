@@ -1,66 +1,71 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { generatePageMetadata, generateServiceJsonLd } from '@/lib/seo';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { generatePageMetadata, generateServiceJsonLd, siteUrl } from '@/lib/seo';
 import { SystemArchitect } from '@/components/solutions/SystemArchitect';
+import { PlatformShowcase } from '@/components/solutions/PlatformShowcase';
 import { AccordionSection } from '@/components/solutions/AccordionSection';
 import { GlobalCTA } from '@/components/layout/GlobalCTA';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Solutions',
+  title: 'Solutions - Coaching & Leadership Development',
   description:
     'Boon is a unified talent development system. Coaching, leadership development, and executive support designed around where growth pressure shows up.',
   path: '/solutions',
 });
 
-const solutions = [
+const pillars = [
   {
     id: 'scale',
-    name: 'Boon Scale',
-    title: 'Democratized 1:1 Coaching',
-    tagline: '"WHEN EVERYONE NEEDS SUPPORT—NOT JUST EXECS."',
-    description:
-      '1:1 coaching for everyone in your org, not just leadership. Employees book sessions when they need them, with coaches matched to their role and context.',
-    startingPoint: 'You want broad, always-on support across the organization.',
-    bestFor: 'All employees, large-scale culture shifts.',
-    color: '#466FF6', // boon-blue
-    badge: null,
+    name: 'Scale',
+    description: '1:1 coaching for everyone, not just execs',
+    color: '#466FF6',
+    borderColor: 'border-t-[#466FF6]',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#466FF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    ),
   },
   {
     id: 'grow',
-    name: 'Boon Grow',
-    title: 'Leadership Development',
-    tagline: '"WHEN YOUR MANAGERS ARE UNDERWATER."',
-    description:
-      'Cohort-based development for new and rising managers. A structured program that builds the skills most first-time managers never learned: feedback, delegation, and difficult conversations.',
-    startingPoint: 'New managers or team leads are the biggest bottleneck.',
-    bestFor: 'First-time managers, L&D cohorts, team leads.',
-    color: '#FF6D6A', // boon-coral
-    badge: 'Most common starting point',
+    name: 'Grow',
+    description: 'Structured development for new and rising managers',
+    color: '#10B981',
+    borderColor: 'border-t-[#10B981]',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+        <polyline points="16 7 22 7 22 13" />
+      </svg>
+    ),
   },
   {
     id: 'exec',
-    name: 'Boon Exec',
-    title: 'Executive Coaching',
-    tagline: '"WHEN THE STAKES ARE HIGHEST."',
-    description:
-      'Confidential coaching for your senior leaders. A thinking partner for the decisions that ripple across the org.',
-    startingPoint: 'Senior leaders need confidential, high-stakes support.',
-    bestFor: 'C-Suite, VPs, Founders.',
-    color: '#2E353D', // boon-charcoal
-    badge: null,
+    name: 'Exec',
+    description: 'Strategic sparring for senior leadership',
+    color: '#2E353D',
+    borderColor: 'border-t-[#2E353D]',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E353D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
   },
   {
     id: 'together',
-    name: 'Boon Together',
-    title: 'Collective Development',
-    tagline: '"WHEN THE TEAM NEEDS TO GET ON THE SAME PAGE."',
-    description:
-      'Facilitated sessions for teams that need to align: offsites, department kickoffs, or moments of change. Builds shared language and momentum.',
-    startingPoint: 'Alignment, shared language, or change moments matter most.',
-    bestFor: 'Team offsites, department alignment, workshops.',
-    color: '#FFC969', // boon-gold
-    badge: 'Strategic entry point',
+    name: 'Together',
+    description: 'Team sessions that build shared language and capability',
+    color: '#F59E0B',
+    borderColor: 'border-t-[#F59E0B]',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
   },
 ];
 
@@ -68,7 +73,7 @@ export default function SolutionsPage() {
   const jsonLd = generateServiceJsonLd({
     name: 'Boon Leadership Development System',
     description: 'Unified talent development system with coaching, leadership development, and executive support.',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/solutions`,
+    url: `${siteUrl}/solutions`,
   });
 
   return (
@@ -105,7 +110,7 @@ export default function SolutionsPage() {
             <div className="inline-flex items-center gap-2 bg-boon-light-blue/50 text-boon-blue label-text text-[10px] px-4 py-2 rounded-full mb-10 border border-boon-light-blue">
               How Boon Works
             </div>
-            <h1 className="font-sans text-6xl md:text-[92px] font-bold text-boon-charcoal leading-[0.9] tracking-tight mb-10 max-w-5xl">
+            <h1 className="font-sans text-4xl md:text-6xl lg:text-[92px] font-bold text-boon-charcoal leading-tight lg:leading-[0.9] tracking-tight mb-10 max-w-5xl">
               One system. Configured to solve your <span className="font-serif italic text-boon-blue">problems</span>.
             </h1>
             <div className="max-w-3xl">
@@ -119,9 +124,7 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        <SystemArchitect />
-
-        {/* Why a System Matters */}
+        {/* 1. Problem Statement */}
         <section className="py-32 px-6 md:px-12 lg:px-24 bg-boon-navy relative overflow-hidden">
           {/* Dotted texture overlay - fading from right */}
           <div
@@ -143,7 +146,7 @@ export default function SolutionsPage() {
             }}
           ></div>
 
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center relative z-10">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
             <div>
               <p className="label-text text-[10px] text-boon-coral mb-6">
                 The Case for Integration
@@ -160,7 +163,7 @@ export default function SolutionsPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-boon-charcoal p-12 rounded-[60px] border border-gray-700">
+            <div className="bg-boon-charcoal p-6 md:p-12 rounded-[60px] border border-gray-700">
               <div className="space-y-10">
                 {[
                   { t: 'Seamless Continuity', d: 'When someone gets promoted, their development journey continues. No reset.' },
@@ -170,7 +173,7 @@ export default function SolutionsPage() {
                   <div key={point.t} className="border-b border-gray-700 pb-6 last:border-0">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-2 h-2 rounded-full bg-boon-coral"></div>
-                      <h4 className="font-sans text-lg font-bold text-white">{point.t}</h4>
+                      <h3 className="font-sans text-lg font-bold text-white">{point.t}</h3>
                     </div>
                     <p className="text-sm text-gray-400 font-body font-medium pl-5">{point.d}</p>
                   </div>
@@ -180,98 +183,58 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Solutions Grid */}
+        {/* 2. System Architecture - Product Pillars */}
+        <section className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-boon-off-white/30 to-white"></div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-14">
+              <p className="label-text text-[10px] text-boon-blue mb-4">The System Architecture</p>
+              <h2 className="font-sans text-4xl md:text-5xl font-bold text-boon-charcoal tracking-tight leading-tight">
+                Four products. One continuous thread.
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {pillars.map((pillar) => (
+                <Link
+                  key={pillar.id}
+                  href={`/solutions/${pillar.id}`}
+                  className={"group bg-white border border-slate-200 rounded-2xl p-6 flex flex-col border-t-[3px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 " + pillar.borderColor}
+                >
+                  <div className="mb-4">{pillar.icon}</div>
+                  <p className="label-text text-[10px] mb-2">
+                    <span className="text-gray-400">BOON </span>
+                    <span style={{ color: pillar.color }}>{pillar.name.toUpperCase()}</span>
+                  </p>
+                  <p className="text-sm font-body font-medium text-gray-500 leading-relaxed mb-5 flex-1">
+                    {pillar.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-body font-semibold group-hover:gap-3 transition-all" style={{ color: pillar.color }}>
+                    Learn more <span>→</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Platform in Action */}
+        <PlatformShowcase />
+
+        {/* 3. System Configuration */}
+        <section className="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <SystemArchitect />
+          </div>
+        </section>
+
+        {/* 4. How The System Evolves Over Time */}
         <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-          {/* Soft gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white via-boon-light-blue/10 to-boon-soft-coral/10"></div>
-
-          {/* Decorative gradient blob */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-br from-boon-blue/5 to-boon-coral/5 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-
-          <div className="max-w-5xl mx-auto text-center mb-24 relative z-10">
-            <SectionHeading
-              overline="Our Philosophy"
-              title="Growth is a utility, not an event."
-              subtitle="Leadership development shouldn't be a one-off afterthought. Boon is thoughtfully designed, easy to measure, and always-on."
-            />
+          <div className="absolute inset-0 bg-gradient-to-b from-boon-off-white/50 via-white to-white"></div>
+          <div className="relative z-10">
+            <AccordionSection />
           </div>
-
-          <div className="max-w-7xl mx-auto text-center mb-12 relative z-10">
-            <h4 className="label-text text-[10px] text-boon-blue mb-4">
-              The Unified Ecosystem
-            </h4>
-            <div className="w-12 h-0.5 bg-boon-blue mx-auto"></div>
-          </div>
-
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 mb-24 relative z-10">
-            {solutions.map((solution) => (
-              <div
-                key={solution.id}
-                className="group relative bg-boon-off-white p-16 rounded-[60px] border border-gray-100 hover:border-current transition-all flex flex-col justify-between min-h-[550px]"
-                style={{ '--hover-color': solution.color } as React.CSSProperties}
-              >
-                <div
-                  className="absolute top-10 left-16 w-8 h-[2px]"
-                  style={{ backgroundColor: solution.color }}
-                ></div>
-                {solution.badge && (
-                  <div
-                    className="absolute -top-4 right-10 text-white text-[9px] font-body font-bold uppercase tracking-widest px-4 py-2 rounded-lg shadow-lg"
-                    style={{ backgroundColor: solution.color }}
-                  >
-                    {solution.badge}
-                  </div>
-                )}
-                <div>
-                  <div
-                    className="label-text text-[10px] mb-10"
-                    style={{ color: solution.color }}
-                  >
-                    {solution.name}
-                  </div>
-                  <h3 className="font-sans text-4xl font-bold text-boon-charcoal mb-4">{solution.title}</h3>
-                  <p
-                    className="text-sm font-serif italic mb-8"
-                    style={{ color: solution.color }}
-                  >
-                    {solution.tagline}
-                  </p>
-                  <p className="text-gray-500 font-body font-medium leading-relaxed mb-8">{solution.description}</p>
-                  <div className="space-y-4 border-t border-gray-200 pt-8">
-                    <div className="text-sm font-body font-semibold text-boon-charcoal">
-                      <span
-                        className="label-text text-[10px] block mb-1"
-                        style={{ color: solution.color }}
-                      >
-                        Common starting point when:
-                      </span>
-                      {solution.startingPoint}
-                    </div>
-                    <div className="text-sm font-body font-semibold text-boon-charcoal">
-                      <span className="label-text text-[10px] text-gray-400 block mb-1">
-                        Best for:
-                      </span>
-                      {solution.bestFor}
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-12">
-                  <p className="text-[9px] font-body font-medium text-gray-300 uppercase tracking-widest mb-4">
-                    Part of the Boon system. Designed to integrate and expand over time.
-                  </p>
-                  <Link
-                    href={`/solutions/${solution.id}`}
-                    className="flex items-center gap-3 label-text text-[10px] group-hover:gap-5 transition-all"
-                    style={{ color: solution.color }}
-                  >
-                    Learn about {solution.name.split(' ')[1]} <span>→</span>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <AccordionSection />
         </section>
 
         {/* Getting Started */}
@@ -301,7 +264,7 @@ export default function SolutionsPage() {
               {
                 num: '02',
                 title: 'Get a Quote',
-                desc: 'We\'ll build a custom proposal based on your goals, team size, and timeline. No templated packages—just what you need.',
+                desc: 'We\'ll build a custom proposal based on your goals, team size, and timeline. No templated packages, just what you need.',
               },
               {
                 num: '03',
@@ -311,7 +274,7 @@ export default function SolutionsPage() {
             ].map((step) => (
               <div
                 key={step.num}
-                className="bg-white p-12 rounded-[40px] border border-gray-100 text-center"
+                className="bg-white p-6 md:p-12 rounded-[40px] border border-gray-100 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-boon-blue/10 flex items-center justify-center mx-auto mb-8">
                   <span className="label-text text-[14px] text-boon-blue">{step.num}</span>

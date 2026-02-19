@@ -2,14 +2,16 @@ import type { Metadata } from 'next';
 import { generatePageMetadata, generateFAQJsonLd } from '@/lib/seo';
 import { DemoForm } from '@/components/demo/DemoForm';
 import { DemoFAQ } from '@/components/demo/DemoFAQ';
-import Image from 'next/image';
+import { DemoTrustBar } from '@/components/demo/DemoTrustBar';
 import Link from 'next/link';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Book a Demo',
+  title: 'Schedule a Conversation',
   description:
     'Schedule a conversation with Boon to understand your goals and determine whether our unified leadership system is the right fit for your organization.',
   path: '/demo',
+  ogTitle: 'Talk to Boon',
+  ogDescription: 'Schedule a conversation to explore how Boon\'s unified leadership system can develop your people at every level.',
 });
 
 const faqs = [
@@ -44,152 +46,149 @@ export default function DemoPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <main className="bg-white text-[#2E353D]">
+      <main className="bg-white text-boon-charcoal">
         {/* Hero */}
-        <section className="pt-32 pb-20 px-6 md:px-12 lg:px-24">
-          <div className="max-w-7xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-[#F4F7FF] text-[#466FF6] text-[10px] tracking-widest font-black px-4 py-2 rounded-full mb-10 uppercase border border-blue-50">
-              Schedule a Conversation
-            </div>
-            <h1 className="text-6xl md:text-[92px] font-black leading-[0.85] tracking-tighter mb-10 max-w-5xl">
-              Schedule a conversation about your organization.
+        <section className="pt-24 md:pt-40 pb-20 px-6 md:px-12 lg:px-24 relative overflow-hidden bg-gradient-to-br from-boon-light-blue/30 via-white to-boon-soft-coral/15">
+          {/* Floating blobs */}
+          <div
+            className="absolute top-[-10%] right-[-5%] w-[40%] h-[60%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.15) 0%, transparent 70%)',
+              filter: 'blur(60px)',
+            }}
+          />
+          <div
+            className="absolute bottom-[-10%] left-[-5%] w-[35%] h-[50%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.15) 0%, transparent 70%)',
+              filter: 'blur(70px)',
+            }}
+          />
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            <p className="label-text text-[10px] text-boon-blue mb-6">
+              30 minutes, zero pressure
+            </p>
+            <h1 className="font-sans text-4xl md:text-6xl lg:text-[92px] font-bold tracking-tight leading-tight lg:leading-[0.9] mb-10 max-w-5xl">
+              See if Boon is the right{' '}
+              <span className="font-serif italic text-boon-blue">fit</span> for your team.
             </h1>
-            <p className="text-xl md:text-2xl text-gray-500 font-medium leading-relaxed max-w-3xl mb-12">
-              A short conversation to understand your goals and determine whether Boon is the right fit.
+            <p className="text-xl md:text-2xl text-gray-500 font-body font-semibold leading-relaxed max-w-3xl mb-12">
+              Pick a time below. We&apos;ll talk through your goals and show you exactly how Boon works for organizations like yours.
             </p>
 
-            <div className="flex flex-wrap items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-gray-400">
+            <div className="flex flex-wrap items-center gap-8 label-text text-[10px] text-gray-400">
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#466FF6]"></div>
-                Response within 1 business day
+                <div className="w-1.5 h-1.5 rounded-full bg-boon-blue"></div>
+                Pick a time that works for you
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#466FF6]"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-boon-blue"></div>
                 No scripted sales pitch
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#466FF6]"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-boon-blue"></div>
                 Speak directly with our team
               </div>
             </div>
           </div>
         </section>
 
-        {/* Content + Form */}
-        <section className="py-24 px-6 md:px-12 lg:px-24 border-t border-gray-50">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-24 items-start relative">
+        {/* Content + Calendar */}
+        <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 border-t border-gray-50">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-16 items-start relative">
             {/* Left Column */}
             <div className="space-y-24 lg:sticky lg:top-32">
               <div className="space-y-16">
                 <div>
-                  <h3 className="text-[11px] font-black uppercase tracking-[0.4em] text-[#466FF6] mb-8">
+                  <p className="label-text text-[10px] text-boon-blue mb-8">
                     What this conversation covers
-                  </h3>
-                  <ul className="space-y-6 text-lg text-gray-500 font-medium leading-relaxed">
+                  </p>
+                  <ul className="space-y-6 text-lg text-gray-500 font-body font-medium leading-relaxed">
                     <li className="flex gap-4">
-                      <span className="w-1.5 h-1.5 bg-blue-100 rounded-full mt-2.5 flex-shrink-0"></span>
+                      <span className="w-1.5 h-1.5 bg-boon-light-blue rounded-full mt-2.5 flex-shrink-0"></span>
                       Whether Boon fits your organization and goals
                     </li>
                     <li className="flex gap-4">
-                      <span className="w-1.5 h-1.5 bg-blue-100 rounded-full mt-2.5 flex-shrink-0"></span>
+                      <span className="w-1.5 h-1.5 bg-boon-light-blue rounded-full mt-2.5 flex-shrink-0"></span>
                       Which programs make sense for your team today
                     </li>
                     <li className="flex gap-4">
-                      <span className="w-1.5 h-1.5 bg-blue-100 rounded-full mt-2.5 flex-shrink-0"></span>
+                      <span className="w-1.5 h-1.5 bg-boon-light-blue rounded-full mt-2.5 flex-shrink-0"></span>
                       How pricing works as you scale
                     </li>
                   </ul>
                 </div>
 
                 <div className="pt-16 border-t border-gray-100">
-                  <h3 className="text-[11px] font-black uppercase tracking-[0.4em] text-gray-300 mb-8">
-                    What this is not
-                  </h3>
+                  <p className="label-text text-[10px] text-gray-300 mb-8">
+                    After you book
+                  </p>
                   <ul className="space-y-6">
-                    {['Not a scripted sales demo', 'Not therapy or clinical intake', 'Not a generic product walkthrough'].map(
-                      (item) => (
-                        <li key={item} className="flex gap-4 text-sm font-bold text-gray-400">
-                          <span className="w-1.5 h-1.5 border border-gray-200 rounded-full mt-1.5"></span>
-                          {item}
-                        </li>
-                      )
-                    )}
+                    {[
+                      'You\'ll get a calendar invite with a video link',
+                      'We\'ll review your goals before the call',
+                      'Come with questions. We\'ll bring answers.',
+                    ].map((item) => (
+                      <li key={item} className="flex gap-4 text-sm font-body font-bold text-gray-400">
+                        <span className="w-1.5 h-1.5 bg-gray-200 rounded-full mt-1.5 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Form */}
+            {/* Right Column: Calendar */}
             <DemoForm />
           </div>
         </section>
 
-        {/* Social Proof */}
-        <section className="py-24 px-6 md:px-12 lg:px-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto flex flex-col items-center">
-            <p className="text-[10px] font-black uppercase tracking-widest text-gray-300 mb-16">
-              TRUSTED BY PEOPLE LEADERS
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale mb-24">
-              <Image
-                src="https://storage.googleapis.com/boon-public-assets/72andsunny.png"
-                width={80}
-                height={24}
-                className="h-6 w-auto"
-                alt="72andSunny"
-              />
-              <Image
-                src="https://storage.googleapis.com/boon-public-assets/consensys.png"
-                width={80}
-                height={24}
-                className="h-6 w-auto"
-                alt="Consensys"
-              />
-              <Image
-                src="https://storage.googleapis.com/boon-public-assets/circle.png"
-                width={80}
-                height={24}
-                className="h-6 w-auto"
-                alt="Circle"
-              />
-              <Image
-                src="https://storage.googleapis.com/boon-public-assets/usta.png"
-                width={80}
-                height={24}
-                className="h-6 w-auto"
-                alt="USTA"
-              />
-            </div>
-
-            <div className="max-w-2xl bg-white p-12 rounded-[35px] border border-gray-100 shadow-sm text-center">
-              <p className="text-lg font-bold text-gray-500 italic leading-relaxed mb-8">
-                &ldquo;Boon has become a core part of our leadership infrastructure. The level of support they
-                provide our managers is unmatched by any generic L&D tool we&apos;ve used.&rdquo;
-              </p>
-              <div>
-                <p className="text-sm font-black uppercase tracking-widest">VP OF PEOPLE</p>
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-1">
-                  Global Tech Organization
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Social Proof - Scrolling Logo Bar */}
+        <DemoTrustBar />
 
         {/* FAQ */}
         <DemoFAQ faqs={faqs} />
 
         {/* Final CTA */}
-        <section className="py-40 px-6 md:px-12 lg:px-24 bg-[#466FF6] text-white text-center rounded-[35px] mx-4 md:mx-10 mb-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
+        <section className="py-24 md:py-48 px-6 md:px-12 lg:px-24 bg-boon-navy text-white text-center relative overflow-hidden">
+          {/* Decorative blobs */}
+          <div
+            className="absolute top-[10%] right-[5%] w-[40%] h-[50%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.3) 0%, rgba(70, 111, 246, 0.1) 40%, transparent 70%)',
+              filter: 'blur(80px)',
+            }}
+          />
+          <div
+            className="absolute bottom-[10%] left-[10%] w-[45%] h-[55%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
+              filter: 'blur(80px)',
+            }}
+          />
+          {/* Grid pattern */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+              backgroundSize: '80px 80px',
+            }}
+          />
+
           <div className="max-w-4xl mx-auto relative z-10">
-            <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter leading-[0.85]">
-              Prefer to reach out directly?
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[84px] font-bold tracking-tight leading-tight lg:leading-[0.9] mb-6">
+              Not ready to{' '}
+              <span className="font-serif italic text-boon-blue">book</span>?
             </h2>
+            <p className="text-xl text-white/60 font-body font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
+              No problem. Drop us a line and we&apos;ll get back to you within one business day.
+            </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link
-                href="mailto:hello@boon.coach"
-                className="bg-white text-[#466FF6] px-8 py-4 rounded-[15px] font-black text-2xl hover:scale-105 transition-all shadow-2xl"
+                href="mailto:anewman@boon-health.com"
+                className="bg-boon-coral text-white px-8 py-4 md:px-16 md:py-8 rounded-full font-sans font-bold text-lg md:text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
               >
                 Email our team
               </Link>

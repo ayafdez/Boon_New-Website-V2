@@ -73,5 +73,155 @@
     "source": "/for-individuals",
     "destination": "/individuals",
     "permanent": true
+  },
+  {
+    "source": "/boon-live",
+    "destination": "/learn/live",
+    "permanent": true
+  },
+  {
+    "source": "/boon-live/",
+    "destination": "/learn/live",
+    "permanent": true
+  },
+  {
+    "source": "/leadership-development-solutions",
+    "destination": "/solutions",
+    "permanent": true
+  },
+  {
+    "source": "/leadership-development-solutions/",
+    "destination": "/solutions",
+    "permanent": true
+  },
+  {
+    "source": "/the-hidden-cost-of-pretending-youre-fine",
+    "destination": "/learn/blog/the-hidden-cost-of-pretending-youre-fine",
+    "permanent": true
+  },
+  {
+    "source": "/the-hidden-cost-of-pretending-youre-fine/",
+    "destination": "/learn/blog/the-hidden-cost-of-pretending-youre-fine",
+    "permanent": true
+  },
+  {
+    "source": "/boon-turns-4",
+    "destination": "/learn/blog",
+    "permanent": true
+  },
+  {
+    "source": "/boon-turns-4/",
+    "destination": "/learn/blog",
+    "permanent": true
+  },
+  {
+    "source": "/boon-blog",
+    "destination": "/learn/blog",
+    "permanent": true
+  },
+  {
+    "source": "/boon-blog/",
+    "destination": "/learn/blog",
+    "permanent": true
+  },
+  {
+    "source": "/boon-exec",
+    "destination": "/solutions/exec",
+    "permanent": true
+  },
+  {
+    "source": "/boon-exec/",
+    "destination": "/solutions/exec",
+    "permanent": true
+  },
+  {
+    "source": "/boon-scale",
+    "destination": "/solutions/scale",
+    "permanent": true
+  },
+  {
+    "source": "/boon-scale/",
+    "destination": "/solutions/scale",
+    "permanent": true
+  },
+  {
+    "source": "/how-it-works",
+    "destination": "/solutions",
+    "permanent": true
+  },
+  {
+    "source": "/how-it-works/",
+    "destination": "/solutions",
+    "permanent": true
+  },
+  {
+    "source": "/schedule-demo",
+    "destination": "/demo",
+    "permanent": true
+  },
+  {
+    "source": "/schedule-demo/",
+    "destination": "/demo",
+    "permanent": true
+  },
+  {
+    "source": "/boon-together",
+    "destination": "/solutions/together",
+    "permanent": true
+  },
+  {
+    "source": "/boon-together/",
+    "destination": "/solutions/together",
+    "permanent": true
+  },
+  {
+    "source": "/boon-grow",
+    "destination": "/solutions/grow",
+    "permanent": true
+  },
+  {
+    "source": "/boon-grow/",
+    "destination": "/solutions/grow",
+    "permanent": true
+  },
+  {
+    "source": "/our-story",
+    "destination": "/story",
+    "permanent": true
+  },
+  {
+    "source": "/our-story/",
+    "destination": "/story",
+    "permanent": true
+  },
+  {
+    "source": "/case-study-energage",
+    "destination": "/learn/case-studies/energage",
+    "permanent": true
+  },
+  {
+    "source": "/case-study-energage/",
+    "destination": "/learn/case-studies/energage",
+    "permanent": true
+  },
+  {
+    "source": "/content",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/content/",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/home",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/home/",
+    "destination": "/",
+    "permanent": true
   }
 ]

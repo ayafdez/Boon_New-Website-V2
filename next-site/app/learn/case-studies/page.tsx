@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { generatePageMetadata } from '@/lib/seo';
-import { getCaseStudies } from '@/lib/content';
+import { generatePageMetadata, generateBreadcrumbJsonLd } from '@/lib/seo';
+import { getCaseStudies, programColors } from '@/lib/content';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Case Studies',
@@ -11,17 +11,18 @@ export const metadata: Metadata = generatePageMetadata({
   path: '/learn/case-studies',
 });
 
-const programColors = {
-  Scale: '#466FF6',
-  Grow: '#FF8D80',
-  Exec: '#2E353D',
-  Together: '#FDB022',
-};
-
 export default async function CaseStudiesPage() {
   const caseStudies = await getCaseStudies();
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Learn', path: '/learn' },
+    { name: 'Case Studies', path: '/learn/case-studies' },
+  ]);
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
     <main className="bg-white">
       {/* Hero */}
       <section className="pt-32 pb-24 px-6 md:px-12 lg:px-24">
@@ -64,9 +65,9 @@ export default async function CaseStudiesPage() {
                   </div>
                 </div>
                 <div className="p-10">
-                  <h3 className="text-2xl font-black text-[#2E353D] mb-4 group-hover:text-[#466FF6] transition-colors">
+                  <h2 className="text-2xl font-black text-[#2E353D] mb-4 group-hover:text-[#466FF6] transition-colors">
                     {study.title}
-                  </h3>
+                  </h2>
                   <p className="text-gray-500 font-medium leading-relaxed mb-6">{study.summary}</p>
                   <div className="flex flex-wrap gap-2">
                     {study.tags.map((tag) => (
@@ -85,5 +86,6 @@ export default async function CaseStudiesPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

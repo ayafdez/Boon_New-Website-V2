@@ -52,7 +52,7 @@ export const DemoPage: React.FC = () => {
         <div className="w-24 h-24 bg-[#E6F8F0] rounded-full flex items-center justify-center text-[#4CD995] mb-12 animate-bounce">
           <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
         </div>
-        <h1 className="text-5xl md:text-7xl font-black text-[#2E353D] mb-8 tracking-tighter">Thanks — we’ve got your request.</h1>
+        <h1 className="text-5xl md:text-7xl font-black text-[#2E353D] mb-8 tracking-tighter">Thanks, we've got your request.</h1>
         <p className="text-xl text-gray-500 font-medium max-w-2xl leading-relaxed">
           Someone from our team will follow up ASAP to confirm next steps and suggest times. We review every request personally.
         </p>
@@ -150,7 +150,7 @@ export const DemoPage: React.FC = () => {
                   </div>
                   <div className="flex justify-between text-sm font-bold">
                     <span className="text-gray-400">Priority</span>
-                    <span className="text-[#2E353D]">{formData.timeline === 'IMMEDIATE' ? 'Urgent' : formData.timeline === '1-3-MONTHS' ? '1-3 months' : formData.timeline === 'FUTURE' ? 'Planning' : '—'}</span>
+                    <span className="text-[#2E353D]">{formData.timeline === 'IMMEDIATE' ? 'Urgent' : formData.timeline === '1-3-MONTHS' ? '1-3 months' : formData.timeline === 'FUTURE' ? 'Planning' : '-'}</span>
                   </div>
                   <div className="flex justify-between text-sm font-bold">
                     <span className="text-gray-400">Availability</span>

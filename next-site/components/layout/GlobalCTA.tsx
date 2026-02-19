@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function GlobalCTA() {
   return (
-    <section className="py-40 px-6 md:px-12 lg:px-24 bg-boon-navy text-white text-center relative overflow-hidden">
+    <section className="py-20 md:py-40 px-6 md:px-12 lg:px-24 bg-boon-navy text-white text-center relative overflow-hidden">
       {/* Overlapping gradient blobs */}
       <div
         className="absolute top-[10%] right-[5%] w-[40%] h-[60%] pointer-events-none"
@@ -29,7 +29,7 @@ export function GlobalCTA() {
       ></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="font-sans text-5xl md:text-7xl font-bold mb-10 tracking-tight leading-[0.9]">
+        <h2 className="font-sans text-2xl md:text-4xl lg:text-7xl font-bold mb-10 tracking-tight leading-tight lg:leading-[0.9]">
           Built for how people <span className="font-serif italic text-boon-coral">actually grow</span>.
         </h2>
         <p className="text-xl mb-16 text-white/70 font-body font-medium max-w-2xl mx-auto leading-relaxed">
@@ -38,7 +38,7 @@ export function GlobalCTA() {
         </p>
         <Link
           href="/demo"
-          className="inline-block bg-boon-coral text-white px-8 py-4 rounded-[15px] font-sans font-bold text-2xl hover:scale-105 transition-all shadow-2xl shadow-boon-coral/30"
+          className="inline-block bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-full font-sans font-bold text-lg md:text-2xl hover:scale-105 transition-all shadow-2xl shadow-boon-coral/30"
         >
           Schedule a Conversation
         </Link>

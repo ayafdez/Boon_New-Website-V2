@@ -32,7 +32,7 @@ const COACHES = [
     name: "Keith Cocking",
     roleGroup: "L&D",
     context: "Ex-Learning Strategy leader at The Home Depot",
-    quote: "I help managers find their footing—especially when they're not sure what kind of leader they want to be.",
+    quote: "I help managers find their footing, especially when they're not sure what kind of leader they want to be.",
     img: "https://storage.googleapis.com/boon-public-assets/coking.png"
   },
   {
@@ -279,12 +279,12 @@ export const HomePage: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) 
               <button 
                 key={item.id}
                 onClick={() => setPage(item.id as Page)}
-                className="reveal p-14 bg-white rounded-[64px] text-left border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all h-full flex flex-col justify-between group overflow-hidden"
+                className="reveal p-10 lg:p-8 xl:p-14 bg-white rounded-[64px] text-left border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all h-full flex flex-col justify-between group overflow-hidden"
               >
-                <div className="absolute top-10 left-14 w-10 h-[2px]" style={{ backgroundColor: item.color }}></div>
+                <div className="absolute top-10 left-10 lg:left-8 xl:left-14 w-10 h-[2px]" style={{ backgroundColor: item.color }}></div>
                 <div className="pt-6">
                   <div className="text-[#2E353D] mb-12 group-hover:scale-110 group-hover:text-[#466FF6] transition-all origin-left">{item.icon}</div>
-                  <h3 className="text-3xl font-black">Boon <span style={{ color: item.color }}>{item.name}</span></h3>
+                  <h3 className="text-2xl lg:text-[1.35rem] xl:text-3xl font-black whitespace-nowrap">Boon <span style={{ color: item.color }}>{item.name}</span></h3>
                   <p className="text-gray-500 font-medium text-base leading-relaxed">{item.desc}</p>
                 </div>
                 <div className="mt-16 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-300 group-hover:text-[#466FF6]">
@@ -292,6 +292,19 @@ export const HomePage: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) 
                 </div>
               </button>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4b. Product Preview */}
+      <section className="pb-48 px-6 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto reveal">
+          <div className="rounded-[48px] md:rounded-[64px] overflow-hidden shadow-2xl border border-gray-100">
+            <img
+              src="https://storage.googleapis.com/boon-public-assets/togetherdash.png"
+              alt="Boon unified leadership dashboard"
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
@@ -364,7 +377,7 @@ export const HomePage: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) 
                 We don’t just measure activity. We measure behavioral change that actually compounds.
               </p>
               <p className="text-xl text-[#2E353D] font-bold leading-relaxed">
-                CPOs get an anonymized, board-ready view of where leadership capability is strengthening across the organization.
+                AI-powered insights give your executive team a real-time, anonymized view of where leadership capability is strengthening across the organization.
               </p>
               <div className="pt-4">
                 <a 

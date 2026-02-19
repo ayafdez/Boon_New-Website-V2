@@ -1,7 +1,9 @@
 import type { MetadataRoute } from 'next';
-import { getCaseStudySlugs, getBlogPostSlugs } from '@/lib/content';
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.boon.coach';
+import { getCaseStudySlugs } from '@/lib/content';
+import { siteUrl } from '@/lib/seo';
+import { allBlogs } from 'contentlayer/generated';
+import { allPodcasts } from 'contentlayer/generated';
+import { allBoonLives } from 'contentlayer/generated';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages
@@ -12,7 +14,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/solutions/grow',
     '/solutions/exec',
     '/solutions/together',
-    '/why',
     '/story',
     '/coaches',
     '/individuals',
@@ -41,14 +42,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Dynamic blog posts
-  const blogSlugs = await getBlogPostSlugs();
-  const blogRoutes: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `${siteUrl}/blog/${slug}`,
-    lastModified: new Date(),
+  // Dynamic blog posts from Contentlayer
+  const blogRoutes: MetadataRoute.Sitemap = allBlogs.map((post) => ({
+    url: `${siteUrl}/learn/blog/${post.slug}`,
+    lastModified: post.date ? new Date(post.date) : new Date(),
     changeFrequency: 'weekly',
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes];
+  // Dynamic podcast episodes from Contentlayer
+  const podcastRoutes: MetadataRoute.Sitemap = allPodcasts.map((episode) => ({
+    url: `${siteUrl}/learn/podcast/${episode.slug}`,
+    lastModified: episode.date ? new Date(episode.date) : new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }));
+
+  // Dynamic live events from Contentlayer
+  const liveRoutes: MetadataRoute.Sitemap = allBoonLives.map((event) => ({
+    url: `${siteUrl}/learn/live/${event.slug}`,
+    lastModified: event.date ? new Date(event.date) : new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes, ...podcastRoutes, ...liveRoutes];
 }

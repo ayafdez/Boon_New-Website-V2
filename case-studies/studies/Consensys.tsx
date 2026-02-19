@@ -23,7 +23,7 @@ export const ConsensysStudy: React.FC<{ onBack: () => void }> = ({ onBack }) => 
       approach={
         <>
           <p>Consensys deployed <strong>Boon Together</strong> to facilitate synchronous cohort experiences for their geographically distributed leadership team. The program focused on building a 'Common Operating Language' for high-stakes remote communication.</p>
-          <p>Unlike traditional seminars, the Boon approach centered on peer-to-peer reflection. Groups of 8 leaders met bi-weekly with an ICF-certified coach to stress-test their real-world management hurdles—from async conflict resolution to scaling high-candor feedback cultures.</p>
+          <p>Unlike traditional seminars, the Boon approach centered on peer-to-peer reflection. Groups of 8 leaders met bi-weekly with an ICF-certified coach to stress-test their real-world management hurdles, from async conflict resolution to scaling high-candor feedback cultures.</p>
         </>
       }
       whatChanged={[

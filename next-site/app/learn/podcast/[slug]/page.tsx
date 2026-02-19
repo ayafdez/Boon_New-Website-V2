@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { allPodcasts } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 import { format, parseISO } from 'date-fns';
+import { generatePodcastEpisodeJsonLd, siteUrl } from '@/lib/seo';
 
 interface PageProps {
   params: { slug: string };
@@ -103,7 +104,20 @@ export default function PodcastEpisodePage({ params }: PageProps) {
   const body = episode.body as unknown as { code?: string; raw?: string };
   const bodyCode = body?.code;
 
+  const episodeJsonLd = generatePodcastEpisodeJsonLd({
+    name: title,
+    datePublished: episode.date,
+    duration: episode.duration,
+    episodeNumber: episode.episodeNumber,
+    description: episode.excerpt || episode.description,
+    url: `${siteUrl}/learn/podcast/${episode.slug}`,
+    spotifyUrl: episode.spotifyUrl,
+    appleUrl: episode.appleUrl,
+  });
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeJsonLd) }} />
     <main className="bg-white min-h-screen">
       {/* Hero Section with Video */}
       <section className="pt-32 pb-12 px-6 md:px-12 lg:px-24 bg-gradient-to-br from-boon-light-blue/30 via-white to-boon-soft-coral/10">
@@ -471,5 +485,6 @@ export default function PodcastEpisodePage({ params }: PageProps) {
         </div>
       </section>
     </main>
+    </>
   );
 }

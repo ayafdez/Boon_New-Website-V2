@@ -9,10 +9,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      borderRadius: {
-        'container': '35px',
-        'btn': '15px',
-      },
       colors: {
         // Primary Brand Colors
         'boon-blue': '#466FF6',

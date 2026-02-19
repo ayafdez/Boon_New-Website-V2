@@ -79,13 +79,13 @@ export const StoryPage: React.FC = () => {
             </h2>
             <div className="space-y-6 text-gray-500 text-lg font-medium leading-relaxed">
               <p className="text-[#2E353D] font-bold">
-                We learned this the hard way—inside systems that optimized for output and ignored the people producing it.
+                We learned this the hard way, inside systems that optimized for output and ignored the people producing it.
               </p>
               <p>
                 Alex Simmons spent the early part of his career in the high-stakes world of finance. It was a system optimized for output, not durability. Performance was measured relentlessly. Leadership capability wasn’t measured at all.
               </p>
               <p>
-                Like many in high-growth environments, the weight of the work eventually led to burnout. It was a turning point that felt both personal and structural. During this period, Alex found a coach—a professional partner who helped him navigate the transition from reaction to intention.
+                Like many in high-growth environments, the weight of the work eventually led to burnout. It was a turning point that felt both personal and structural. During this period, Alex found a coach, a professional partner who helped him navigate the transition from reaction to intention.
               </p>
               <p>
                 That experience revealed a structural failure in how organizations develop leaders. Coaching worked, but only for the few. Everyone else was expected to figure it out on their own, under pressure. Boon was built to bridge that gap, making world-class support a standard resource for every level of an organization.
@@ -107,7 +107,7 @@ export const StoryPage: React.FC = () => {
             </div>
             <div>
               <h4 className="text-xl font-black mb-4">Organizational resilience is built or broken in the middle.</h4>
-              <p className="text-gray-400 text-sm leading-relaxed">Strategy doesn’t scale—behavior does. We ensure that entry-level managers and individual contributors have the tools to lead themselves.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">Strategy doesn't scale; behavior does. We ensure that entry-level managers and individual contributors have the tools to lead themselves.</p>
             </div>
             <div>
               <h4 className="text-xl font-black mb-4">Generic programs create insight. Personalized coaching creates behavior change.</h4>
@@ -190,7 +190,7 @@ export const StoryPage: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="text-4xl mb-12 opacity-20">“</div>
           <p className="text-2xl md:text-4xl font-black leading-tight mb-12 tracking-tight">
-            “The most authentic professional environment I've ever been part of. We don't hide from the hard parts of scaling—we coach through them.”
+            “The most authentic professional environment I've ever been part of. We don't hide from the hard parts of scaling. We coach through them.”
           </p>
           <div className="flex flex-col items-center gap-2">
             <div className="w-12 h-12 bg-[#466FF6] rounded-full mb-2"></div>

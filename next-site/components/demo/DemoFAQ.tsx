@@ -11,12 +11,12 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex justify-between items-center py-8 text-left group transition-all"
       >
-        <h4 className="text-xl font-bold text-[#2E353D] group-hover:text-[#466FF6] transition-colors">
+        <h3 className="text-xl font-sans font-bold text-boon-charcoal group-hover:text-boon-blue transition-colors">
           {question}
-        </h4>
+        </h3>
         <div
           className={`w-8 h-8 rounded-full border border-gray-100 flex items-center justify-center transition-all ${
-            isOpen ? 'bg-[#466FF6] border-[#466FF6] text-white rotate-45' : 'text-gray-400'
+            isOpen ? 'bg-boon-blue border-boon-blue text-white rotate-45' : 'text-gray-400'
           }`}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29,7 +29,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           isOpen ? 'max-h-[300px] pb-8 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <p className="text-gray-500 font-medium leading-relaxed">{answer}</p>
+        <p className="text-gray-500 font-body font-medium leading-relaxed">{answer}</p>
       </div>
     </div>
   );
@@ -40,8 +40,10 @@ export function DemoFAQ({ faqs }: { faqs: Array<{ question: string; answer: stri
     <section className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-7xl font-black text-[#2E353D] tracking-tighter mb-4">Questions.</h2>
-          <p className="text-gray-400 font-bold italic">Clear answers to common questions.</p>
+          <p className="label-text text-[10px] text-boon-blue mb-4">FAQ</p>
+          <div className="w-12 h-0.5 bg-boon-blue mx-auto mb-8"></div>
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-7xl font-bold text-boon-charcoal tracking-tight mb-4">Questions.</h2>
+          <p className="text-gray-400 font-body font-medium leading-relaxed">Clear answers to common questions.</p>
         </div>
         <div className="border-t border-gray-100">
           {faqs.map((faq, i) => (

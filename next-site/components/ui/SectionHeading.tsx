@@ -34,7 +34,7 @@ export function SectionHeading({ overline, title, subtitle, light, emphasisWord 
         {overline}
       </p>
       <h2
-        className={`font-sans text-4xl md:text-5xl font-bold mb-6 tracking-tight ${
+        className={`font-sans text-2xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight ${
           light ? 'text-white' : 'text-boon-charcoal'
         } leading-tight`}
       >
@@ -42,7 +42,7 @@ export function SectionHeading({ overline, title, subtitle, light, emphasisWord 
       </h2>
       {subtitle && (
         <p
-          className={`text-lg md:text-xl font-body font-medium ${
+          className={`text-base md:text-lg lg:text-xl font-body font-medium ${
             light ? 'text-white/60' : 'text-gray-500'
           } leading-relaxed`}
         >

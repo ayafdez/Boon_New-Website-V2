@@ -30,7 +30,7 @@ export function Navbar() {
   const startsWithPath = (path: string) => pathname?.startsWith(path);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-4 px-6 md:px-12 lg:px-24 flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm py-4 px-6 md:px-12 lg:px-24 flex justify-between items-center">
       <div className="flex items-center gap-10">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Image
@@ -156,18 +156,15 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center gap-4">
-        <button className="hidden sm:block text-boon-charcoal font-body font-semibold text-sm hover:text-boon-blue px-4 transition-colors">
-          Log In
-        </button>
         <Link
           href="/demo"
-          className="bg-boon-coral text-white px-6 py-2.5 rounded-lg hover:bg-boon-light-coral transition-all font-sans font-bold shadow-lg shadow-boon-coral/20 text-sm"
+          className="bg-boon-coral text-white px-4 py-2 md:px-6 md:py-2.5 rounded-lg hover:bg-boon-light-coral transition-all font-sans font-bold shadow-lg shadow-boon-coral/20 text-sm"
         >
           Book Demo
         </Link>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-gray-600"
+          className="lg:hidden p-3 -mr-1 text-gray-600"
           aria-label="Toggle mobile menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,7 +197,7 @@ export function Navbar() {
             <Link
               href="/solutions"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-left text-2xl font-sans font-bold text-boon-charcoal"
+              className="block w-full text-left text-xl font-sans font-bold text-boon-charcoal py-1"
             >
               Overview
             </Link>
@@ -209,7 +206,7 @@ export function Navbar() {
                 key={p}
                 href={`/solutions/${p}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-left text-2xl font-sans font-bold text-boon-charcoal"
+                className="block w-full text-left text-xl font-sans font-bold text-boon-charcoal py-1"
               >
                 Boon {p.toUpperCase()}
               </Link>
@@ -220,31 +217,41 @@ export function Navbar() {
             <Link
               href="/learn"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-left text-2xl font-sans font-bold text-boon-charcoal"
+              className="block w-full text-left text-xl font-sans font-bold text-boon-charcoal py-1"
             >
               Learn Hub
             </Link>
+            {learnItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full text-left text-xl font-sans font-bold text-boon-charcoal py-1"
+              >
+                {item.name}
+              </Link>
+            ))}
             <p className="label-text text-[10px] text-gray-400 border-b border-gray-100 pb-2 mt-12">
               Company
             </p>
             <Link
               href="/story"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-left text-2xl font-sans font-bold text-boon-charcoal"
+              className="block w-full text-left text-xl font-sans font-bold text-boon-charcoal py-1"
             >
               Our Story
             </Link>
             <Link
               href="/coaches"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-left text-2xl font-sans font-bold text-boon-charcoal"
+              className="block w-full text-left text-xl font-sans font-bold text-boon-charcoal py-1"
             >
               For Coaches
             </Link>
             <Link
               href="/individuals"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full text-left text-2xl font-sans font-bold text-boon-charcoal"
+              className="block w-full text-left text-xl font-sans font-bold text-boon-charcoal py-1"
             >
               For Individuals
             </Link>

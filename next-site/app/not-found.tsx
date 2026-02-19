@@ -38,7 +38,7 @@ export default function NotFound() {
 
           <Link
             href="/demo"
-            className="inline-block bg-[#466FF6] text-white px-12 py-6 rounded-full font-black text-2xl hover:scale-105 transition-all shadow-2xl"
+            className="inline-block bg-[#466FF6] text-white px-8 py-4 md:px-12 md:py-6 rounded-full font-black text-lg md:text-2xl hover:scale-105 transition-all shadow-2xl"
           >
             Book a Demo
           </Link>

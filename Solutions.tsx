@@ -113,7 +113,7 @@ export const SolutionsPage: React.FC<{ setPage: (p: Page) => void }> = ({ setPag
           <SectionHeading 
             overline="Our Philosophy" 
             title="Growth as a utility, not an event."
-            subtitle="We view coaching as an ongoing, practical resource—a utility that powers the human side of your business."
+            subtitle="We view coaching as an ongoing, practical resource, a utility that powers the human side of your business."
           />
           <p className="text-lg md:text-xl font-medium text-gray-400 leading-relaxed -mt-10 max-w-2xl mx-auto">
             We view coaching as an ongoing, practical resource. Organizations typically start with one entry point and expand as needs evolve, choosing the mix, emphasis, and pace based on where growth pressure is highest.
@@ -264,7 +264,7 @@ export const SolutionsPage: React.FC<{ setPage: (p: Page) => void }> = ({ setPag
             <AccordionItem 
               index="03"
               title="You see progress without surveilling people" 
-              content="Success is measured by signal that leadership can actually use—sentiment shifts, retention indicators, and core competency development." 
+              content="Success is measured by signal that leadership can actually use: sentiment shifts, retention indicators, and core competency development." 
             />
             <AccordionItem 
               index="04"
@@ -275,64 +275,151 @@ export const SolutionsPage: React.FC<{ setPage: (p: Page) => void }> = ({ setPag
         </div>
       </section>
 
-      {/* Product Artifact Section: Grounded Data Visualization */}
+      {/* Platform Intelligence: Visibility, Integrations & Dashboards */}
       <section className="py-32 px-6 md:px-12 lg:px-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
-          <div className="relative">
-             <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#466FF6]/5 blur-[80px] rounded-full"></div>
-             <div className="relative bg-[#F9FAFB] p-8 md:p-12 rounded-[60px] border border-gray-100 shadow-sm overflow-hidden">
-                <div className="flex justify-between items-center mb-10">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-400/20"></div>
-                    <div className="w-3 h-3 rounded-full bg-amber-400/20"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400/20"></div>
-                  </div>
-                  <div className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Aggregate Sentiment Report</div>
-                </div>
-                
-                {/* Mock UI Artifact */}
-                <div className="space-y-6 blur-[1px] opacity-70">
-                   <div className="h-8 bg-white rounded-lg w-2/3 shadow-sm border border-gray-50"></div>
-                   <div className="grid grid-cols-3 gap-4">
-                      <div className="h-24 bg-white rounded-2xl shadow-sm border border-gray-50"></div>
-                      <div className="h-24 bg-[#466FF6]/10 rounded-2xl shadow-sm border border-[#466FF6]/20"></div>
-                      <div className="h-24 bg-white rounded-2xl shadow-sm border border-gray-50"></div>
-                   </div>
-                   <div className="space-y-3">
-                      <div className="h-3 bg-gray-100 rounded-full w-full"></div>
-                      <div className="h-3 bg-gray-100 rounded-full w-5/6"></div>
-                      <div className="h-3 bg-gray-100 rounded-full w-4/6"></div>
-                   </div>
-                </div>
-                
-                <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
-                   <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white max-w-sm">
-                      <p className="text-sm font-black text-[#2E353D] mb-2 uppercase tracking-tight">Meaningful Measurement</p>
-                      <p className="text-xs text-gray-500 font-medium">Boon provides an anonymized view of workforce themes—identifying burnout markers and growth trends before they impact performance.</p>
-                   </div>
-                </div>
-             </div>
-          </div>
-          <div>
-            <p className="text-[#466FF6] font-black text-[10px] tracking-widest uppercase mb-6">The Outcome</p>
-            <h2 className="text-5xl md:text-7xl font-black text-[#2E353D] leading-[0.9] mb-10 tracking-tighter">Leadership signal that informs decisions, not dashboards.</h2>
-            <p className="text-lg text-gray-500 font-medium leading-relaxed mb-10">
-              Traditional surveys capture how people feel at a moment in time. Boon surfaces evolving development themes so leaders can act while change is still possible.
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-[#466FF6] font-black text-[10px] tracking-widest uppercase mb-6">Platform Intelligence</p>
+            <h2 className="text-4xl md:text-6xl font-black text-[#2E353D] tracking-tighter leading-tight mb-6">
+              Built into the tools your team already uses.
+            </h2>
+            <p className="text-lg text-gray-500 font-medium max-w-3xl mx-auto leading-relaxed">
+              Real-time development insights, Slack-native nudges, and manager dashboards that surface leadership signal without adding work.
             </p>
-            <div className="flex items-center gap-4 group cursor-pointer">
-               <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#466FF6] group-hover:text-white transition-all">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-               </div>
-               <span className="text-sm font-black uppercase tracking-widest text-gray-400 group-hover:text-[#2E353D]">View Sample Report</span>
+          </div>
+
+          {/* UI Mockup Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Growth Areas Card */}
+            <div className="bg-[#F9FAFB] rounded-[40px] p-8 border border-gray-100 shadow-sm">
+              <div className="flex justify-between items-center mb-8">
+                <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Growth Areas</div>
+                <div className="text-[9px] font-black text-[#6CD893] bg-[#6CD893]/10 px-3 py-1 rounded-full">Live</div>
+              </div>
+              <div className="space-y-5">
+                {[
+                  { label: 'Confidence in Decision-Making', pct: 85, color: '#466FF6' },
+                  { label: 'Navigating Difficult Conversations', pct: 72, color: '#466FF6' },
+                  { label: 'Strategic Prioritization', pct: 68, color: '#FDB022' },
+                  { label: 'Cross-Functional Influence', pct: 61, color: '#FF8D80' },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-xs font-bold text-[#2E353D]">{item.label}</span>
+                      <span className="text-xs font-black" style={{ color: item.color }}>{item.pct}%</span>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${item.pct}%`, backgroundColor: item.color }}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[9px] text-gray-400 font-medium mt-6">Anonymized, aggregated across coached population.</p>
             </div>
+
+            {/* Slack Integration Cards */}
+            <div className="space-y-8">
+              {/* Coach Match Notification */}
+              <div className="bg-[#F9FAFB] rounded-[40px] p-8 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 bg-[#4A154B] rounded-lg flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/>
+                    </svg>
+                  </div>
+                  <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Slack Integration</div>
+                </div>
+                <div className="bg-white rounded-2xl p-5 border border-gray-100">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-6 h-6 rounded-full bg-[#466FF6] flex items-center justify-center">
+                      <span className="text-white text-[8px] font-black">B</span>
+                    </div>
+                    <span className="text-sm font-black text-[#2E353D]">New Coach Match</span>
+                  </div>
+                  <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                    Your coach <span className="font-bold text-[#2E353D]">Keith Cocking</span> has been matched based on your role and development goals.
+                  </p>
+                  <div className="flex gap-2">
+                    <span className="text-[9px] font-black text-[#466FF6] bg-[#466FF6]/10 px-3 py-1 rounded-full">View Profile</span>
+                    <span className="text-[9px] font-black text-[#2E353D] bg-gray-100 px-3 py-1 rounded-full">Book First Session</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Items Notification */}
+              <div className="bg-[#F9FAFB] rounded-[40px] p-8 border border-gray-100 shadow-sm">
+                <div className="bg-white rounded-2xl p-5 border border-gray-100">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-6 h-6 rounded-full bg-[#466FF6] flex items-center justify-center">
+                      <span className="text-white text-[8px] font-black">B</span>
+                    </div>
+                    <span className="text-sm font-black text-[#2E353D]">Action Items from Session</span>
+                  </div>
+                  <div className="space-y-3 mb-4">
+                    {[
+                      'Practice active listening in next 1:1',
+                      'Schedule skip-level conversation',
+                      'Draft 30-day development plan',
+                    ].map((item) => (
+                      <div key={item} className="flex items-center gap-3">
+                        <div className="w-4 h-4 rounded border border-gray-200 flex-shrink-0"></div>
+                        <span className="text-xs text-gray-600">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <span className="text-[9px] font-bold text-gray-400">Due: Feb 28</span>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI Dashboard Card */}
+            <div className="bg-[#F9FAFB] rounded-[40px] p-8 border border-gray-100 shadow-sm flex flex-col">
+              <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-8">Manager Dashboard</div>
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  { label: 'Active Sessions', value: '847', sub: 'this quarter' },
+                  { label: 'Utilization', value: '73%', sub: 'of available hours' },
+                  { label: 'Coachee NPS', value: '78', sub: 'rolling 90-day' },
+                  { label: 'Coach Rating', value: '4.8', sub: 'avg satisfaction' },
+                ].map((stat) => (
+                  <div key={stat.label} className="bg-white rounded-2xl p-5 border border-gray-100 text-center">
+                    <div className="text-2xl font-black text-[#2E353D] tracking-tight">{stat.value}</div>
+                    <div className="text-[9px] font-black text-[#466FF6] uppercase tracking-widest mt-1">{stat.label}</div>
+                    <div className="text-[8px] text-gray-400 font-medium mt-1">{stat.sub}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-white rounded-2xl p-5 border border-gray-100 mt-auto">
+                <div className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-3">Team Development Trend</div>
+                <div className="flex items-end gap-1 h-16">
+                  {[35, 42, 38, 55, 48, 62, 58, 70, 65, 78, 72, 85].map((h, i) => (
+                    <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h}%`, backgroundColor: i >= 10 ? '#466FF6' : i >= 8 ? '#466FF6CC' : '#466FF640' }}></div>
+                  ))}
+                </div>
+                <div className="flex justify-between mt-2">
+                  <span className="text-[8px] text-gray-400 font-medium">Jan</span>
+                  <span className="text-[8px] text-gray-400 font-medium">Dec</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Full-width product screenshot */}
+          <div className="rounded-[48px] md:rounded-[64px] overflow-hidden shadow-2xl border border-gray-100">
+            <img
+              src="https://storage.googleapis.com/boon-public-assets/togetherdash.png"
+              alt="Boon unified leadership dashboard"
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
 
-      {/* How Organizations Use Boon */}
+      {/* What To Expect Next */}
       <section className="py-32 px-6 md:px-12 lg:px-24 bg-gray-50">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-start">
            <div>
+              <p className="text-[#466FF6] font-black text-[10px] tracking-widest uppercase mb-6">What To Expect Next</p>
               <h2 className="text-4xl md:text-6xl font-black text-[#2E353D] leading-tight mb-8 tracking-tighter">Flexibility without the complexity.</h2>
               <p className="text-lg text-gray-500 font-medium leading-relaxed mb-12">
                 We help organizations choose the right entry point for their current stage, then expand deliberately as value becomes clear.

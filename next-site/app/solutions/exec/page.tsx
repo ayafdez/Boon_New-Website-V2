@@ -1,455 +1,878 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
-import { generatePageMetadata, generateServiceJsonLd } from '@/lib/seo';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { Shield, CheckCircle2, Brain, MessageSquare, Target, Users, Lock, Eye } from 'lucide-react';
+import { generatePageMetadata, generateServiceJsonLd, generateBreadcrumbJsonLd, generateFAQJsonLd, siteUrl } from '@/lib/seo';
+import { ProductHero } from '@/components/solutions/ProductHero';
+import { TippingPoints } from '@/components/solutions/TippingPoints';
+import { CoherentSystem } from '@/components/solutions/CoherentSystem';
+import { ProductPricing } from '@/components/solutions/ProductPricing';
+import { ProductTestimonials } from '@/components/solutions/ProductTestimonials';
+import { ProductFAQ } from '@/components/solutions/ProductFAQ';
+import { ProductCTA } from '@/components/solutions/ProductCTA';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Boon EXEC - Executive Coaching for Senior Leaders',
   description:
     'A confidential space for senior leaders navigating decisions where clarity, consequence, and timing matter. Precision in high-stakes leadership.',
   path: '/solutions/exec',
+  ogDescription: 'Confidential executive coaching for senior leaders navigating high-stakes decisions. Precision when clarity, consequence, and timing matter most.',
 });
 
-// Icon components
-function BoundaryIcon() {
-  return (
-    <svg className="w-6 h-6 text-[#2E353D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-      <path d="M4 8V4h4m8 0h4v4m0 8v4h-4m-8 0H4v-4" />
-      <rect x="9" y="9" width="6" height="6" strokeDasharray="1 1" />
-    </svg>
-  );
-}
-
-function PrecisionIcon() {
-  return (
-    <svg className="w-6 h-6 text-[#2E353D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-      <path d="M12 2v20M2 12h20" strokeOpacity="0.1" />
-      <circle cx="12" cy="12" r="1" fill="currentColor" />
-      <circle cx="12" cy="12" r="6" />
-    </svg>
-  );
-}
-
-function LeverageIcon() {
-  return (
-    <svg className="w-6 h-6 text-[#2E353D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-      <path d="M3 16h18" />
-      <path d="M11 16l1-2 1 2h-2z" fill="currentColor" />
-      <circle cx="5" cy="10" r="1.5" />
-      <circle cx="19" cy="4" r="1.5" />
-      <path d="M5 11.5L19 5.5" strokeDasharray="2 2" />
-    </svg>
-  );
-}
-
-function MinimalIcon({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative w-20 h-20 flex items-center justify-center mb-12 border border-gray-100 bg-white shadow-sm rounded-lg transition-all duration-500 group-hover:border-[#466FF6]/30 group-hover:scale-110">
-      <div className="relative z-10 opacity-70 group-hover:opacity-100 transition-opacity">
-        {children}
-      </div>
-    </div>
-  );
-}
 
 export default function ExecPage() {
   const jsonLd = generateServiceJsonLd({
     name: 'Boon EXEC',
     description:
       'A confidential space for senior leaders navigating high-stakes decisions. Precision in executive leadership.',
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/solutions/exec`,
+    url: `${siteUrl}/solutions/exec`,
   });
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Solutions', path: '/solutions' },
+    { name: 'Exec', path: '/solutions/exec' },
+  ]);
+
+  const faqJsonLd = generateFAQJsonLd([
+    { question: 'How is Boon EXEC different from hiring an executive coach independently?', answer: 'Independent coaches are uncoordinated. Boon EXEC is part of a leadership system. Your coaching connects to how the rest of your organization is developing. Plus, our matching process is structured around operating style and industry context, not just referrals.' },
+    { question: 'Is session content shared with my organization?', answer: 'Never. Absolute discretion is foundational to EXEC. Your sponsor receives progress summaries at midpoint and close showing focus areas and engagement quality without any session content or personal details.' },
+    { question: 'What seniority levels does EXEC serve?', answer: 'C-suite, SVP, VP, and senior director-level leaders. The common thread is not title but the weight of the decisions being made and the need for a confidential space to calibrate.' },
+    { question: 'How do you ensure coach quality at this level?', answer: 'Every EXEC coach has held senior operating roles (CEO, CFO, COO, SVP). They are vetted for operator depth, not just coaching certification. If the match is not right, we rematch within 48 hours.' },
+    { question: 'Can EXEC be part of a broader organizational engagement?', answer: 'Yes. EXEC integrates with SCALE, GROW, and TOGETHER. Many organizations run EXEC for the senior team while using GROW for managers and SCALE for the broader workforce, creating coherent development at every level.' },
+  ]);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <main className="bg-white text-[#2E353D] overflow-hidden">
-        {/* 1. Hero Section */}
-        <section className="bg-boon-navy pt-40 pb-44 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-          {/* Animated floating gradient blob - Blue (top right) */}
-          <div
-            className="absolute -top-[10%] -right-[10%] w-[45%] h-[60%] pointer-events-none"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.35) 0%, rgba(70, 111, 246, 0.15) 30%, transparent 70%)',
-              filter: 'blur(70px)',
-            }}
-          ></div>
+        {/* 1. Hero (dark variant) */}
+        <ProductHero
+          productName="Boon EXEC"
+          accentColor="#C9A55C"
+          accentBg="#FBF5E8"
+          darkMode
+          headline={
+            <>
+              Precision in high-stakes{' '}
+              <span className="text-[#C9A55C] font-serif italic">leadership</span>.
+            </>
+          }
+          subtitle="A thinking partner for the decisions only you can make."
+          ctaPrimary={{ text: 'Initiate a Confidential Inquiry', href: '/demo' }}
+          heroImage="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000"
+          heroImageAlt="High-stakes leadership calibration"
+        />
 
-          {/* Animated floating gradient blob - Coral (bottom left) */}
+        {/* 2. The Executive Reality */}
+        <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-[#FAF8F5] relative overflow-hidden">
+          {/* Warm gold glow - top right */}
           <div
-            className="absolute -bottom-[15%] -left-[10%] w-[40%] h-[50%] pointer-events-none"
+            className="absolute -top-[20%] -right-[10%] w-[50%] h-[60%] pointer-events-none"
             style={{
-              background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(255, 141, 128, 0.1) 30%, transparent 70%)',
+              background: 'radial-gradient(ellipse at center, rgba(201, 165, 92, 0.12) 0%, rgba(201, 165, 92, 0.04) 40%, transparent 70%)',
               filter: 'blur(60px)',
             }}
           ></div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+                THE EXECUTIVE REALITY
+              </p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+                At the top, decisions get harder but feedback gets <span className="text-[#C9A55C] font-serif italic">softer.</span>
+              </h2>
+              <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
+                Traditional executive coaching is reactive, isolated, and expensive. Boon EXEC is different.
+              </p>
+            </div>
 
-          {/* Dotted texture overlay */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: Brain,
+                  title: 'Decisions get harder',
+                  description: 'More ambiguity, higher stakes, less clear "right answers"',
+                },
+                {
+                  icon: MessageSquare,
+                  title: 'Feedback gets softer',
+                  description: 'Peers hesitate, reports filter, boards stay high-level',
+                },
+                {
+                  icon: Target,
+                  title: 'Stakes multiply',
+                  description: 'Impact on teams, culture, and business outcomes compounds',
+                },
+                {
+                  icon: Users,
+                  title: 'Isolation increases',
+                  description: 'Fewer peers who truly understand your context',
+                },
+              ].map((challenge, index) => {
+                const Icon = challenge.icon;
+                return (
+                  <div key={index} className="group">
+                    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full">
+                      <div className="p-6">
+                        <div className="w-14 h-14 rounded-xl bg-[#FBF5E8] flex items-center justify-center mx-auto mb-4">
+                          <Icon className="w-7 h-7 text-[#C9A55C]" strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-lg font-bold text-center text-[#2E353D] mb-3">
+                          {challenge.title}
+                        </h3>
+                        <p className="text-sm text-center text-slate-500">
+                          {challenge.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* 3. The Difference - Comparison Table */}
+        <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+                THE DIFFERENCE
+              </p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+                Not your typical executive coaching.
+              </h2>
+              <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
+                Traditional executive coaching is reactive, expensive, and often unclear on ROI. Boon EXEC is designed differently.
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto">
+              {/* Desktop Table */}
+              <div className="hidden md:block bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="grid grid-cols-3 gap-6 p-8 border-b border-gray-200 bg-[#FAF8F5]">
+                  <div></div>
+                  <div className="text-center">
+                    <span className="text-sm font-semibold text-slate-400">
+                      Traditional Coaching
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-sm font-bold text-[#C9A55C]">
+                      Boon EXEC
+                    </span>
+                  </div>
+                </div>
+
+                {[
+                  {
+                    category: 'Timing',
+                    traditional: 'Reactive, called in when there\'s already a problem',
+                    exec: 'Proactive, ongoing strategic partnership',
+                  },
+                  {
+                    category: 'Focus',
+                    traditional: 'Remediation and "fixing" perceived gaps',
+                    exec: 'Sharpening strengths and strategic thinking',
+                  },
+                  {
+                    category: 'Structure',
+                    traditional: 'Ad-hoc, inconsistent cadence',
+                    exec: 'Structured 6-month engagement with clear milestones',
+                  },
+                  {
+                    category: 'Coach Match',
+                    traditional: 'Generic senior coach assignment',
+                    exec: 'Role-specific coach with relevant domain expertise',
+                  },
+                  {
+                    category: 'Confidentiality',
+                    traditional: 'Often unclear what\'s shared with organization',
+                    exec: 'Crystal clear boundaries. Sessions private, progress shared.',
+                  },
+                  {
+                    category: 'Cost',
+                    traditional: '$25K-50K per executive per year',
+                    exec: 'Scalable pricing, cohort-based efficiency',
+                  },
+                ].map((point, index, arr) => (
+                  <div
+                    key={index}
+                    className={`grid grid-cols-3 gap-6 p-6 ${
+                      index !== arr.length - 1 ? 'border-b border-gray-100' : ''
+                    }`}
+                  >
+                    <div className="flex items-center">
+                      <span className="text-sm font-bold text-[#2E353D]">
+                        {point.category}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-center px-4">
+                      <div className="text-center">
+                        <p className="text-sm text-slate-400">
+                          {point.traditional}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center px-4">
+                      <div className="text-center">
+                        <p className="text-sm font-medium text-[#2E353D]">
+                          {point.exec}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile Cards */}
+              <div className="md:hidden space-y-4">
+                {[
+                  {
+                    category: 'Timing',
+                    traditional: 'Reactive, called in when there\'s already a problem',
+                    exec: 'Proactive, ongoing strategic partnership',
+                  },
+                  {
+                    category: 'Focus',
+                    traditional: 'Remediation and "fixing" perceived gaps',
+                    exec: 'Sharpening strengths and strategic thinking',
+                  },
+                  {
+                    category: 'Structure',
+                    traditional: 'Ad-hoc, inconsistent cadence',
+                    exec: 'Structured 6-month engagement with clear milestones',
+                  },
+                  {
+                    category: 'Coach Match',
+                    traditional: 'Generic senior coach assignment',
+                    exec: 'Role-specific coach with relevant domain expertise',
+                  },
+                  {
+                    category: 'Confidentiality',
+                    traditional: 'Often unclear what\'s shared with organization',
+                    exec: 'Crystal clear boundaries. Sessions private, progress shared.',
+                  },
+                  {
+                    category: 'Cost',
+                    traditional: '$25K-50K per executive per year',
+                    exec: 'Scalable pricing, cohort-based efficiency',
+                  },
+                ].map((point, index) => (
+                  <div key={index} className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                    <div className="px-5 py-3 border-b border-gray-100 bg-[#FAF8F5]">
+                      <span className="text-sm font-bold text-[#2E353D]">
+                        {point.category}
+                      </span>
+                    </div>
+                    <div className="p-5 space-y-3">
+                      <div>
+                        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Traditional</p>
+                        <p className="text-sm text-slate-500">
+                          {point.traditional}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-[#C9A55C] uppercase tracking-wider mb-1">Boon EXEC</p>
+                        <p className="text-sm font-medium text-[#2E353D]">
+                          {point.exec}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Callout */}
+              <div className="mt-8 bg-white border-l-4 border-[#C9A55C] rounded-2xl p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#2E353D] flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-[#2E353D] mb-1">
+                      Built for scale, designed for impact
+                    </h4>
+                    <p className="text-sm text-[#2E353D]">
+                      Boon EXEC combines the personalized attention of 1:1 coaching with the efficiency and insight of a cohort-based model.
+                      Your organization gets better outcomes at a fraction of traditional executive coaching costs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Tipping Points */}
+        <TippingPoints
+          productName="EXEC"
+          accentColor="#C9A55C"
+          items={[
+            "Your senior leaders are navigating high-stakes transitions with no structured support",
+            "Executive coaching has been ad-hoc, disconnected from the broader leadership development strategy",
+            "Board dynamics, organizational scaling, or leadership team friction require confidential calibration",
+          ]}
+        />
+
+        {/* 6. What an Executive Engagement Looks Like */}
+        <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
+          {/* Subtle warm glow - bottom left */}
+          <div
+            className="absolute -bottom-[20%] -left-[10%] w-[45%] h-[50%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(201, 165, 92, 0.08) 0%, rgba(201, 165, 92, 0.03) 40%, transparent 70%)',
+              filter: 'blur(70px)',
+            }}
+          ></div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+                THE ENGAGEMENT
+              </p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+                Strategic sparring. Not <span className="text-[#C9A55C] font-serif italic">remediation.</span>
+              </h2>
+              <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
+                A structured 6-month engagement designed to sharpen your strategic thinking and decision-making in real-time.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  step: 'Step 1',
+                  icon: Brain,
+                  title: 'Discovery',
+                  duration: 'Week 1',
+                  description: 'Deep context gathering and strategic priority mapping',
+                  activities: [
+                    'Confidential intake and 360 context review',
+                    'Strategic challenge identification',
+                    'Success metrics definition',
+                  ],
+                },
+                {
+                  step: 'Step 2',
+                  icon: MessageSquare,
+                  title: 'Intensive Sparring',
+                  duration: '3-4 months',
+                  description: 'Bi-weekly strategic sessions with your dedicated coach',
+                  activities: [
+                    'Live decision-making and scenario planning',
+                    'Leadership blind spot surfacing',
+                    'Real-time strategic thinking practice',
+                  ],
+                },
+                {
+                  step: 'Step 3',
+                  icon: Target,
+                  title: 'Application & Refinement',
+                  duration: 'Months 4-6',
+                  description: 'Apply insights to real challenges, refine approach',
+                  activities: [
+                    'Test new strategies in live situations',
+                    'Debrief outcomes with coach',
+                    'Iterate and strengthen new patterns',
+                  ],
+                },
+                {
+                  step: 'Step 4',
+                  icon: Users,
+                  title: 'Sustain & Scale',
+                  duration: 'Month 6+',
+                  description: 'Ongoing access and reinforcement',
+                  activities: [
+                    'Monthly check-ins for continuity',
+                    'On-demand sparring for key moments',
+                    'Optional peer executive cohort access',
+                  ],
+                },
+              ].map((phase, index) => {
+                const Icon = phase.icon;
+                return (
+                  <div key={index} className="group">
+                    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full">
+                      <div className="p-6 border-b border-gray-100">
+                        <p className="text-[10px] font-black text-[#C9A55C] tracking-[0.4em] uppercase mb-3">
+                          {phase.step}
+                        </p>
+
+                        <div className="w-12 h-12 rounded-xl bg-[#2E353D] flex items-center justify-center mb-4">
+                          <Icon className="w-6 h-6 text-white" strokeWidth={1.5} />
+                        </div>
+
+                        <h3 className="text-xl font-bold text-[#2E353D] mb-2">
+                          {phase.title}
+                        </h3>
+
+                        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-[#2E353D]">
+                          {phase.duration}
+                        </span>
+                      </div>
+
+                      <div className="p-6">
+                        <p className="text-sm text-slate-500 mb-4">
+                          {phase.description}
+                        </p>
+
+                        <ul className="space-y-2">
+                          {phase.activities.map((activity, actIndex) => (
+                            <li key={actIndex} className="flex items-start gap-2">
+                              <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#C9A55C]" />
+                              <span className="text-xs text-slate-500">
+                                {activity}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Coach Match */}
+        <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-[#FAF8F5] relative overflow-hidden">
+          {/* Warm glow - bottom right */}
+          <div
+            className="absolute -bottom-[15%] -right-[10%] w-[45%] h-[50%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(201, 165, 92, 0.10) 0%, rgba(201, 165, 92, 0.03) 40%, transparent 70%)',
+              filter: 'blur(70px)',
+            }}
+          ></div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+                YOUR COACH MATCH
+              </p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+                Not generic. <span className="text-[#C9A55C] font-serif italic">Role-specific.</span>
+              </h2>
+              <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
+                Every Boon EXEC coach has walked in your shoes. They have held senior roles at high-growth companies and know the challenges you are facing.
+              </p>
+            </div>
+
+            {/* Coach Cards Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  initials: 'CM',
+                  photo: 'https://storage.googleapis.com/boon-public-assets/Cheryl.jpg',
+                  name: 'Cheryl Mills',
+                  title: 'Former Head of Technology Product Management',
+                  credentials: 'ICF-Accredited Coach, MBA in Finance',
+                  companies: ['BNY Mellon', 'Broadridge'],
+                  specialties: [
+                    'Technology leadership through organizational change',
+                    'Scaling product teams in regulated industries',
+                    'Executive presence in board-facing roles',
+                  ],
+                  style: 'Holistic & clarity-focused',
+                },
+                {
+                  initials: 'CA',
+                  photo: 'https://storage.googleapis.com/boon-public-assets/Carrie%20Atkin.jpg',
+                  name: 'Carrie Atkin',
+                  title: 'Former VP of Merchandise Planning',
+                  credentials: 'ICF-Certified Coach, Harvard BA',
+                  companies: ['Sephora', 'Ann Taylor', 'Gap'],
+                  specialties: [
+                    'Retail leadership through rapid growth and restructuring',
+                    'Building and leading cross-functional merchandising teams',
+                    'Navigating executive transitions',
+                  ],
+                  style: 'Supportive & developmental',
+                },
+                {
+                  initials: 'YH',
+                  photo: 'https://storage.googleapis.com/boon-public-assets/Yoshi_pic.png',
+                  photoPosition: 'center 20%',
+                  name: 'Yoshi Hashimoto',
+                  title: 'Former VP at Elsevier & Goldman Sachs',
+                  credentials: 'ICF-Accredited Coach, MBA',
+                  companies: ['Elsevier', 'Goldman Sachs'],
+                  specialties: [
+                    'Leading through M&A and organizational transformation',
+                    'Finance-to-general-management transitions',
+                    'Cross-cultural executive leadership',
+                  ],
+                  style: 'Authentic & empowering',
+                },
+                {
+                  initials: 'KC',
+                  photo: 'https://storage.googleapis.com/boon-public-assets/Coach%20Profile%20Photos/cumming.png',
+                  photoPosition: 'center 20%',
+                  name: 'Kimberli Cumming',
+                  title: 'Former Executive Coach at Michigan Medicine',
+                  credentials: 'MSW & MBA - University of Michigan',
+                  companies: ['Michigan Medicine', 'Michigan Ross'],
+                  specialties: [
+                    'Healthcare system leadership and stakeholder management',
+                    'Leading culture change in large institutions',
+                    'Executive coaching through career pivots',
+                  ],
+                  style: 'Champion & advocate',
+                },
+              ].map((coach) => (
+                <div key={coach.name} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  {/* Top section */}
+                  <div className="flex items-start mb-4">
+                    <div className="flex items-center gap-3">
+                      {coach.photo ? (
+                        <Image src={coach.photo} alt={coach.name} width={72} height={72} className="w-[72px] h-[72px] rounded-xl object-cover flex-shrink-0 ring-2 ring-white shadow-md" style={coach.photoPosition ? { objectPosition: coach.photoPosition } : undefined} />
+                      ) : (
+                        <div className="w-[72px] h-[72px] rounded-xl bg-[#2E353D] flex items-center justify-center text-white text-lg font-bold flex-shrink-0 ring-2 ring-white shadow-md">
+                          {coach.initials}
+                        </div>
+                      )}
+                      <div>
+                        <p className="text-base font-bold text-[#2E353D]">
+                          {coach.name}
+                        </p>
+                        <p className="text-xs text-slate-500">
+                          {coach.title}
+                        </p>
+                        <p className="text-[11px] text-slate-400">
+                          {coach.credentials}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Company tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {coach.companies.map((company) => (
+                      <div key={company} className="px-2.5 py-1 rounded-full bg-slate-100">
+                        <span className="text-[11px] font-medium text-slate-500">
+                          {company}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Divider */}
+                  <div className="border-t border-gray-100 my-4"></div>
+
+                  {/* Specialties */}
+                  <div className="mb-4">
+                    <ul className="space-y-1.5">
+                      {coach.specialties.map((spec) => (
+                        <li key={spec} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 bg-[#C9A55C]"></div>
+                          <span className="text-xs text-slate-500">
+                            {spec}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Coaching Style as subtitle */}
+                  <p className="text-sm font-bold text-[#2E353D]">
+                    {coach.style}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Confidentiality */}
+        <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-[#FAF8F5] relative overflow-hidden">
+          {/* Warm gold glow - center */}
+          <div
+            className="absolute top-[10%] left-[50%] -translate-x-1/2 w-[60%] h-[40%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(201, 165, 92, 0.10) 0%, rgba(201, 165, 92, 0.03) 50%, transparent 70%)',
+              filter: 'blur(80px)',
+            }}
+          ></div>
+          {/* Subtle dot pattern */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              backgroundImage: 'radial-gradient(circle, rgba(70, 111, 246, 0.12) 1px, transparent 1px)',
-              backgroundSize: '20px 20px',
+              backgroundImage: 'radial-gradient(circle, rgba(201, 165, 92, 0.06) 1px, transparent 1px)',
+              backgroundSize: '24px 24px',
               maskImage: 'radial-gradient(ellipse at center, black 0%, transparent 80%)',
               WebkitMaskImage: 'radial-gradient(ellipse at center, black 0%, transparent 80%)',
             }}
           ></div>
-
-          <Image
-            src="https://storage.googleapis.com/boon-public-assets/Background%20Shapes/Background%20Shape%20(4).png"
-            width={800}
-            height={800}
-            className="absolute -bottom-44 -right-44 w-2/3 opacity-10 pointer-events-none select-none z-0"
-            alt=""
-            aria-hidden="true"
-          />
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-20 items-center relative z-10">
-            <div>
-              <div className="inline-flex items-center bg-white/10 text-white font-black text-[13px] tracking-[0.25em] px-10 py-5 rounded-full mb-16 uppercase border border-white/5 shadow-inner">
-                Boon EXEC
-              </div>
-              <h1 className="text-6xl md:text-[108px] font-black text-white leading-[0.78] tracking-tighter mb-16 max-w-5xl">
-                Precision in <br />
-                high-stakes <span className="text-[#466FF6] italic font-serif">leadership</span>.
-              </h1>
-              <p className="text-xl md:text-2xl text-white/40 font-medium leading-relaxed max-w-2xl mb-24">
-                Strategic coaching for executives navigating decisions where clarity, consequence,
-                and organizational impact converge.
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+                CONFIDENTIALITY BUILT IN
               </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link
-                  href="/demo"
-                  className="bg-[#466FF6] text-white px-14 py-6 rounded-2xl font-black text-xl hover:bg-blue-600 transition-all shadow-2xl shadow-blue-900/40 text-center"
-                >
-                  Initiate a Confidential Inquiry
-                </Link>
-              </div>
-            </div>
-            <div className="relative hidden lg:block h-full min-h-[600px]">
-              <div className="relative w-full h-full min-h-[400px] bg-[#1A1F24] overflow-hidden rounded-[80px] shadow-2xl border border-white/5">
-                <Image
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000"
-                  width={800}
-                  height={600}
-                  alt="High-stakes leadership calibration"
-                  className="w-full h-full object-cover opacity-70 grayscale hover:grayscale-0 transition-all duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2E353D] via-transparent to-transparent"></div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* 2. The Executive Reality */}
-        <section className="py-48 px-6 md:px-12 lg:px-24 bg-white border-b border-gray-50">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl mb-44">
-              <p className="text-[#466FF6] font-black text-[10px] tracking-[0.4em] uppercase mb-10">
-                The Context
-              </p>
-              <h2 className="text-4xl md:text-7xl font-black leading-[1.02] mb-14 tracking-tighter">
-                At the top, decisions get harder but feedback gets softer.
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+                What&apos;s shared. What&apos;s <span className="text-[#C9A55C] font-serif italic">not.</span>
               </h2>
-              <div className="space-y-12 text-gray-500 text-xl font-medium leading-relaxed max-w-2xl">
-                <p>
-                  At the senior level, decisions are rarely simple. Leaders are dealing with
-                  ambiguity, time constraints, and asymmetric information. Boon EXEC equips leaders
-                  with the skills for navigating high-stakes circumstances. And unlike standalone
-                  coaching, Exec connects to how your entire leadership team is developing, ensuring
-                  coherence from C-suite to frontline.
-                </p>
-              </div>
-            </div>
-
-            <div className="mb-12">
-              <p className="text-[#466FF6] font-black text-[10px] tracking-[0.4em] uppercase mb-2">
-                The pressure points that show up behind closed doors.
+              <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
+                Your coaching conversations remain confidential. Your organization sees only what matters: growth and impact.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {[
-                {
-                  t: 'Leadership Isolation',
-                  d: 'The higher the role, the fewer people a leader can speak to with total candor.',
-                },
-                {
-                  t: 'Decision Fatigue',
-                  d: 'Continuous high-impact choices require an intentional space for calibration.',
-                },
-                {
-                  t: 'Cultural Gravity of Leadership',
-                  d: 'Senior leaders set the tone. Their development is an organizational imperative.',
-                },
-              ].map((item) => (
-                <div
-                  key={item.t}
-                  className="p-12 border border-gray-100 rounded-[56px] hover:shadow-2xl hover:border-transparent transition-all group bg-white"
-                >
-                  <div className="w-1.5 h-1.5 bg-gray-100 rounded-full mb-10 group-hover:bg-[#466FF6] transition-colors"></div>
-                  <h4 className="text-2xl font-black mb-6 transition-colors tracking-tight leading-tight text-[#1A1F24] group-hover:text-[#466FF6]">
-                    {item.t}
-                  </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed font-medium">{item.d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 2b. What EXEC Replaces */}
-        <section className="py-24 px-6 md:px-12 lg:px-24 bg-[#F0F3F7]/50">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-emerald-50/50 border-2 border-dashed border-emerald-200 rounded-[48px] p-12 md:p-16 text-center">
-              <p className="text-emerald-600 font-black text-[10px] tracking-[0.4em] uppercase mb-6">
-                What EXEC Replaces
-              </p>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-[#2E353D] mb-8">
-                EXEC is one layer of a coordinated leadership program
-              </h2>
-              <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-2xl mx-auto">
-                Most executive coaching is ad-hoc—a trusted name, an occasional check-in, no
-                connection to broader leadership development. Boon Exec is part of a larger
-                leadership system, coordinated and applied with intention to drive maximum impact.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. The Philosophy */}
-        <section className="py-48 px-6 md:px-12 lg:px-24 bg-[#F0F3F7]/50 relative overflow-hidden">
-          <Image
-            src="https://storage.googleapis.com/boon-public-assets/Background%20Shapes/Background%20Shape%20(1).png"
-            width={800}
-            height={800}
-            className="absolute -top-32 -right-32 w-1/2 opacity-[0.08] pointer-events-none select-none z-0 rotate-12"
-            alt=""
-            aria-hidden="true"
-          />
-          <div className="max-w-5xl mx-auto text-center mb-40 relative z-10">
-            <SectionHeading
-              overline="The Philosophy"
-              title="Strategic sparring. Not remediation."
-              subtitle="Executive growth is not about fixing deficits; it's about pressure-testing judgment before it shows up in the organization."
-            />
-          </div>
-          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-24 relative z-10">
-            {[
-              {
-                icon: <BoundaryIcon />,
-                t: 'Absolute Discretion',
-                d: 'Privacy is our foundation. Every engagement is protected by rigorous confidentiality protocols.',
-              },
-              {
-                icon: <PrecisionIcon />,
-                t: 'Operator Depth',
-                d: 'Matched with elite coaches who have spent decades in senior leadership roles themselves.',
-              },
-              {
-                icon: <LeverageIcon />,
-                t: 'Focus on Leverage',
-                d: 'We focus on the cognitive skills that drive outsized results: presence, influence, and calm under pressure.',
-              },
-            ].map((item) => (
-              <div key={item.t} className="text-center group">
-                <div className="flex justify-center">
-                  <MinimalIcon>{item.icon}</MinimalIcon>
-                </div>
-                <h4 className="text-3xl font-black mb-8 tracking-tight group-hover:scale-[1.02] transition-transform duration-500">
-                  {item.t}
-                </h4>
-                <p className="text-gray-500 font-medium leading-relaxed px-6 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-                  {item.d}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 4. Focus Areas - Outcomes */}
-        <section className="py-48 px-6 md:px-12 lg:px-24 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-32">
-              <p className="text-[#466FF6] font-black text-[10px] tracking-[0.4em] uppercase mb-10">
-                Outcomes
-              </p>
-              <div className="inline-block relative">
-                <h2 className="text-5xl md:text-8xl font-black tracking-tighter pb-4">
-                  Leverage, not hand-holding.
-                </h2>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-[#466FF6]"></div>
-              </div>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-12">
-              {[
-                {
-                  t: 'Leading Through Ambiguity',
-                  d: 'Developing internal stability to steer teams through organizational shifts and rapid scaling.',
-                },
-                {
-                  t: 'Influence Without Erosion of Trust',
-                  d: 'Sharpening the ability to manage board dynamics and drive consensus.',
-                },
-                {
-                  t: 'Sustained Executive Effectiveness',
-                  d: 'Building resilience to maintain peak performance without personal depletion.',
-                },
-                {
-                  t: 'Decision Clarity Under Pressure',
-                  d: 'A structured environment to vet strategic plans before execution.',
-                },
-              ].map((area) => (
-                <div
-                  key={area.t}
-                  className="flex gap-12 p-16 bg-gray-50/50 rounded-[72px] border border-gray-100 hover:bg-white hover:border-[#466FF6]/20 transition-all group"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-1.5 h-1.5 bg-[#466FF6] opacity-30 mt-2"></div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* What's Shared */}
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="p-6 border-b border-gray-100">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Eye className="w-6 h-6 text-[#C9A55C]" strokeWidth={1.5} />
+                    <h3 className="text-xl font-bold text-[#2E353D]">
+                      What&apos;s Shared
+                    </h3>
                   </div>
+                  <p className="text-sm text-slate-500">
+                    Aggregate insights that help your organization
+                  </p>
+                </div>
+
+                <div className="p-6">
+                  <ul className="space-y-3">
+                    {[
+                      'Engagement frequency and consistency',
+                      'Competency development areas being addressed',
+                      'Progress toward stated goals',
+                      'Overall cohort trends (anonymized)',
+                      'ROI and program effectiveness metrics',
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5 text-[#C9A55C]" />
+                        <span className="text-sm text-[#2E353D]">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* What's Private */}
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                <div className="p-6 border-b border-gray-100">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Lock className="w-6 h-6 text-[#2E353D]" strokeWidth={1.5} />
+                    <h3 className="text-xl font-bold text-[#2E353D]">
+                      What&apos;s Private
+                    </h3>
+                  </div>
+                  <p className="text-sm text-slate-500">
+                    Your strategic conversations stay confidential
+                  </p>
+                </div>
+
+                <div className="p-6">
+                  <ul className="space-y-3">
+                    {[
+                      'Specific coaching session content',
+                      'Individual challenges or vulnerabilities discussed',
+                      'Personal performance concerns',
+                      'Relationship dynamics with specific colleagues',
+                      'Career considerations or next moves',
+                    ].map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-slate-400"></div>
+                        <span className="text-sm text-slate-500">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Callout */}
+            <div className="mt-12 max-w-4xl mx-auto">
+              <div className="bg-white border-l-4 border-[#C9A55C] rounded-2xl p-8 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <Shield className="w-6 h-6 text-[#C9A55C] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <h4 className="text-3xl font-black mb-6 group-hover:text-[#466FF6] transition-colors tracking-tight leading-tight">
-                      {area.t}
+                    <h4 className="text-lg font-bold text-[#2E353D] mb-2">
+                      Why this matters
                     </h4>
-                    <p className="text-gray-500 font-medium text-lg leading-relaxed">{area.d}</p>
+                    <p className="text-sm text-[#2E353D]">
+                      Executives need a safe space to think out loud, test ideas, and work through challenges without fear of judgment or political fallout.
+                      Traditional executive coaching often lacks this protection when delivered through internal HR channels. Boon EXEC creates a clear boundary
+                      that enables real growth while giving your organization the visibility it needs.
+                    </p>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 5. The Coherent System */}
-        <section className="py-36 px-6 md:px-12 lg:px-24 bg-boon-navy text-white relative overflow-hidden">
-          {/* Dotted texture overlay */}
+        {/* 8. Outcomes */}
+        <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
+          {/* Warm glow - top right */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute -top-[15%] -right-[5%] w-[40%] h-[50%] pointer-events-none"
             style={{
-              backgroundImage: 'radial-gradient(circle, rgba(70, 111, 246, 0.12) 1px, transparent 1px)',
-              backgroundSize: '20px 20px',
-              maskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
-              WebkitMaskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
+              background: 'radial-gradient(ellipse at center, rgba(201, 165, 92, 0.10) 0%, rgba(201, 165, 92, 0.03) 40%, transparent 70%)',
+              filter: 'blur(70px)',
             }}
           ></div>
-          <div className="max-w-7xl mx-auto text-center relative z-10">
-            <h3 className="text-4xl md:text-6xl font-black tracking-tighter mb-12">
-              One system. Coherent growth at every level.
-            </h3>
-            <div className="max-w-3xl mx-auto mb-24">
-              <p className="text-white/15 text-xl font-medium leading-relaxed mb-6">
-                Boon EXEC integrates with SCALE and GROW to ensure leadership speaks a common
-                language across levels.
+          {/* Charcoal glow - bottom left */}
+          <div
+            className="absolute -bottom-[15%] -left-[5%] w-[35%] h-[40%] pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(46, 53, 61, 0.06) 0%, rgba(46, 53, 61, 0.02) 40%, transparent 70%)',
+              filter: 'blur(70px)',
+            }}
+          ></div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+                THE OUTCOMES
               </p>
-              <p className="text-white/40 font-bold italic">
-                This ensures leadership development compounds across levels instead of fragmenting
-                into disconnected tools.
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+                What you&apos;ll <span className="text-[#C9A55C] font-serif italic">develop.</span>
+              </h2>
+              <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
+                Executives who complete Boon EXEC report measurable improvements across four critical dimensions.
               </p>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16">
-              {['Boon SCALE', 'Boon GROW', 'Boon TOGETHER'].map((prod, idx) => (
-                <div key={prod} className="flex items-center gap-6">
-                  <div className="flex items-center gap-5 text-white/50 font-black text-[12px] tracking-[0.4em] uppercase">
-                    <div className="w-1.5 h-1.5 bg-[#466FF6] rounded-full"></div> {prod}
-                  </div>
-                  {idx < 2 && (
-                    <div className="hidden md:flex items-center gap-2 opacity-10">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
-                      <div className="w-8 h-px bg-white"></div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* 6. Why Boon EXEC - The Standard */}
-        <section className="py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-          <Image
-            src="https://storage.googleapis.com/boon-public-assets/Background%20Shapes/Background%20Shape%20(3).png"
-            width={800}
-            height={800}
-            className="absolute -bottom-32 -left-32 w-1/2 opacity-10 pointer-events-none select-none z-0"
-            alt=""
-            aria-hidden="true"
-          />
-          <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
-            <SectionHeading overline="The Standard" title="What an executive engagement looks like." />
-            <div className="grid md:grid-cols-3 gap-12 w-full mt-24">
+            <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  t: 'Vetted Matches',
-                  d: "Every match starts with a structured diagnostic—mapping your operating style, industry context, and the specific leadership edges you're sharpening. You'll meet coaches who've held roles like yours, not just coached people in them. And if the fit isn't right, we rematch within 48 hours.",
+                  icon: Brain,
+                  title: 'Leading Through Ambiguity',
+                  description: 'Navigate complex, high-stakes decisions with confidence even when there\'s no clear "right answer"',
+                  metrics: ['85% report increased decision confidence', 'Faster strategic clarity'],
                 },
                 {
-                  t: 'Measured Outcomes',
-                  d: "Progress isn't a feeling—it's tracked. Our Resilience Index™ captures shifts in decision quality, influence capacity, and pressure tolerance across your engagement. Quarterly summaries give you and your sponsor clear signals on movement, without exposing session content.",
+                  icon: Users,
+                  title: 'Expanding Your Leadership Range',
+                  description: 'Flex between directive and collaborative styles based on context, not habit',
+                  metrics: ['360 feedback improvement', 'Stronger team trust scores'],
                 },
                 {
-                  t: 'Flexible Engagement',
-                  d: "Engage support for as long as it provides value, without rigid contract locks or transactional overhead. Scale up during high-stakes transitions, dial back when you've got momentum. The structure flexes around your operating reality, not our revenue model.",
+                  icon: Target,
+                  title: 'Sharpening Strategic Thinking',
+                  description: 'See patterns earlier, connect dots faster, anticipate second-order effects',
+                  metrics: ['Better long-term planning', 'Reduced reactive firefighting'],
                 },
-              ].map((item) => (
-                <div
-                  key={item.t}
-                  className="p-16 border border-gray-100 rounded-[64px] bg-white hover:shadow-xl transition-all"
-                >
-                  <h5 className="text-2xl font-black mb-8 tracking-tight leading-tight">{item.t}</h5>
-                  <p className="text-gray-400 font-medium leading-relaxed text-sm">{item.d}</p>
-                </div>
-              ))}
+                {
+                  icon: Shield,
+                  title: 'Building Resilience',
+                  description: 'Maintain clarity and composure under pressure without burning out',
+                  metrics: ['Sustained high performance', 'Improved work-life integration'],
+                },
+              ].map((outcome, index) => {
+                const Icon = outcome.icon;
+                return (
+                  <div key={index} className="group">
+                    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                      <div className="p-8 pb-6">
+                        <div className="w-14 h-14 rounded-xl bg-[#2E353D] flex items-center justify-center mb-6">
+                          <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                        </div>
+
+                        <h3 className="text-xl font-bold text-[#2E353D] mb-3">
+                          {outcome.title}
+                        </h3>
+
+                        <p className="text-sm text-slate-500 mb-6">
+                          {outcome.description}
+                        </p>
+
+                        <div className="space-y-2">
+                          {outcome.metrics.map((metric, metricIndex) => (
+                            <div key={metricIndex} className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#C9A55C]"></div>
+                              <span className="text-sm font-medium text-[#2E353D]">
+                                {metric}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* 7. Final CTA */}
-        <section className="bg-boon-navy py-40 px-6 text-white text-center relative overflow-hidden">
-          {/* Overlapping gradient blobs */}
-          <div
-            className="absolute top-[10%] right-[5%] w-[40%] h-[60%] pointer-events-none"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.3) 0%, rgba(70, 111, 246, 0.1) 40%, transparent 70%)',
-              filter: 'blur(80px)',
-            }}
-          ></div>
-          <div
-            className="absolute bottom-[10%] left-[10%] w-[45%] h-[55%] pointer-events-none"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
-              filter: 'blur(80px)',
-            }}
-          ></div>
+        {/* 10. Cross-sell */}
+        <CoherentSystem
+          currentProduct="exec"
+          accentColor="#C9A55C"
+          headline="EXEC is part of something bigger."
+          subtitle="Pair with GROW for manager development, SCALE for organization-wide coaching, or TOGETHER for team alignment. One system that compounds."
+        />
 
-          {/* Subtle grid line pattern */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-              backgroundSize: '80px 80px',
-            }}
-          ></div>
+        {/* 11. Pricing */}
+        <ProductPricing
+          accentColor="#C9A55C"
+          pricingPoints={[
+            { title: 'Engagement-Based Pricing', description: 'Custom pricing based on scope, duration, and seniority. No rigid packages.' },
+            { title: 'Confidential Billing', description: 'Discreet invoicing and administration. Your engagement details stay private.' },
+            { title: 'Flexible Terms', description: 'Engage for as long as it provides value. Scale up during transitions, dial back when you have momentum.' },
+          ]}
+          ctaText="Start a Conversation"
+          bottomLine="Confidential. Flexible. Results-driven."
+          bottomSubline="Engagements begin within 1-2 weeks"
+        />
 
-          <div className="max-w-4xl mx-auto relative z-10">
-            <h2 className="font-sans text-5xl md:text-[84px] font-bold tracking-tight leading-[0.85] mb-12">
-              Get clarity when <br />
-              <span className="text-[#466FF6] font-serif italic">the stakes are highest</span>.
-            </h2>
-            <p className="text-xl text-white/70 font-body font-medium mb-16 max-w-2xl mx-auto leading-relaxed">
-              Ready to talk through the decision in front of you?
-            </p>
-            <Link
-              href="/demo"
-              className="inline-block bg-boon-coral text-white px-12 py-6 rounded-full font-sans font-bold text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
-            >
-              Book a Strategy Call
-            </Link>
-            <div className="mt-12 text-[10px] font-body font-bold uppercase tracking-[0.2em] text-white/40">
-              Strictly Confidential • ICF Certified • Global Network
-            </div>
-          </div>
-        </section>
+        {/* 12. Testimonials */}
+        <ProductTestimonials
+          logos={[]}
+          testimonials={[
+            {
+              quote: "Stop doing everyone's job. Don't work your way out of it, manage your way out of it. You set the standard.",
+              name: 'Executive',
+              title: 'Mechanical Services',
+            },
+            {
+              quote: "It gave me confidence where I was unsure on some decisions that I made or was about to make. I've learned to address issues with the person, rather than listen to hearsay from other employees.",
+              name: 'VP',
+              title: 'Software Technology',
+            },
+            {
+              quote: 'I have been able to work through a challenging issue with an employee that is not thrilled to be at work.',
+              name: 'Senior Director',
+              title: 'Government',
+            },
+          ]}
+        />
+
+        {/* 13. FAQ */}
+        <ProductFAQ
+          faqs={[
+            { question: 'How is Boon EXEC different from hiring an executive coach independently?', answer: 'Independent coaches are uncoordinated. Boon EXEC is part of a leadership system. Your coaching connects to how the rest of your organization is developing. Plus, our matching process is structured around operating style and industry context, not just referrals.' },
+            { question: 'Is session content shared with my organization?', answer: 'Never. Absolute discretion is foundational to EXEC. Your sponsor receives progress summaries at midpoint and close showing focus areas and engagement quality without any session content or personal details.' },
+            { question: 'What seniority levels does EXEC serve?', answer: 'C-suite, SVP, VP, and senior director-level leaders. The common thread is not title but the weight of the decisions being made and the need for a confidential space to calibrate.' },
+            { question: 'How do you ensure coach quality at this level?', answer: 'Every EXEC coach has held senior operating roles (CEO, CFO, COO, SVP). They are vetted for operator depth, not just coaching certification. If the match is not right, we rematch within 48 hours.' },
+            { question: 'Can EXEC be part of a broader organizational engagement?', answer: 'Yes. EXEC integrates with SCALE, GROW, and TOGETHER. Many organizations run EXEC for the senior team while using GROW for managers and SCALE for the broader workforce, creating coherent development at every level.' },
+          ]}
+        />
+
+        {/* 14. Final CTA */}
+        <ProductCTA
+          headline={
+            <>
+              Get clarity when{' '}
+              <span className="text-[#C9A55C] font-serif italic">the stakes are highest</span>.
+            </>
+          }
+          subtitle="Ready to talk through the decision in front of you?"
+          ctaText="Book a Strategy Call"
+          trustBadges="Strictly Confidential &bull; ICF Certified &bull; Global Network"
+          accentBlobColor="rgba(201, 165, 92, 0.3)"
+        />
       </main>
     </>
   );

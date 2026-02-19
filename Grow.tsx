@@ -230,7 +230,7 @@ export const BoonGrowPage: React.FC = () => {
               },
               { 
                 t: "Signals HR can trust", 
-                d: "Aggregate themes show where leadership is strengthening—or breaking down.",
+                d: "Aggregate themes show where leadership is strengthening or breaking down.",
                 note: "Individual conversations remain private."
               }
             ].map((step, idx) => (

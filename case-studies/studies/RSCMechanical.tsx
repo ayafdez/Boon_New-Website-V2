@@ -22,7 +22,7 @@ export const RSCMechanicalStudy: React.FC<{ onBack: () => void }> = ({ onBack })
       }
       approach={
         <>
-          <p>RSC chose <strong>Boon Grow</strong> to provide a practical, non-academic support system for their operations managers. The focus was on 'Applied Leadership'—taking the high-pressure situations found on a job site and coaching through them in real-time.</p>
+          <p>RSC chose <strong>Boon Grow</strong> to provide a practical, non-academic support system for their operations managers. The focus was on 'Applied Leadership': taking the high-pressure situations found on a job site and coaching through them in real-time.</p>
           <p>Coaches worked 1:1 with managers to build 'muscles' around delegation and accountability. The coaching was grounded in the reality of the mechanical services world, avoiding academic jargon in favor of practical outcomes.</p>
         </>
       }
@@ -33,7 +33,7 @@ export const RSCMechanicalStudy: React.FC<{ onBack: () => void }> = ({ onBack })
         "Measurable shift from 'reactive firefighting' to 'proactive planning'."
       ]}
       whyItMattered={
-        "Traditional industries are often underserved by modern talent development. By investing in the human layer of their operations, RSC Mechanical didn't just improve their managers; they protected their highest-value asset—their field expertise—and created a sustainable path for career growth."
+        "Traditional industries are often underserved by modern talent development. By investing in the human layer of their operations, RSC Mechanical didn't just improve their managers; they protected their highest-value asset, their field expertise, and created a sustainable path for career growth."
       }
       quote={{
         text: "Boon is the only leadership resource our managers have actually asked for more of. It's practical, it's grounded, and it works in the field.",

@@ -82,7 +82,7 @@ export function AccordionSection() {
         <AccordionItem
           index="03"
           title="You see progress without surveilling people"
-          content="Success is measured by signal that leadership can actually use—sentiment shifts, retention indicators, and core competency development."
+          content="Success is measured by signal that leadership can actually use: sentiment shifts, retention indicators, and core competency development."
         />
         <AccordionItem
           index="04"

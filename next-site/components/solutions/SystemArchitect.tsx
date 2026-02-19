@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const configs = {
   SCALE: {
@@ -31,12 +32,12 @@ export function SystemArchitect() {
   return (
     <div className="py-32 px-6 bg-white border-y border-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-32 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-32 items-center">
           <div>
             <p className="label-text text-[10px] text-boon-blue mb-10">
               System Configuration
             </p>
-            <h2 className="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-12 text-boon-charcoal">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight lg:leading-[0.9] mb-12 text-boon-charcoal">
               Map the system to the right <br />
               <span className="font-serif italic text-boon-blue">pressure point</span>.
             </h2>
@@ -64,7 +65,7 @@ export function SystemArchitect() {
             </div>
           </div>
 
-          <div className="bg-boon-off-white rounded-[72px] p-20 relative overflow-hidden">
+          <div className="bg-boon-off-white rounded-[32px] md:rounded-[72px] p-8 md:p-20 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-10 opacity-5">
               <svg className="w-64 h-64" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" stroke="currentColor" fill="none" strokeWidth="0.5" />
@@ -107,10 +108,10 @@ export function SystemArchitect() {
                   {configs[stage].focus}
                 </h4>
               </div>
-              <button className="flex items-center gap-4 label-text text-[11px] text-boon-blue group hover:gap-6 transition-all">
+              <Link href="/demo" className="flex items-center gap-4 label-text text-[11px] text-boon-blue group hover:gap-6 transition-all">
                 Get Full Blueprint{' '}
                 <span className="text-2xl group-hover:translate-x-2 transition-transform">→</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

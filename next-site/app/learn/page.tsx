@@ -81,7 +81,7 @@ export default function LearnPage() {
           <div className="inline-flex items-center gap-2 bg-gray-50 text-[#466FF6] text-[10px] tracking-widest font-black px-4 py-2 rounded-full mb-10 uppercase border border-gray-100">
             Learn Hub
           </div>
-          <h1 className="text-6xl md:text-[92px] font-black text-[#2E353D] leading-[0.85] tracking-tighter mb-10 max-w-5xl">
+          <h1 className="text-4xl md:text-6xl lg:text-[92px] font-black text-[#2E353D] leading-tight lg:leading-[0.85] tracking-tighter mb-10 max-w-5xl">
             Resources for <span className="text-[#466FF6] italic font-serif">growing leaders</span>.
           </h1>
           <p className="text-xl md:text-2xl text-gray-500 font-medium leading-relaxed max-w-3xl">
@@ -98,7 +98,7 @@ export default function LearnPage() {
               <Link
                 key={resource.id}
                 href={resource.href}
-                className="group bg-white p-12 rounded-[48px] border border-gray-100 hover:border-[#466FF6] hover:shadow-xl transition-all"
+                className="group bg-white p-6 md:p-12 rounded-[48px] border border-gray-100 hover:border-[#466FF6] hover:shadow-xl transition-all"
               >
                 <div className="text-gray-400 group-hover:text-[#466FF6] transition-colors mb-8">
                   {resource.icon}
@@ -106,7 +106,7 @@ export default function LearnPage() {
                 <div className="text-[10px] font-black text-[#466FF6] uppercase tracking-widest mb-2">
                   {resource.subtitle}
                 </div>
-                <h3 className="text-2xl font-black text-[#2E353D] mb-4">{resource.title}</h3>
+                <h2 className="text-2xl font-black text-[#2E353D] mb-4">{resource.title}</h2>
                 <p className="text-gray-500 font-medium leading-relaxed mb-8">{resource.description}</p>
                 <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-300 group-hover:text-[#466FF6] transition-colors">
                   Explore <span>→</span>

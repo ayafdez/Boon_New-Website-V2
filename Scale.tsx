@@ -130,7 +130,7 @@ export const BoonScalePage: React.FC = () => {
               A confidential, usage-based coaching benefit designed for employees at every level, not just the top 5 percent.
             </p>
             <p className="text-lg text-gray-400 font-medium italic leading-relaxed mb-12 max-w-xl">
-              Your people shouldn't have to wait for a crisis—or a promotion—to get support.
+              Your people shouldn't have to wait for a crisis, or a promotion, to get support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-[#466FF6] text-white px-8 py-4 rounded-2xl font-black text-lg shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
