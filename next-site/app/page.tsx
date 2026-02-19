@@ -56,7 +56,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Card 1: Fragmented */}
-            <div className="group bg-[#1a2540] rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/40 transition-all duration-300 flex flex-col">
+            <div className="group rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/60 hover:shadow-lg hover:shadow-boon-blue/10 transition-all duration-300 flex flex-col" style={{ backgroundColor: 'rgba(26, 37, 64, 0.5)' }}>
               <div className="flex items-center gap-3 mb-8">
                 <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">1</span>
                 <span className="label-text text-[10px] text-boon-blue tracking-widest">Fragmented</span>
@@ -78,7 +78,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2: Lopsided */}
-            <div className="group bg-[#1a2540] rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/40 transition-all duration-300 flex flex-col">
+            <div className="group rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/60 hover:shadow-lg hover:shadow-boon-blue/10 transition-all duration-300 flex flex-col" style={{ backgroundColor: 'rgba(26, 37, 64, 0.5)' }}>
               <div className="flex items-center gap-3 mb-8">
                 <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">2</span>
                 <span className="label-text text-[10px] text-boon-blue tracking-widest">Lopsided</span>
@@ -100,7 +100,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 3: Invisible */}
-            <div className="group bg-[#1a2540] rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/40 transition-all duration-300 flex flex-col">
+            <div className="group rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/60 hover:shadow-lg hover:shadow-boon-blue/10 transition-all duration-300 flex flex-col" style={{ backgroundColor: 'rgba(26, 37, 64, 0.5)' }}>
               <div className="flex items-center gap-3 mb-8">
                 <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">3</span>
                 <span className="label-text text-[10px] text-boon-blue tracking-widest">Invisible</span>
