@@ -15,7 +15,7 @@ const content = {
       { icon: 'x', text: 'Not personalized' },
       { icon: 'x', text: 'Nothing to build on' },
     ],
-    image: 'https://storage.googleapis.com/boon-public-assets/Website%20Images/without-boon.jpg',
+    image: '/without-boon.jpg',
     fallbackGradient: 'from-gray-100 to-gray-200',
     timeline: [
       { year: '2021', role: 'IC', event: 'Onboarding webinar', color: '#CBD5E1' },
@@ -31,7 +31,7 @@ const content = {
       { icon: 'check', text: 'Growth compounds over time' },
       { icon: 'check', text: 'Context carries forward' },
     ],
-    image: 'https://storage.googleapis.com/boon-public-assets/Website%20Images/with-boon.jpg',
+    image: '/with-boon.jpg',
     fallbackGradient: 'from-boon-light-blue to-boon-soft-coral/30',
     timeline: [
       { year: '2021', role: 'IC', event: 'Boon SCALE', color: '#466FF6' },
