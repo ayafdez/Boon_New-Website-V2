@@ -113,7 +113,7 @@ export function BoonDifferenceVisual() {
           <div
             className="absolute top-1/2 -translate-y-1/2 -right-8"
             style={{
-              width: 280,
+              width: 320,
               borderRadius: 28,
               background: 'linear-gradient(180deg, rgba(245,246,248,1) 0%, rgba(206,208,213,1) 100%)',
               boxShadow: '0 18px 40px rgba(10,10,10,0.15)',
