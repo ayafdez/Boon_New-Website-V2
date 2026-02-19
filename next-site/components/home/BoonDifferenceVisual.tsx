@@ -84,8 +84,8 @@ export function BoonDifferenceVisual() {
             {c.bullets.map((b, i) => (
               <li key={i} className="flex items-center gap-3">
                 {b.icon === 'x' ? (
-                  <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
-                    <X className="w-3 h-3 text-boon-coral" strokeWidth={3} />
+                  <span className="w-5 h-5 rounded-full bg-boon-blue/10 flex items-center justify-center flex-shrink-0">
+                    <X className="w-3 h-3 text-boon-blue" strokeWidth={3} />
                   </span>
                 ) : (
                   <span className="w-5 h-5 rounded-full bg-boon-blue/10 flex items-center justify-center flex-shrink-0">
@@ -128,26 +128,25 @@ export function BoonDifferenceVisual() {
                         <div style={{
                           display: 'flex', alignItems: 'center', gap: 16,
                           borderRadius: 22, padding: '14px 16px',
-                          background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
-                          boxShadow: isHovered ? '0 16px 36px rgba(10,10,10,0.18)' : '0 10px 22px rgba(10,10,10,0.10)',
-                          border: isHovered ? '1px solid rgba(70,111,246,0.3)' : '1px solid rgba(0,0,0,0.04)',
+                          background: 'rgba(255,255,255,0.95)',
+                          boxShadow: '0 10px 22px rgba(10,10,10,0.10)',
+                          border: '1px solid rgba(0,0,0,0.04)',
                           opacity: isDimmed ? 0.45 : 1,
-                          transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
-                          transition: 'all 0.2s ease',
+                          transition: 'opacity 0.2s ease',
                         }}>
-                          <div style={{ width: 48, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#8C8F97', fontSize: 11, fontWeight: 600, lineHeight: 1.1 }}>
+                          <div style={{ width: 48, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', color: '#8C8F97', fontSize: 11, fontWeight: 600, lineHeight: 1.1 }}>
                             <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
                           </div>
                           <div style={{ width: 18, flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
                             <div style={{
                               width: 14, height: 14, borderRadius: 999, transition: 'all 0.2s ease',
-                              background: isHovered ? '#466FF6' : '#7C7F88',
-                              boxShadow: isHovered ? '0 0 0 4px rgba(70,111,246,0.15)' : '0 2px 6px rgba(0,0,0,0.15)',
+                              background: '#7C7F88',
+                              boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
                             }} />
                           </div>
                           <div style={{ flex: 1 }}>
                             <div style={{
-                              borderRadius: 999, padding: '9px 18px', textAlign: 'left',
+                              borderRadius: 999, padding: '9px 18px', textAlign: 'center',
                               background: item.isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
                               boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)',
                             }}>
@@ -180,7 +179,7 @@ export function BoonDifferenceVisual() {
               background: 'linear-gradient(180deg, rgba(246,248,255,0) 0%, rgba(70,111,246,0.20) 100%)',
             }}>
               <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 10 }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                   {c.timeline.map((item: any, i: number) => {
                     const isLast = i === c.timeline.length - 1;
                     const isHovered = hoveredCard === i;
@@ -192,14 +191,19 @@ export function BoonDifferenceVisual() {
                       : 'linear-gradient(180deg, #FF8D80 0%, #D077D2 100%)';
                     return (
                       <div key={i}
-                        style={{ display: 'flex', alignItems: 'flex-start', gap: 10, position: 'relative', cursor: 'pointer', opacity: isDimmed ? 0.45 : 1, transition: 'opacity 0.2s ease' }}
+                        style={{ display: 'flex', alignItems: 'flex-start', gap: 14, position: 'relative', cursor: 'pointer', opacity: isDimmed ? 0.45 : 1, transition: 'opacity 0.2s ease', padding: '16px 8px', paddingBottom: isLast ? 16 : 0 }}
                         onMouseEnter={() => setHoveredCard(i)}
                         onMouseLeave={() => setHoveredCard(null)}
                       >
-                        {/* Dot + connector */}
-                        <div style={{ position: 'relative', width: 16, flexShrink: 0, display: 'flex', justifyContent: 'center', paddingTop: 3 }}>
+                        {/* Label — right-aligned, left of dot */}
+                        <div style={{ width: 52, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', color: 'rgba(85,92,115,0.75)', fontSize: 11, fontWeight: 600, lineHeight: 1.2, paddingTop: 2 }}>
+                          <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
+                        </div>
+
+                        {/* Dot + connector — centered between label and badge */}
+                        <div style={{ position: 'relative', width: 24, flexShrink: 0, display: 'flex', justifyContent: 'center', paddingTop: 3 }}>
                           <div style={{
-                            width: 12, height: 12, borderRadius: 999,
+                            width: 14, height: 14, borderRadius: 999,
                             background: dotColor, boxShadow: `0 4px 10px ${dotColor}55`,
                             position: 'relative', zIndex: 1,
                             transform: isHovered ? 'scale(1.35)' : 'scale(1)',
@@ -209,29 +213,23 @@ export function BoonDifferenceVisual() {
                             <div style={{
                               position: 'absolute', top: 15, left: '50%',
                               transform: 'translateX(-50%)',
-                              width: 4, height: 70, borderRadius: 999,
+                              width: 4, height: 90, borderRadius: 999,
                               background: connectorGradient,
                             }} />
                           )}
                         </div>
 
-                        {/* Label */}
-                        <div style={{ width: 52, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'rgba(85,92,115,0.75)', fontSize: 11, fontWeight: 600, lineHeight: 1.2, paddingTop: 2 }}>
-                          <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
-                        </div>
-
                         {/* Badge + description */}
-                        <div style={{ flexShrink: 0 }}>
-                          <span style={{
-                            display: 'inline-block',
-                            fontSize: 12, fontWeight: 800, padding: '5px 12px',
+                        <div style={{ flex: 1, paddingLeft: 8 }}>
+                          <div style={{
+                            fontSize: 12, fontWeight: 800, padding: '9px 14px',
                             borderRadius: 999, background: badgeBg, color: dotColor,
-                            whiteSpace: 'nowrap',
+                            textAlign: 'center',
                           }}>
                             {item.event}
-                          </span>
+                          </div>
                           {item.description && (
-                            <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(80,88,112,0.80)', marginTop: 4, lineHeight: 1.4 }}>
+                            <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(80,88,112,0.80)', marginTop: 4, lineHeight: 1.4, textAlign: 'center' }}>
                               {item.description}
                             </div>
                           )}
