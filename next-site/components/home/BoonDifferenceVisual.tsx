@@ -191,46 +191,51 @@ export function BoonDifferenceVisual() {
                       ? 'linear-gradient(180deg, #466FF6 0%, #FF8D80 100%)'
                       : 'linear-gradient(180deg, #FF8D80 0%, #D077D2 100%)';
                     return (
-                      <div key={i} style={{ position: 'relative', cursor: 'pointer' }}
+                      <div key={i}
+                        style={{ display: 'flex', alignItems: 'flex-start', gap: 10, position: 'relative', cursor: 'pointer', opacity: isDimmed ? 0.45 : 1, transition: 'opacity 0.2s ease' }}
                         onMouseEnter={() => setHoveredCard(i)}
                         onMouseLeave={() => setHoveredCard(null)}
-                        style={{ opacity: isDimmed ? 0.45 : 1, transition: 'opacity 0.2s ease' }}
                       >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                          <div style={{ width: 48, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#8C8F97', fontSize: 11, fontWeight: 600, lineHeight: 1.1 }}>
-                            <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
-                          </div>
-                          <div style={{ width: 18, flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
-                            <div style={{
-                              width: 14, height: 14, borderRadius: 999, transition: 'all 0.2s ease',
-                              background: dotColor,
-                              boxShadow: isHovered ? `0 0 0 4px ${dotColor}30` : `0 2px 6px ${dotColor}55`,
-                              transform: isHovered ? 'scale(1.35)' : 'scale(1)',
-                            }} />
-                          </div>
-                          <div style={{ flex: 1 }}>
-                            <div style={{
-                              borderRadius: 999, padding: '9px 18px', textAlign: 'center',
-                              background: badgeBg,
-                            }}>
-                              <span style={{ fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap', color: dotColor }}>
-                                {item.event}
-                              </span>
-                            </div>
-                            {item.description && (
-                              <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(80,88,112,0.70)', marginTop: 5, paddingLeft: 4, lineHeight: 1.4 }}>
-                                {item.description}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                        {!isLast && (
+                        {/* Dot + connector */}
+                        <div style={{ position: 'relative', width: 16, flexShrink: 0, display: 'flex', justifyContent: 'center', paddingTop: 3 }}>
                           <div style={{
-                            position: 'absolute', top: '100%', left: 10 + 48 + 16 + 9,
-                            width: 5, height: 20, borderRadius: 999,
-                            background: connectorGradient,
+                            width: 12, height: 12, borderRadius: 999,
+                            background: dotColor, boxShadow: `0 4px 10px ${dotColor}55`,
+                            position: 'relative', zIndex: 1,
+                            transform: isHovered ? 'scale(1.35)' : 'scale(1)',
+                            transition: 'transform 0.2s ease',
                           }} />
-                        )}
+                          {!isLast && (
+                            <div style={{
+                              position: 'absolute', top: 15, left: '50%',
+                              transform: 'translateX(-50%)',
+                              width: 4, height: 70, borderRadius: 999,
+                              background: connectorGradient,
+                            }} />
+                          )}
+                        </div>
+
+                        {/* Label */}
+                        <div style={{ width: 52, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'rgba(85,92,115,0.75)', fontSize: 11, fontWeight: 600, lineHeight: 1.2, paddingTop: 2 }}>
+                          <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
+                        </div>
+
+                        {/* Badge + description */}
+                        <div style={{ flexShrink: 0 }}>
+                          <span style={{
+                            display: 'inline-block',
+                            fontSize: 12, fontWeight: 800, padding: '5px 12px',
+                            borderRadius: 999, background: badgeBg, color: dotColor,
+                            whiteSpace: 'nowrap',
+                          }}>
+                            {item.event}
+                          </span>
+                          {item.description && (
+                            <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(80,88,112,0.80)', marginTop: 4, lineHeight: 1.4 }}>
+                              {item.description}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     );
                   })}
