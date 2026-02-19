@@ -284,7 +284,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
                 href={episode.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#FF0000] text-white px-8 py-4 rounded-[15px] font-bold text-base shadow-lg hover:scale-105 transition-all"
+                className="inline-flex items-center gap-3 bg-[#FF0000] text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:scale-105 transition-all"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -297,7 +297,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
                 href={episode.spotifyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#1DB954] text-white px-8 py-4 rounded-[15px] font-bold text-base shadow-lg hover:scale-105 transition-all"
+                className="inline-flex items-center gap-3 bg-[#1DB954] text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:scale-105 transition-all"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
@@ -310,7 +310,7 @@ export default function PodcastEpisodePage({ params }: PageProps) {
                 href={episode.appleUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#F452FF] to-[#832BC1] text-white px-8 py-4 rounded-[15px] font-bold text-base shadow-lg hover:scale-105 transition-all"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#F452FF] to-[#832BC1] text-white px-8 py-4 rounded-full font-bold text-base shadow-lg hover:scale-105 transition-all"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M5.34 0A5.328 5.328 0 000 5.34v13.32A5.328 5.328 0 005.34 24h13.32A5.328 5.328 0 0024 18.66V5.34A5.328 5.328 0 0018.66 0H5.34zm6.525 2.568c2.336 0 4.448.902 6.056 2.587 1.224 1.272 1.912 2.619 2.264 4.392l-2.016.588c-.228-1.272-.852-2.46-1.608-3.188-1.14-1.152-2.424-1.776-4.076-1.776-1.608 0-3.192.48-4.392 1.392-1.488 1.14-2.412 3.108-2.412 5.208 0 2.352 1.248 4.38 3.036 5.496 1.512.948 3.204 1.308 5.208 1.308l.18.012c1.296 0 2.544-.324 3.756-.888.516-.24 1.224-.648 1.74-1.008l1.224 1.764c-.972.636-1.788 1.104-2.544 1.404-1.428.564-2.988.852-4.62.852h-.18c-2.388 0-4.62-.564-6.432-1.86C5.148 16.968 3.5 14.436 3.5 11.58c0-2.676 1.2-5.088 3.132-6.732C8.496 3.252 10.704 2.568 13.2 2.568h-.024c-.084-.012.084 0 0 0h.024v.012-.012zm-.156 5.568c1.26 0 2.316.48 3.132 1.368.42.456.756.996.924 1.62l-1.836.564c-.12-.384-.324-.756-.636-1.044-.456-.42-1.008-.66-1.632-.66-.624 0-1.164.228-1.596.636-.504.48-.804 1.2-.804 1.98 0 .768.324 1.5.9 2.004.384.336.936.54 1.512.54.564 0 1.116-.18 1.548-.54.324-.264.6-.636.756-1.044l1.848.552c-.228.672-.612 1.26-1.116 1.74-.756.72-1.728 1.14-2.844 1.14-1.116 0-2.124-.42-2.916-1.188-.804-.78-1.248-1.848-1.248-3.024 0-1.188.456-2.244 1.272-3.012.768-.732 1.776-1.14 2.904-1.14-.012 0 .036 0 0 0l-.168-.012z"/>
@@ -471,13 +471,13 @@ export default function PodcastEpisodePage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center gap-2 bg-boon-coral text-white px-10 py-5 rounded-[15px] font-sans font-bold text-lg shadow-xl hover:scale-105 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-boon-coral text-white px-10 py-5 rounded-full font-sans font-bold text-lg shadow-xl hover:scale-105 transition-all"
             >
               Book a Strategy Call
             </Link>
             <Link
               href="/learn/podcast"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-10 py-5 rounded-[15px] font-sans font-bold text-lg border border-white/20 hover:bg-white/20 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-10 py-5 rounded-full font-sans font-bold text-lg border border-white/20 hover:bg-white/20 transition-all"
             >
               More Episodes
             </Link>

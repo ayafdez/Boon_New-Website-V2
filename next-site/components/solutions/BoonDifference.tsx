@@ -62,7 +62,7 @@ export function BoonDifference({
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white px-10 py-5 rounded-[15px] font-black text-xl hover:scale-[1.02] transition-all shadow-2xl"
+              className="inline-block bg-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-[1.02] transition-all shadow-2xl"
               style={{ color: accentColor }}
             >
               {ctaText}
@@ -70,7 +70,7 @@ export function BoonDifference({
           ) : (
             <Link
               href={ctaHref}
-              className="inline-block bg-white px-10 py-5 rounded-[15px] font-black text-xl hover:scale-[1.02] transition-all shadow-2xl"
+              className="inline-block bg-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-[1.02] transition-all shadow-2xl"
               style={{ color: accentColor }}
             >
               {ctaText}

@@ -173,13 +173,13 @@ export default function CoachesPage() {
                 href="https://share.hsforms.com/1eMN4ewSoTMuYjlwM2aGH_Qcrsd5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-boon-blue text-white px-10 py-5 rounded-[15px] font-black text-xl shadow-xl shadow-blue-100 hover:bg-boon-deep-blue transition-all text-center"
+                className="bg-boon-blue text-white px-10 py-5 rounded-full font-black text-xl shadow-xl shadow-blue-100 hover:bg-boon-deep-blue transition-all text-center"
               >
                 Join the Boon coaching bench
               </a>
               <a
                 href="#scope"
-                className="border-2 border-gray-200 px-10 py-5 rounded-[15px] font-black text-xl hover:bg-gray-50 transition-all text-center"
+                className="border-2 border-gray-200 px-10 py-5 rounded-full font-black text-xl hover:bg-gray-50 transition-all text-center"
               >
                 See the scope
               </a>
@@ -399,7 +399,7 @@ export default function CoachesPage() {
                 href="https://share.hsforms.com/1eMN4ewSoTMuYjlwM2aGH_Qcrsd5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-lg shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
+                className="bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-full font-sans font-bold text-lg md:text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
               >
                 Apply to the Partnership
               </a>

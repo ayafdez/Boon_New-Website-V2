@@ -251,14 +251,14 @@ export default function BoonVsBetterUpPage() {
           <div className="flex justify-center gap-4 mt-10">
             <Link
               href="/demo"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-boon-coral text-white rounded-[15px] font-sans font-bold text-base hover:-translate-y-0.5 hover:shadow-lg hover:shadow-boon-coral/30 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-boon-coral text-white rounded-lg font-sans font-bold text-base hover:-translate-y-0.5 hover:shadow-lg hover:shadow-boon-coral/30 transition-all"
             >
               Book a Strategy Call
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </Link>
             <Link
               href="/how-it-works"
-              className="inline-flex items-center px-7 py-3.5 text-boon-charcoal rounded-[15px] font-sans font-semibold text-base border-2 border-boon-charcoal/10 hover:border-boon-blue hover:text-boon-blue transition-all"
+              className="inline-flex items-center px-7 py-3.5 text-boon-charcoal rounded-lg font-sans font-semibold text-base border-2 border-boon-charcoal/10 hover:border-boon-blue hover:text-boon-blue transition-all"
             >
               See How It Works
             </Link>
@@ -345,7 +345,7 @@ export default function BoonVsBetterUpPage() {
                   <p className="font-body text-sm text-gray-600 pl-8">{p.desc}</p>
                 </div>
               ))}
-              <div className="mt-6 px-5 py-4 bg-boon-blue/[0.05] rounded-[15px] border-l-[3px] border-boon-blue">
+              <div className="mt-6 px-5 py-4 bg-boon-blue/[0.05] rounded-xl border-l-[3px] border-boon-blue">
                 <p className="font-body text-sm text-boon-charcoal font-medium leading-relaxed">
                   Everything talks to each other. A manager in GROW and their direct report in SCALE
                   are working in the same system with shared context. Data flows across programs,
@@ -369,7 +369,7 @@ export default function BoonVsBetterUpPage() {
                   <p className="font-body text-sm text-gray-400 pl-8">{p.desc}</p>
                 </div>
               ))}
-              <div className="mt-6 px-5 py-4 bg-gray-100 rounded-[15px] border-l-[3px] border-gray-300">
+              <div className="mt-6 px-5 py-4 bg-gray-100 rounded-xl border-l-[3px] border-gray-300">
                 <p className="font-body text-sm text-gray-500 font-medium leading-relaxed">
                   Multiple products, but the core is 1:1 coaching. Manage and Grow are newer additions
                   with different underlying architectures. Group coaching and team workshops
@@ -522,7 +522,7 @@ export default function BoonVsBetterUpPage() {
           </p>
           <Link
             href="/demo"
-            className="inline-flex items-center gap-2.5 px-9 py-4 bg-boon-coral text-white rounded-[15px] font-sans font-bold text-lg hover:-translate-y-0.5 hover:shadow-lg hover:shadow-boon-coral/40 transition-all"
+            className="inline-flex items-center gap-2.5 px-9 py-4 bg-boon-coral text-white rounded-xl font-sans font-bold text-lg hover:-translate-y-0.5 hover:shadow-lg hover:shadow-boon-coral/40 transition-all"
           >
             Book a Strategy Call
             <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>

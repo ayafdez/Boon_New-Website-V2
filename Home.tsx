@@ -163,13 +163,13 @@ export const HomePage: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) 
             <div className="reveal stagger-3 flex flex-col sm:flex-row gap-6">
               <button 
                 onClick={() => setPage('SOLUTIONS')} 
-                className="bg-[#466FF6] text-white px-12 py-6 rounded-[15px] font-black text-xl hover:bg-blue-700 transition-all shadow-2xl shadow-[#466FF6]/20 active:scale-95"
+                className="bg-[#466FF6] text-white px-12 py-6 rounded-2xl font-black text-xl hover:bg-blue-700 transition-all shadow-2xl shadow-[#466FF6]/20 active:scale-95"
               >
                 Explore the System
               </button>
               <button 
                 onClick={() => setPage('WHY_BOON')} 
-                className="border border-gray-100 text-[#2E353D] px-12 py-6 rounded-[15px] font-black text-xl hover:bg-gray-50 transition-all active:scale-95"
+                className="border border-gray-100 text-[#2E353D] px-12 py-6 rounded-2xl font-black text-xl hover:bg-gray-50 transition-all active:scale-95"
               >
                 How It Works
               </button>
@@ -355,7 +355,7 @@ export const HomePage: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) 
             {activeRoleGroup === 'EXEC' && (
               <div className="bg-blue-600 rounded-[56px] p-12 text-white flex flex-col justify-center items-center text-center">
                  <h4 className="text-3xl font-black mb-8">Explore the full 150+ coach network.</h4>
-                 <button className="bg-white text-blue-600 px-8 py-4 rounded-[15px] font-black text-[10px] uppercase tracking-[0.2em] hover:scale-105 transition-all">
+                 <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:scale-105 transition-all">
                     See how Boon vets, matches, and governs coaching at scale.
                  </button>
               </div>
@@ -435,10 +435,10 @@ export const HomePage: React.FC<{ setPage: (p: Page) => void }> = ({ setPage }) 
              Boon is leadership infrastructure designed around human behavior, not tools or programs. So growth holds up as organizations scale.
            </p>
            <div className="flex flex-col sm:flex-row justify-center gap-6">
-             <button className="bg-[#466FF6] text-white px-16 py-8 rounded-[15px] font-black text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all">
+             <button className="bg-[#466FF6] text-white px-16 py-8 rounded-full font-black text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all">
                Book a Strategy Call
              </button>
-             <button onClick={() => setPage('WHY_BOON')} className="bg-white/5 border border-white/10 text-white px-16 py-8 rounded-[15px] font-black text-lg hover:bg-white/10 transition-all">
+             <button onClick={() => setPage('WHY_BOON')} className="bg-white/5 border border-white/10 text-white px-16 py-8 rounded-full font-black text-2xl hover:bg-white/10 transition-all">
                See how it works
              </button>
            </div>

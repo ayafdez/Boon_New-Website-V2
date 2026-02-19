@@ -63,7 +63,7 @@ export function ProductCTA({
         </p>
         <Link
           href={ctaHref}
-          className="inline-block bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-lg shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
+          className="inline-block bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-full font-sans font-bold text-lg md:text-2xl shadow-2xl shadow-boon-coral/30 hover:scale-105 transition-all"
         >
           {ctaText}
         </Link>

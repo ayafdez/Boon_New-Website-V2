@@ -552,7 +552,7 @@ export default function ExecPage() {
                   {/* Company tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {coach.companies.map((company) => (
-                      <div key={company} className="px-2.5 py-1 rounded-[15px] bg-slate-100">
+                      <div key={company} className="px-2.5 py-1 rounded-full bg-slate-100">
                         <span className="text-[11px] font-medium text-slate-500">
                           {company}
                         </span>

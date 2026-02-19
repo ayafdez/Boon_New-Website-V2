@@ -172,7 +172,7 @@ function CTABanner({ title, description, primaryLabel, primaryHref, secondaryLab
       <p className="text-white/85 max-w-lg mx-auto mb-6">{description}</p>
       <Link
         href={primaryHref}
-        className="inline-block bg-boon-coral text-white px-8 py-3 rounded-[15px] font-semibold text-base transition-all hover:bg-boon-light-coral hover:-translate-y-0.5"
+        className="inline-block bg-boon-coral text-white px-8 py-3 rounded-lg font-semibold text-base transition-all hover:bg-boon-light-coral hover:-translate-y-0.5"
       >
         {primaryLabel}
       </Link>

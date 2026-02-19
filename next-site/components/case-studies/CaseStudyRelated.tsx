@@ -51,7 +51,7 @@ export function CaseStudyRelated({ studies }: Props) {
         <div className="text-center mt-12">
           <Link
             href="/learn/case-studies"
-            className="inline-block bg-boon-blue text-white px-10 py-4 rounded-[15px] font-black text-lg hover:scale-105 transition-all"
+            className="inline-block bg-boon-blue text-white px-10 py-4 rounded-full font-black text-lg hover:scale-105 transition-all"
           >
             View All Case Studies
           </Link>

@@ -119,12 +119,12 @@ export const BoonGrowPage: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
               <div className="flex flex-col items-center sm:items-start gap-3">
-                <button className="bg-[#FF8D80] text-white px-10 py-5 rounded-[15px] font-black text-xl shadow-xl shadow-orange-100 hover:bg-[#ff7a6b] transition-all">
+                <button className="bg-[#FF8D80] text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl shadow-orange-100 hover:bg-[#ff7a6b] transition-all">
                   Book a conversation
                 </button>
                 <p className="text-[10px] font-bold text-gray-300 uppercase tracking-widest sm:ml-4">30 minutes. No sales pitch.</p>
               </div>
-              <button className="border border-gray-100 px-10 py-5 rounded-[15px] font-black text-xl hover:bg-gray-50 transition-all">
+              <button className="border border-gray-100 px-10 py-5 rounded-2xl font-black text-xl hover:bg-gray-50 transition-all">
                 View Leadership Focus
               </button>
             </div>
@@ -422,7 +422,7 @@ export const BoonGrowPage: React.FC = () => {
                   Cohort and group experiences that reinforce GROW by turning individual coaching into shared leadership behavior across your teams.
                 </p>
               </div>
-              <div className="flex items-center gap-3 text-[10px] font-black text-[#FDB022] uppercase tracking-[0.3em] bg-[#FFF9E6] px-10 py-5 rounded-[15px] border border-[#FDB022]/10 flex-shrink-0 relative z-10 shadow-sm">
+              <div className="flex items-center gap-3 text-[10px] font-black text-[#FDB022] uppercase tracking-[0.3em] bg-[#FFF9E6] px-10 py-5 rounded-full border border-[#FDB022]/10 flex-shrink-0 relative z-10 shadow-sm">
                 <span className="w-2 h-2 bg-[#FDB022] rounded-full animate-pulse"></span>
                 Reinforcement Layer
               </div>
@@ -442,7 +442,7 @@ export const BoonGrowPage: React.FC = () => {
              A short conversation to see if GROW fits your organization.
            </p>
            <div className="flex flex-col items-center gap-4">
-             <button className="bg-[#FF8D80] text-white px-12 py-6 rounded-[15px] font-black text-lg hover:scale-105 transition-all">
+             <button className="bg-[#FF8D80] text-white px-12 py-6 rounded-full font-black text-2xl hover:scale-105 transition-all">
                Schedule a conversation
              </button>
              <p className="text-[11px] font-bold text-gray-300 uppercase tracking-[0.2em]">Speak directly with our team. No sales pitch.</p>

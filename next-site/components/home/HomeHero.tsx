@@ -89,13 +89,13 @@ export function HomeHero() {
           <div className="reveal stagger-3 flex flex-col sm:flex-row gap-6">
             <Link
               href="/solutions"
-              className="bg-boon-blue text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl hover:bg-boon-deep-blue transition-all shadow-2xl shadow-boon-blue/20 active:scale-95 text-center"
+              className="bg-boon-blue text-white px-8 py-4 md:px-12 md:py-6 rounded-2xl font-sans font-bold text-lg md:text-xl hover:bg-boon-deep-blue transition-all shadow-2xl shadow-boon-blue/20 active:scale-95 text-center"
             >
               See how it works
             </Link>
             <Link
               href="/demo"
-              className="border border-gray-200 text-boon-charcoal px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl hover:bg-boon-off-white transition-all active:scale-95 text-center"
+              className="border border-gray-200 text-boon-charcoal px-8 py-4 md:px-12 md:py-6 rounded-2xl font-sans font-bold text-lg md:text-xl hover:bg-boon-off-white transition-all active:scale-95 text-center"
             >
               Book a Strategy Call
             </Link>

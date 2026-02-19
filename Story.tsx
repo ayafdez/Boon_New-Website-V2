@@ -27,7 +27,7 @@ export const StoryPage: React.FC = () => {
           <p className="text-xl md:text-2xl text-gray-500 font-medium leading-relaxed max-w-3xl mb-12">
             We learned this the hard way, inside high-pressure systems that optimized for performance but ignored the human cost. Boon delivers scalable, human coaching across entire organizations.
           </p>
-          <button className="bg-[#466FF6] text-white px-10 py-5 rounded-[15px] font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all">
+          <button className="bg-[#466FF6] text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all">
             Work with Boon
           </button>
         </div>
@@ -234,7 +234,7 @@ export const StoryPage: React.FC = () => {
             Growth is not a perk. <br />
             <span className="text-[#466FF6] italic font-serif">It’s the work.</span>
           </h2>
-          <button className="bg-[#466FF6] text-white px-12 py-6 rounded-[15px] font-black text-lg shadow-2xl hover:scale-105 transition-all">
+          <button className="bg-[#466FF6] text-white px-12 py-6 rounded-full font-black text-2xl shadow-2xl hover:scale-105 transition-all">
             Partner with Boon
           </button>
         </div>

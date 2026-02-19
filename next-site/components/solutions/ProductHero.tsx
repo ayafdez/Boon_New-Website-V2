@@ -124,7 +124,7 @@ export function ProductHero({
           <div className="flex flex-col sm:flex-row gap-6">
             <Link
               href={ctaPrimary.href}
-              className="px-10 py-5 rounded-[15px] font-black text-xl transition-all shadow-xl text-center text-white"
+              className="px-10 py-5 rounded-2xl font-black text-xl transition-all shadow-xl text-center text-white"
               style={{ backgroundColor: accentColor }}
             >
               {ctaPrimary.text}

@@ -131,7 +131,7 @@ export const BoonExecPage: React.FC = () => {
         />
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-20 items-center relative z-10">
           <div>
-            <div className="inline-flex items-center bg-white/10 text-white font-black text-[13px] tracking-[0.25em] px-10 py-5 rounded-[15px] mb-16 uppercase border border-white/5 shadow-inner">
+            <div className="inline-flex items-center bg-white/10 text-white font-black text-[13px] tracking-[0.25em] px-10 py-5 rounded-full mb-16 uppercase border border-white/5 shadow-inner">
               Boon EXEC
             </div>
             <h1 className="text-6xl md:text-[108px] font-black text-white leading-[0.78] tracking-tighter mb-16 max-w-5xl">
@@ -141,7 +141,7 @@ export const BoonExecPage: React.FC = () => {
               A confidential space for senior leaders navigating decisions where clarity, consequence, and timing matter.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button className="bg-[#466FF6] text-white px-14 py-6 rounded-[15px] font-black text-xl hover:bg-blue-600 transition-all shadow-2xl shadow-blue-900/40">
+              <button className="bg-[#466FF6] text-white px-14 py-6 rounded-2xl font-black text-xl hover:bg-blue-600 transition-all shadow-2xl shadow-blue-900/40">
                 Initiate a Confidential Inquiry
               </button>
             </div>
@@ -325,7 +325,7 @@ export const BoonExecPage: React.FC = () => {
           <p className="text-lg md:text-xl text-white/60 font-medium mb-24 max-w-2xl mx-auto leading-relaxed scale-95">
             Where the stakes are highest and the margin for error is smallest.
           </p>
-          <button className="bg-white text-[#466FF6] px-16 py-8 rounded-[15px] font-black text-lg shadow-2xl hover:scale-105 transition-all">
+          <button className="bg-white text-[#466FF6] px-16 py-8 rounded-full font-black text-2xl shadow-2xl hover:scale-105 transition-all">
             Initiate a Conversation
           </button>
           

@@ -67,7 +67,7 @@ export function Navbar() {
               </svg>
             </Link>
             {isSolutionsOpen && (
-              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-[15px] border border-gray-100 py-4 px-2 flex flex-col gap-1">
+              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl border border-gray-100 py-4 px-2 flex flex-col gap-1">
                 <Link
                   href="/solutions"
                   className="flex flex-col text-left p-3 hover:bg-boon-light-blue/30 rounded-xl transition-all border-b border-gray-50 mb-1"
@@ -131,7 +131,7 @@ export function Navbar() {
               </svg>
             </Link>
             {isLearnOpen && (
-              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-[15px] border border-gray-100 py-4 px-2 flex flex-col gap-1">
+              <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl border border-gray-100 py-4 px-2 flex flex-col gap-1">
                 <Link
                   href="/learn"
                   className="flex flex-col text-left p-3 hover:bg-boon-light-blue/30 rounded-xl transition-all border-b border-gray-50 mb-1"
@@ -158,7 +158,7 @@ export function Navbar() {
       <div className="flex items-center gap-4">
         <Link
           href="/demo"
-          className="bg-boon-coral text-white px-4 py-2 md:px-6 md:py-2.5 rounded-[15px] hover:bg-boon-light-coral transition-all font-sans font-bold shadow-lg shadow-boon-coral/20 text-sm"
+          className="bg-boon-coral text-white px-4 py-2 md:px-6 md:py-2.5 rounded-lg hover:bg-boon-light-coral transition-all font-sans font-bold shadow-lg shadow-boon-coral/20 text-sm"
         >
           Book Demo
         </Link>

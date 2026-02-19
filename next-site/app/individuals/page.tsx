@@ -182,13 +182,13 @@ export default function IndividualsPage() {
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
                 href="/demo"
-                className="bg-[#466FF6] text-white px-10 py-5 rounded-[15px] font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all text-center"
+                className="bg-[#466FF6] text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all text-center"
               >
                 Find Your Coach
               </Link>
               <a
                 href="#how-it-works"
-                className="border border-gray-200 px-10 py-5 rounded-[15px] font-black text-xl hover:bg-white transition-all text-center"
+                className="border border-gray-200 px-10 py-5 rounded-2xl font-black text-xl hover:bg-white transition-all text-center"
               >
                 See How It Works
               </a>
@@ -242,7 +242,7 @@ export default function IndividualsPage() {
             <div className="grid grid-cols-1 gap-6">
               {opportunityMoments.map((item) => (
                 <div key={item.title} className="p-6 md:p-10 bg-[#F9FAFB] rounded-[40px] border border-gray-100 shadow-sm">
-                  <h3 className="text-xl font-black mb-4">{item.title}</h4>
+                  <h4 className="text-xl font-black mb-4">{item.title}</h4>
                   <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
               ))}
@@ -292,7 +292,7 @@ export default function IndividualsPage() {
               {platformFeatures.map((item) => (
                 <div key={item.title} className="p-6 md:p-10 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
                   {item.icon}
-                  <h3 className="text-xl font-black mb-4 text-white">{item.title}</h4>
+                  <h4 className="text-xl font-black mb-4 text-white">{item.title}</h4>
                   <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
                 </div>
               ))}
@@ -325,7 +325,7 @@ export default function IndividualsPage() {
                 <div key={item.title} className="flex gap-6">
                   <CheckCircleIcon />
                   <div>
-                    <h3 className="text-xl font-black mb-2">{item.title}</h4>
+                    <h4 className="text-xl font-black mb-2">{item.title}</h4>
                     <p className="text-gray-500 font-medium leading-relaxed text-sm">{item.description}</p>
                   </div>
                 </div>
@@ -347,7 +347,7 @@ export default function IndividualsPage() {
                   <div className="w-16 h-16 rounded-full bg-[#466FF6] text-white flex items-center justify-center font-black text-2xl mb-8 shadow-xl shadow-blue-100">
                     {step.number}
                   </div>
-                  <h3 className="text-2xl font-black mb-4">{step.title}</h3>
+                  <h5 className="text-2xl font-black mb-4">{step.title}</h5>
                   <p className="text-gray-400 font-medium leading-relaxed text-sm">{step.description}</p>
                 </div>
               ))}
@@ -369,7 +369,7 @@ export default function IndividualsPage() {
               </p>
               <Link
                 href="/demo"
-                className="inline-block bg-[#466FF6] text-white px-10 py-5 rounded-[15px] font-black text-lg shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all mb-12"
+                className="inline-block bg-[#466FF6] text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-blue-100 hover:bg-blue-700 transition-all mb-12"
               >
                 Share Boon with Your HR Team
               </Link>
@@ -422,7 +422,7 @@ export default function IndividualsPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-white text-boon-navy px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-lg shadow-2xl hover:scale-105 transition-all"
+              className="inline-block bg-white text-boon-navy px-8 py-4 md:px-12 md:py-6 rounded-full font-sans font-bold text-lg md:text-2xl shadow-2xl hover:scale-105 transition-all"
             >
               Find Your Coach
             </Link>

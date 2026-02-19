@@ -188,7 +188,7 @@ export default function DemoPage() {
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link
                 href="mailto:anewman@boon-health.com"
-                className="bg-boon-coral text-white px-8 py-4 md:px-16 md:py-8 rounded-[15px] font-sans font-bold text-lg md:text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all"
+                className="bg-boon-coral text-white px-8 py-4 md:px-16 md:py-8 rounded-full font-sans font-bold text-lg md:text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
               >
                 Email our team
               </Link>

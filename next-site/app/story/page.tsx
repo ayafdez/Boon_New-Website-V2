@@ -84,7 +84,7 @@ export default function StoryPage() {
             <div className="flex items-center gap-6">
               <Link
                 href="/demo"
-                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-bold text-lg hover:bg-blue-700 transition-all"
+                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all"
               >
                 Book a Strategy Call
               </Link>
@@ -311,7 +311,7 @@ export default function StoryPage() {
             <div className="flex items-center justify-center gap-6">
               <Link
                 href="/demo"
-                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-[15px] font-bold text-lg hover:bg-blue-700 transition-all"
+                className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all"
               >
                 Book a Strategy Call
               </Link>

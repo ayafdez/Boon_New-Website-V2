@@ -44,7 +44,7 @@ export function GrowProgramTimeline() {
                 <Users className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-sm font-black text-[#2E353D]">Optional Manager Alignment</h3>
+                <h4 className="text-sm font-black text-[#2E353D]">Optional Manager Alignment</h4>
                 <p className="text-xs text-[#2E353D]/50 font-medium">
                   Ensure managers above your cohort understand what&apos;s being developed and how to reinforce new behaviors
                 </p>
