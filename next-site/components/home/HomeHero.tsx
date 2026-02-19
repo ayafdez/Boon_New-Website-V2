@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export function HomeHero() {
@@ -44,13 +45,15 @@ export function HomeHero() {
       <div
         ref={bgRef}
         className="absolute inset-0 w-full h-[120%] -top-[10%] pointer-events-none will-change-transform"
-        style={{
-          backgroundImage: 'url(/hp_hero_bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      ></div>
+      >
+        <Image
+          src="/hp_hero_bg.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Subtle white overlay to keep text readable */}
       <div className="absolute inset-0 bg-white/20 pointer-events-none"></div>
