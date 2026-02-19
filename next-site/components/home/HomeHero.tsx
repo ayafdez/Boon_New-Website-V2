@@ -28,7 +28,7 @@ export function HomeHero() {
 
   return (
     <section className="pt-40 pb-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      {/* Static background image — full cover, no parallax */}
+      {/* Static background image — full width, natural proportions */}
       <div
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ zIndex: 0 }}
@@ -44,8 +44,7 @@ export function HomeHero() {
             inset: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center center',
+            objectFit: 'fill',
           }}
         />
       </div>
