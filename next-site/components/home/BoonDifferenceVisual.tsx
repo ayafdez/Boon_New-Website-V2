@@ -145,7 +145,7 @@ export function BoonDifferenceVisual() {
                           transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
                           transition: 'all 0.2s ease',
                         }}>
-                          <div className="flex flex-col items-center" style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}>
+                          <div className="flex flex-col items-end" style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}>
                             <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
                           </div>
                           <div style={{ position: 'relative', width: 18, display: 'flex', justifyContent: 'center' }}>
@@ -160,7 +160,7 @@ export function BoonDifferenceVisual() {
                             <div style={{
                               borderRadius: 999, padding: '9px 14px',
                               background: isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
-                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)', textAlign: 'center',
+                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)', textAlign: 'left',
                             }}>
                               <span style={{ fontSize: 13, fontWeight: 700, color: isLilac ? '#B06AF2' : '#8A8F98', whiteSpace: 'nowrap' }}>
                                 {item.event}
@@ -183,7 +183,7 @@ export function BoonDifferenceVisual() {
               </div>
             </div>
           ) : (
-            /* WITH BOON — gradient shell, white inner, SAME card structure as WITHOUT BOON */
+            /* WITH BOON — original Figma layout, updated brand colors */
             <div
               className="absolute"
               style={{
@@ -192,84 +192,72 @@ export function BoonDifferenceVisual() {
                 padding: 18, zIndex: 10, overflow: 'hidden',
               }}
             >
-              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 10 }}>
-                <div className="flex flex-col" style={{ gap: 0 }}>
+              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 18 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
                   {c.timeline.map((item: any, i: number) => {
                     const isLast = i === c.timeline.length - 1;
                     const isHovered = hoveredCard === i;
                     const isDimmed = hoveredCard !== null && !isHovered;
+                    const dotColor = item.tone === 'blue' ? '#466FF6' : item.tone === 'red' ? '#FF8D80' : '#D077D2';
+                    const badgeBg = item.tone === 'blue' ? 'rgba(70,111,246,0.10)' : item.tone === 'red' ? 'rgba(255,141,128,0.15)' : 'rgba(208,119,210,0.12)';
                     const connectorGradient = i === 0
                       ? 'linear-gradient(180deg, #466FF6 0%, #FF8D80 100%)'
                       : 'linear-gradient(180deg, #FF8D80 0%, #D077D2 100%)';
-                    const badgeBg = item.tone === 'blue'
-                      ? 'rgba(70,111,246,0.10)' : item.tone === 'red'
-                      ? 'rgba(255,141,128,0.15)' : 'rgba(208,119,210,0.12)';
-                    const dotColor = item.tone === 'blue' ? '#466FF6' : item.tone === 'red' ? '#FF8D80' : '#D077D2';
-                    const textColor = item.tone === 'blue' ? '#466FF6' : item.tone === 'red' ? '#FF8D80' : '#D077D2';
                     return (
-                      <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
-                        {/* Card — identical structure to WITHOUT BOON */}
-                        <div
-                          onMouseEnter={() => setHoveredCard(i)}
-                          onMouseLeave={() => setHoveredCard(null)}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          <div className="flex items-center gap-4" style={{
-                            background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
-                            borderRadius: 22, padding: '14px 16px',
-                            boxShadow: isHovered ? `0 16px 36px ${dotColor}30` : '0 10px 22px rgba(10,10,10,0.10)',
-                            border: isHovered ? `1px solid ${dotColor}55` : '1px solid rgba(0,0,0,0.04)',
-                            opacity: isDimmed ? 0.45 : 1,
-                            transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
-                            transition: 'all 0.2s ease',
-                          }}>
-                            {/* Label */}
-                            <div className="flex flex-col items-center" style={{ width: 48, color: '#8C8F97', fontSize: 11, lineHeight: 1.1, fontWeight: 600 }}>
-                              <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
-                            </div>
-                            {/* Dot */}
-                            <div style={{ position: 'relative', width: 18, display: 'flex', justifyContent: 'center' }}>
-                              <div style={{
-                                width: 14, height: 14, borderRadius: 999,
-                                background: dotColor,
-                                boxShadow: isHovered ? `0 0 0 4px ${dotColor}30` : `0 2px 6px ${dotColor}55`,
-                                flexShrink: 0, transition: 'all 0.2s ease',
-                                transform: isHovered ? 'scale(1.2)' : 'scale(1)',
-                              }} />
-                            </div>
-                            {/* Full-width pill */}
-                            <div style={{ flex: 1 }}>
-                              <div style={{
-                                borderRadius: 999, padding: '9px 14px',
-                                background: badgeBg,
-                                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)', textAlign: 'center',
-                              }}>
-                                <span style={{ fontSize: 13, fontWeight: 700, color: textColor, whiteSpace: 'nowrap' }}>
-                                  {item.event}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14, position: 'relative', cursor: 'pointer' }}
+                        onMouseEnter={() => setHoveredCard(i)}
+                        onMouseLeave={() => setHoveredCard(null)}
+                      >
+                        {/* Label */}
+                        <div style={{ width: 74, display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'rgba(85,92,115,0.75)', fontSize: 12, fontWeight: 600, lineHeight: 1.1 }}>
+                          <span>{item.year}</span>
+                          <span style={{ marginTop: 6 }}>{item.role}</span>
                         </div>
-                        {/* Description */}
-                        {item.description && (
+
+                        {/* Dot + connector */}
+                        <div style={{ position: 'relative', width: 22, display: 'flex', justifyContent: 'center', alignItems: 'flex-start', flexShrink: 0 }}>
                           <div style={{
-                            fontSize: 12, fontWeight: 600, color: 'rgba(80,88,112,0.65)',
-                            paddingLeft: 48 + 16 + 18 + 16 + 4,
-                            paddingTop: 5, paddingBottom: 2, lineHeight: 1.4,
-                          }}>
+                            width: 14, height: 14, borderRadius: 999,
+                            background: dotColor,
+                            boxShadow: `0 6px 14px ${dotColor}55`,
+                            marginTop: 10, position: 'relative', zIndex: 1,
+                            transform: isHovered ? 'scale(1.35)' : 'scale(1)',
+                            transition: 'transform 0.2s ease',
+                          }} />
+                          {!isLast && (
+                            <div style={{
+                              position: 'absolute', top: 26, left: '50%',
+                              transform: 'translateX(-50%)',
+                              width: 5, height: 74, borderRadius: 999,
+                              background: connectorGradient,
+                            }} />
+                          )}
+                        </div>
+
+                        {/* Card */}
+                        <div style={{
+                          flex: 1,
+                          background: 'rgba(255,255,255,0.95)',
+                          borderRadius: 18, padding: '12px 14px',
+                          boxShadow: isHovered ? `0 16px 30px ${dotColor}25` : '0 10px 20px rgba(20,40,120,0.12)',
+                          border: isHovered ? `1px solid ${dotColor}44` : '1px solid rgba(0,0,0,0.04)',
+                          opacity: isDimmed ? 0.45 : 1,
+                          transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
+                          transition: 'all 0.2s ease',
+                        }}>
+                          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 6 }}>
+                            <span style={{
+                              fontSize: 13, fontWeight: 800, padding: '6px 14px',
+                              borderRadius: 999, background: badgeBg, color: dotColor,
+                              whiteSpace: 'nowrap',
+                            }}>
+                              {item.event}
+                            </span>
+                          </div>
+                          <div style={{ textAlign: 'center', fontSize: 12, fontWeight: 600, color: 'rgba(80,88,112,0.80)' }}>
                             {item.description}
                           </div>
-                        )}
-                        {/* Gradient connector */}
-                        {!isLast && (
-                          <div style={{
-                            marginLeft: 48 + 16 + 9 - 2,
-                            width: 5, height: 18, borderRadius: 999,
-                            background: connectorGradient,
-                            flexShrink: 0,
-                          }} />
-                        )}
+                        </div>
                       </div>
                     );
                   })}
