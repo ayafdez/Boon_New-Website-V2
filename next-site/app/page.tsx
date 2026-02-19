@@ -51,7 +51,7 @@ export default function HomePage() {
             The Problem
           </p>
           <h2 className="font-sans text-4xl md:text-5xl lg:text-[62px] font-bold tracking-tight leading-[1.0] text-white mb-20 max-w-5xl">
-            Leadership development fails for <span className="font-serif italic text-boon-coral">three predictable reasons</span>.
+            Leadership development fails for <span className="font-serif italic text-boon-blue">three predictable reasons</span>.
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
