@@ -56,10 +56,10 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Card 1: Fragmented */}
-            <div className="bg-boon-charcoal rounded-3xl p-6 md:p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">01</span>
-                <span className="label-text text-[10px] text-boon-coral">Fragmented</span>
+            <div className="group bg-[#1a2540] rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/40 transition-all duration-300 flex flex-col">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">1</span>
+                <span className="label-text text-[10px] text-boon-blue tracking-widest">Fragmented</span>
               </div>
               <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                 You&apos;re managing four vendors for one job.
@@ -67,21 +67,21 @@ export default function HomePage() {
               <p className="text-gray-500 font-body font-medium mb-6">
                 No one owns the system.
               </p>
-              <div className="border-t border-gray-700/50 pt-6">
+              <div className="border-t border-white/10 pt-6 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:opacity-100 transition-all duration-500">
                 <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
                   Organizations stitch together coaching, training, assessments, and wellbeing tools. None of them talk to each other. Progress stalls because responsibility is diffused.
                 </p>
-                <p className="text-gray-500 text-sm font-serif italic">
+                <p className="text-gray-500 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
                   &quot;We have five vendors and still can&apos;t tell you what&apos;s working.&quot;
                 </p>
               </div>
             </div>
 
             {/* Card 2: Lopsided */}
-            <div className="bg-boon-charcoal rounded-3xl p-6 md:p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">02</span>
-                <span className="label-text text-[10px] text-boon-coral">Lopsided</span>
+            <div className="group bg-[#1a2540] rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/40 transition-all duration-300 flex flex-col">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">2</span>
+                <span className="label-text text-[10px] text-boon-blue tracking-widest">Lopsided</span>
               </div>
               <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                 Executives get coaching. Everyone else gets a workshop and a prayer.
@@ -89,21 +89,21 @@ export default function HomePage() {
               <p className="text-gray-500 font-body font-medium mb-6">
                 The middle is carrying the load.
               </p>
-              <div className="border-t border-gray-700/50 pt-6">
+              <div className="border-t border-white/10 pt-6 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:opacity-100 transition-all duration-500">
                 <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
                   Most solutions are designed for a handful of senior leaders. Managers and emerging leaders, the people actually running the business, get generic training or nothing at all. The result is burnout, inconsistency, and quiet failure in the middle.
                 </p>
-                <p className="text-gray-500 text-sm font-serif italic">
+                <p className="text-gray-500 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
                   &quot;Our top 5% gets coaching. The other 95% gets a workshop link.&quot;
                 </p>
               </div>
             </div>
 
             {/* Card 3: Invisible */}
-            <div className="bg-boon-charcoal rounded-3xl p-6 md:p-10 border border-gray-700/50 hover:border-boon-coral/30 transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-boon-coral/20 text-boon-coral flex items-center justify-center text-xs font-bold font-body">03</span>
-                <span className="label-text text-[10px] text-boon-coral">Invisible</span>
+            <div className="group bg-[#1a2540] rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/40 transition-all duration-300 flex flex-col">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">3</span>
+                <span className="label-text text-[10px] text-boon-blue tracking-widest">Invisible</span>
               </div>
               <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                 Your CEO asks what&apos;s changing. You don&apos;t have an answer.
@@ -111,11 +111,11 @@ export default function HomePage() {
               <p className="text-gray-500 font-body font-medium mb-6">
                 Impact becomes guesswork.
               </p>
-              <div className="border-t border-gray-700/50 pt-6">
+              <div className="border-t border-white/10 pt-6 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:opacity-100 transition-all duration-500">
                 <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
                   HR leaders are asked to defend spend without real insight into behavior change, adoption, or momentum. Data lives in silos. Outcomes are inferred, not observed.
                 </p>
-                <p className="text-gray-500 text-sm font-serif italic">
+                <p className="text-gray-500 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
                   &quot;The board wants ROI. I have engagement scores.&quot;
                 </p>
               </div>
