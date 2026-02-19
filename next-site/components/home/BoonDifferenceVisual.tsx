@@ -43,6 +43,7 @@ const content = {
 
 export function BoonDifferenceVisual() {
   const [active, setActive] = useState<Tab>('WITHOUT BOON');
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const c = content[active];
   const isWithBoon = active === 'WITH BOON';
 
@@ -115,10 +116,10 @@ export function BoonDifferenceVisual() {
             style={{
               top: '-120px',
               right: '-200px',
-              width: 320,
+              width: 400,
               borderRadius: 28,
-              backgroundImage: 'linear-gradient(180deg, #F5F6F8 0%, #CED0D5 100%)',
-              backgroundColor: '#F5F6F8',
+              backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
+              backgroundColor: 'rgba(255,255,255,0.15)',
               boxShadow: '0 18px 40px rgba(10,10,10,0.15)',
               padding: 18,
               zIndex: 10,
@@ -130,17 +131,31 @@ export function BoonDifferenceVisual() {
                   const isLast = i === c.timeline.length - 1;
                   const isLilac = isLast && active === 'WITHOUT BOON';
 
+                  const isHovered = hoveredCard === i;
+                  const isDimmed = hoveredCard !== null && !isHovered;
+
                   return (
-                    <div key={i} className="relative">
+                    <div key={i} className="relative"
+                      onMouseEnter={() => setHoveredCard(i)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                      style={{ cursor: 'pointer' }}
+                    >
                       {/* Row card */}
                       <div
                         className="flex items-center gap-4"
                         style={{
-                          background: 'rgba(255,255,255,0.95)',
+                          background: isHovered ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.95)',
                           borderRadius: 22,
                           padding: '14px 16px',
-                          boxShadow: '0 10px 22px rgba(10,10,10,0.10)',
-                          border: '1px solid rgba(0,0,0,0.04)',
+                          boxShadow: isHovered
+                            ? '0 16px 36px rgba(10,10,10,0.18)'
+                            : '0 10px 22px rgba(10,10,10,0.10)',
+                          border: isHovered
+                            ? '1px solid rgba(70,111,246,0.3)'
+                            : '1px solid rgba(0,0,0,0.04)',
+                          opacity: isDimmed ? 0.45 : 1,
+                          transform: isHovered ? 'scale(1.03) translateX(-4px)' : 'scale(1)',
+                          transition: 'all 0.2s ease',
                         }}
                       >
                         {/* Year / Role label */}
@@ -159,9 +174,10 @@ export function BoonDifferenceVisual() {
                               width: 14,
                               height: 14,
                               borderRadius: 999,
-                              background: '#7C7F88',
-                              boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+                              background: isHovered ? '#466FF6' : '#7C7F88',
+                              boxShadow: isHovered ? '0 0 0 4px rgba(70,111,246,0.15)' : '0 2px 6px rgba(0,0,0,0.15)',
                               flexShrink: 0,
+                              transition: 'all 0.2s ease',
                             }}
                           />
                         </div>
@@ -182,6 +198,7 @@ export function BoonDifferenceVisual() {
                                 fontSize: 13,
                                 fontWeight: 700,
                                 color: isLilac ? '#B06AF2' : '#8A8F98',
+                                whiteSpace: 'nowrap',
                               }}
                             >
                               {item.event}
