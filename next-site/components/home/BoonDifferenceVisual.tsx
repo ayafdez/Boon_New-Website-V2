@@ -109,15 +109,19 @@ export function BoonDifferenceVisual() {
             />
           </div>
 
-          {/* Timeline overlay — matches Figma spec exactly */}
+          {/* Timeline overlay — overlaps only ~20% of image, extends right */}
           <div
-            className="absolute top-1/2 -translate-y-1/2 -right-8"
+            className="absolute"
             style={{
+              top: '-120px',
+              right: '-200px',
               width: 320,
               borderRadius: 28,
-              background: 'linear-gradient(180deg, rgba(245,246,248,1) 0%, rgba(206,208,213,1) 100%)',
+              backgroundImage: 'linear-gradient(180deg, #F5F6F8 0%, #CED0D5 100%)',
+              backgroundColor: '#F5F6F8',
               boxShadow: '0 18px 40px rgba(10,10,10,0.15)',
               padding: 18,
+              zIndex: 10,
             }}
           >
             <div style={{ borderRadius: 22, padding: 10 }}>
@@ -178,7 +182,6 @@ export function BoonDifferenceVisual() {
                                 fontSize: 13,
                                 fontWeight: 700,
                                 color: isLilac ? '#B06AF2' : '#8A8F98',
-                                whiteSpace: 'nowrap',
                               }}
                             >
                               {item.event}
