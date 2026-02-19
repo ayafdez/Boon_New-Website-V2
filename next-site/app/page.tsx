@@ -8,6 +8,7 @@ import { SystemArchitectureSection } from '@/components/home/SystemArchitectureS
 import { CoachSection } from '@/components/home/CoachSection';
 import { LeadershipIntelligence } from '@/components/home/LeadershipIntelligence';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
+import { ProblemCards } from '@/components/home/ProblemCards';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Boon | The Unified Leadership System',
@@ -54,73 +55,7 @@ export default function HomePage() {
             Leadership development fails for <span className="font-serif italic text-boon-blue">three predictable reasons</span>.
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Card 1: Fragmented */}
-            <div className="group rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/60 hover:shadow-lg hover:shadow-boon-blue/10 transition-all duration-300 flex flex-col" style={{ backgroundColor: 'rgba(26, 37, 64, 0.5)' }}>
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">1</span>
-                <span className="label-text text-[10px] text-boon-blue tracking-widest">Fragmented</span>
-              </div>
-              <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
-                You&apos;re managing four vendors for one job.
-              </h3>
-              <p className="text-gray-500 font-body font-medium mb-6">
-                No one owns the system.
-              </p>
-              <div className="border-t border-white/10 pt-6 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
-                  Organizations stitch together coaching, training, assessments, and wellbeing tools. None of them talk to each other. Progress stalls because responsibility is diffused.
-                </p>
-                <p className="text-gray-500 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
-                  &quot;We have five vendors and still can&apos;t tell you what&apos;s working.&quot;
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2: Lopsided */}
-            <div className="group rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/60 hover:shadow-lg hover:shadow-boon-blue/10 transition-all duration-300 flex flex-col" style={{ backgroundColor: 'rgba(26, 37, 64, 0.5)' }}>
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">2</span>
-                <span className="label-text text-[10px] text-boon-blue tracking-widest">Lopsided</span>
-              </div>
-              <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
-                Executives get coaching. Everyone else gets a workshop and a prayer.
-              </h3>
-              <p className="text-gray-500 font-body font-medium mb-6">
-                The middle is carrying the load.
-              </p>
-              <div className="border-t border-white/10 pt-6 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
-                  Most solutions are designed for a handful of senior leaders. Managers and emerging leaders, the people actually running the business, get generic training or nothing at all. The result is burnout, inconsistency, and quiet failure in the middle.
-                </p>
-                <p className="text-gray-500 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
-                  &quot;Our top 5% gets coaching. The other 95% gets a workshop link.&quot;
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3: Invisible */}
-            <div className="group rounded-[35px] p-8 md:p-10 border border-white/10 hover:border-boon-blue/60 hover:shadow-lg hover:shadow-boon-blue/10 transition-all duration-300 flex flex-col" style={{ backgroundColor: 'rgba(26, 37, 64, 0.5)' }}>
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">3</span>
-                <span className="label-text text-[10px] text-boon-blue tracking-widest">Invisible</span>
-              </div>
-              <h3 className="font-sans text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
-                Your CEO asks what&apos;s changing. You don&apos;t have an answer.
-              </h3>
-              <p className="text-gray-500 font-body font-medium mb-6">
-                Impact becomes guesswork.
-              </p>
-              <div className="border-t border-white/10 pt-6 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">
-                  HR leaders are asked to defend spend without real insight into behavior change, adoption, or momentum. Data lives in silos. Outcomes are inferred, not observed.
-                </p>
-                <p className="text-gray-500 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
-                  &quot;The board wants ROI. I have engagement scores.&quot;
-                </p>
-              </div>
-            </div>
-          </div>
+          <ProblemCards />
         </div>
       </section>
 
