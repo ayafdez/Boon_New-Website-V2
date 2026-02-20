@@ -53,7 +53,7 @@ function ImpactMetricRow({
 
 export function LeadershipIntelligence() {
   return (
-    <section className="py-24 md:py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="section section-py relative overflow-hidden">
       {/* Soft gradient background */}
       <div className="absolute inset-0 bg-gradient-to-tl from-boon-soft-coral/10 via-white to-boon-light-blue/15"></div>
 
@@ -75,7 +75,7 @@ export function LeadershipIntelligence() {
         }}
       ></div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-12 md:gap-20 lg:gap-32 items-center relative z-10">
+      <div className="container-xl grid lg:grid-cols-[1fr_1.3fr] gap-12 md:gap-20 lg:gap-32 items-center relative z-10">
         <div>
           <p className="label-text text-[10px] text-boon-blue mb-10">
             Boon&apos;s Data and Insights

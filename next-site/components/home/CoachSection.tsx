@@ -26,14 +26,14 @@ const FEATURED_COACHES = [
 
 export function CoachSection() {
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="section section-py relative overflow-hidden">
       {/* Soft gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-boon-off-white via-white to-boon-light-blue/20"></div>
 
       {/* Decorative gradient blob */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-gradient-to-br from-boon-soft-coral/20 to-transparent rounded-full blur-3xl opacity-50"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="container-xl relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="label-text text-[10px] text-boon-blue mb-8">
@@ -53,7 +53,7 @@ export function CoachSection() {
         </p>
 
         {/* Coach Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid-3col mb-16">
           {FEATURED_COACHES.map((coach, idx) => (
             <div
               key={idx}
