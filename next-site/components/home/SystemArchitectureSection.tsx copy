@@ -301,16 +301,16 @@ export function SystemArchitectureSection() {
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(36px,5vw,64px)' }}>
-          <p style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.18em', color: C.blue, textTransform: 'uppercase', marginBottom: 20, fontFamily: "'Inter', sans-serif" }}>
+          <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.18em', color: C.blue, textTransform: 'uppercase', marginBottom: 16 }}>
             THE SYSTEM ARCHITECTURE
-          </p>
-          <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 'clamp(36px, 6vw, 84px)', fontWeight: 800, color: '#2E353D', lineHeight: 0.9, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
-            One leadership system.{' '}
-            <span style={{ fontFamily: "'DM Serif Text', serif", fontStyle: 'italic', fontWeight: 400, color: C.blue }}>
-              Not four disconnected programs.
-            </span>
-          </h2>
-          <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', color: '#64748B', maxWidth: 600, margin: '28px auto 0', lineHeight: 1.65, fontWeight: 500 }}>
+          </div>
+          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 'clamp(28px,4vw,44px)', fontWeight: 800, color: '#2E353D', lineHeight: 1.15, marginBottom: 4 }}>
+            One leadership system.
+          </div>
+          <div style={{ fontFamily: "'DM Serif Text', serif", fontSize: 'clamp(28px,4vw,44px)', fontStyle: 'italic', color: C.blue, lineHeight: 1.15, marginBottom: 20 }}>
+            Not four disconnected programs.
+          </div>
+          <p style={{ fontSize: 'clamp(13px,1.5vw,15px)', color: '#64748B', maxWidth: 520, margin: '0 auto', lineHeight: 1.65 }}>
             Boon unifies coaching, manager development, executive support, and shared capability into a single system designed to compound as organizations scale.
           </p>
         </div>
