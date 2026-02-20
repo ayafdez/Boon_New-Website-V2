@@ -1,247 +1,189 @@
-'use client';
-
-import { useState } from 'react';
-import { X, Check } from 'lucide-react';
-
-const tabs = ['WITHOUT BOON', 'WITH BOON'] as const;
-type Tab = typeof tabs[number];
-
-const content = {
-  'WITHOUT BOON': {
-    heading: "Maria's fragmented journey",
-    subheading: 'No development for years. Then suddenly, premium coaching with no foundation to build on.',
-    bullets: [
-      { icon: 'x', text: 'Generic, one-off trainings' },
-      { icon: 'x', text: 'Not personalized' },
-      { icon: 'x', text: 'Nothing to build on' },
-    ],
-    image: '/without-boon.jpg',
-    fallbackGradient: 'from-gray-100 to-gray-200',
-    timeline: [
-      { year: '2021', role: 'IC', event: 'Onboarding webinar' },
-      { year: '2023', role: 'Manager', event: 'Leadership 101 workshop' },
-      { year: '2025', role: 'VP', event: 'Executive Coach', isLilac: true },
-    ],
-  },
-  'WITH BOON': {
-    heading: "Maria's continuous journey",
-    subheading: 'Scaffolded development from day one. Each stage builds on the last.',
-    bullets: [
-      { icon: 'check', text: 'Development from day one' },
-      { icon: 'check', text: 'Growth compounds over time' },
-      { icon: 'check', text: 'Context carries forward' },
-    ],
-    image: '/with-boon.jpg',
-    fallbackGradient: 'from-blue-50 to-blue-100',
-    timeline: [
-      { year: '2021', role: 'IC', event: 'Boon SCALE', tone: 'blue', description: 'Builds Self-Awareness' },
-      { year: '2023', role: 'Manager', event: 'Boon GROW', tone: 'red', description: 'Applies IC Insights To Leadership' },
-      { year: '2025', role: 'VP', event: 'Boon EXEC', tone: 'purple', description: 'Accelerates With Strong Foundation' },
-    ],
-  },
-} as const;
+import { ArrowDown, X, Check } from 'lucide-react';
 
 export function BoonDifferenceVisual() {
-  const [active, setActive] = useState<Tab>('WITHOUT BOON');
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const c = content[active];
-  const isWithBoon = active === 'WITH BOON';
-
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto space-y-16">
 
-      {/* Tabs */}
-      <div className="flex justify-center mb-12">
-        <div className="flex border-b border-gray-200">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => { setActive(tab); setHoveredCard(null); }}
-              className={`px-8 py-3 text-xs font-body font-extrabold tracking-widest transition-all duration-200 border-b-2 -mb-px ${
-                active === tab
-                  ? 'border-boon-blue text-boon-charcoal'
-                  : 'border-transparent text-gray-400 hover:text-gray-600'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+      {/* BEFORE - Fragmented Journey */}
+      <div>
+        <div className="mb-8 text-center">
+          <div className="text-xs font-body font-extrabold text-slate-400 tracking-[0.1em] mb-2">
+            BEFORE
+          </div>
+          <h3 className="text-xl md:text-2xl font-sans font-bold text-boon-charcoal mb-3">
+          </h3>
+          <p className="text-sm font-body text-slate-500 max-w-2xl mx-auto">
+            Maria sat through an onboarding webinar in 2021. She didn&apos;t get development again until she was already managing a team.
+          </p>
+        </div>
+
+        {/* Timeline with gaps */}
+        <div className="relative">
+          {/* Dashed connector line (desktop) */}
+          <div className="hidden sm:block absolute top-2 left-[16.67%] right-[16.67%] h-0.5" style={{ backgroundImage: 'repeating-linear-gradient(90deg, #E2E8F0 0, #E2E8F0 6px, transparent 6px, transparent 12px)' }} />
+
+          <div className="grid sm:grid-cols-3 gap-0 sm:gap-6">
+            {[
+              { role: 'IC', year: '2021', offering: 'Onboarding webinar', isEmpty: true, pain: 'Generic, forgotten in a week' },
+              { role: 'Manager', year: '2023', offering: 'Leadership 101 workshop', isEmpty: true, pain: 'Too late, too basic' },
+              { role: 'VP', year: '2025', offering: 'Executive Coach', isEmpty: false, pain: 'Expensive, no foundation to build on' },
+            ].map((stage, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                {/* Vertical dashed connector (mobile only) */}
+                {i > 0 && (
+                  <div className="sm:hidden w-0.5 h-8 my-1" style={{ backgroundImage: 'repeating-linear-gradient(180deg, #E2E8F0 0, #E2E8F0 4px, transparent 4px, transparent 8px)' }} />
+                )}
+
+                {/* Dot */}
+                <div
+                  className={`w-4 h-4 rounded-full mb-3 border-2 relative z-10 ${
+                    stage.isEmpty
+                      ? 'bg-white border-slate-200'
+                      : 'bg-boon-purple border-boon-purple'
+                  }`}
+                />
+
+                {/* Role */}
+                <div className="text-sm font-sans font-bold text-boon-charcoal mb-0.5">
+                  {stage.role}
+                </div>
+
+                {/* Year */}
+                <div className="text-xs font-body text-slate-400 mb-3">
+                  {stage.year}
+                </div>
+
+                {/* Offering badge */}
+                <div
+                  className={`px-3 py-1.5 rounded border ${
+                    stage.isEmpty
+                      ? 'border-slate-200 bg-slate-50 opacity-50'
+                      : 'border-boon-purple/25 bg-boon-purple/10'
+                  }`}
+                >
+                  <div className={`text-xs font-body font-semibold ${
+                    stage.isEmpty ? 'text-slate-400' : 'text-boon-purple'
+                  }`}>
+                    {stage.offering}
+                  </div>
+                </div>
+
+                {/* Pain point */}
+                <div className="flex items-center gap-1.5 mt-2">
+                  <X className="w-3.5 h-3.5 text-boon-coral flex-shrink-0" />
+                  <span className="text-xs font-body text-slate-400 italic">{stage.pain}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Two-column layout */}
-      <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+      {/* Divider arrow */}
+      <div className="flex items-center justify-center">
+        <div className="w-12 h-12 rounded-full bg-boon-blue flex items-center justify-center">
+          <ArrowDown className="w-6 h-6 text-white" />
+        </div>
+      </div>
 
-        {/* Left */}
-        <div>
-          <h3 className={`text-2xl font-sans font-bold mb-4 ${isWithBoon ? 'text-boon-blue' : 'text-boon-charcoal'}`}>
-            {c.heading}
+      {/* AFTER - With Boon */}
+      <div className="rounded-2xl border border-boon-blue/15 bg-boon-blue/[0.03] p-8 md:p-12">
+        <div className="mb-8 text-center">
+          <div className="text-xs font-body font-extrabold text-boon-blue tracking-[0.1em] mb-2">
+            WITH BOON
+          </div>
+          <h3 className="text-xl md:text-2xl font-sans font-bold text-boon-charcoal mb-3">
           </h3>
-          <p className="text-base font-body text-slate-500 mb-8 leading-relaxed">
-            {c.subheading}
+          <p className="text-sm font-body text-boon-charcoal max-w-2xl mx-auto">
+            Scaffolded development from day one.{' '}
+            <span className="font-serif italic font-semibold text-boon-blue">
+              Each stage builds on the last.
+            </span>
           </p>
-          <ul className="space-y-4">
-            {c.bullets.map((b, i) => (
-              <li key={i} className="flex items-center gap-3">
-                {b.icon === 'x' ? (
-                  <span className="w-5 h-5 rounded-full bg-boon-blue/10 flex items-center justify-center flex-shrink-0">
-                    <X className="w-3 h-3 text-boon-blue" strokeWidth={3} />
-                  </span>
-                ) : (
-                  <span className="w-5 h-5 rounded-full bg-boon-blue/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3 h-3 text-boon-blue" strokeWidth={3} />
-                  </span>
-                )}
-                <span className="text-sm font-body text-slate-600 font-medium">{b.text}</span>
-              </li>
-            ))}
-          </ul>
         </div>
 
-        {/* Right — image + overlay */}
-        <div className="relative pt-32">
+        {/* Continuous timeline */}
+        <div className="relative">
+          {/* Continuous gradient line (desktop) */}
+          <div
+            className="hidden sm:block absolute top-2.5 left-[16.67%] right-[16.67%] h-1 rounded-full"
+            style={{ background: 'linear-gradient(to right, #466FF6, #FF6D6A, #C47ACC)' }}
+          />
 
-          <div className={`rounded-[24px] overflow-hidden aspect-[4/3] bg-gradient-to-br ${c.fallbackGradient} relative`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.image} alt={c.heading} className="w-full h-full object-cover absolute inset-0" />
+          {/* Timeline stages */}
+          <div className="grid sm:grid-cols-3 gap-0 sm:gap-6 mb-6 relative">
+            {[
+              { role: 'IC', year: '2021', product: 'SCALE', color: '#466FF6', context: 'Builds self-awareness' },
+              { role: 'Manager', year: '2023', product: 'GROW', color: '#FF6D6A', context: 'Applies IC insights to leadership' },
+              { role: 'VP', year: '2025', product: 'EXEC', color: '#C47ACC', context: 'Accelerates with strong foundation' },
+            ].map((stage, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                {/* Vertical gradient connector (mobile only) */}
+                {i > 0 && (
+                  <div className="sm:hidden w-1 h-8 my-1 rounded-full" style={{
+                    background: i === 1
+                      ? 'linear-gradient(to bottom, #466FF6, #FF6D6A)'
+                      : 'linear-gradient(to bottom, #FF6D6A, #C47ACC)',
+                  }} />
+                )}
+
+                {/* Dot with glow */}
+                <div
+                  className="w-5 h-5 rounded-full mb-3 relative z-10"
+                  style={{
+                    backgroundColor: stage.color,
+                    boxShadow: `0 0 0 4px ${stage.color}20`,
+                  }}
+                />
+
+                {/* Role */}
+                <div className="text-sm font-sans font-bold text-boon-charcoal mb-0.5">
+                  {stage.role}
+                </div>
+
+                {/* Year */}
+                <div className="text-xs font-body text-slate-400 mb-3">
+                  {stage.year}
+                </div>
+
+                {/* Product badge */}
+                <div className="px-3 py-1.5 rounded mb-2" style={{ backgroundColor: `${stage.color}15` }}>
+                  <div className="text-xs font-body font-bold" style={{ color: stage.color }}>
+                    Boon {stage.product}
+                  </div>
+                </div>
+
+                {/* Context note */}
+                <div className="text-xs font-body text-slate-500 italic px-2">
+                  {stage.context}
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* WITHOUT BOON overlay */}
-          {!isWithBoon && (
-            <div className="absolute" style={{
-              top: 40, right: -200, width: 400, zIndex: 10,
-              borderRadius: 28, padding: 18,
-              backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
-              backgroundColor: 'rgba(255,255,255,0.15)',
-            }}>
-              <div style={{ borderRadius: 22, padding: 10 }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                  {c.timeline.map((item: any, i) => {
-                    const isLast = i === c.timeline.length - 1;
-                    const isHovered = hoveredCard === i;
-                    const isDimmed = hoveredCard !== null && !isHovered;
-                    return (
-                      <div key={i} style={{ position: 'relative', cursor: 'pointer' }}
-                        onMouseEnter={() => setHoveredCard(i)}
-                        onMouseLeave={() => setHoveredCard(null)}
-                      >
-                        <div style={{
-                          display: 'flex', alignItems: 'center', gap: 16,
-                          borderRadius: 22, padding: '14px 16px',
-                          background: 'rgba(255,255,255,0.95)',
-                          boxShadow: '0 10px 22px rgba(10,10,10,0.10)',
-                          border: '1px solid rgba(0,0,0,0.04)',
-                          opacity: isDimmed ? 0.45 : 1,
-                          transition: 'opacity 0.2s ease',
-                        }}>
-                          <div style={{ width: 48, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', color: '#8C8F97', fontSize: 11, fontWeight: 600, lineHeight: 1.1 }}>
-                            <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
-                          </div>
-                          <div style={{ width: 18, flexShrink: 0, display: 'flex', justifyContent: 'center' }}>
-                            <div style={{
-                              width: 14, height: 14, borderRadius: 999, transition: 'all 0.2s ease',
-                              background: '#7C7F88',
-                              boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
-                            }} />
-                          </div>
-                          <div style={{ flex: 1 }}>
-                            <div style={{
-                              borderRadius: 999, padding: '9px 18px', textAlign: 'center',
-                              background: item.isLilac ? 'rgba(239,217,255,0.65)' : '#EEF0F3',
-                              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.65)',
-                            }}>
-                              <span style={{ fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap', color: item.isLilac ? '#B06AF2' : '#8A8F98' }}>
-                                {item.event}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        {!isLast && (
-                          <div style={{
-                            position: 'absolute', top: '100%', left: 10 + 48 + 16 + 9,
-                            width: 2, height: 20, borderRadius: 999,
-                            backgroundImage: 'repeating-linear-gradient(to bottom, rgba(124,127,136,0.55) 0 4px, rgba(124,127,136,0) 4px 9px)',
-                          }} />
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
+          {/* TOGETHER persistent bar */}
+          <div className="mt-4 mx-auto rounded-lg bg-emerald-50 border border-emerald-200/50 px-4 py-2.5 text-center" style={{ width: 'calc(100% - 2rem)' }}>
+            <span className="text-xs font-body font-bold text-emerald-600 tracking-wide">
+              Boon TOGETHER
+            </span>
+            <span className="text-xs font-body text-emerald-600/70 ml-2">
+              Team workshops available at every stage
+            </span>
+          </div>
+
+          {/* Benefits */}
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-3 pt-6">
+            {[
+              'Development from day one',
+              'Growth compounds over time',
+              'Context carries forward',
+            ].map((benefit, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-boon-green" />
+                <span className="text-sm font-body font-medium text-boon-charcoal">{benefit}</span>
               </div>
-            </div>
-          )}
-
-          {/* WITH BOON overlay */}
-          {isWithBoon && (
-            <div className="absolute" style={{
-              top: 40, right: -200, width: 400, zIndex: 10,
-              borderRadius: 35, padding: 18, overflow: 'hidden',
-              background: 'linear-gradient(180deg, rgba(246,248,255,0) 0%, rgba(70,111,246,0.20) 100%)',
-            }}>
-              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 10 }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-                  {c.timeline.map((item: any, i: number) => {
-                    const isLast = i === c.timeline.length - 1;
-                    const isHovered = hoveredCard === i;
-                    const isDimmed = hoveredCard !== null && !isHovered;
-                    const dotColor = item.tone === 'blue' ? '#466FF6' : item.tone === 'red' ? '#FF8D80' : '#D077D2';
-                    const badgeBg = item.tone === 'blue' ? 'rgba(70,111,246,0.10)' : item.tone === 'red' ? 'rgba(255,141,128,0.15)' : 'rgba(208,119,210,0.12)';
-                    const connectorGradient = i === 0
-                      ? 'linear-gradient(180deg, #466FF6 0%, #FF8D80 100%)'
-                      : 'linear-gradient(180deg, #FF8D80 0%, #D077D2 100%)';
-                    return (
-                      <div key={i}
-                        style={{ display: 'flex', alignItems: 'flex-start', gap: 14, position: 'relative', cursor: 'pointer', opacity: isDimmed ? 0.45 : 1, transition: 'opacity 0.2s ease', padding: '16px 8px', paddingBottom: isLast ? 16 : 0 }}
-                        onMouseEnter={() => setHoveredCard(i)}
-                        onMouseLeave={() => setHoveredCard(null)}
-                      >
-                        {/* Label — right-aligned, left of dot */}
-                        <div style={{ width: 52, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', color: 'rgba(85,92,115,0.75)', fontSize: 11, fontWeight: 600, lineHeight: 1.2, paddingTop: 2 }}>
-                          <span>{item.year}</span><span style={{ marginTop: 3 }}>{item.role}</span>
-                        </div>
-
-                        {/* Dot + connector — centered between label and badge */}
-                        <div style={{ position: 'relative', width: 24, flexShrink: 0, display: 'flex', justifyContent: 'center', paddingTop: 3 }}>
-                          <div style={{
-                            width: 14, height: 14, borderRadius: 999,
-                            background: dotColor, boxShadow: `0 4px 10px ${dotColor}55`,
-                            position: 'relative', zIndex: 1,
-                            transform: isHovered ? 'scale(1.35)' : 'scale(1)',
-                            transition: 'transform 0.2s ease',
-                          }} />
-                          {!isLast && (
-                            <div style={{
-                              position: 'absolute', top: 15, left: '50%',
-                              transform: 'translateX(-50%)',
-                              width: 4, height: 90, borderRadius: 999,
-                              background: connectorGradient,
-                            }} />
-                          )}
-                        </div>
-
-                        {/* Badge + description */}
-                        <div style={{ flex: 1, paddingLeft: 8 }}>
-                          <div style={{
-                            fontSize: 12, fontWeight: 800, padding: '9px 14px',
-                            borderRadius: 999, background: badgeBg, color: dotColor,
-                            textAlign: 'center',
-                          }}>
-                            {item.event}
-                          </div>
-                          {item.description && (
-                            <div style={{ fontSize: 11, fontWeight: 600, color: 'rgba(80,88,112,0.80)', marginTop: 4, lineHeight: 1.4, textAlign: 'center' }}>
-                              {item.description}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          )}
-
+            ))}
+          </div>
         </div>
       </div>
     </div>
