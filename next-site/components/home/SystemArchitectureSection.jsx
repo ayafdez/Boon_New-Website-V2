@@ -261,13 +261,13 @@ export default function SystemArchitectureSection() {
           <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.18em", color: "#466FF6", textTransform: "uppercase", marginBottom: 16, fontFamily: "Inter, sans-serif" }}>
             THE SYSTEM ARCHITECTURE
           </div>
-          <h2 style={{ fontFamily: "DM Sans, sans-serif", fontSize: 44, fontWeight: 800, color: "#2E353D", lineHeight: 1.15, margin: "0 0 8px" }}>
+          <h2 style={{ fontFamily: "DM Sans, sans-serif", fontSize: "clamp(36px, 6vw, 84px)", fontWeight: 800, color: "#2E353D", lineHeight: 0.9, margin: "0 0 8px", letterSpacing: "-0.03em" }}>
             One leadership system.
           </h2>
-          <h2 style={{ fontFamily: "DM Serif Text, serif", fontSize: 44, fontStyle: "italic", fontWeight: 400, color: "#466FF6", lineHeight: 1.15, margin: "0 0 20px" }}>
+          <h2 style={{ fontFamily: "DM Serif Text, serif", fontSize: "clamp(36px, 6vw, 84px)", fontStyle: "italic", fontWeight: 400, color: "#466FF6", lineHeight: 0.9, margin: "0 0 28px", letterSpacing: "-0.02em" }}>
             Not four disconnected programs.
           </h2>
-          <p style={{ fontSize: 15, color: "#64748B", maxWidth: 520, margin: "0 auto", lineHeight: 1.65 }}>
+          <p style={{ fontSize: "clamp(15px, 1.5vw, 18px)", color: "#64748B", maxWidth: 600, margin: "0 auto", lineHeight: 1.65, fontWeight: 500 }}>
             Boon unifies coaching, manager development, executive support, and shared capability into a single system designed to compound as organizations scale.
           </p>
         </div>
