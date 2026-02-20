@@ -297,7 +297,7 @@ export function SystemArchitectureSection() {
 
   return (
     <section style={{ padding: 'clamp(56px,8vw,100px) clamp(16px,4vw,40px)', background: '#F0F3F7', fontFamily: "'Inter', sans-serif" }}>
-      <div style={{ maxWidth: 1120, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(36px,5vw,64px)' }}>

@@ -148,7 +148,7 @@ export function BoonDifferenceSection() {
 
   return (
     <section style={{ background: '#f1f4f9', padding: 'clamp(36px,6vw,80px) clamp(16px,4vw,40px)', fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif' }}>
-      <div style={{ maxWidth: 960, margin: '0 auto' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
 
         {/* Tab switcher */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'clamp(32px,5vw,48px)' }}>
