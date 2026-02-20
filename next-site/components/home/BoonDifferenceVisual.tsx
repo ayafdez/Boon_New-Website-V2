@@ -74,10 +74,10 @@ export function BoonDifferenceVisual() {
 
         {/* Left */}
         <div>
-          <h3 className={`text-xl md:text-2xl font-sans font-bold mb-4 ${isWithBoon ? 'text-boon-blue' : 'text-boon-charcoal'}`}>
+          <h3 className={`text-2xl md:text-3xl font-sans font-bold mb-4 ${isWithBoon ? 'text-boon-blue' : 'text-boon-charcoal'}`}>
             {c.heading}
           </h3>
-          <p className="text-base md:text-lg font-body text-slate-500 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl font-body text-slate-500 mb-8 leading-relaxed">
             {c.subheading}
           </p>
           <ul className="space-y-4">
@@ -92,7 +92,7 @@ export function BoonDifferenceVisual() {
                     <Check className="w-3 h-3 text-boon-blue" strokeWidth={3} />
                   </span>
                 )}
-                <span className="text-base font-body text-slate-600 font-medium">{b.text}</span>
+                <span className="text-lg font-body text-slate-600 font-medium">{b.text}</span>
               </li>
             ))}
           </ul>
