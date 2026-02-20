@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="section section-py bg-white border-t border-gray-100">
-      <div className="container-xl grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-20">
+    <footer className="bg-white py-12 md:py-24 px-6 md:px-12 lg:px-24 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-20">
         <div className="col-span-1">
           <Image
             src="https://res.cloudinary.com/djbo6r080/image/upload/v1764863780/Wordmark_Blue_16_aw7lvc.png"
@@ -71,7 +71,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="container-xl pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-gray-400 text-sm font-body">
           © {new Date().getFullYear()} Boon. All rights reserved.
         </p>

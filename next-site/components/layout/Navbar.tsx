@@ -30,7 +30,7 @@ export function Navbar() {
   const startsWithPath = (path: string) => pathname?.startsWith(path);
 
   return (
-    <nav className="section sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm py-4 flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm py-4 px-6 md:px-12 lg:px-24 flex justify-between items-center">
       <div className="flex items-center gap-10">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Image

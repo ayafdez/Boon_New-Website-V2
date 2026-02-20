@@ -30,8 +30,8 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="section section-py bg-white">
-      <div className="container-xl">
+    <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="mb-6 flex items-center justify-center gap-3">
@@ -56,7 +56,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid-3col">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, i) => (
             <div
               key={i}
