@@ -142,7 +142,7 @@ function WithTimeline() {
 
 // ── Main Component ─────────────────────────────────────────────────────────
 
-export default function BoonDifferenceSection() {
+export function BoonDifferenceSection() {
   const [activeTab, setActiveTab] = useState<TabKey>('without');
   const isWithout = activeTab === 'without';
 

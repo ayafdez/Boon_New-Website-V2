@@ -291,7 +291,7 @@ const PILL_LABELS = ['SCALE', 'GROW', 'EXEC', 'TOGETHER'];
 
 // ── Main Component ─────────────────────────────────────────────────────────
 
-export default function SystemArchitectureSection() {
+export function SystemArchitectureSection() {
   const [activeTab, setActiveTab] = useState(0);
   const product = PRODUCTS[activeTab];
 
