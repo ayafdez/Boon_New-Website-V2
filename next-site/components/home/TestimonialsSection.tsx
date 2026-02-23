@@ -92,53 +92,32 @@ export function TestimonialsSection() {
           </span>
         </div>
 
-        {/* Avatar row */}
-        <div className="flex items-center justify-center gap-3 flex-wrap">
+        {/* Avatar row — fixed-width slots keep active centered */}
+        <div className="flex items-center justify-center gap-4">
           {testimonials.map((person, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className="transition-all duration-200"
+              className="transition-all duration-200 flex items-center gap-3"
+              style={{ width: i === active ? 'auto' : 44, minWidth: i === active ? 220 : 44 }}
             >
-              {i === active ? (
-                /* Active: pill card with photo + name/role */
-                <div
-                  className="flex items-center gap-3 px-4 py-3 rounded-2xl"
-                  style={{
-                    background: 'rgba(255,255,255,0.9)',
-                    border: '1px solid rgba(255,255,255,0.95)',
-                    boxShadow: '0 4px 16px rgba(46,53,61,0.10)',
-                  }}
-                >
-                  <div className="rounded-full overflow-hidden flex-shrink-0" style={{ width: 48, height: 48 }}>
-                    <Image
-                      src={person.headshot}
-                      alt={person.name}
-                      width={96}
-                      height={96}
-                      quality={90}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-sm font-sans font-bold text-boon-charcoal leading-tight">{person.name}</p>
-                    <p className="text-xs font-body text-gray-400 leading-snug max-w-[140px]">{person.role}</p>
-                  </div>
-                </div>
-              ) : (
-                /* Inactive: small dimmed avatar */
-                <div
-                  className="rounded-full overflow-hidden"
-                  style={{ width: 44, height: 44, opacity: 0.45 }}
-                >
-                  <Image
-                    src={person.headshot}
-                    alt={person.name}
-                    width={88}
-                    height={88}
-                    quality={90}
-                    className="w-full h-full object-cover"
-                  />
+              <div
+                className="rounded-full overflow-hidden flex-shrink-0"
+                style={{ width: i === active ? 52 : 44, height: i === active ? 52 : 44, opacity: i === active ? 1 : 0.4 }}
+              >
+                <Image
+                  src={person.headshot}
+                  alt={person.name}
+                  width={104}
+                  height={104}
+                  quality={90}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {i === active && (
+                <div className="text-left">
+                  <p className="text-sm font-sans font-bold text-boon-charcoal leading-tight">{person.name}</p>
+                  <p className="text-xs font-body text-gray-400 leading-snug">{person.role}</p>
                 </div>
               )}
             </button>
