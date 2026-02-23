@@ -47,10 +47,10 @@ export function TestimonialsSection() {
             </div>
           </div>
 
-          <h2 className="font-sans text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[0.95] md:leading-[0.9] text-boon-charcoal mb-6">
+          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.95] md:leading-[0.9] text-boon-charcoal mb-6">
             Don&apos;t just take <span className="font-serif italic text-boon-blue">our word</span> for it
           </h2>
-          <p className="text-base md:text-xl text-gray-500 font-body font-medium max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-500 font-body font-medium max-w-3xl mx-auto">
             See what leaders are saying about their experience with Boon
           </p>
         </div>
