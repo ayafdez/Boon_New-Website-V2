@@ -39,10 +39,10 @@ export function CoachSection() {
           <p className="label-text text-[10px] text-boon-blue mb-8">
             Boon&apos;s Coaching Bench
           </p>
-          <h2 className="font-sans text-3xl md:text-5xl lg:text-[84px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
+          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
             Coaches who&apos;ve done the <span className="font-serif italic text-boon-blue">job before</span>.
           </h2>
-          <p className="text-xl md:text-2xl text-gray-500 font-body font-medium leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base md:text-lg text-gray-500 font-body font-medium leading-relaxed max-w-4xl mx-auto">
             Boon matches your people with coaches who&apos;ve done the job: former execs, functional leaders, and operators who understand the decisions your team is actually facing.
           </p>
         </div>
@@ -57,9 +57,9 @@ export function CoachSection() {
           {FEATURED_COACHES.map((coach, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[40px] p-5 md:p-8 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-[20px] p-5 md:p-8 hover:shadow-2xl transition-all duration-300"
             >
-              <div className="aspect-square rounded-3xl bg-gray-100 mb-6 overflow-hidden relative">
+              <div className="aspect-square rounded-2xl bg-gray-100 mb-6 overflow-hidden relative">
                 <Image
                   src={coach.img}
                   alt={coach.name}
