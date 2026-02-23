@@ -80,7 +80,7 @@ export default function HomePage() {
       <SystemArchitectureSection />
 
       {/* Mid-page CTA */}
-      <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden" style={{ background: 'rgb(240, 243, 247)' }}>
+      <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #1A253B 0%, #0F1A2E 100%)' }}>
         <div className="max-w-7xl mx-auto">
 
           {/* Card */}
