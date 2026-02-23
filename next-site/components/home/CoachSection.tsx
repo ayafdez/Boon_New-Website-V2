@@ -26,20 +26,20 @@ const FEATURED_COACHES = [
 
 export function CoachSection() {
   return (
-    <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="section section-py relative overflow-hidden">
       {/* Soft gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-boon-off-white via-white to-boon-light-blue/20"></div>
 
       {/* Decorative gradient blob */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-gradient-to-br from-boon-soft-coral/20 to-transparent rounded-full blur-3xl opacity-50"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="container-xl relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="label-text text-[10px] text-boon-blue mb-8">
             Boon&apos;s Coaching Bench
           </p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[74px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
             Coaches who&apos;ve done the <span className="font-serif italic text-boon-blue">job before</span>.
           </h2>
           <p className="text-base md:text-lg text-gray-500 font-body font-medium leading-relaxed max-w-4xl mx-auto">
@@ -53,19 +53,17 @@ export function CoachSection() {
         </p>
 
         {/* Coach Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid-3col mb-16">
           {FEATURED_COACHES.map((coach, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[20px] p-5 md:p-8 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-[40px] p-5 md:p-8 hover:shadow-2xl transition-all duration-300"
             >
-              <div className="aspect-square rounded-2xl bg-gray-100 mb-6 overflow-hidden relative">
+              <div className="aspect-square rounded-3xl bg-gray-100 mb-6 overflow-hidden relative">
                 <Image
                   src={coach.img}
                   alt={coach.name}
                   fill
-                  quality={90}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                   className="object-cover"
                 />
               </div>

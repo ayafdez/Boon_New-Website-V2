@@ -32,8 +32,10 @@ export function LeadershipIntelligence() {
           <Image
             src="/competency growth.png"
             alt="Competency Growth Chart"
-            width={700}
-            height={700}
+            width={1400}
+            height={1400}
+            quality={100}
+            sizes="(max-width: 768px) 100vw, 700px"
             className="w-full h-auto"
             priority
           />
@@ -44,7 +46,7 @@ export function LeadershipIntelligence() {
           <p className="label-text text-[10px] text-boon-blue mb-10">
             Boon&apos;s Data and Insights
           </p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-boon-charcoal mb-12 tracking-tight leading-tight lg:leading-[0.9]">
+          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
             See what&apos;s actually <span className="font-serif italic text-boon-blue">changing</span>.
           </h2>
           <div className="space-y-8 max-w-xl">

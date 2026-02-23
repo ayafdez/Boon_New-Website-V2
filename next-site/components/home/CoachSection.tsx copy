@@ -64,6 +64,8 @@ export function CoachSection() {
                   src={coach.img}
                   alt={coach.name}
                   fill
+                  quality={90}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                   className="object-cover"
                 />
               </div>

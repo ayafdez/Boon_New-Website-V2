@@ -9,7 +9,8 @@ const testimonials = [
     title: 'Boon is a Game Changer',
     quote: 'My coach helps me stay accountable and creates space for meaningful conversations around what matters most. As CPO, I\'m proud to offer Boon to our employees. It\'s consistently one of our most appreciated benefits.',
     name: 'Lisa S.',
-    role: 'Chief People Officer, Energage',
+    position: 'Chief People Officer',
+    company: 'Energage',
     headshot: 'https://storage.googleapis.com/boon-public-assets/lisa%20s.jpeg',
     highlight: 'Most appreciated benefit',
   },
@@ -17,7 +18,8 @@ const testimonials = [
     title: 'Truly Transformative',
     quote: 'I\'ve worked with my coach for almost two years and it\'s been truly transformative. Her thoughtful questions push me to reflect deeply and practice new ways of leading. Coaching has helped me discover insights that continue to shape both my professional and personal life.',
     name: 'HaMy V.',
-    role: 'Chief Operating Officer, Teaching Lab',
+    position: 'Chief Operating Officer',
+    company: 'Teaching Lab',
     headshot: 'https://storage.googleapis.com/boon-public-assets/hamy.jpg',
     highlight: 'Deep, lasting impact',
   },
@@ -25,7 +27,8 @@ const testimonials = [
     title: 'Seamless, Supportive, and Strategic',
     quote: 'Boon has quickly become a core pillar of our total rewards package. Support feels less like a vendor and more like a trusted thought partner. I\'ve built a strong partnership with my own coach through dozens of sessions that are consistently authentic, insightful, and transformative.',
     name: 'Nick D.',
-    role: 'HR Director, OpenUp Resources',
+    position: 'HR Director',
+    company: 'OpenUp Resources',
     headshot: 'https://storage.googleapis.com/boon-public-assets/nick.png',
     highlight: 'Core to total rewards',
   },
@@ -117,7 +120,8 @@ export function TestimonialsSection() {
               {i === active && (
                 <div className="text-left">
                   <p className="text-sm font-sans font-bold text-boon-charcoal leading-tight">{person.name}</p>
-                  <p className="text-xs font-body text-gray-400 leading-snug">{person.role}</p>
+                  <p className="text-xs font-body text-gray-500 leading-snug">{person.position}</p>
+                  <p className="text-xs font-body text-gray-400 leading-snug">{person.company}</p>
                 </div>
               )}
             </button>
