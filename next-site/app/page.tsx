@@ -149,10 +149,8 @@ export default function HomePage() {
       <section className="section section-py-sm bg-off-white">
         <div className="container-xl">
           <div
-            className="relative overflow-hidden rounded-3xl px-12 py-12 md:py-14"
-            style={{
-              background: 'linear-gradient(135deg, #1A253B 0%, #0F1A2E 100%)',
-            }}
+            className="relative overflow-hidden rounded-3xl px-8 md:px-12 py-12 md:py-14"
+            style={{ background: 'linear-gradient(135deg, #1A253B 0%, #0F1A2E 100%)' }}
           >
             {/* Subtle glow accents */}
             <div className="absolute top-0 right-0 w-[40%] h-[80%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at top right, rgba(70,111,246,0.18) 0%, transparent 65%)', filter: 'blur(48px)' }} />
