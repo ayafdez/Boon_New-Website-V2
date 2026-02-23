@@ -13,7 +13,7 @@ const rows = [
 export function LeadershipIntelligence() {
   return (
     <section
-      className="section section-py relative overflow-hidden"
+      className="section relative overflow-hidden py-20 md:py-32"
       style={{ background: 'linear-gradient(135deg, #EEF1FF 0%, #F5F0FF 35%, #FFF5F0 70%, #FFF0F5 100%)' }}
     >
       {/* Blob accents */}
