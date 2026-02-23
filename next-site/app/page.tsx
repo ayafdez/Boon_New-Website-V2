@@ -47,13 +47,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-stretch">
 
           {/* Left — image */}
-          <div className="relative rounded-3xl overflow-hidden h-full min-h-[500px] lg:min-h-[700px]">
+          <div className="relative rounded-3xl overflow-hidden h-full min-h-[500px] lg:min-h-[700px] self-start">
             <img
               src="/leadership development.png"
               alt="Leadership development challenge"
-              className="w-full h-full object-contain object-center absolute inset-0"
+              className="w-full h-auto object-contain"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-boon-navy/60 via-transparent to-transparent" />
           </div>
 
           {/* Right — text + accordion */}
