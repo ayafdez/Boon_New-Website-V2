@@ -51,7 +51,7 @@ export default function HomePage() {
             <img
               src="/leadership development.png"
               alt="Leadership development challenge"
-              className="w-full h-full object-cover object-center absolute inset-0"
+              className="w-full h-full object-contain object-center absolute inset-0"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-boon-navy/60 via-transparent to-transparent" />
           </div>
