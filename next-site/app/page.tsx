@@ -133,7 +133,7 @@ export default function HomePage() {
       <BlogTeaser />
 
       {/* Final CTA */}
-      <section className="py-24 md:py-48 px-6 text-center relative overflow-hidden" style={{ background: 'radial-gradient(ellipse at 50% 50%, #4466DD 0%, #3355CC 35%, #2B4AB0 65%, #1E3A9A 100%)' }}>
+      <section className="py-24 md:py-48 px-6 text-center relative overflow-hidden" style={{ background: 'radial-gradient(rgb(68, 102, 221) 0%, rgb(51, 85, 204) 35%, rgb(31, 45, 93) 65%, #111827 100%)' }}>
         {/* Grid line pattern */}
         <div
           className="absolute inset-0 pointer-events-none"
