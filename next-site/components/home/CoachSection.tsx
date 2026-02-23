@@ -39,7 +39,7 @@ export function CoachSection() {
           <p className="label-text text-[10px] text-boon-blue mb-8">
             Boon&apos;s Coaching Bench
           </p>
-          <h2 className="font-sans text-2xl md:text-4xl lg:text-[44px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal mb-8 tracking-tight leading-[0.9]">
             Coaches who&apos;ve done the <span className="font-serif italic text-boon-blue">job before</span>.
           </h2>
           <p className="text-base md:text-lg text-gray-500 font-body font-medium leading-relaxed max-w-4xl mx-auto">

@@ -21,7 +21,7 @@ export async function BlogTeaser() {
           {/* Left — label + heading */}
           <div>
             <p className="label-text text-[10px] text-boon-blue mb-6">Blog</p>
-            <h2 className="font-sans text-2xl md:text-4xl lg:text-[44px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
               Insights for leaders building{' '}
               <span className="font-serif italic text-boon-blue">what&apos;s next.</span>
             </h2>
