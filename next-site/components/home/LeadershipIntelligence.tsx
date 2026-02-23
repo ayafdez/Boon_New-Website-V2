@@ -46,7 +46,7 @@ export function LeadershipIntelligence() {
           <p className="label-text text-[10px] text-boon-blue mb-10">
             Boon&apos;s Data and Insights
           </p>
-          <h2 className="font-sans text-3xl md:text-5xl lg:text-[74px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
+          <h2 className="font-sans text-2xl md:text-4xl lg:text-[44px] font-bold text-boon-charcoal mb-12 tracking-tight leading-[0.9]">
             See what&apos;s actually <span className="font-serif italic text-boon-blue">changing</span>.
           </h2>
           <div className="space-y-8 max-w-xl">
