@@ -57,9 +57,9 @@ export function CoachSection() {
           {FEATURED_COACHES.map((coach, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[20px] p-5 md:p-8 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-[40px] p-5 md:p-8 hover:shadow-2xl transition-all duration-300"
             >
-              <div className="aspect-square rounded-2xl bg-gray-100 mb-6 overflow-hidden relative">
+              <div className="aspect-square rounded-3xl bg-gray-100 mb-6 overflow-hidden relative">
                 <Image
                   src={coach.img}
                   alt={coach.name}
