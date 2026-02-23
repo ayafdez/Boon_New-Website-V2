@@ -44,15 +44,16 @@ export default function HomePage() {
           style={{ background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, transparent 70%)', filter: 'blur(60px)' }}
         />
 
-        <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-stretch">
+        <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
 
           {/* Left — image */}
-          <div className="relative rounded-3xl overflow-hidden h-full min-h-[500px] lg:min-h-[700px]">
+          <div className="relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-auto lg:h-full min-h-[400px]">
             <img
               src="/leadership development.png"
               alt="Leadership development challenge"
-              className="w-full h-full object-cover object-center absolute inset-0"
+              className="w-full h-full object-cover object-center"
             />
+            {/* Dark overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-t from-boon-navy/60 via-transparent to-transparent" />
           </div>
 
