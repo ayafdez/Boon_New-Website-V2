@@ -304,7 +304,7 @@ export function SystemArchitectureSection() {
           <p style={{ fontSize: '0.625rem', fontWeight: 800, letterSpacing: '0.18em', color: C.blue, textTransform: 'uppercase', marginBottom: 20, fontFamily: "'Inter', sans-serif" }}>
             THE SYSTEM ARCHITECTURE
           </p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9]" style={{ color: '#2E353D', margin: '0 0 8px' }}>
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[74px] font-bold tracking-tight leading-[0.9]" style={{ color: '#2E353D', margin: '0 0 8px' }}>
             One leadership system.{' '}
             <span style={{ fontFamily: "'DM Serif Text', serif", fontStyle: 'italic', fontWeight: 400, color: C.blue }}>
               Not four disconnected programs.

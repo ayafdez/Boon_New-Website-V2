@@ -54,7 +54,7 @@ export function TestimonialsSection() {
             <span className="text-xs font-body font-bold text-boon-charcoal">5.0 on G2</span>
           </div>
 
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-4">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[74px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-4">
             Don&apos;t just take <span className="font-serif italic text-boon-blue">our word</span> for it
           </h2>
           <p className="text-base md:text-lg text-gray-500 font-body font-medium max-w-xl mx-auto">

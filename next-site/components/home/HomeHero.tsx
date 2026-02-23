@@ -63,7 +63,7 @@ export function HomeHero() {
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-8 md:gap-16 items-center relative" style={{ zIndex: 2 }}>
         <div>
-          <h1 className="reveal stagger-1 font-architectural text-4xl md:text-6xl lg:text-[72px] text-boon-charcoal mb-12">
+          <h1 className="reveal stagger-1 font-architectural text-5xl md:text-7xl lg:text-[96px] text-boon-charcoal mb-12">
             The leadership development system you won&apos;t <span className="font-serif italic text-boon-blue">outgrow</span>.
           </h1>
 

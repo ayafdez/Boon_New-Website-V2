@@ -58,7 +58,7 @@ export default function HomePage() {
           {/* Right — text + accordion */}
           <div className="flex flex-col justify-center">
             <p className="label-text text-[10px] text-boon-blue mb-6">The Problem</p>
-            <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9] text-white mb-10">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[74px] font-bold tracking-tight leading-[0.9] text-white mb-10">
               Leadership development fails <span className="font-serif italic text-boon-blue">for three predictable reasons.</span>
             </h2>
             <ProblemCards />
@@ -74,7 +74,7 @@ export default function HomePage() {
             <p className="label-text text-[10px] text-boon-blue mb-8">
               The Boon Difference
             </p>
-            <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-10">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[74px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-10">
               What if everyone got the development they needed, <span className="font-serif italic text-boon-blue">not just executives</span>?
             </h2>
             <p className="text-xl text-gray-500 font-body font-medium leading-relaxed max-w-3xl mx-auto">
@@ -152,7 +152,7 @@ export default function HomePage() {
 
         <div className="max-w-3xl mx-auto relative z-10">
           {/* Heading with inline avatars */}
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-white tracking-tight leading-[1.0] lg:leading-[0.95] mb-8">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[74px] font-bold text-white tracking-tight leading-[0.95] mb-8">
             {/* Line 1: "Built to help people" with avatars after */}
             <span className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-2">
               <span>Built to help people</span>
