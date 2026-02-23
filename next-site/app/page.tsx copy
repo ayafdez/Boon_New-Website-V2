@@ -133,49 +133,76 @@ export default function HomePage() {
       <BlogTeaser />
 
       {/* Final CTA */}
-      <section className="py-32 md:py-64 bg-boon-navy px-6 text-center relative overflow-hidden">
-        {/* Overlapping gradient blobs */}
+      <section className="py-24 md:py-48 px-6 text-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #2B4AB0 0%, #3355CC 40%, #4466DD 100%)' }}>
+        {/* Grid line pattern */}
         <div
-          className="absolute top-[10%] right-[5%] w-[40%] h-[50%] pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.3) 0%, rgba(70, 111, 246, 0.1) 40%, transparent 70%)',
-            filter: 'blur(80px)',
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
           }}
-        ></div>
-        <div
-          className="absolute bottom-[10%] left-[10%] w-[45%] h-[55%] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
-        ></div>
+        />
 
-        {/* Subtle grid line pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-100"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-          }}
-        ></div>
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-white mb-8 tracking-tight leading-[0.9]">
-            Built to help people and teams <br /> <span className="font-serif italic text-boon-blue">actually grow</span>.
+        <div className="max-w-3xl mx-auto relative z-10">
+          {/* Heading with inline avatars */}
+          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-white tracking-tight leading-[1.0] lg:leading-[0.95] mb-8">
+            {/* Line 1: "Built to help people" with avatars after */}
+            <span className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-2">
+              <span>Built to help people</span>
+              {/* Avatar cluster 1 */}
+              <span className="inline-flex items-center">
+                {[
+                  'https://storage.googleapis.com/boon-public-assets/lisa%20s.jpeg',
+                  'https://storage.googleapis.com/boon-public-assets/hamy.jpg',
+                  'https://storage.googleapis.com/boon-public-assets/nick.png',
+                ].map((src, i) => (
+                  <span
+                    key={i}
+                    className="inline-block rounded-full overflow-hidden border-2 border-white/30"
+                    style={{ width: 48, height: 48, marginLeft: i === 0 ? 0 : -12 }}
+                  >
+                    <img src={src} alt="" className="w-full h-full object-cover" />
+                  </span>
+                ))}
+              </span>
+            </span>
+            {/* Line 2: "and teams" */}
+            <span className="block mb-2">and teams</span>
+            {/* Line 3: italic "actually grow." with avatars after */}
+            <span className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+              <span className="font-serif italic font-normal">actually grow.</span>
+              {/* Avatar cluster 2 */}
+              <span className="inline-flex items-center">
+                {[
+                  'https://storage.googleapis.com/boon-public-assets/amykellylauer.jpg',
+                  'https://storage.googleapis.com/boon-public-assets/Olga%20Volgin_New.png',
+                ].map((src, i) => (
+                  <span
+                    key={i}
+                    className="inline-block rounded-full overflow-hidden border-2 border-white/30"
+                    style={{ width: 48, height: 48, marginLeft: i === 0 ? 0 : -12 }}
+                  >
+                    <img src={src} alt="" className="w-full h-full object-cover" />
+                  </span>
+                ))}
+              </span>
+            </span>
           </h2>
-          <p className="text-xl md:text-2xl text-white/60 font-body font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
+
+          <p className="text-base md:text-lg text-white/60 font-body font-medium mb-12 max-w-lg mx-auto leading-relaxed">
             Boon delivers leadership infrastructure designed around real human behavior. Ready for a better leadership system? Get in touch today.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/demo"
-              className="bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl shadow-2xl hover:scale-105 active:scale-95 transition-all"
+              className="bg-boon-coral text-white px-8 py-4 rounded-xl font-sans font-bold text-base shadow-lg hover:scale-105 active:scale-95 transition-all"
             >
               Book a Strategy Call
             </Link>
             <Link
               href="/solutions"
-              className="bg-white/5 border border-white/10 text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl hover:bg-white/10 transition-all"
+              className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-sans font-bold text-base hover:bg-white/15 transition-all"
             >
               See how it works
             </Link>
