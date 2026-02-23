@@ -146,8 +146,8 @@ export default function HomePage() {
       <SystemArchitectureSection />
 
       {/* Mid-page CTA */}
-      <section className="section section-py-sm bg-off-white">
-        <div className="container-xl">
+      <div className="bg-off-white section-py-sm">
+        <div className="container-xl px-6 md:px-12 lg:px-24">
           <div
             className="relative overflow-hidden rounded-3xl px-8 md:px-12 py-12 md:py-14"
             style={{ background: 'linear-gradient(135deg, #1A253B 0%, #0F1A2E 100%)' }}
@@ -186,7 +186,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <DataInsightsSection />
 
