@@ -301,16 +301,16 @@ export function SystemArchitectureSection() {
 
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(36px,5vw,64px)' }}>
-          <p style={{ fontSize: '0.625rem', fontWeight: 800, letterSpacing: '0.18em', color: C.blue, textTransform: 'uppercase', marginBottom: 20, fontFamily: "'Inter', sans-serif" }}>
+          <p style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.18em', color: C.blue, textTransform: 'uppercase', marginBottom: 20, fontFamily: "'Inter', sans-serif" }}>
             THE SYSTEM ARCHITECTURE
           </p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9]" style={{ color: '#2E353D', margin: '0 0 8px' }}>
+          <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 'clamp(36px, 6vw, 84px)', fontWeight: 800, color: '#2E353D', lineHeight: 0.9, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
             One leadership system.{' '}
             <span style={{ fontFamily: "'DM Serif Text', serif", fontStyle: 'italic', fontWeight: 400, color: C.blue }}>
               Not four disconnected programs.
             </span>
           </h2>
-          <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)', color: '#64748B', maxWidth: 600, margin: '28px auto 0', lineHeight: 1.65, fontWeight: 500 }}>
+          <p style={{ fontSize: 'clamp(15px, 1.5vw, 18px)', color: '#64748B', maxWidth: 600, margin: '28px auto 0', lineHeight: 1.65, fontWeight: 500 }}>
             Boon unifies coaching, manager development, executive support, and shared capability into a single system designed to compound as organizations scale.
           </p>
         </div>
@@ -319,75 +319,47 @@ export function SystemArchitectureSection() {
         <div style={{ display: 'grid', gridTemplateColumns: 'clamp(220px,25vw,300px) 1fr', gap: 'clamp(20px,2.5vw,28px)', alignItems: 'start' }} className="sa-layout">
           
           {/* Tabs */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             {TABS.map((tab, i) => {
               const isActive = activeTab === i;
               const color = TAB_COLORS[i];
-              const iconName = i === 0 ? 'grid' : i === 1 ? 'trendUp' : i === 2 ? 'bars' : i === 3 ? 'star' : 'users';
               return (
                 <div
                   key={i}
                   onClick={() => setActiveTab(i)}
                   style={{
-                    borderRadius: 16,
-                    padding: '16px 18px',
+                    padding: '14px 4px',
                     cursor: 'pointer',
-                    background: isActive
-                      ? 'linear-gradient(135deg, rgba(70,111,246,0.10) 0%, rgba(255,141,128,0.08) 100%)'
-                      : 'white',
-                    boxShadow: isActive
-                      ? '0 2px 16px rgba(70,111,246,0.10)'
-                      : '0 1px 4px rgba(46,53,61,0.07)',
-                    border: isActive ? '1px solid rgba(70,111,246,0.15)' : '1px solid rgba(0,0,0,0.06)',
+                    borderBottom: i < TABS.length - 1 ? '1.5px solid rgba(0,0,0,0.08)' : 'none',
                     transition: 'all 0.2s ease',
                   }}
                 >
-                  {/* Row: icon + name + chevron */}
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                       <div style={{
-                        width: 30, height: 30, borderRadius: 8, flexShrink: 0,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        width: 32, height: 32, borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                         background: isActive ? TAB_ICON_BGS[i] : 'rgba(0,0,0,0.04)',
+                        color: isActive ? color : '#8C9AB0',
                         transition: 'all 0.2s ease',
                       }}>
-                        <IconEl name={iconName} color={isActive ? color : '#8C9AB0'} size={15} />
+                        <IconEl name={
+                          i === 0 ? 'grid' : i === 1 ? 'trendUp' : i === 2 ? 'bars' : i === 3 ? 'star' : 'users'
+                        } color={isActive ? color : '#8C9AB0'} size={16} />
                       </div>
-                      <span style={{
-                        fontSize: '0.875rem', fontWeight: 700,
-                        fontFamily: "'DM Sans', sans-serif",
-                        color: isActive ? '#2E353D' : '#8C9AB0',
-                        transition: 'color 0.2s ease',
-                      }}>
-                        {/* Bold the product name portion */}
-                        {tab.name.includes(' ') ? (
-                          <>
-                            {tab.name.split(' ')[0]}{' '}
-                            <strong style={{ fontWeight: 800 }}>{tab.name.split(' ').slice(1).join(' ')}</strong>
-                          </>
-                        ) : tab.name}
-                      </span>
+                      <div style={{ fontSize: 13, fontWeight: 700, fontFamily: "'DM Sans', sans-serif", color: isActive ? color : '#8C9AB0', transition: 'color 0.2s ease' }}>
+                        {tab.name}
+                      </div>
                     </div>
-                    {/* Chevron */}
-                    <svg
-                      width="16" height="16" viewBox="0 0 24 24" fill="none"
-                      stroke={isActive ? '#2E353D' : '#C0C8D8'} strokeWidth="2.5"
-                      strokeLinecap="round" strokeLinejoin="round"
-                      style={{ flexShrink: 0, transition: 'transform 0.2s ease', transform: isActive ? 'rotate(0deg)' : 'rotate(180deg)' }}
-                    >
-                      <polyline points="18 15 12 9 6 15" />
-                    </svg>
+                    <span style={{ fontSize: 15, color: C.blue, opacity: isActive ? 1 : 0, transform: isActive ? 'translateX(0)' : 'translateX(-4px)', transition: 'opacity 0.2s ease, transform 0.2s ease' }}>→</span>
                   </div>
-
-                  {/* Expanded description */}
-                  {isActive && tab.desc && (
-                    <p style={{
-                      fontSize: '0.75rem', color: '#64748B',
-                      lineHeight: 1.55, marginTop: 10,
-                      paddingLeft: 40,
-                    }}>
-                      {tab.desc}
-                    </p>
+                  {/* Tab body — shown only when active & not platform */}
+                  {isActive && i > 0 && tab.desc && (
+                    <div style={{ paddingLeft: 44, marginTop: 8, paddingBottom: 4 }}>
+                      <p style={{ fontSize: 12, color: '#64748B', lineHeight: 1.55, marginBottom: 8 }}>{tab.desc}</p>
+                      <a href="#" style={{ fontSize: 11, fontWeight: 800, color: C.blue, letterSpacing: '0.03em', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                        EXPLORE PILLAR →
+                      </a>
+                    </div>
                   )}
                 </div>
               );
