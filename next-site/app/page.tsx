@@ -9,7 +9,6 @@ import { CoachSection } from '@/components/home/CoachSection';
 import { LeadershipIntelligence } from '@/components/home/LeadershipIntelligence';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { ProblemCards } from '@/components/home/ProblemCards';
-import { DataInsightsSection } from '@/components/home/DataInsightsSection';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Boon | The Unified Leadership System',
@@ -126,8 +125,6 @@ export default function HomePage() {
 
         </div>
       </section>
-
-      <DataInsightsSection />
 
       <CoachSection />
       <LeadershipIntelligence />

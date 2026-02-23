@@ -1,6 +1,118 @@
 import Link from 'next/link';
 
 function ImpactMetricRow({
+  label, before, after, change, width,
+}: {
+  label: string; before: string; after: string; change: string; width: string;
+}) {
+  return (
+    <div
+      className="grid items-center py-5"
+      style={{
+        gridTemplateColumns: '1fr 3rem 3rem 3.5rem 8rem',
+        borderBottom: '1px solid rgba(0,0,0,0.05)',
+      }}
+    >
+      <span className="text-sm font-medium text-gray-600 pr-4">{label}</span>
+      <span className="text-sm text-gray-400 text-right tabular-nums">{before}</span>
+      <span className="text-sm font-bold text-boon-blue text-right tabular-nums">{after}</span>
+      <span className="text-sm font-bold text-boon-blue text-right tabular-nums">{change}</span>
+      <div className="flex items-center pl-5">
+        <div className="h-1.5 bg-gray-100 rounded-full w-full overflow-hidden">
+          <div className="h-full rounded-full" style={{ width, background: 'linear-gradient(90deg, #4ade80, #16a34a)' }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function LeadershipIntelligence() {
+  return (
+    <section
+      className="section section-py relative overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #EEF1FF 0%, #F5F0FF 35%, #FFF5F0 70%, #FFF0F5 100%)' }}
+    >
+      {/* Blob accents */}
+      <div className="absolute top-0 left-0 w-[50%] h-[60%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at top left, rgba(70,111,246,0.10) 0%, transparent 65%)', filter: 'blur(70px)' }} />
+      <div className="absolute bottom-0 right-0 w-[45%] h-[55%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at bottom right, rgba(255,141,128,0.12) 0%, transparent 65%)', filter: 'blur(70px)' }} />
+
+      <div className="container-xl relative z-10">
+        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 md:gap-20 lg:gap-32 items-center">
+
+          {/* Left — text */}
+          <div>
+            <p className="label-text text-[10px] text-boon-blue mb-8">
+              Boon&apos;s Data and Insights
+            </p>
+            <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-boon-charcoal mb-10 tracking-tight leading-[0.9]">
+              See what&apos;s actually <span className="font-serif italic text-boon-blue">changing</span>.
+            </h2>
+            <div className="space-y-6 max-w-md">
+              <p className="text-base md:text-lg text-gray-500 font-body font-medium leading-relaxed">
+                Leverage AI-powered insights to give your exec team the data they need to see development in action.
+              </p>
+              <Link
+                href="/solutions"
+                className="inline-flex items-center gap-2 label-text text-[10px] text-boon-blue hover:gap-4 transition-all"
+              >
+                See how leadership signal compounds over time →
+              </Link>
+            </div>
+          </div>
+
+          {/* Right — card */}
+          <div className="flex flex-col gap-4 w-full relative">
+            <p className="label-text text-[9px] text-gray-400 text-right tracking-widest">
+              Aggregated cohort deltas measured across coached leaders over time.
+            </p>
+
+            <div
+              className="rounded-[28px] overflow-hidden"
+              style={{
+                background: 'rgba(255,255,255,0.92)',
+                boxShadow: '0 24px 64px rgba(46,53,61,0.10), 0 4px 16px rgba(46,53,61,0.06)',
+                border: '1px solid rgba(255,255,255,0.95)',
+                backdropFilter: 'blur(20px)',
+              }}
+            >
+              {/* Card header */}
+              <div className="px-8 pt-8 pb-6 border-b border-gray-100">
+                <div className="flex items-start justify-between mb-1">
+                  <h3 className="font-sans font-bold text-boon-charcoal text-2xl md:text-3xl leading-tight">
+                    Competency Growth
+                  </h3>
+                  <span
+                    className="text-[10px] font-bold tracking-[0.12em] uppercase px-3 py-1.5 rounded-full mt-1 flex-shrink-0"
+                    style={{ background: 'rgba(108,216,147,0.15)', color: '#16a34a', border: '1px solid rgba(108,216,147,0.3)' }}
+                  >
+                    Verified
+                  </span>
+                </div>
+                <p className="label-text text-[9px] text-gray-400 tracking-widest mt-1">
+                  Aggregate Cohort Performance &bull; Q3–Q4 2025
+                </p>
+              </div>
+
+              {/* Rows */}
+              <div className="px-8 pb-4">
+                <ImpactMetricRow label="Giving and Receiving Feedback" before="2.1" after="3.3" change="+53%" width="100%" />
+                <ImpactMetricRow label="Delegation and Accountability"  before="2.4" after="3.4" change="+41%" width="77%"  />
+                <ImpactMetricRow label="Time Management"               before="2.5" after="3.5" change="+40%" width="75%"  />
+                <ImpactMetricRow label="Self Confidence"               before="2.6" after="3.4" change="+33%" width="62%"  />
+                <ImpactMetricRow label="Planning and Execution"        before="2.7" after="3.3" change="+25%" width="47%"  />
+                <ImpactMetricRow label="Emotional Intelligence"        before="3.0" after="3.7" change="+24%" width="45%"  />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+function ImpactMetricRow({
   label,
   before,
   after,
@@ -48,151 +160,5 @@ function ImpactMetricRow({
         </div>
       </div>
     </div>
-  );
-}
-
-export function LeadershipIntelligence() {
-  return (
-    <section className="py-24 md:py-48 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      {/* Soft gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-tl from-boon-soft-coral/10 via-white to-boon-light-blue/15"></div>
-
-      {/* Soft radial gradient accent - right side */}
-      <div
-        className="absolute top-[20%] -right-[5%] w-[45%] h-[70%] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(204, 217, 255, 0.15) 40%, transparent 70%)',
-          filter: 'blur(60px)',
-        }}
-      ></div>
-
-      {/* Secondary blue accent - bottom left */}
-      <div
-        className="absolute -bottom-[10%] -left-[5%] w-[35%] h-[50%] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.15) 0%, transparent 60%)',
-          filter: 'blur(50px)',
-        }}
-      ></div>
-
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-12 md:gap-20 lg:gap-32 items-center relative z-10">
-        <div>
-          <p className="label-text text-[10px] text-boon-blue mb-10">
-            Boon&apos;s Data and Insights
-          </p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold text-boon-charcoal mb-12 tracking-tight leading-tight lg:leading-[0.9]">
-            See what&apos;s actually <span className="font-serif italic text-boon-blue">changing</span>.
-          </h2>
-          <div className="space-y-8 max-w-xl">
-            <p className="text-base md:text-lg text-boon-charcoal font-body font-semibold leading-relaxed">
-              Leverage AI-powered insights to give your exec team the data they need to see development in action.
-            </p>
-            <div className="pt-4">
-              <Link
-                href="/solutions"
-                className="inline-flex items-center gap-2 text-sm font-body font-bold text-boon-blue hover:gap-4 transition-all uppercase tracking-widest"
-              >
-                See how leadership signal compounds over time <span>→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-8 w-full relative">
-          <p className="label-text text-[10px] text-gray-300 ml-0 md:ml-12">
-            Aggregated cohort deltas measured across coached leaders over time.
-          </p>
-
-          {/* Organic gradient blob behind chart - signature Boon visual */}
-          <div className="absolute -inset-12 z-0 pointer-events-none">
-            {/* Blue accent - top left */}
-            <div
-              className="absolute -top-20 -left-20 w-[380px] h-[420px]"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.5) 0%, rgba(70, 111, 246, 0.25) 40%, transparent 70%)',
-                filter: 'blur(50px)',
-              }}
-            ></div>
-            {/* Coral accent - bottom right */}
-            <div
-              className="absolute -bottom-16 -right-16 w-[350px] h-[380px]"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.55) 0%, rgba(255, 141, 128, 0.3) 40%, transparent 70%)',
-                filter: 'blur(50px)',
-              }}
-            ></div>
-            {/* Center blend for smooth transition */}
-            <div
-              className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[450px]"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(204, 217, 255, 0.4) 0%, rgba(255, 187, 187, 0.25) 50%, transparent 80%)',
-                filter: 'blur(55px)',
-              }}
-            ></div>
-          </div>
-
-          <div className="bg-white p-6 md:p-12 lg:p-20 rounded-[32px] md:rounded-[80px] shadow-2xl border border-gray-100 relative z-10">
-            <div className="relative z-10">
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 md:mb-16">
-                <div>
-                  <h3 className="font-sans text-xl md:text-3xl font-bold text-boon-charcoal tracking-tight">Competency Growth</h3>
-                  <p className="label-text text-[10px] text-gray-400 mt-2">
-                    Aggregate Cohort Performance • Q3-Q4 2025
-                  </p>
-                </div>
-                <div className="label-text text-[10px] text-boon-green bg-boon-green/10 px-4 py-2 rounded-full border border-boon-green/10">
-                  VERIFIED
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <ImpactMetricRow
-                  label="Giving and Receiving Feedback"
-                  before="2.1"
-                  after="3.3"
-                  change="+53%"
-                  width="100%"
-                />
-                <ImpactMetricRow
-                  label="Delegation and Accountability"
-                  before="2.4"
-                  after="3.4"
-                  change="+41%"
-                  width="77%"
-                />
-                <ImpactMetricRow
-                  label="Time Management"
-                  before="2.5"
-                  after="3.5"
-                  change="+40%"
-                  width="75%"
-                />
-                <ImpactMetricRow
-                  label="Self Confidence"
-                  before="2.6"
-                  after="3.4"
-                  change="+33%"
-                  width="62%"
-                />
-                <ImpactMetricRow
-                  label="Planning and Execution"
-                  before="2.7"
-                  after="3.3"
-                  change="+25%"
-                  width="47%"
-                />
-                <ImpactMetricRow
-                  label="Emotional Intelligence"
-                  before="3.0"
-                  after="3.7"
-                  change="+24%"
-                  width="45%"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
