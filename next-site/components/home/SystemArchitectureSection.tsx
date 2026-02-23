@@ -323,17 +323,21 @@ export function SystemArchitectureSection() {
             {TABS.map((tab, i) => {
               const isActive = activeTab === i;
               const color = TAB_COLORS[i];
-              const iconName = i === 0 ? 'grid' : i === 1 ? 'trendUp' : i === 2 ? 'bars' : i === 3 ? 'star' : 'users';
+              // Split "Boon SCALE" → prefix "Boon" + name "SCALE"
+              const parts = tab.name.split(' ');
+              const prefix = parts[0]; // "Boon"
+              const productName = parts.slice(1).join(' '); // "SCALE", "GROW", etc.
+
               return (
                 <div
                   key={i}
                   onClick={() => setActiveTab(i)}
                   style={{
                     borderRadius: 16,
-                    padding: '16px 18px',
+                    padding: '18px 20px',
                     cursor: 'pointer',
                     background: isActive
-                      ? 'linear-gradient(135deg, rgba(70,111,246,0.10) 0%, rgba(255,141,128,0.08) 100%)'
+                      ? 'linear-gradient(135deg, rgba(70,111,246,0.07) 0%, rgba(255,141,128,0.06) 100%)'
                       : 'white',
                     boxShadow: isActive
                       ? '0 2px 16px rgba(70,111,246,0.10)'
@@ -342,33 +346,18 @@ export function SystemArchitectureSection() {
                     transition: 'all 0.2s ease',
                   }}
                 >
-                  {/* Row: icon + name + chevron */}
+                  {/* Row: name + chevron */}
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <div style={{
-                        width: 30, height: 30, borderRadius: 8, flexShrink: 0,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        background: isActive ? TAB_ICON_BGS[i] : 'rgba(0,0,0,0.04)',
-                        transition: 'all 0.2s ease',
-                      }}>
-                        <IconEl name={iconName} color={isActive ? color : '#8C9AB0'} size={15} />
-                      </div>
-                      <span style={{
-                        fontSize: '0.875rem', fontWeight: 700,
-                        fontFamily: "'DM Sans', sans-serif",
-                        color: isActive ? '#2E353D' : '#8C9AB0',
-                        transition: 'color 0.2s ease',
-                      }}>
-                        {/* Bold the product name portion */}
-                        {tab.name.includes(' ') ? (
-                          <>
-                            {tab.name.split(' ')[0]}{' '}
-                            <strong style={{ fontWeight: 800 }}>{tab.name.split(' ').slice(1).join(' ')}</strong>
-                          </>
-                        ) : tab.name}
-                      </span>
-                    </div>
-                    {/* Chevron */}
+                    <span style={{
+                      fontSize: '1.0625rem',
+                      fontFamily: "'DM Sans', sans-serif",
+                      color: '#2E353D',
+                      fontWeight: 400,
+                    }}>
+                      {prefix}{' '}
+                      <strong style={{ fontWeight: 800 }}>{productName}</strong>
+                    </span>
+                    {/* Chevron — up when active, down when inactive */}
                     <svg
                       width="16" height="16" viewBox="0 0 24 24" fill="none"
                       stroke={isActive ? '#2E353D' : '#C0C8D8'} strokeWidth="2.5"
@@ -379,15 +368,37 @@ export function SystemArchitectureSection() {
                     </svg>
                   </div>
 
-                  {/* Expanded description */}
-                  {isActive && tab.desc && (
-                    <p style={{
-                      fontSize: '0.75rem', color: '#64748B',
-                      lineHeight: 1.55, marginTop: 10,
-                      paddingLeft: 40,
-                    }}>
-                      {tab.desc}
-                    </p>
+                  {/* Expanded content */}
+                  {isActive && (
+                    <div style={{ marginTop: 10 }}>
+                      {tab.desc && (
+                        <p style={{
+                          fontSize: '0.8125rem',
+                          color: '#64748B',
+                          lineHeight: 1.55,
+                          marginBottom: 14,
+                          fontFamily: "'Inter', sans-serif",
+                        }}>
+                          {tab.desc}
+                        </p>
+                      )}
+                      {i > 0 && (
+                        <a href="#" style={{
+                          fontSize: '0.6875rem',
+                          fontWeight: 800,
+                          color: color,
+                          letterSpacing: '0.06em',
+                          textDecoration: 'none',
+                          textTransform: 'uppercase' as const,
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: 5,
+                          fontFamily: "'Inter', sans-serif",
+                        }}>
+                          Explore Pillar →
+                        </a>
+                      )}
+                    </div>
                   )}
                 </div>
               );
