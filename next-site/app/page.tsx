@@ -8,6 +8,7 @@ import { SystemArchitectureSection } from '@/components/home/SystemArchitectureS
 import { CoachSection } from '@/components/home/CoachSection';
 import { LeadershipIntelligence } from '@/components/home/LeadershipIntelligence';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
+import { BlogTeaser } from '@/components/home/BlogTeaser';
 import { ProblemCards } from '@/components/home/ProblemCards';
 
 export const metadata: Metadata = generatePageMetadata({
@@ -129,6 +130,7 @@ export default function HomePage() {
       <CoachSection />
       <LeadershipIntelligence />
       <TestimonialsSection />
+      <BlogTeaser />
 
       {/* Final CTA */}
       <section className="py-32 md:py-64 bg-boon-navy px-6 text-center relative overflow-hidden">
