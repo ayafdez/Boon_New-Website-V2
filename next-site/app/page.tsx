@@ -28,7 +28,7 @@ export default function HomePage() {
 
       {/* THE TRUTH - Three Failure Modes */}
       <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 bg-boon-navy relative overflow-hidden">
-        {/* Dotted texture overlay - fading from right */}
+        {/* Dotted texture overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -37,26 +37,35 @@ export default function HomePage() {
             maskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
             WebkitMaskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
           }}
-        ></div>
-
-        {/* Soft coral gradient glow from bottom-left */}
+        />
+        {/* Coral glow */}
         <div
           className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[60%] pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
-        ></div>
+          style={{ background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, transparent 70%)', filter: 'blur(60px)' }}
+        />
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <p className="label-text text-[10px] text-gray-500 mb-8">
-            The Problem
-          </p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9] text-white mb-20 max-w-5xl">
-            Leadership development fails for <span className="font-serif italic text-boon-blue">three predictable reasons</span>.
-          </h2>
+        <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
 
-          <ProblemCards />
+          {/* Left — image */}
+          <div className="relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-auto lg:h-full min-h-[400px]">
+            <img
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=90&auto=format&fit=crop"
+              alt="Leadership development challenge"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Dark overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-t from-boon-navy/60 via-transparent to-transparent" />
+          </div>
+
+          {/* Right — text + accordion */}
+          <div className="flex flex-col justify-center">
+            <p className="label-text text-[10px] text-boon-blue mb-6">The Problem</p>
+            <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9] text-white mb-10">
+              Leadership development fails <span className="font-serif italic text-boon-blue">for three predictable reasons.</span>
+            </h2>
+            <ProblemCards />
+          </div>
+
         </div>
       </section>
 
