@@ -130,14 +130,14 @@ export function PlatformShowcase() {
             <span className={`label-text text-[10px] self-start px-3 py-1 rounded-full mb-6 ${content.badgeColor}`}>
               {content.badge}
             </span>
-            <h3 className="font-sans text-xl md:text-2xl font-bold text-boon-charcoal tracking-tight leading-tight mb-8">
+            <h3 className="text-xl md:text-2xl font-sans font-bold text-boon-charcoal mb-4 leading-tight">
               {content.headline}
             </h3>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-4">
               {content.features.map((feature) => (
                 <div key={feature} className="flex items-start gap-3">
                   <CheckIcon />
-                  <p className="text-base font-body font-medium text-gray-600 leading-relaxed">{feature}</p>
+                  <span className="text-base font-body text-slate-600 font-medium">{feature}</span>
                 </div>
               ))}
             </div>
