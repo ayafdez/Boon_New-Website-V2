@@ -93,7 +93,7 @@ export function ProductTestimonials({ logos, testimonials }: ProductTestimonials
             return (
               <div
                 key={`${t.name}-${idx}`}
-                className={`p-8 md:p-16 rounded-[32px] md:rounded-[60px] ${bgColors[idx % bgColors.length]} ${
+                className={`p-8 md:p-16 rounded-[20px] md:rounded-[20px] ${bgColors[idx % bgColors.length]} ${
                   isLastOdd ? 'md:col-span-2 md:max-w-[calc(50%-1rem)] md:mx-auto' : ''
                 }`}
               >

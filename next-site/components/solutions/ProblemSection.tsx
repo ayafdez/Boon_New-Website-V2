@@ -71,7 +71,7 @@ export function ProblemSection({
           {cards.map((item) => (
             <div
               key={item.title}
-              className="bg-white/5 border border-white/10 p-6 md:p-10 rounded-[40px] hover:bg-white/10 transition-all group"
+              className="bg-white/5 border border-white/10 p-6 md:p-10 rounded-[20px] hover:bg-white/10 transition-all group"
             >
               <div className="mb-8" style={{ color: accentColor }}>
                 <div className="w-10 h-10 border-2 border-current rounded-xl flex items-center justify-center font-bold text-xs">

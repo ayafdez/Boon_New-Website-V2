@@ -35,7 +35,7 @@ export function ProductProof({
           </div>
           <div className="space-y-8">
             {images.map((img) => (
-              <div key={img.src} className="rounded-[48px] overflow-hidden bg-[#F0F3F7] shadow-lg">
+              <div key={img.src} className="rounded-[20px] overflow-hidden bg-[#F0F3F7] shadow-lg">
                 <Image
                   src={img.src}
                   width={800}

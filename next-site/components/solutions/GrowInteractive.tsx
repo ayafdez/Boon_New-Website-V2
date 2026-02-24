@@ -180,7 +180,7 @@ export function GrowMeasurement() {
 
   return (
     <div className="flex flex-col gap-6 w-full">
-      <div className="bg-white rounded-[48px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 overflow-hidden">
+      <div className="bg-white rounded-[20px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 overflow-hidden">
         <div className="p-8 md:p-12">
           <div className="flex justify-between items-start mb-10">
             <div>

@@ -66,7 +66,7 @@ export function HowItWorks({
           </div>
         ) : dashboardImage ? (
           <div className="relative">
-            <div className="rounded-[48px] overflow-hidden bg-white shadow-2xl">
+            <div className="rounded-[20px] overflow-hidden bg-white shadow-2xl">
               <Image
                 src={dashboardImage}
                 width={800}

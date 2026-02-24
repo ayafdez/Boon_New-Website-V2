@@ -20,7 +20,7 @@ export function TippingPoints({ productName, accentColor, items }: TippingPoints
           {items.map((item) => (
             <div
               key={item}
-              className="bg-white p-8 rounded-[32px] border border-gray-100 flex items-start gap-4"
+              className="bg-white p-8 rounded-[20px] border border-gray-100 flex items-start gap-4"
             >
               <div
                 className="w-2 h-2 rounded-full mt-2 flex-shrink-0"

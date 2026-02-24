@@ -20,7 +20,7 @@ export function PlatformIntelligence() {
         {/* UI Mockup Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Growth Areas Card */}
-          <div className="bg-boon-off-white rounded-[40px] p-8 border border-gray-100 shadow-sm">
+          <div className="bg-boon-off-white rounded-[20px] p-8 border border-gray-100 shadow-sm">
             <div className="flex justify-between items-center mb-8">
               <div className="label-text text-[10px] text-gray-400">Growth Areas</div>
               <div className="text-[9px] font-body font-bold text-emerald-500 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-widest">Live</div>
@@ -54,7 +54,7 @@ export function PlatformIntelligence() {
           {/* Slack Integration Cards */}
           <div className="space-y-8">
             {/* Coach Match Notification */}
-            <div className="bg-boon-off-white rounded-[40px] p-8 border border-gray-100 shadow-sm">
+            <div className="bg-boon-off-white rounded-[20px] p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 bg-[#4A154B] rounded-lg flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -81,7 +81,7 @@ export function PlatformIntelligence() {
             </div>
 
             {/* Action Items Notification */}
-            <div className="bg-boon-off-white rounded-[40px] p-8 border border-gray-100 shadow-sm">
+            <div className="bg-boon-off-white rounded-[20px] p-8 border border-gray-100 shadow-sm">
               <div className="bg-white rounded-2xl p-5 border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-6 h-6 rounded-full bg-boon-blue flex items-center justify-center">
@@ -107,7 +107,7 @@ export function PlatformIntelligence() {
           </div>
 
           {/* KPI Dashboard Card */}
-          <div className="bg-boon-off-white rounded-[40px] p-8 border border-gray-100 shadow-sm flex flex-col">
+          <div className="bg-boon-off-white rounded-[20px] p-8 border border-gray-100 shadow-sm flex flex-col">
             <div className="label-text text-[10px] text-gray-400 mb-8">Manager Dashboard</div>
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[

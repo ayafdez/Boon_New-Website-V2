@@ -145,7 +145,7 @@ export function ProductHero({
         </div>
         <div className="relative">
           <div
-            className={`rounded-[80px] overflow-hidden shadow-2xl relative ${
+            className={`rounded-[20px] overflow-hidden shadow-2xl relative ${
               darkMode ? 'border border-white/5' : ''
             }`}
           >
@@ -164,7 +164,7 @@ export function ProductHero({
           </div>
           {badgeText && (
             <div className="absolute top-8 right-0 md:-right-16">
-              <div className="bg-white/95 backdrop-blur-sm p-5 rounded-3xl shadow-2xl flex items-start gap-4 max-w-[320px]">
+              <div className="bg-white/95 backdrop-blur-sm p-5 rounded-[20px] shadow-2xl flex items-start gap-4 max-w-[320px]">
                 {badgeIcon}
                 <div>
                   <p className="text-sm font-bold text-boon-charcoal">{badgeText}</p>

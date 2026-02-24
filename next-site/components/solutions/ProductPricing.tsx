@@ -43,7 +43,7 @@ export function ProductPricing({
           Transparent pricing that works for people leaders and finance teams.
         </p>
       </div>
-      <div className="max-w-4xl mx-auto bg-white p-6 md:p-12 lg:p-20 rounded-[32px] md:rounded-[80px] shadow-sm relative overflow-hidden">
+      <div className="max-w-4xl mx-auto bg-white p-6 md:p-12 lg:p-20 rounded-[20px] md:rounded-[20px] shadow-sm relative overflow-hidden">
         <div className="space-y-12 mb-16 relative z-10">
           {pricingPoints.map((item) => (
             <div key={item.title} className="flex gap-8">
