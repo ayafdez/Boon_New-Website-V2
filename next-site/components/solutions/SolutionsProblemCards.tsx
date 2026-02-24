@@ -16,7 +16,7 @@ const cards = [
     label: 'Lopsided',
     heading: 'Executives get coaching. Everyone else gets a workshop and a prayer.',
     sub: 'The middle is carrying the load.',
-    detail: 'Most solutions are designed for a handful of senior leaders. Managers and emerging leaders — the people actually running the business — get generic training or nothing at all.',
+    detail: 'Most solutions are designed for a handful of senior leaders. Managers and emerging leaders—the people actually running the business—get generic training or nothing at all.',
     quote: '"Our top 5% gets coaching. The other 95% gets a workshop link."',
   },
   {
@@ -30,61 +30,63 @@ const cards = [
 ];
 
 export function SolutionsProblemCards() {
-  const [hovered, setHovered] = useState<number | null>(null);
+  const [open, setOpen] = useState<number>(0);
 
   return (
-    <div className="grid md:grid-cols-3 gap-6">
+    <div className="flex flex-col gap-3">
       {cards.map((card, i) => {
-        const isHovered = hovered === i;
-        const isDimmed = hovered !== null && !isHovered;
-
+        const isOpen = open === i;
         return (
           <div
             key={i}
-            onMouseEnter={() => setHovered(i)}
-            onMouseLeave={() => setHovered(null)}
-            className="relative rounded-[20px] p-8 border flex flex-col transition-all duration-300 overflow-hidden"
+            className="rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
             style={{
-              backgroundColor: 'rgba(26, 37, 64, 0.5)',
-              borderColor: isHovered ? 'rgba(70, 111, 246, 0.6)' : 'rgba(255,255,255,0.1)',
-              opacity: isDimmed ? 0.4 : 1,
-              transform: isDimmed ? 'scale(0.98)' : 'scale(1)',
+              background: isOpen
+                ? 'linear-gradient(135deg, rgba(70,111,246,0.18) 0%, rgba(255,255,255,0.06) 100%)'
+                : 'linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 100%)',
+              border: isOpen
+                ? '1px solid rgba(70,111,246,0.35)'
+                : '1px solid rgba(255,255,255,0.10)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              boxShadow: isOpen
+                ? '0 8px 32px rgba(70,111,246,0.12), inset 0 1px 0 rgba(255,255,255,0.1)'
+                : '0 2px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06)',
             }}
+            onClick={() => setOpen(i)}
           >
-            {isHovered && (
-              <div
-                className="absolute inset-0 pointer-events-none rounded-[20px]"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(70,111,246,0.15) 0%, rgba(70,111,246,0.05) 50%, transparent 100%)',
-                  boxShadow: 'inset 0 0 40px rgba(70,111,246,0.1)',
-                }}
-              />
-            )}
-
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-7 h-7 rounded-lg bg-boon-blue/20 text-boon-blue flex items-center justify-center text-xs font-bold font-body">
+            <div className="flex items-start justify-between gap-4 px-6 py-5">
+              <div className="flex items-start gap-4">
+                <span
+                  className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold font-body flex-shrink-0 mt-0.5"
+                  style={{
+                    background: isOpen ? 'rgba(70,111,246,0.25)' : 'rgba(70,111,246,0.15)',
+                    color: '#466FF6',
+                    border: '1px solid rgba(70,111,246,0.2)',
+                  }}
+                >
                   {card.num}
                 </span>
-                <span className="label-text text-[10px] text-boon-blue tracking-widest">{card.label}</span>
+                <div className="flex flex-col gap-1">
+                  <span className="label-text text-[9px] text-boon-blue tracking-widest">{card.label.toUpperCase()}</span>
+                  <h3 className="font-sans font-bold text-white text-base md:text-lg leading-snug">
+                    {card.heading}
+                  </h3>
+                </div>
               </div>
+              <span className="text-white/40 flex-shrink-0 text-base leading-none mt-1">
+                {isOpen ? '∧' : '∨'}
+              </span>
+            </div>
 
-              <h3 className="font-sans text-lg md:text-xl font-bold text-white mb-3 leading-tight">
-                {card.heading}
-              </h3>
-              <p className="text-gray-500 font-body font-medium mb-6">{card.sub}</p>
-
-              <div
-                className="overflow-hidden transition-all duration-500"
-                style={{
-                  maxHeight: isHovered ? '300px' : '0px',
-                  opacity: isHovered ? 1 : 0,
-                  borderTop: isHovered ? '1px solid rgba(255,255,255,0.1)' : 'none',
-                  paddingTop: isHovered ? '1.5rem' : '0',
-                }}
-              >
-                <p className="text-gray-400 text-sm font-body leading-relaxed mb-4">{card.detail}</p>
-                <p className="text-gray-500 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
+            <div
+              className="overflow-hidden transition-all duration-400"
+              style={{ maxHeight: isOpen ? '300px' : '0px', opacity: isOpen ? 1 : 0 }}
+            >
+              <div className="px-6 pb-6 border-t pt-4" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+                <p className="text-white/60 font-sans font-semibold text-sm mb-3">{card.sub}</p>
+                <p className="text-white/40 text-sm font-body leading-relaxed mb-4">{card.detail}</p>
+                <p className="text-boon-blue/80 text-sm font-serif italic border-l-2 border-boon-blue/30 pl-3">
                   {card.quote}
                 </p>
               </div>

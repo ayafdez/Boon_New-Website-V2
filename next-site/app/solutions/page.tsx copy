@@ -5,6 +5,7 @@ import { SystemArchitect } from '@/components/solutions/SystemArchitect';
 import { PlatformShowcase } from '@/components/solutions/PlatformShowcase';
 import { AccordionSection } from '@/components/solutions/AccordionSection';
 import { GlobalCTA } from '@/components/layout/GlobalCTA';
+import { SolutionsProblemCards } from '@/components/solutions/SolutionsProblemCards';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Solutions - Coaching & Leadership Development',
@@ -173,8 +174,8 @@ export default function SolutionsPage() {
         </section>
 
         {/* 1. Problem Statement */}
-        <section className="py-32 px-6 md:px-12 lg:px-24 bg-boon-navy relative overflow-hidden">
-          {/* Dotted texture overlay - fading from right */}
+        <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 bg-boon-navy relative overflow-hidden">
+          {/* Dotted texture overlay */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -183,51 +184,34 @@ export default function SolutionsPage() {
               maskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
               WebkitMaskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
             }}
-          ></div>
-
-          {/* Soft coral gradient glow from bottom-left */}
+          />
+          {/* Coral glow */}
           <div
             className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[60%] pointer-events-none"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
-              filter: 'blur(60px)',
-            }}
-          ></div>
+            style={{ background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, transparent 70%)', filter: 'blur(60px)' }}
+          />
 
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
-            <div>
-              <p className="label-text text-[10px] text-boon-coral mb-6">
-                The Case for Integration
-              </p>
-              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-white tracking-tight leading-[0.9] mb-8">
-                Fragmented support is no support at all.
+          <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-stretch">
+
+            {/* Left — image */}
+            <div className="relative rounded-3xl overflow-hidden h-full min-h-[500px] lg:min-h-[700px] self-start">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/sp_fragmentsupport.png"
+                alt="Fragmented leadership support"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+
+            {/* Right — text + cards */}
+            <div className="flex flex-col justify-center">
+              <p className="label-text text-[10px] text-boon-blue mb-6">The Problem</p>
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] text-white mb-10">
+                Fragmented support is <span className="font-serif italic text-boon-blue">no support at all.</span>
               </h2>
-              <div className="space-y-8 text-gray-400 text-lg font-body font-medium leading-relaxed">
-                <p>
-                  When you&apos;re juggling four vendors for coaching, manager training, exec support, and team facilitation, nothing connects. Context gets lost. Adoption drops. And you can&apos;t show what&apos;s actually working.
-                </p>
-                <p className="text-white">
-                  Boon keeps a continuous thread. When someone gets promoted, their coach relationship and development history come with them. No starting over.
-                </p>
-              </div>
+              <SolutionsProblemCards />
             </div>
-            <div className="bg-boon-charcoal p-6 md:p-12 rounded-[60px] border border-gray-700">
-              <div className="space-y-10">
-                {[
-                  { t: 'Seamless Continuity', d: 'When someone gets promoted, their development journey continues. No reset.' },
-                  { t: 'Depth of Impact', d: 'Habits that stick, not insights that fade after a workshop.' },
-                  { t: 'Strategic Alignment', d: 'One partner who knows your culture, not four vendors who don\'t talk to each other.' },
-                ].map((point) => (
-                  <div key={point.t} className="border-b border-gray-700 pb-6 last:border-0">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-2 h-2 rounded-full bg-boon-coral"></div>
-                      <h3 className="font-sans text-lg font-bold text-white">{point.t}</h3>
-                    </div>
-                    <p className="text-sm text-gray-400 font-body font-medium pl-5">{point.d}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+
           </div>
         </section>
 

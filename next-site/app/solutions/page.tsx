@@ -194,7 +194,7 @@ export default function SolutionsPage() {
           <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-stretch">
 
             {/* Left — image */}
-            <div className="relative rounded-3xl overflow-hidden h-full min-h-[500px] lg:min-h-[700px] self-start">
+            <div className="relative rounded-[20px] overflow-hidden h-full min-h-[500px] lg:min-h-[700px] self-start">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/sp_fragmentsupport.png"
