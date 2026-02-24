@@ -1,59 +1,124 @@
+'use client';
+
+import Image from 'next/image';
+import { Star } from 'lucide-react';
+import { useState } from 'react';
+
 const testimonials = [
   {
-    quote: 'One of the things that set Boon apart was how personalized their match process was. Boon was one of the only solutions that truly combined personal and professional development.',
+    title: 'Personalized From Day One',
+    quote: "One of the things that set Boon apart was how personalized their match process was. Boon was one of the only solutions that truly combined personal and professional development.",
     name: 'Alicia Kiser',
-    role: 'EVP of Human Resources, M3 Insurance',
+    position: 'EVP of Human Resources',
+    company: 'M3 Insurance',
+    headshot: 'https://storage.googleapis.com/boon-public-assets/alicia.jpeg',
+    highlight: 'Truly personalized match',
   },
   {
-    quote: 'What surprised me most was how coaching connected the dots between personal well-being and professional performance. Employees were not just more productive. They were more present, more collaborative, and more invested in our mission.',
+    title: 'More Than Productivity',
+    quote: "What surprised me most was how coaching connected the dots between personal well-being and professional performance. Employees were not just more productive. They were more present, more collaborative, and more invested in our mission.",
     name: 'Lisa Sordilla',
-    role: 'Chief People Officer, Energage',
+    position: 'Chief People Officer',
+    company: 'Energage',
+    headshot: 'https://storage.googleapis.com/boon-public-assets/lisa%20s.jpeg',
+    highlight: 'Well-being meets performance',
   },
 ];
 
 export function SolutionsTestimonials() {
+  const [active, setActive] = useState(0);
+  const t = testimonials[active];
+
   return (
-    <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden" style={{ background: 'rgb(240, 243, 247)' }}>
+      <div className="max-w-4xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="label-text text-[10px] text-boon-blue mb-6">What Our Clients Say</p>
-          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-6">
-            Trusted by HR leaders building <span className="font-serif italic text-boon-blue">real cultures</span>.
+        <div className="text-center mb-12">
+          {/* G2 badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(0,0,0,0.07)' }}>
+            <div className="flex items-center gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-current text-boon-blue" />
+              ))}
+            </div>
+            <span className="text-xs font-body font-bold text-boon-charcoal">5.0 on G2</span>
+          </div>
+
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-4">
+            What Our <span className="font-serif italic text-boon-blue">Clients Say</span>
           </h2>
-          <p className="text-base md:text-lg font-body font-medium text-gray-500 max-w-2xl mx-auto">
-            See what leaders are saying about their experience with Boon.
+          <p className="text-base md:text-lg text-gray-500 font-body font-medium max-w-xl mx-auto">
+            Trusted by HR leaders building real cultures.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="flex flex-col p-8 rounded-[20px] bg-boon-off-white border border-slate-200 transition-all hover:shadow-lg"
+        {/* Featured testimonial card */}
+        <div
+          className="rounded-[20px] p-8 md:p-12 mb-10 text-center"
+          style={{
+            background: 'rgba(255,255,255,0.85)',
+            border: '1px solid rgba(255,255,255,0.9)',
+            boxShadow: '0 4px 32px rgba(46,53,61,0.07)',
+            backdropFilter: 'blur(12px)',
+          }}
+        >
+          {/* Stars */}
+          <div className="flex items-center justify-center gap-1 mb-5">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 fill-current text-boon-blue" />
+            ))}
+          </div>
+
+          {/* Title */}
+          <h3 className="font-sans font-bold text-boon-charcoal text-xl md:text-2xl mb-4">
+            {t.title}
+          </h3>
+
+          {/* Quote */}
+          <p className="text-sm md:text-base font-body text-gray-500 leading-relaxed max-w-2xl mx-auto mb-6">
+            &ldquo;{t.quote}&rdquo;
+          </p>
+
+          {/* Highlight badge */}
+          <span
+            className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-body font-semibold text-boon-blue"
+            style={{ background: 'rgba(70,111,246,0.08)', border: '1px solid rgba(70,111,246,0.15)' }}
+          >
+            {t.highlight}
+          </span>
+        </div>
+
+        {/* Avatar row */}
+        <div className="flex items-center justify-center gap-4">
+          {testimonials.map((person, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className="transition-all duration-200 flex items-center gap-3"
+              style={{ width: i === active ? 'auto' : 44, minWidth: i === active ? 220 : 44 }}
             >
-              {/* Stars */}
-              <div className="flex items-center gap-0.5 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 fill-current text-boon-coral" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+              <div
+                className="rounded-full overflow-hidden flex-shrink-0"
+                style={{ width: i === active ? 52 : 44, height: i === active ? 52 : 44, opacity: i === active ? 1 : 0.4 }}
+              >
+                <Image
+                  src={person.headshot}
+                  alt={person.name}
+                  width={104}
+                  height={104}
+                  quality={90}
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              {/* Quote */}
-              <p className="flex-1 text-base font-body text-slate-600 leading-relaxed mb-8">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Reviewer */}
-              <div className="pt-6 border-t border-slate-200">
-                <div className="text-sm font-body font-semibold text-boon-charcoal">{t.name}</div>
-                <div className="text-xs font-body text-slate-400 mt-0.5">{t.role}</div>
-              </div>
-            </div>
+              {i === active && (
+                <div className="text-left">
+                  <p className="text-sm font-sans font-bold text-boon-charcoal leading-tight">{person.name}</p>
+                  <p className="text-xs font-body text-gray-500 leading-snug">{person.position}</p>
+                  <p className="text-xs font-body text-gray-400 leading-snug">{person.company}</p>
+                </div>
+              )}
+            </button>
           ))}
         </div>
 
