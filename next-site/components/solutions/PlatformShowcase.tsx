@@ -22,7 +22,7 @@ const TAB_DATA: Record<TabId, {
   image: string;
 }> = {
   employee: {
-    badge: 'Employee View',
+    badge: "What's in it for me?",
     badgeColor: 'bg-boon-light-blue/50 text-boon-blue border border-boon-light-blue',
     question: "What's in it for me?",
     headline: 'Your personal coaching journey, all in one place',
@@ -34,7 +34,7 @@ const TAB_DATA: Record<TabId, {
     image: '/sp_employee.png',
   },
   manager: {
-    badge: 'Manager View',
+    badge: 'How is my team developing?',
     badgeColor: 'bg-boon-light-blue/50 text-boon-blue border border-boon-light-blue',
     question: 'How is my team developing?',
     headline: 'Team development visibility without invading privacy',
@@ -46,7 +46,7 @@ const TAB_DATA: Record<TabId, {
     image: '/sp_manager.png',
   },
   hr: {
-    badge: 'HR / L&D View',
+    badge: "What's the ROI?",
     badgeColor: 'bg-boon-light-blue/50 text-boon-blue border border-boon-light-blue',
     question: "What's the ROI?",
     headline: 'The reporting your CFO will actually believe',
@@ -83,18 +83,18 @@ export function PlatformShowcase() {
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Section header */}
-        <div className="mb-16 max-w-4xl">
+        <div className="mb-16 text-center max-w-4xl mx-auto">
           <p className="label-text text-[10px] text-boon-blue mb-6">Platform in Action</p>
           <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6">
             See it working across <span className="font-serif italic text-boon-blue">every level</span>.
           </h2>
-          <p className="text-base md:text-lg font-body font-medium text-gray-500 leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg font-body font-medium text-gray-500 leading-relaxed max-w-2xl mx-auto">
             From individual coaching portals to executive dashboards, Boon keeps everyone connected without adding complexity.
           </p>
         </div>
 
         {/* Tab bar — homepage underline style */}
-        <div className="flex mb-12">
+        <div className="flex justify-center mb-12">
           <div className="flex border-b border-gray-200">
             {(['employee', 'manager', 'hr'] as TabId[]).map((id) => {
               const labels: Record<TabId, string> = { employee: 'EMPLOYEE', manager: 'MANAGER', hr: 'HR / L&D' };
@@ -130,9 +130,6 @@ export function PlatformShowcase() {
             <span className={`label-text text-[10px] self-start px-3 py-1 rounded-full mb-6 ${content.badgeColor}`}>
               {content.badge}
             </span>
-            <p className="font-serif italic text-gray-400 text-base md:text-lg mb-4">
-              {content.question}
-            </p>
             <h3 className="font-sans text-xl md:text-2xl font-bold text-boon-charcoal tracking-tight leading-tight mb-8">
               {content.headline}
             </h3>
