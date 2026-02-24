@@ -6,10 +6,10 @@ export function GrowProgramTimeline() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-4">
-          <p className="text-[#FF8D80] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+          <p className="text-[#FF8D80] font-extrabold text-[10px] tracking-widest uppercase mb-6">
             What&apos;s Inside
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-black tracking-tighter mb-4">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-4">
             How GROW builds resilient leaders.
           </h2>
           <p className="text-lg text-[#2E353D]/60 font-medium max-w-2xl">
@@ -44,13 +44,13 @@ export function GrowProgramTimeline() {
                 <Users className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h4 className="text-sm font-black text-[#2E353D]">Optional Manager Alignment</h4>
+                <h4 className="text-sm font-bold text-boon-charcoal">Optional Manager Alignment</h4>
                 <p className="text-xs text-[#2E353D]/50 font-medium">
                   Ensure managers above your cohort understand what&apos;s being developed and how to reinforce new behaviors
                 </p>
               </div>
             </div>
-            <span className="text-[10px] font-black tracking-widest uppercase text-[#2E353D]/40 bg-white px-3 py-1.5 rounded-full border border-slate-200 flex-shrink-0">
+            <span className="text-[10px] font-extrabold tracking-widest uppercase text-[#2E353D]/40 bg-white px-3 py-1.5 rounded-full border border-slate-200 flex-shrink-0">
               Optional
             </span>
           </div>
@@ -127,12 +127,12 @@ export function GrowProgramTimeline() {
                   </div>
                   <div>
                     <p
-                      className="text-[10px] font-black tracking-[0.2em] uppercase mb-1"
+                      className="text-[10px] font-extrabold tracking-[0.2em] uppercase mb-1"
                       style={{ color: card.accent }}
                     >
                       {card.phase}
                     </p>
-                    <p className="text-xl font-black text-[#2E353D]">{card.range}</p>
+                    <p className="text-xl font-bold text-boon-charcoal">{card.range}</p>
                   </div>
                 </div>
                 <p className="text-sm text-[#2E353D]/60 font-medium italic">{card.summary}</p>

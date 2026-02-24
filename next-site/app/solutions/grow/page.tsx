@@ -134,8 +134,8 @@ export default function GrowPage() {
         <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-[#F0F3F7]">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
-              <p className="text-[#FF8D80] font-black text-[10px] tracking-[0.4em] uppercase mb-6">Program Overview</p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter">Program at a Glance</h2>
+              <p className="text-[#FF8D80] font-extrabold text-[10px] tracking-widest uppercase mb-6">Program Overview</p>
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9]">Program at a Glance</h2>
             </div>
             <div className="bg-white rounded-2xl md:rounded-3xl border border-gray-200 shadow-sm relative overflow-visible">
               <ProgramCopyButton />
@@ -163,7 +163,7 @@ export default function GrowPage() {
               Every program is configured to your org. This is a typical structure.
             </p>
             <div className="text-center mt-8">
-              <Link href="/demo" className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all">
+              <Link href="/demo" className="inline-block bg-[#466FF6] text-white px-8 py-4 rounded-xl font-bold text-base hover:scale-105 transition-all">
                 Book a Strategy Call
               </Link>
             </div>
@@ -175,8 +175,8 @@ export default function GrowPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_1.3fr] gap-20 items-start">
               <div>
-                <p className="text-[#FF8D80] font-black text-[10px] tracking-[0.4em] uppercase mb-8">Measurement Integrity</p>
-                <h2 className="text-3xl md:text-5xl lg:text-[80px] font-black leading-tight lg:leading-[0.85] mb-10 tracking-tighter text-slate-900">
+                <p className="text-[#FF8D80] font-extrabold text-[10px] tracking-widest uppercase mb-8">Measurement Integrity</p>
+                <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-8 text-boon-charcoal">
                   Behavior change, <span className="text-[#FF8D80]">verified.</span>
                 </h2>
                 <div className="space-y-8 text-xl text-slate-500 font-medium leading-relaxed max-w-xl mb-12">
@@ -185,7 +185,7 @@ export default function GrowPage() {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-12 mt-16 pt-16 border-t border-slate-100">
                   <div>
-                    <h4 className="text-sm font-black text-[#FF8D80] uppercase tracking-widest mb-6">What we measure</h4>
+                    <h4 className="text-sm font-bold text-[#FF8D80] uppercase tracking-widest mb-6">What we measure</h4>
                     <ul className="space-y-4">
                       {['Core leadership competencies', 'Change over time at cohort level'].map((item) => (
                         <li key={item} className="flex gap-3 text-sm font-bold text-slate-600">
@@ -196,7 +196,7 @@ export default function GrowPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-sm font-black text-[#FF8D80] uppercase tracking-widest mb-6">Verification</h4>
+                    <h4 className="text-sm font-bold text-[#FF8D80] uppercase tracking-widest mb-6">Verification</h4>
                     <ul className="space-y-4">
                       {['Pre/Post assessments', 'Ongoing coach observation'].map((item) => (
                         <li key={item} className="flex gap-3 text-sm font-bold text-slate-600">

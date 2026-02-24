@@ -80,7 +80,7 @@ export function ProductHero({
         <div>
           {productName && (
             <div
-              className={`inline-flex items-center gap-2 text-[10px] tracking-widest font-black px-4 py-2 rounded-full mb-10 uppercase ${
+              className={`inline-flex items-center gap-2 text-[10px] tracking-widest font-extrabold px-4 py-2 rounded-full mb-10 uppercase ${
                 darkMode
                   ? 'bg-white/10 text-white border border-white/5 text-[13px] tracking-[0.25em] px-10 py-5 mb-16'
                   : `border`
@@ -98,7 +98,7 @@ export function ProductHero({
             </div>
           )}
           <h1
-            className={`text-3xl md:text-5xl lg:text-[92px] font-black leading-[0.85] tracking-tighter mb-10 max-w-5xl ${
+            className={`font-sans text-4xl md:text-6xl lg:text-[64px] font-bold tracking-tight leading-[0.9] mb-10 max-w-5xl ${
               darkMode ? 'text-white' : 'text-[#2E353D]'
             }`}
           >
@@ -124,7 +124,7 @@ export function ProductHero({
           <div className="flex flex-col sm:flex-row gap-6">
             <Link
               href={ctaPrimary.href}
-              className="px-10 py-5 rounded-2xl font-black text-xl transition-all shadow-xl text-center text-white"
+              className="px-8 py-4 rounded-xl font-bold text-base transition-all shadow-lg text-center text-white"
               style={{ backgroundColor: accentColor }}
             >
               {ctaPrimary.text}
@@ -132,7 +132,7 @@ export function ProductHero({
             {ctaSecondary && (
               <Link
                 href={ctaSecondary.href}
-                className={`border px-10 py-5 rounded-2xl font-black text-xl transition-all text-center ${
+                className={`border px-8 py-4 rounded-xl font-bold text-base transition-all text-center ${
                   darkMode
                     ? 'border-white/20 text-white hover:bg-white/5'
                     : 'border-gray-100 text-[#2E353D] hover:bg-gray-50'
@@ -167,7 +167,7 @@ export function ProductHero({
               <div className="bg-white/95 backdrop-blur-sm p-5 rounded-3xl shadow-2xl flex items-start gap-4 max-w-[320px]">
                 {badgeIcon}
                 <div>
-                  <p className="text-sm font-black text-[#2E353D]">{badgeText}</p>
+                  <p className="text-sm font-bold text-boon-charcoal">{badgeText}</p>
                 </div>
               </div>
             </div>

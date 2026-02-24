@@ -110,14 +110,14 @@ export default function SolutionsPage() {
             <div className="inline-flex items-center gap-2 bg-boon-light-blue/50 text-boon-blue label-text text-[10px] px-4 py-2 rounded-full mb-10 border border-boon-light-blue">
               How Boon Works
             </div>
-            <h1 className="font-sans text-4xl md:text-6xl lg:text-[92px] font-bold text-boon-charcoal leading-tight lg:leading-[0.9] tracking-tight mb-10 max-w-5xl">
+            <h1 className="font-sans text-4xl md:text-6xl lg:text-[64px] font-bold tracking-tight leading-[0.9] mb-10 max-w-5xl">
               One system. Configured to solve your <span className="font-serif italic text-boon-blue">problems</span>.
             </h1>
             <div className="max-w-3xl">
-              <p className="text-xl md:text-2xl text-gray-500 font-body font-medium leading-relaxed mb-6">
+              <p className="text-base md:text-lg text-gray-500 font-body font-medium leading-relaxed mb-6">
                 Boon brings coaching, leadership development, and executive support into a single system. Customize your program based on where your organization is feeling the strain.
               </p>
-              <p className="text-lg md:text-xl text-boon-blue font-body font-bold tracking-tight border-l-2 border-boon-blue pl-6 py-1">
+              <p className="text-base md:text-lg text-boon-blue font-body font-bold tracking-tight border-l-2 border-boon-blue pl-6 py-1">
                 Start by fixing what&apos;s broken today, then adapt to solve new problems tomorrow.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function SolutionsPage() {
               <p className="label-text text-[10px] text-boon-coral mb-6">
                 The Case for Integration
               </p>
-              <h2 className="font-sans text-4xl md:text-6xl font-bold text-white leading-tight mb-8 tracking-tight">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-white tracking-tight leading-[0.9] mb-8">
                 Fragmented support is no support at all.
               </h2>
               <div className="space-y-8 text-gray-400 text-lg font-body font-medium leading-relaxed">
@@ -190,7 +190,7 @@ export default function SolutionsPage() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-14">
               <p className="label-text text-[10px] text-boon-blue mb-4">The System Architecture</p>
-              <h2 className="font-sans text-4xl md:text-5xl font-bold text-boon-charcoal tracking-tight leading-tight">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
                 Four products. One continuous thread.
               </h2>
             </div>
@@ -249,7 +249,7 @@ export default function SolutionsPage() {
             <p className="label-text text-[10px] text-boon-blue mb-6">
               Getting Started
             </p>
-            <h2 className="font-sans text-5xl md:text-7xl font-bold text-boon-charcoal tracking-tight leading-[0.9]">
+            <h2 className="font-sans font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
               What to expect <span className="font-serif italic text-boon-blue">next</span>.
             </h2>
           </div>

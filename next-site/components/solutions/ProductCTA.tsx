@@ -55,7 +55,7 @@ export function ProductCTA({
       />
 
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="font-sans text-2xl md:text-4xl lg:text-[84px] font-bold tracking-tight leading-tight lg:leading-[0.85] mb-12">
+        <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-8">
           {headline}
         </h2>
         <p className="text-xl text-white/70 font-body font-medium mb-16 max-w-2xl mx-auto leading-relaxed">

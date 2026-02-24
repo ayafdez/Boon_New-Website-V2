@@ -42,16 +42,16 @@ export function BoonDifference({
         <div className="grid md:grid-cols-2 gap-y-20 gap-x-16 border-t border-white/20 pt-20">
           {benefits.map((item) => (
             <div key={item.title}>
-              <h3 className="text-2xl font-black mb-6">{item.title}</h3>
+              <h3 className="font-sans text-lg md:text-xl font-bold mb-4">{item.title}</h3>
               <p className="text-white/60 font-medium leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
         <div>
-          <p className="text-[#4CD995] font-black text-[10px] tracking-widest uppercase mb-6">
+          <p className="text-[#4CD995] font-extrabold text-[10px] tracking-widest uppercase mb-6">
             {overline}
           </p>
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-black leading-tight lg:leading-[0.9] tracking-tighter mb-10">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-10">
             {headline}
           </h2>
           <p className="text-xl text-white/70 font-medium mb-12 leading-relaxed">
@@ -62,7 +62,7 @@ export function BoonDifference({
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-[1.02] transition-all shadow-2xl"
+              className="inline-block bg-white px-8 py-4 rounded-xl font-bold text-base hover:scale-105 transition-all shadow-lg"
               style={{ color: accentColor }}
             >
               {ctaText}
@@ -70,7 +70,7 @@ export function BoonDifference({
           ) : (
             <Link
               href={ctaHref}
-              className="inline-block bg-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-[1.02] transition-all shadow-2xl"
+              className="inline-block bg-white px-8 py-4 rounded-xl font-bold text-base hover:scale-105 transition-all shadow-lg"
               style={{ color: accentColor }}
             >
               {ctaText}

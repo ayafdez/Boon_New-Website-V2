@@ -21,12 +21,12 @@ export function ProductProof({
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-20 items-center">
           <div>
             <p
-              className="font-black text-[10px] tracking-[0.4em] uppercase mb-8"
+              className="font-extrabold text-[10px] tracking-widest uppercase mb-8"
               style={{ color: accentColor }}
             >
               {overline}
             </p>
-            <h2 className="text-3xl md:text-5xl lg:text-7xl font-black leading-tight lg:leading-[0.9] mb-10 tracking-tighter text-[#2E353D]">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-8">
               {headline}
             </h2>
             <p className="text-xl text-gray-500 font-medium leading-relaxed max-w-xl">

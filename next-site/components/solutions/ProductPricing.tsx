@@ -33,10 +33,10 @@ export function ProductPricing({
   return (
     <section id="pricing" className="py-32 px-6 md:px-12 lg:px-24 bg-[#F0F3F7]">
       <div className="max-w-5xl mx-auto text-center mb-20">
-        <p className="font-black text-[10px] tracking-widest uppercase mb-6" style={{ color: accentColor }}>
+        <p className="font-extrabold text-[10px] tracking-widest uppercase mb-6" style={{ color: accentColor }}>
           Modern Pricing
         </p>
-        <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#2E353D] tracking-tighter leading-tight mb-8">
+        <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-8">
           Designed to fit real budgets.
         </h2>
         <p className="text-xl text-gray-500 font-medium leading-relaxed">
@@ -51,7 +51,7 @@ export function ProductPricing({
                 <CheckIcon />
               </div>
               <div>
-                <h3 className="text-2xl font-black mb-2">{item.title}</h3>
+                <h3 className="font-sans text-lg md:text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-gray-500 font-medium leading-relaxed">{item.description}</p>
               </div>
             </div>
@@ -59,14 +59,14 @@ export function ProductPricing({
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center pt-16 border-t border-gray-50 gap-8 relative z-10">
           <div className="text-left">
-            <p className="text-3xl font-black text-[#2E353D]">{bottomLine}</p>
-            <p className="text-[10px] font-black uppercase tracking-widest text-gray-300">
+            <p className="text-3xl font-bold text-boon-charcoal">{bottomLine}</p>
+            <p className="text-[10px] font-extrabold uppercase tracking-widest text-gray-300">
               {bottomSubline}
             </p>
           </div>
           <Link
             href={ctaHref}
-            className="text-white px-10 py-5 rounded-2xl font-black text-xl shadow-xl transition-all hover:opacity-90"
+            className="text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg transition-all hover:scale-105"
             style={{ backgroundColor: accentColor }}
           >
             {ctaText}

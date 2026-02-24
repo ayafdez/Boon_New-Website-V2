@@ -61,7 +61,7 @@ export function ProductFAQ({
     <section className="py-32 px-6 md:px-12 lg:px-24 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-24">
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#2E353D] tracking-tighter mb-4">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-4">
             {headline}
           </h2>
           <p className="text-gray-400 font-bold italic">{subline}</p>

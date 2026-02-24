@@ -9,7 +9,7 @@ export function PlatformIntelligence() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <p className="label-text text-[10px] text-boon-blue mb-6">Platform Intelligence</p>
-          <h2 className="font-sans text-4xl md:text-6xl font-bold text-boon-charcoal tracking-tight leading-tight mb-6">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6">
             Built into the tools your team already uses.
           </h2>
           <p className="text-lg text-gray-500 font-body font-medium max-w-3xl mx-auto leading-relaxed">

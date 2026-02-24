@@ -55,12 +55,12 @@ export function ProblemSection({
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-20 items-center relative z-10">
         <div>
           <p
-            className="font-black text-[10px] tracking-widest uppercase mb-6"
+            className="font-extrabold text-[10px] tracking-widest uppercase mb-6"
             style={{ color: accentColor }}
           >
             {overline}
           </p>
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-white leading-tight mb-10 tracking-tighter">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-white tracking-tight leading-[0.9] mb-8">
             {headline}
           </h2>
           <div className="space-y-6 text-white/60 text-lg font-medium leading-relaxed max-w-lg">
@@ -74,11 +74,11 @@ export function ProblemSection({
               className="bg-white/5 border border-white/10 p-6 md:p-10 rounded-[40px] hover:bg-white/10 transition-all group"
             >
               <div className="mb-8" style={{ color: accentColor }}>
-                <div className="w-10 h-10 border-2 border-current rounded-xl flex items-center justify-center font-black text-xs">
+                <div className="w-10 h-10 border-2 border-current rounded-xl flex items-center justify-center font-bold text-xs">
                   {item.label}
                 </div>
               </div>
-              <h3 className="text-2xl font-black text-white mb-4">{item.title}</h3>
+              <h3 className="font-sans text-lg md:text-xl font-bold text-white mb-4">{item.title}</h3>
               <p className="text-white/40 text-sm font-medium leading-relaxed">{item.desc}</p>
             </div>
           ))}

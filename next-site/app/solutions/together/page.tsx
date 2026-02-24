@@ -130,10 +130,10 @@ export default function TogetherPage() {
         />
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center relative z-10">
           <div>
-            <div className="inline-flex items-center gap-2 bg-[#FDB022]/10 text-[#FDB022] text-[10px] tracking-widest font-black px-4 py-2 rounded-full mb-10 uppercase">
+            <div className="inline-flex items-center gap-2 bg-[#FDB022]/10 text-[#FDB022] text-[10px] tracking-widest font-extrabold px-4 py-2 rounded-full mb-10 uppercase">
               Boon TOGETHER
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-[76px] font-black text-[#2E353D] leading-tight lg:leading-[0.88] tracking-tighter mb-8 max-w-xl">
+            <h1 className="font-sans text-4xl md:text-6xl lg:text-[64px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-8 max-w-xl">
               Build infrastructure, not <span className="text-[#FDB022] italic font-serif">one-off events</span>.
             </h1>
             <p className="text-lg md:text-xl text-gray-500 font-medium leading-relaxed max-w-lg mb-4">
@@ -142,13 +142,13 @@ export default function TogetherPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/demo"
-                className="bg-[#FDB022] text-white px-10 py-5 rounded-2xl font-black text-lg hover:opacity-90 transition-all shadow-xl text-center"
+                className="bg-[#FFC969] text-white px-8 py-4 rounded-xl font-bold text-base hover:scale-105 transition-all shadow-lg text-center"
               >
                 Start a Conversation About Alignment
               </Link>
               <a
                 href="#formats"
-                className="border-2 border-gray-200 text-[#2E353D] px-10 py-5 rounded-2xl font-black text-lg hover:border-gray-300 transition-all text-center"
+                className="border border-gray-200 text-boon-charcoal px-8 py-4 rounded-xl font-bold text-base hover:scale-105 transition-all text-center"
               >
                 See Formats
               </a>
@@ -191,10 +191,10 @@ export default function TogetherPage() {
             </svg>
           </div>
           <div className="px-16 py-12">
-            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FDB022] mb-6">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#FDB022] mb-6">
               What TOGETHER Replaces
             </p>
-            <h3 className="text-3xl md:text-5xl font-black text-[#2E353D] tracking-tight leading-tight mb-6">
+            <h3 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6">
               Stop stitching together offsites, workshops, and facilitators.
             </h3>
             <p className="text-lg text-gray-500 font-medium leading-relaxed">
@@ -225,10 +225,10 @@ export default function TogetherPage() {
           }}
         />
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-[#FDB022]/10 text-[#FDB022] text-[10px] tracking-widest font-black px-4 py-2 rounded-full mb-10 uppercase">
+          <div className="inline-flex items-center gap-2 bg-[#FDB022]/10 text-[#FDB022] text-[10px] tracking-widest font-extrabold px-4 py-2 rounded-full mb-10 uppercase">
             What makes us different
           </div>
-          <h2 className="text-4xl md:text-[64px] font-black text-white tracking-tight leading-[0.9] mb-6 max-w-4xl mx-auto">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-white tracking-tight leading-[0.9] mb-6 max-w-4xl mx-auto">
             Not just <span className="italic font-serif text-white/40 line-through decoration-white/60">another workshop vendor</span>
           </h2>
           <p className="text-lg text-white/50 font-medium leading-relaxed max-w-3xl mx-auto mb-16">
@@ -240,7 +240,7 @@ export default function TogetherPage() {
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${card.iconBg}`}>
                   <card.Icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-black text-white mb-3">{card.title}</h3>
+                <h3 className="font-sans text-lg font-bold text-white mb-3">{card.title}</h3>
                 <p className="text-white/60 leading-relaxed text-sm">{card.desc}</p>
               </div>
             ))}
@@ -253,10 +253,10 @@ export default function TogetherPage() {
       {/* ── Section 6: Flexible Formats ── */}
       <section id="formats" className="py-32 px-6 md:px-12 lg:px-24 bg-[#F9FAFB] border-y border-gray-100">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FDB022] mb-6">
+          <p className="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#FDB022] mb-6">
             Flexible Formats
           </p>
-          <h2 className="text-4xl md:text-6xl font-black text-[#2E353D] tracking-tight leading-tight mb-6 max-w-4xl mx-auto">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6 max-w-4xl mx-auto">
             Three formats. One connected system.
           </h2>
           <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-3xl mx-auto mb-16">
@@ -265,13 +265,13 @@ export default function TogetherPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {FORMAT_CARDS.map((card) => (
               <div key={card.format} className={`bg-white rounded-2xl p-8 border border-gray-100 text-left border-t-4 ${card.borderColor}`}>
-                <h3 className="text-lg font-black text-[#2E353D] mb-2">{card.format}</h3>
+                <h3 className="font-sans text-lg font-bold text-boon-charcoal mb-2">{card.format}</h3>
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-sm text-gray-400 font-medium">{card.duration}</span>
                   <span className="text-gray-200">|</span>
                   <span className="text-sm text-gray-400 font-medium">{card.size}</span>
                 </div>
-                <p className="text-xs font-black uppercase tracking-[0.3em] text-[#2E353D]/40 mb-4">What&apos;s Included</p>
+                <p className="text-[10px] font-extrabold uppercase tracking-widest text-[#2E353D]/40 mb-4">What&apos;s Included</p>
                 <ul className="space-y-3">
                   {card.includes.map((item) => (
                     <li key={item} className="flex items-start gap-3">
@@ -290,10 +290,10 @@ export default function TogetherPage() {
       <section className="py-32 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FDB022] mb-6">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#FDB022] mb-6">
               Program Portal
             </p>
-            <h2 className="text-4xl md:text-[64px] font-black text-[#2E353D] tracking-tight leading-[0.9] mb-6 max-w-4xl mx-auto">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6 max-w-4xl mx-auto">
               See what&apos;s <span className="italic font-serif">actually happening</span>.
             </h2>
             <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-3xl mx-auto">
@@ -309,7 +309,7 @@ export default function TogetherPage() {
       {/* ── Section 9: Works with Your Coaching Stack ── */}
       <section className="py-32 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-[64px] font-black text-[#2E353D] tracking-tight leading-[0.9] mb-6">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6">
             Works with your <span className="text-[#FDB022] italic font-serif">entire coaching stack</span>
           </h2>
           <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-3xl mx-auto mb-16">
@@ -322,7 +322,7 @@ export default function TogetherPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#FDB022]/10 flex items-center justify-center mb-6">
                   <Users className="w-6 h-6 text-[#FDB022]" />
                 </div>
-                <h3 className="text-xl font-black text-[#2E353D] mb-2">You&apos;re here: Together</h3>
+                <h3 className="font-sans text-xl font-bold text-boon-charcoal mb-2">You&apos;re here: Together</h3>
                 <p className="text-gray-500 font-medium mb-6">Group coaching, workshops, offsites</p>
                 <ul className="space-y-3 mt-auto">
                   <li className="flex items-center gap-3">
@@ -342,15 +342,15 @@ export default function TogetherPage() {
               {/* Cross-sell cards */}
               <div className="flex flex-col gap-4">
                 <Link href="/solutions/scale" className="flex-1 flex flex-col justify-center rounded-2xl border border-gray-200 bg-white p-6 text-left hover:border-[#466FF6]/30 hover:shadow-md transition-all">
-                  <p className="text-base font-black text-[#466FF6] mb-1">+ Scale</p>
+                  <p className="text-base font-bold text-boon-blue mb-1">+ Scale</p>
                   <p className="text-sm text-gray-500">Add ongoing 1:1 coaching for participants</p>
                 </Link>
                 <Link href="/solutions/grow" className="flex-1 flex flex-col justify-center rounded-2xl border border-gray-200 bg-white p-6 text-left hover:border-[#FF8D80]/30 hover:shadow-md transition-all">
-                  <p className="text-base font-black text-[#FF8D80] mb-1">+ Grow</p>
+                  <p className="text-base font-bold text-[#FF8D80] mb-1">+ Grow</p>
                   <p className="text-sm text-gray-500">Structure workshops into leadership development tracks</p>
                 </Link>
                 <Link href="/solutions/exec" className="flex-1 flex flex-col justify-center rounded-2xl border border-gray-200 bg-white p-6 text-left hover:border-[#C47ACC]/30 hover:shadow-md transition-all">
-                  <p className="text-base font-black text-[#C47ACC] mb-1">+ Exec</p>
+                  <p className="text-base font-bold text-[#C47ACC] mb-1">+ Exec</p>
                   <p className="text-sm text-gray-500">Dedicated executive coaching for senior leaders</p>
                 </Link>
               </div>
@@ -363,10 +363,10 @@ export default function TogetherPage() {
       {/* ── Section 13: Pricing ── */}
       <section className="py-32 px-6 md:px-12 lg:px-24 bg-[#F9FAFB] border-y border-gray-100">
         <div className="max-w-7xl mx-auto text-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#FDB022] mb-6">
+          <p className="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#FDB022] mb-6">
             Modern Pricing
           </p>
-          <h2 className="text-4xl md:text-6xl font-black text-[#2E353D] tracking-tight leading-tight mb-6">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6">
             Designed to fit real budgets.
           </h2>
           <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-3xl mx-auto mb-16">
@@ -382,7 +382,7 @@ export default function TogetherPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-[#2E353D] mb-1">{point.title}</h3>
+                    <h3 className="font-sans text-lg font-bold text-boon-charcoal mb-1">{point.title}</h3>
                     <p className="text-gray-400 leading-relaxed">{point.desc}</p>
                   </div>
                 </div>
@@ -391,14 +391,14 @@ export default function TogetherPage() {
           </div>
           <div className="flex items-center justify-center gap-6 flex-wrap">
             <div>
-              <p className="text-lg font-black text-[#2E353D]">Custom-designed for your team.</p>
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
+              <p className="text-base md:text-lg font-bold text-boon-charcoal">Custom-designed for your team.</p>
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-gray-400">
                 Engagements start within 2-3 weeks
               </p>
             </div>
             <Link
               href="/demo"
-              className="bg-[#FDB022] text-white px-10 py-4 rounded-2xl font-black text-lg hover:opacity-90 transition-all shadow-xl"
+              className="bg-[#FFC969] text-white px-8 py-4 rounded-xl font-bold text-base hover:scale-105 transition-all shadow-lg"
             >
               Get a Quote
             </Link>
@@ -410,7 +410,7 @@ export default function TogetherPage() {
       <section className="py-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Trust logos */}
-          <p className="text-[10px] font-black text-gray-300 uppercase tracking-[0.4em] mb-10 text-center">
+          <p className="text-[10px] font-extrabold text-gray-300 uppercase tracking-[0.4em] mb-10 text-center">
             Trusted by people-first organizations
           </p>
           <div className="flex items-center justify-center gap-12 flex-wrap mb-20 opacity-40">
@@ -420,7 +420,7 @@ export default function TogetherPage() {
           </div>
 
           {/* Testimonials */}
-          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#466FF6] mb-1 text-center">
+          <p className="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#466FF6] mb-1 text-center">
             Testimonials
           </p>
           <div className="flex justify-center mb-10">
@@ -460,7 +460,7 @@ export default function TogetherPage() {
       {/* ── Section 15: FAQ ── */}
       <section className="py-32 px-6 md:px-12 lg:px-24 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-[#2E353D] tracking-tight leading-tight mb-12 text-center">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-12 text-center">
             FAQs
           </h2>
           <div className="divide-y divide-gray-200">
@@ -500,7 +500,7 @@ export default function TogetherPage() {
             }}
           />
           <div className="max-w-4xl mx-auto relative z-10">
-            <h2 className="text-5xl md:text-[80px] font-black text-white mb-6 tracking-tighter leading-[0.88]">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-white tracking-tight leading-[0.9] mb-6">
               Growth is better when it&apos;s <span className="text-[#FDB022] italic font-serif">shared</span>.
             </h2>
             <p className="text-lg text-white/50 font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -508,11 +508,11 @@ export default function TogetherPage() {
             </p>
             <Link
               href="/demo"
-              className="inline-block bg-[#FDB022] text-white px-14 py-6 rounded-full font-black text-xl hover:opacity-90 transition-all shadow-2xl"
+              className="inline-flex bg-[#FFC969] text-white px-8 py-4 rounded-xl font-bold text-base hover:scale-105 transition-all shadow-lg"
             >
               Book a Strategy Call
             </Link>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mt-10">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-white/30 mt-10">
               Facilitated by ICF Certified Coaches &middot; Systemic Design &middot; Global Delivery
             </p>
           </div>

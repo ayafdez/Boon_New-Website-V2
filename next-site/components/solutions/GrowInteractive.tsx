@@ -46,7 +46,7 @@ export function GrowSteps() {
           }`}
         >
           <div
-            className={`w-10 h-10 rounded-full flex items-center justify-center font-black text-xs transition-all duration-500 ${
+            className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-500 ${
               activeStep === idx
                 ? 'bg-[#FF8D80] text-white shadow-xl shadow-orange-100'
                 : 'bg-gray-100 text-gray-400'
@@ -55,7 +55,7 @@ export function GrowSteps() {
             {idx + 1}
           </div>
           <h4
-            className={`text-xl font-black leading-tight transition-colors ${
+            className={`font-sans text-lg font-bold leading-tight transition-colors ${
               activeStep === idx ? 'text-[#FF8D80]' : 'text-[#2E353D]'
             }`}
           >
@@ -184,12 +184,12 @@ export function GrowMeasurement() {
         <div className="p-8 md:p-12">
           <div className="flex justify-between items-start mb-10">
             <div>
-              <h3 className="text-2xl font-black text-slate-900">Program Impact</h3>
+              <h3 className="font-sans text-lg md:text-xl font-bold text-slate-900">Program Impact</h3>
               <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">
                 Measuring competency growth
               </p>
             </div>
-            <div className="bg-slate-50 border border-slate-100 px-4 py-2 rounded-xl text-[9px] font-black text-slate-400">
+            <div className="bg-slate-50 border border-slate-100 px-4 py-2 rounded-xl text-[9px] font-extrabold text-slate-400">
               Aggregate View
             </div>
           </div>
@@ -199,20 +199,20 @@ export function GrowMeasurement() {
             ref={countRef}
           >
             <div>
-              <div className="text-[#FF8D80]/80 text-6xl font-black tracking-tighter">
+              <div className="text-[#FF8D80]/80 text-5xl font-bold tracking-tight">
                 +{count}.0%
               </div>
-              <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-2">
+              <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mt-2">
                 Overall Competency Growth
               </div>
             </div>
             <div className="hidden sm:block w-px h-20 bg-slate-100"></div>
             <div className="flex flex-col gap-6">
               <div className="bg-white border border-slate-50 p-4 rounded-2xl shadow-sm min-w-[180px]">
-                <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                <div className="text-[9px] font-extrabold text-slate-400 uppercase tracking-widest mb-1">
                   Avg Score Gain
                 </div>
-                <div className="text-xl font-black text-slate-900">+0.56</div>
+                <div className="text-xl font-bold text-slate-900">+0.56</div>
               </div>
             </div>
           </div>

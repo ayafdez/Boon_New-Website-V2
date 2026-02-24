@@ -62,7 +62,7 @@ export function AccordionSection() {
   return (
     <div className="max-w-4xl mx-auto pb-32">
       <div className="text-center mb-16">
-        <h3 className="font-sans text-4xl font-bold text-boon-charcoal tracking-tight">
+        <h3 className="font-sans text-xl md:text-2xl font-bold text-boon-charcoal tracking-tight">
           How the system evolves over time
         </h3>
         <div className="w-12 h-1 bg-boon-blue mx-auto mt-6"></div>

@@ -29,7 +29,7 @@ export function HowItWorks({
     <section id="how-it-works" className="py-32 px-6 md:px-12 lg:px-24 bg-[#F0F3F7]">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_1.5fr] gap-24 items-center">
         <div>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#2E353D] leading-tight mb-4">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-4">
             {headline}
           </h2>
           <p className="text-xl text-gray-500 font-medium mb-16">
@@ -39,7 +39,7 @@ export function HowItWorks({
             {steps.map((step) => (
               <div key={step.number} className="flex gap-4 md:gap-8 group">
                 <div
-                  className="flex-shrink-0 w-12 h-12 rounded-full border-2 flex items-center justify-center font-black transition-all"
+                  className="flex-shrink-0 w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold transition-all"
                   style={{
                     borderColor: accentColor,
                     color: accentColor,
@@ -48,7 +48,7 @@ export function HowItWorks({
                   {step.number}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-black mb-2">{step.title}</h3>
+                  <h3 className="font-sans text-lg md:text-xl font-bold mb-2">{step.title}</h3>
                   <p className="text-gray-500 font-medium leading-relaxed max-w-md">{step.description}</p>
                 </div>
               </div>

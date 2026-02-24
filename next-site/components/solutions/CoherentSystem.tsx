@@ -38,7 +38,7 @@ export function CoherentSystem({ currentProduct, accentColor, headline, subtitle
       ></div>
 
       <div className="max-w-7xl mx-auto text-center relative z-10">
-        <h3 className="text-3xl md:text-4xl lg:text-6xl font-black tracking-tighter mb-12">
+        <h3 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-8">
           {headline || 'One system. Coherent growth at every level.'}
         </h3>
         <div className="max-w-3xl mx-auto mb-24">
@@ -51,7 +51,7 @@ export function CoherentSystem({ currentProduct, accentColor, headline, subtitle
             <div key={prod.key} className="flex items-center gap-6">
               <Link
                 href={prod.href}
-                className="flex items-center gap-5 text-white/50 font-black text-[12px] tracking-[0.4em] uppercase hover:text-white/80 transition-colors"
+                className="flex items-center gap-5 text-white/50 font-bold text-[12px] tracking-[0.4em] uppercase hover:text-white/80 transition-colors"
               >
                 <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }}></div>
                 {prod.label}

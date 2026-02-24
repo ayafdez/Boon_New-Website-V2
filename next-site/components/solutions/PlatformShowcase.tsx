@@ -254,7 +254,7 @@ export function PlatformShowcase() {
         {/* Section Header */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <p className="label-text text-[10px] mb-4 text-boon-blue">Platform in Action</p>
-          <h2 className="font-sans text-4xl md:text-5xl font-bold mb-6 tracking-tight text-boon-charcoal leading-tight">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-6">
             See it working across <span className="font-serif italic">every level</span>.
           </h2>
           <p className="text-lg md:text-xl font-body font-medium text-gray-500 leading-relaxed">
@@ -335,7 +335,7 @@ export function PlatformShowcase() {
             <p className="font-serif italic text-slate-400 text-base mb-3">
               {content.question}
             </p>
-            <h3 className="font-sans text-[28px] md:text-[32px] font-bold text-boon-charcoal leading-tight mb-8">
+            <h3 className="font-sans text-xl md:text-2xl font-bold text-boon-charcoal tracking-tight mb-6">
               {content.headline}
             </h3>
             <div className="space-y-5">

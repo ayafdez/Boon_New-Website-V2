@@ -78,10 +78,10 @@ export default function ExecPage() {
           ></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+              <p className="text-[#C9A55C] font-extrabold text-[10px] tracking-widest uppercase mb-6">
                 THE EXECUTIVE REALITY
               </p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-6">
                 At the top, decisions get harder but feedback gets <span className="text-[#C9A55C] font-serif italic">softer.</span>
               </h2>
               <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
@@ -139,10 +139,10 @@ export default function ExecPage() {
         <section className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+              <p className="text-[#C9A55C] font-extrabold text-[10px] tracking-widest uppercase mb-6">
                 THE DIFFERENCE
               </p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-6">
                 Not your typical executive coaching.
               </h2>
               <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
@@ -330,10 +330,10 @@ export default function ExecPage() {
           ></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+              <p className="text-[#C9A55C] font-extrabold text-[10px] tracking-widest uppercase mb-6">
                 THE ENGAGEMENT
               </p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-6">
                 Strategic sparring. Not <span className="text-[#C9A55C] font-serif italic">remediation.</span>
               </h2>
               <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
@@ -397,7 +397,7 @@ export default function ExecPage() {
                   <div key={index} className="group">
                     <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full">
                       <div className="p-6 border-b border-gray-100">
-                        <p className="text-[10px] font-black text-[#C9A55C] tracking-[0.4em] uppercase mb-3">
+                        <p className="text-[10px] font-extrabold text-[#C9A55C] tracking-[0.4em] uppercase mb-3">
                           {phase.step}
                         </p>
 
@@ -451,10 +451,10 @@ export default function ExecPage() {
           <div className="max-w-7xl mx-auto relative z-10">
             {/* Section Header */}
             <div className="text-center mb-16">
-              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+              <p className="text-[#C9A55C] font-extrabold text-[10px] tracking-widest uppercase mb-6">
                 YOUR COACH MATCH
               </p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-6">
                 Not generic. <span className="text-[#C9A55C] font-serif italic">Role-specific.</span>
               </h2>
               <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
@@ -609,11 +609,11 @@ export default function ExecPage() {
           ></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+              <p className="text-[#C9A55C] font-extrabold text-[10px] tracking-widest uppercase mb-6">
                 CONFIDENTIALITY BUILT IN
               </p>
 
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-6">
                 What&apos;s shared. What&apos;s <span className="text-[#C9A55C] font-serif italic">not.</span>
               </h2>
               <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">
@@ -732,10 +732,10 @@ export default function ExecPage() {
           ></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-16">
-              <p className="text-[#C9A55C] font-black text-[10px] tracking-[0.4em] uppercase mb-6">
+              <p className="text-[#C9A55C] font-extrabold text-[10px] tracking-widest uppercase mb-6">
                 THE OUTCOMES
               </p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-6">
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-6">
                 What you&apos;ll <span className="text-[#C9A55C] font-serif italic">develop.</span>
               </h2>
               <p className="text-lg max-w-3xl mx-auto text-[#2E353D]">

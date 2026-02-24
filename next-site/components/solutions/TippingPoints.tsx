@@ -9,10 +9,10 @@ export function TippingPoints({ productName, accentColor, items }: TippingPoints
     <section className="py-20 px-6 md:px-12 lg:px-24 bg-emerald-50/30">
       <div className="max-w-7xl mx-auto">
         <div className="border-l-4 border-emerald-400 pl-8 mb-12">
-          <p className="text-emerald-600 font-black text-[10px] tracking-[0.4em] uppercase mb-4">
+          <p className="text-emerald-600 font-extrabold text-[10px] tracking-widest uppercase mb-4">
             Tipping Points
           </p>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-[#2E353D]">
+          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
             {productName} is right for you if...
           </h2>
         </div>

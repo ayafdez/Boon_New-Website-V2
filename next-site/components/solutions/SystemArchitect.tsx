@@ -37,7 +37,7 @@ export function SystemArchitect() {
             <p className="label-text text-[10px] text-boon-blue mb-10">
               System Configuration
             </p>
-            <h2 className="font-sans text-3xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight lg:leading-[0.9] mb-12 text-boon-charcoal">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] mb-8 text-boon-charcoal">
               Map the system to the right <br />
               <span className="font-serif italic text-boon-blue">pressure point</span>.
             </h2>

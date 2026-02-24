@@ -55,7 +55,7 @@ export function ProductTestimonials({ logos, testimonials }: ProductTestimonials
       <div className="max-w-7xl mx-auto">
         {logos && logos.length > 0 && (
           <div className="text-center mb-16">
-            <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-12 text-center">
+            <p className="text-[10px] font-extrabold text-gray-300 uppercase tracking-widest mb-12 text-center">
               Trusted by people-first organizations
             </p>
             <div className="relative overflow-hidden group py-4">
@@ -106,8 +106,8 @@ export function ProductTestimonials({ logos, testimonials }: ProductTestimonials
                     style={{ backgroundColor: avatarColors[idx % avatarColors.length] }}
                   ></div>
                   <div>
-                    <p className="text-sm font-black">{t.name}</p>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">
+                    <p className="text-sm font-bold">{t.name}</p>
+                    <p className="text-[10px] font-extrabold uppercase tracking-widest text-gray-400">
                       {t.title}
                     </p>
                   </div>

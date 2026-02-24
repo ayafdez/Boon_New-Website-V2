@@ -170,7 +170,7 @@ export default function ScalePage() {
         {/* 3. Whole Person Support */}
         <section className="py-32 px-6 md:px-12 lg:px-24">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-5xl md:text-7xl font-black text-[#2E353D] tracking-tighter leading-tight mb-8">
+            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9] mb-8">
               One resource for the whole person.
             </h2>
             <p className="text-xl text-gray-500 font-medium">
@@ -182,7 +182,7 @@ export default function ScalePage() {
               <IconWrapper className="mb-10 bg-white">
                 <BriefcaseIcon />
               </IconWrapper>
-              <h3 className="text-3xl font-black mb-12">Professional Growth</h3>
+              <h3 className="font-sans text-xl md:text-2xl font-bold mb-6">Professional Growth</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
                 {['Managing up and across', 'Career pathing', 'Time management', 'Leadership confidence', 'Conflict resolution'].map((item) => (
                   <div key={item} className="flex items-center gap-3 text-sm font-bold text-[#2E353D]">
@@ -195,7 +195,7 @@ export default function ScalePage() {
               <IconWrapper className="mb-10 bg-white text-orange-600">
                 <ActivityIcon />
               </IconWrapper>
-              <h3 className="text-3xl font-black mb-12">Personal Wellbeing</h3>
+              <h3 className="font-sans text-xl md:text-2xl font-bold mb-6">Personal Wellbeing</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
                 {['Stress management', 'Work-life boundaries', 'Interpersonal skills', 'Sustaining energy over time', 'Resilience training'].map((item) => (
                   <div key={item} className="flex items-center gap-3 text-sm font-bold text-[#2E353D]">
