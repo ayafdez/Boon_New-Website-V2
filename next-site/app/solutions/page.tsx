@@ -195,7 +195,7 @@ export default function SolutionsPage() {
             </h2>
           </div>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 relative z-10">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 relative z-10">
             {[
               {
                 num: '01',
@@ -215,13 +215,13 @@ export default function SolutionsPage() {
             ].map((step) => (
               <div
                 key={step.num}
-                className="bg-white p-6 md:p-12 rounded-[40px] border border-gray-100 text-center"
+                className="p-8 rounded-[20px] border border-gray-100 text-left transition-all duration-300 hover:border-boon-blue/30 hover:shadow-lg hover:-translate-y-1 cursor-default"
               >
-                <div className="w-16 h-16 rounded-full bg-boon-blue/10 flex items-center justify-center mx-auto mb-8">
-                  <span className="label-text text-[14px] text-boon-blue">{step.num}</span>
+                <div className="w-8 h-8 rounded-full bg-boon-blue/10 flex items-center justify-center mb-6">
+                  <span className="label-text text-[10px] text-boon-blue">{step.num}</span>
                 </div>
-                <h3 className="font-sans text-2xl font-bold text-boon-charcoal mb-4">{step.title}</h3>
-                <p className="text-gray-500 font-body font-medium leading-relaxed">{step.desc}</p>
+                <h3 className="font-sans text-xl md:text-2xl font-bold text-boon-charcoal mb-3">{step.title}</h3>
+                <p className="text-base font-body font-medium text-gray-500 leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
