@@ -22,7 +22,7 @@ function AccordionItem({
         className="w-full flex justify-between items-center py-10 text-left group"
       >
         <div className="flex items-center gap-6">
-          <span className="label-text text-[10px] text-boon-blue border border-boon-blue/20 px-2 py-1 rounded-[20px]">
+          <span className="label-text text-[10px] text-boon-blue border border-boon-blue/20 px-2 py-1 rounded-md">
             {index}
           </span>
           <h4
@@ -33,9 +33,19 @@ function AccordionItem({
             {title}
           </h4>
         </div>
-        <span className={`flex-shrink-0 ml-4 text-base leading-none transition-colors ${isOpen ? 'text-boon-blue' : 'text-gray-400 group-hover:text-boon-blue'}`}>
-          {isOpen ? '∧' : '∨'}
-        </span>
+        <div className="flex-shrink-0 ml-4">
+          <div
+            className={`w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center transition-all ${
+              isOpen
+                ? 'bg-boon-blue border-boon-blue text-white rotate-45'
+                : 'bg-white text-gray-400 group-hover:border-boon-blue group-hover:text-boon-blue'
+            }`}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 6v12M6 12h12" />
+            </svg>
+          </div>
+        </div>
       </button>
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -52,9 +62,9 @@ export function AccordionSection() {
   return (
     <div className="max-w-4xl mx-auto pb-32">
       <div className="text-center mb-16">
-        <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
-          How the <span className="font-serif italic text-boon-blue">system evolves</span> over time
-        </h2>
+        <h3 className="font-sans text-xl md:text-2xl font-bold text-boon-charcoal tracking-tight">
+          How the system evolves over time
+        </h3>
         <div className="w-12 h-1 bg-boon-blue mx-auto mt-6"></div>
       </div>
       <div className="border-t border-gray-100">
