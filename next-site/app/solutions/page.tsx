@@ -160,15 +160,15 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Platform in Action */}
-        <PlatformShowcase />
-
-        {/* 3. System Configuration */}
+        {/* 2. System Architecture */}
         <section className="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <SystemArchitect />
           </div>
         </section>
+
+        {/* 3. Platform in Action */}
+        <PlatformShowcase />
 
         {/* 4. How The System Evolves Over Time */}
         <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
