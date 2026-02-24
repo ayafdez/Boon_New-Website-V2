@@ -112,7 +112,6 @@ const C = {
   lCoral: '#FF8D80',
   purple: '#C47ACC',
   gold:   '#FFC969',
-  darkGold: '#a37400',
 };
 
 const TAB_COLORS = [C.blue, C.blue, C.lCoral, C.purple, C.gold];
@@ -140,10 +139,10 @@ const PRODUCTS: (ProductData | null)[] = [
     badgeText: 'SCALE Active', badgeBg: 'rgba(70,111,246,0.10)', badgeColor: C.blue,
     iconSvg: 'trendUp', pillIndex: 0,
     stats: [
-      { iconSvg: 'user',     iconBg: 'rgba(70,111,246,0.10)',  label: 'Active Participants', value: '156',  sub: '+12 this month',  color: C.blue },
-      { iconSvg: 'trendUp',  iconBg: 'rgba(54,90,189,0.10)',   label: 'Utilization Rate',    value: '68%',  sub: 'vs 54% avg',      color: C.deep },
-      { iconSvg: 'clock',    iconBg: 'rgba(255,201,105,0.18)', label: 'Avg Sessions/User',   value: '11.2', sub: 'This quarter',    color: C.gold },
-      { iconSvg: 'calendar', iconBg: 'rgba(196,122,204,0.13)', label: 'Sessions This Week',  value: '89',   sub: '89% attendance',  color: C.purple },
+      { iconSvg: 'user',     iconBg: 'rgba(70,111,246,0.10)', label: 'Active Participants', value: '156',  sub: '+12 this month',  color: C.blue },
+      { iconSvg: 'trendUp',  iconBg: 'rgba(70,111,246,0.10)', label: 'Utilization Rate',    value: '68%',  sub: 'vs 54% avg',      color: C.blue },
+      { iconSvg: 'clock',    iconBg: 'rgba(70,111,246,0.10)', label: 'Avg Sessions/User',   value: '11.2', sub: 'This quarter',     color: C.blue },
+      { iconSvg: 'calendar', iconBg: 'rgba(70,111,246,0.10)', label: 'Sessions This Week',  value: '89',   sub: '89% attendance',  color: C.blue },
     ],
     cards: [
       { tag: 'SCALE', tagColor: C.blue, title: '1:1 Coaching',      iconSvg: 'user',     iconBg: 'rgba(70,111,246,0.10)', borderColor: 'rgba(70,111,246,0.22)', rows: [['Active participants','156'],['Utilization rate','68%'],['Avg sessions/user','11.2',C.blue]], footer: 'Top theme: Career progression clarity' },
@@ -158,10 +157,10 @@ const PRODUCTS: (ProductData | null)[] = [
     badgeText: 'GROW Active', badgeBg: 'rgba(255,141,128,0.12)', badgeColor: C.lCoral,
     iconSvg: 'bars', pillIndex: 1,
     stats: [
-      { iconSvg: 'user',     iconBg: 'rgba(255,141,128,0.12)', label: 'Active Cohorts',       value: '4',      sub: '+2 this quarter', color: C.lCoral },
-      { iconSvg: 'bars',     iconBg: 'rgba(255,141,128,0.12)', label: 'Manager Confidence',   value: '+31%',   sub: 'vs baseline',     color: C.coral },
-      { iconSvg: 'clock',    iconBg: 'rgba(255,201,105,0.18)', label: 'Sessions Completed',   value: '189',    sub: 'This cohort',     color: C.gold },
-      { iconSvg: 'calendar', iconBg: 'rgba(196,122,204,0.13)', label: 'Cohort Progress',      value: 'Mo 4/6', sub: 'On track',        color: C.purple },
+      { iconSvg: 'user',     iconBg: 'rgba(255,141,128,0.12)', label: 'Active Cohorts',      value: '4',      sub: '+2 this quarter', color: C.lCoral },
+      { iconSvg: 'bars',     iconBg: 'rgba(255,141,128,0.12)', label: 'Manager Confidence',  value: '+31%',   sub: 'vs baseline',     color: C.lCoral },
+      { iconSvg: 'clock',    iconBg: 'rgba(255,141,128,0.12)', label: 'Sessions Completed',  value: '189',    sub: 'This cohort',     color: C.lCoral },
+      { iconSvg: 'calendar', iconBg: 'rgba(255,141,128,0.12)', label: 'Cohort Progress',     value: 'Mo 4/6', sub: 'On track',        color: C.lCoral },
     ],
     cards: [
       { tag: 'GROW', tagColor: C.lCoral, title: 'Current Cohort',   iconSvg: 'bars',     iconBg: 'rgba(255,141,128,0.12)', borderColor: 'rgba(255,141,128,0.28)', rows: [['Cohort size','42 managers'],['Program progress','Month 4 of 6'],['Competency growth','+28%',C.lCoral]], footer: 'Next: Group session on giving feedback' },
@@ -176,10 +175,10 @@ const PRODUCTS: (ProductData | null)[] = [
     badgeText: 'EXEC Active', badgeBg: 'rgba(196,122,204,0.12)', badgeColor: C.purple,
     iconSvg: 'star', pillIndex: 2,
     stats: [
-      { iconSvg: 'user',     iconBg: 'rgba(196,122,204,0.13)', label: 'Exec Participants', value: '18',   sub: '+3 this month',      color: C.purple },
-      { iconSvg: 'trendUp',  iconBg: 'rgba(196,122,204,0.13)', label: 'Retention Impact',  value: '+44%', sub: 'Year-over-year',     color: C.purple },
-      { iconSvg: 'clock',    iconBg: 'rgba(255,201,105,0.18)', label: 'Avg Tenure',        value: '14mo', sub: 'Engagement length',  color: C.gold },
-      { iconSvg: 'calendar', iconBg: 'rgba(70,111,246,0.10)',  label: 'Renewal Rate',      value: '89%',  sub: '+11% vs last yr',   color: C.blue },
+      { iconSvg: 'user',     iconBg: 'rgba(196,122,204,0.13)', label: 'Exec Participants', value: '18',   sub: '+3 this month',     color: C.purple },
+      { iconSvg: 'trendUp',  iconBg: 'rgba(196,122,204,0.13)', label: 'Retention Impact',  value: '+44%', sub: 'Year-over-year',    color: C.purple },
+      { iconSvg: 'clock',    iconBg: 'rgba(196,122,204,0.13)', label: 'Avg Tenure',        value: '14mo', sub: 'Engagement length', color: C.purple },
+      { iconSvg: 'calendar', iconBg: 'rgba(196,122,204,0.13)', label: 'Renewal Rate',      value: '89%',  sub: '+11% vs last yr',  color: C.purple },
     ],
     cards: [
       { tag: 'EXEC', tagColor: C.purple, title: 'Active Engagements', iconSvg: 'star',    iconBg: 'rgba(196,122,204,0.12)', borderColor: 'rgba(196,122,204,0.28)', rows: [['Active executives','18'],['Avg engagement','6 months'],['Decision confidence','+34%',C.purple]], footer: 'Latest: Board prep session with Sarah Chen' },
@@ -190,20 +189,20 @@ const PRODUCTS: (ProductData | null)[] = [
   },
   // TOGETHER
   {
-    color: C.darkGold, iconBg: 'rgba(255,201,105,0.12)',
-    badgeText: 'TOGETHER Active', badgeBg: 'rgba(255,201,105,0.15)', badgeColor: C.darkGold,
+    color: C.gold, iconBg: 'rgba(255,201,105,0.12)',
+    badgeText: 'TOGETHER Active', badgeBg: 'rgba(255,201,105,0.15)', badgeColor: C.gold,
     iconSvg: 'users', pillIndex: 3,
     stats: [
-      { iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.18)', label: 'Teams Facilitated', value: '12',   sub: '+5 this quarter',   color: C.darkGold },
-      { iconSvg: 'trendUp',  iconBg: 'rgba(255,201,105,0.18)', label: 'Alignment Score',   value: '+52%', sub: 'Post-workshop',      color: C.darkGold },
+      { iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.18)', label: 'Teams Facilitated', value: '12',   sub: '+5 this quarter',   color: C.gold },
+      { iconSvg: 'trendUp',  iconBg: 'rgba(255,201,105,0.18)', label: 'Alignment Score',   value: '+52%', sub: 'Post-workshop',      color: C.gold },
       { iconSvg: 'clock',    iconBg: 'rgba(70,111,246,0.10)',  label: 'Workshops Run',     value: '34',   sub: 'This year',          color: C.blue },
       { iconSvg: 'calendar', iconBg: 'rgba(196,122,204,0.13)', label: 'Total Participants',value: '96',   sub: 'Across all sessions', color: C.purple },
     ],
     cards: [
-      { tag: 'TOGETHER', tagColor: C.darkGold, title: 'Team Workshops',     iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Sessions this quarter','34'],['Avg team size','11'],['Satisfaction','96%',C.darkGold]], footer: 'Upcoming: Post-merger integration workshop' },
-      { tag: 'TOGETHER', tagColor: C.darkGold, title: 'Alignment Outcomes', iconSvg: 'trendUp',  iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Pre/post alignment','+52%'],['Shared language','High'],['Momentum score','91%',C.darkGold]], footer: 'Teams report clarity post-session' },
-      { tag: 'TOGETHER', tagColor: C.darkGold, title: 'Active Programs',    iconSvg: 'calendar', iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Active programs','8 cohorts'],['Total participants','96'],['Team agreement','+31%',C.darkGold]], footer: '8 active cohorts across org' },
-      { tag: 'TOGETHER', tagColor: C.darkGold, title: 'Upcoming Sessions',  iconSvg: 'calendar', iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Next session','Feb 24'],['Focus','Post-merger'],['RSVP rate','89%',C.darkGold]], footer: 'Integration workshop — all leads invited' },
+      { tag: 'TOGETHER', tagColor: C.gold, title: 'Team Workshops',     iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Sessions this quarter','34'],['Avg team size','11'],['Satisfaction','96%',C.gold]], footer: 'Upcoming: Post-merger integration workshop' },
+      { tag: 'TOGETHER', tagColor: C.gold, title: 'Alignment Outcomes', iconSvg: 'trendUp',  iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Pre/post alignment','+52%'],['Shared language','High'],['Momentum score','91%',C.gold]], footer: 'Teams report clarity post-session' },
+      { tag: 'TOGETHER', tagColor: C.gold, title: 'Active Programs',    iconSvg: 'calendar', iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Active programs','8 cohorts'],['Total participants','96'],['Team agreement','+31%',C.gold]], footer: '8 active cohorts across org' },
+      { tag: 'TOGETHER', tagColor: C.gold, title: 'Upcoming Sessions',  iconSvg: 'calendar', iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Next session','Feb 24'],['Focus','Post-merger'],['RSVP rate','89%',C.gold]], footer: 'Integration workshop — all leads invited' },
     ],
   },
 ];
@@ -284,7 +283,7 @@ const PLATFORM_CARDS: QuadCard[] = [
   { tag: 'EXEC',     tagColor: C.purple,   title: 'Executive Coaching',  iconSvg: 'star',     iconBg: 'rgba(196,122,204,0.12)', borderColor: 'rgba(196,122,204,0.30)', rows: [['Active executives','24'],['Avg engagement','6 months'],['Decision confidence','+34%',C.purple]], footer: 'Latest: Board prep session with Sarah Chen' },
   { tag: 'GROW',     tagColor: C.lCoral,   title: 'Leadership Programs', iconSvg: 'trendUp',  iconBg: 'rgba(255,141,128,0.12)', borderColor: 'rgba(255,141,128,0.30)', rows: [['Current cohort','42 managers'],['Program progress','Month 4 of 6'],['Competency growth','+28%',C.lCoral]], footer: 'Next: Group session on giving feedback' },
   { tag: 'SCALE',    tagColor: C.blue,     title: '1:1 Coaching',        iconSvg: 'user',     iconBg: 'rgba(70,111,246,0.10)',  borderColor: 'rgba(70,111,246,0.25)',  rows: [['Active participants','156'],['Utilization rate','68%'],['Avg sessions/user','11.2',C.blue]], footer: 'Top theme: Career progression clarity' },
-  { tag: 'TOGETHER', tagColor: '#b8860b',  title: 'Team Workshops',      iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.45)', rows: [['Active programs','8 cohorts'],['Total participants','96'],['Team alignment','+31%','#b8860b']], footer: 'Upcoming: Post-merger integration workshop' },
+  { tag: 'TOGETHER', tagColor: C.gold,  title: 'Team Workshops',      iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.45)', rows: [['Active programs','8 cohorts'],['Total participants','96'],['Team alignment','+31%',C.gold]], footer: 'Upcoming: Post-merger integration workshop' },
 ];
 
 const PILL_LABELS = ['SCALE', 'GROW', 'EXEC', 'TOGETHER'];
@@ -304,7 +303,7 @@ export function SystemArchitectureSection() {
           <p style={{ fontSize: '0.625rem', fontWeight: 800, letterSpacing: '0.18em', color: C.blue, textTransform: 'uppercase', marginBottom: 20, fontFamily: "'Inter', sans-serif" }}>
             THE SYSTEM ARCHITECTURE
           </p>
-          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9]" style={{ color: '#2E353D', margin: '0 0 8px' }}>
+          <h2 className="font-sans text-4xl md:text-6xl lg:text-[84px] font-bold tracking-tight leading-[0.9]" style={{ color: '#2E353D', margin: '0 0 8px' }}>
             One leadership system.{' '}
             <span style={{ fontFamily: "'DM Serif Text', serif", fontStyle: 'italic', fontWeight: 400, color: C.blue }}>
               Not four disconnected programs.

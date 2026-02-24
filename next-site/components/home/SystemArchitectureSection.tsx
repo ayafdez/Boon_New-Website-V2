@@ -195,8 +195,8 @@ const PRODUCTS: (ProductData | null)[] = [
     stats: [
       { iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.18)', label: 'Teams Facilitated', value: '12',   sub: '+5 this quarter',   color: C.gold },
       { iconSvg: 'trendUp',  iconBg: 'rgba(255,201,105,0.18)', label: 'Alignment Score',   value: '+52%', sub: 'Post-workshop',      color: C.gold },
-      { iconSvg: 'clock',    iconBg: 'rgba(70,111,246,0.10)',  label: 'Workshops Run',     value: '34',   sub: 'This year',          color: C.blue },
-      { iconSvg: 'calendar', iconBg: 'rgba(196,122,204,0.13)', label: 'Total Participants',value: '96',   sub: 'Across all sessions', color: C.purple },
+      { iconSvg: 'clock',    iconBg: 'rgba(255,201,105,0.18)', label: 'Workshops Run',      value: '34',   sub: 'This year',           color: C.gold },
+      { iconSvg: 'calendar', iconBg: 'rgba(255,201,105,0.18)', label: 'Total Participants', value: '96',   sub: 'Across all sessions', color: C.gold },
     ],
     cards: [
       { tag: 'TOGETHER', tagColor: C.gold, title: 'Team Workshops',     iconSvg: 'users',    iconBg: 'rgba(255,201,105,0.16)', borderColor: 'rgba(255,201,105,0.38)', rows: [['Sessions this quarter','34'],['Avg team size','11'],['Satisfaction','96%',C.gold]], footer: 'Upcoming: Post-merger integration workshop' },
