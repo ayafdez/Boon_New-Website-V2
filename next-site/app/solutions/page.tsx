@@ -14,61 +14,6 @@ export const metadata: Metadata = generatePageMetadata({
   path: '/solutions',
 });
 
-const pillars = [
-  {
-    id: 'scale',
-    name: 'Scale',
-    description: '1:1 coaching for everyone, not just execs',
-    color: '#466FF6',
-    borderColor: 'border-t-[#466FF6]',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#466FF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'grow',
-    name: 'Grow',
-    description: 'Structured development for new and rising managers',
-    color: '#10B981',
-    borderColor: 'border-t-[#10B981]',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-        <polyline points="16 7 22 7 22 13" />
-      </svg>
-    ),
-  },
-  {
-    id: 'exec',
-    name: 'Exec',
-    description: 'Strategic sparring for senior leadership',
-    color: '#2E353D',
-    borderColor: 'border-t-[#2E353D]',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E353D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'together',
-    name: 'Together',
-    description: 'Team sessions that build shared language and capability',
-    color: '#F59E0B',
-    borderColor: 'border-t-[#F59E0B]',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-  },
-];
 
 export default function SolutionsPage() {
   const jsonLd = generateServiceJsonLd({
@@ -212,42 +157,6 @@ export default function SolutionsPage() {
               <SolutionsProblemCards />
             </div>
 
-          </div>
-        </section>
-
-        {/* 2. System Architecture - Product Pillars */}
-        <section className="py-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-boon-off-white/30 to-white"></div>
-
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-14">
-              <p className="label-text text-[10px] text-boon-blue mb-4">The System Architecture</p>
-              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
-                Four products. One continuous thread.
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {pillars.map((pillar) => (
-                <Link
-                  key={pillar.id}
-                  href={`/solutions/${pillar.id}`}
-                  className={"group bg-white border border-slate-200 rounded-2xl p-6 flex flex-col border-t-[3px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 " + pillar.borderColor}
-                >
-                  <div className="mb-4">{pillar.icon}</div>
-                  <p className="label-text text-[10px] mb-2">
-                    <span className="text-gray-400">BOON </span>
-                    <span style={{ color: pillar.color }}>{pillar.name.toUpperCase()}</span>
-                  </p>
-                  <p className="text-sm font-body font-medium text-gray-500 leading-relaxed mb-5 flex-1">
-                    {pillar.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-xs font-body font-semibold group-hover:gap-3 transition-all" style={{ color: pillar.color }}>
-                    Learn more <span>→</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
           </div>
         </section>
 
