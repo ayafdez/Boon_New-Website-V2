@@ -77,13 +77,13 @@ export function HomeHero() {
           <div className="reveal stagger-3 flex flex-col sm:flex-row gap-6">
             <Link
               href="/solutions"
-              className="bg-boon-blue text-white px-8 py-4 rounded-xl font-sans font-bold text-base shadow-lg hover:scale-105 active:scale-95 transition-all text-center"
+              className="bg-boon-blue text-white px-8 py-4 rounded-xl font-sans font-bold text-base shadow-lg hover:scale-105 hover:shadow-xl active:scale-95 transition-all text-center"
             >
               See how it works
             </Link>
             <Link
               href="/demo"
-              className="px-8 py-4 rounded-xl font-sans font-bold text-base active:scale-95 transition-all text-center text-boon-charcoal" style={{ background: "rgba(255,255,255,0.55)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.8)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
+              className="px-8 py-4 rounded-xl font-sans font-bold text-base active:scale-95 transition-all text-center text-boon-charcoal" style={{ background: "rgba(255,255,255,0.55)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.8)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }} onMouseEnter={e => (e.currentTarget.style.background="rgba(255,255,255,0.75)")} onMouseLeave={e => (e.currentTarget.style.background="rgba(255,255,255,0.55)")}
             >
               Book a Strategy Call
             </Link>

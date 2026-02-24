@@ -70,20 +70,20 @@ export function HomeHero() {
           <p className="reveal stagger-2 text-base md:text-xl lg:text-2xl text-boon-charcoal font-body font-semibold leading-relaxed max-w-2xl mb-4">
             Coaching, manager development, and leadership programs in one system, built to scale as fast as you grow.
           </p>
-          <p className="reveal stagger-2 text-sm md:text-lg text-gray-400 font-body font-medium leading-relaxed max-w-2xl mb-16">
+          <p className="reveal stagger-2 text-sm md:text-lg text-boon-charcoal/80 font-body font-medium leading-relaxed max-w-2xl mb-16">
             Headcount just doubled. Managers are struggling. Teams feel lost. Boon scales with you through it all.
           </p>
 
           <div className="reveal stagger-3 flex flex-col sm:flex-row gap-6">
             <Link
               href="/solutions"
-              className="bg-boon-blue text-white px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl hover:bg-boon-deep-blue transition-all shadow-2xl shadow-boon-blue/20 active:scale-95 text-center"
+              className="bg-boon-blue text-white px-8 py-4 rounded-xl font-sans font-bold text-base shadow-lg hover:scale-105 active:scale-95 transition-all text-center"
             >
               See how it works
             </Link>
             <Link
               href="/demo"
-              className="border border-gray-200 text-boon-charcoal px-8 py-4 md:px-12 md:py-6 rounded-[15px] font-sans font-bold text-lg md:text-xl hover:bg-boon-off-white transition-all active:scale-95 text-center"
+              className="px-8 py-4 rounded-xl font-sans font-bold text-base active:scale-95 transition-all text-center text-boon-charcoal" style={{ background: "rgba(255,255,255,0.55)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.8)", boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
             >
               Book a Strategy Call
             </Link>
@@ -110,7 +110,7 @@ export function HomeHero() {
           </div>
 
           {/* Video container */}
-          <div className="w-full max-w-[560px] rounded-[35px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 border border-gray-100 group z-10">
+          <div className="w-full max-w-[392px] rounded-[20px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 group z-10">
             <video
               autoPlay
               muted

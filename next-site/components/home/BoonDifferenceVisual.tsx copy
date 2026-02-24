@@ -101,7 +101,7 @@ export function BoonDifferenceVisual() {
         {/* Right — image + overlay */}
         <div className="relative pt-32">
 
-          <div className={`rounded-[20px] overflow-hidden aspect-[4/3] bg-gradient-to-br ${c.fallbackGradient} relative`}>
+          <div className={`rounded-[24px] overflow-hidden aspect-[4/3] bg-gradient-to-br ${c.fallbackGradient} relative`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={c.image} alt={c.heading} className="w-full h-full object-cover absolute inset-0" />
           </div>
@@ -110,11 +110,11 @@ export function BoonDifferenceVisual() {
           {!isWithBoon && (
             <div className="absolute" style={{
               top: 40, right: -200, width: 400, zIndex: 10,
-              borderRadius: 20, padding: 18,
+              borderRadius: 28, padding: 18,
               backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.20) 100%)',
               backgroundColor: 'rgba(255,255,255,0.15)',
             }}>
-              <div style={{ borderRadius: 20, padding: 10 }}>
+              <div style={{ borderRadius: 22, padding: 10 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                   {c.timeline.map((item: any, i) => {
                     const isLast = i === c.timeline.length - 1;
@@ -127,7 +127,7 @@ export function BoonDifferenceVisual() {
                       >
                         <div style={{
                           display: 'flex', alignItems: 'center', gap: 16,
-                          borderRadius: 20, padding: '14px 16px',
+                          borderRadius: 22, padding: '14px 16px',
                           background: 'rgba(255,255,255,0.95)',
                           boxShadow: '0 10px 22px rgba(10,10,10,0.10)',
                           border: '1px solid rgba(0,0,0,0.04)',
@@ -175,10 +175,10 @@ export function BoonDifferenceVisual() {
           {isWithBoon && (
             <div className="absolute" style={{
               top: 40, right: -200, width: 400, zIndex: 10,
-              borderRadius: 20, padding: 18, overflow: 'hidden',
+              borderRadius: 35, padding: 18, overflow: 'hidden',
               background: 'linear-gradient(180deg, rgba(246,248,255,0) 0%, rgba(70,111,246,0.20) 100%)',
             }}>
-              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 20, padding: 10 }}>
+              <div style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 35, padding: 10 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                   {c.timeline.map((item: any, i: number) => {
                     const isLast = i === c.timeline.length - 1;
@@ -222,7 +222,7 @@ export function BoonDifferenceVisual() {
                         {/* Badge + description */}
                         <div style={{ flex: 1, paddingLeft: 8 }}>
                           <div style={{
-                            fontSize: 12, fontWeight: 800, padding: '9px 18px',
+                            fontSize: 12, fontWeight: 800, padding: '9px 14px',
                             borderRadius: 999, background: badgeBg, color: dotColor,
                             textAlign: 'center',
                           }}>
