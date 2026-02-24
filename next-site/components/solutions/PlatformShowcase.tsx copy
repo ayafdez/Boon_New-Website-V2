@@ -262,27 +262,60 @@ export function PlatformShowcase() {
           </p>
         </div>
 
-        {/* Tab Bar — homepage style */}
-        <div className="flex justify-center mb-16">
-          <div className="flex border-b border-gray-200">
-            {(['employee', 'manager', 'hr'] as TabId[]).map((id) => {
-              const labels: Record<TabId, string> = { employee: 'EMPLOYEE', manager: 'MANAGER', hr: 'HR / L&D' };
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => switchTab(id)}
-                  className={`px-8 py-3 text-xs font-body font-extrabold tracking-widest transition-all duration-200 border-b-2 -mb-px ${
-                    activeTab === id
-                      ? 'border-boon-blue text-boon-charcoal'
-                      : 'border-transparent text-gray-400 hover:text-gray-600'
-                  }`}
-                >
-                  {labels[id]}
-                </button>
-              );
-            })}
-          </div>
+        {/* Tab Bar */}
+        <div className="flex items-center justify-center gap-3 mb-16">
+          <button
+            type="button"
+            onClick={() => switchTab('employee')}
+            className={
+              'inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-body font-semibold border transition-all duration-300 cursor-pointer ' +
+              (activeTab === 'employee'
+                ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-md'
+                : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50')
+            }
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="5" r="3" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M3 14c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+            Employee
+          </button>
+          <button
+            type="button"
+            onClick={() => switchTab('manager')}
+            className={
+              'inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-body font-semibold border transition-all duration-300 cursor-pointer ' +
+              (activeTab === 'manager'
+                ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-md'
+                : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50')
+            }
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="6" cy="5" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="11" cy="5" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M1.5 14c0-2.49 2.01-4.5 4.5-4.5s4.5 2.01 4.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M10.5 9.5c1.66 0 3 1.34 3 3v1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+            Manager
+          </button>
+          <button
+            type="button"
+            onClick={() => switchTab('hr')}
+            className={
+              'inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-body font-semibold border transition-all duration-300 cursor-pointer ' +
+              (activeTab === 'hr'
+                ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-md'
+                : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50')
+            }
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="1.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.5" />
+              <rect x="9.5" y="1.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.5" />
+              <rect x="1.5" y="9.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.5" />
+              <rect x="9.5" y="9.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+            HR / L&D
+          </button>
         </div>
 
         {/* Tab Content */}
