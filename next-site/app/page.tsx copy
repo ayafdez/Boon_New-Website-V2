@@ -93,39 +93,40 @@ export default function HomePage() {
 
           {/* Card */}
           <div
-            className="relative overflow-hidden rounded-3xl px-12 md:px-20 py-20 md:py-28"
-            style={{ background: 'linear-gradient(135deg, #1A253B 0%, #0D1628 60%, #1a1030 100%)' }}
+            className="relative overflow-hidden rounded-3xl px-10 md:px-16 py-12 md:py-14"
+            style={{ background: 'linear-gradient(135deg, #1A253B 0%, #0F1A2E 100%)' }}
           >
 
-            {/* Gradient blobs */}
-            <div className="absolute top-0 right-0 w-[55%] h-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at top right, rgba(70,111,246,0.25) 0%, transparent 60%)', filter: 'blur(60px)' }} />
-            <div className="absolute bottom-0 left-0 w-[45%] h-[70%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at bottom left, rgba(255,141,128,0.20) 0%, transparent 65%)', filter: 'blur(60px)' }} />
-            <div className="absolute top-[20%] left-[35%] w-[40%] h-[60%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(208,119,210,0.12) 0%, transparent 65%)', filter: 'blur(80px)' }} />
+            {/* Glow accents */}
+            <div className="absolute top-0 right-0 w-[40%] h-[80%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at top right, rgba(70,111,246,0.18) 0%, transparent 65%)', filter: 'blur(48px)' }} />
+            <div className="absolute bottom-0 left-[30%] w-[30%] h-[60%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at bottom, rgba(255,141,128,0.12) 0%, transparent 65%)', filter: 'blur(48px)' }} />
 
-            {/* Content — centered */}
-            <div className="relative z-10 flex flex-col items-center text-center gap-8">
+            {/* Horizontal layout */}
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-16">
 
-              {/* Heading */}
-              <h3 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-bold text-white leading-[1.0] tracking-tight max-w-2xl">
-                Ready to see it{' '}
-                <span className="font-serif italic font-normal" style={{ color: '#FF8D80' }}>in action?</span>
-              </h3>
+              {/* Left — heading */}
+              <div className="flex-shrink-0">
+                <h3 className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.05] tracking-tight">
+                  Ready to see it<br />
+                  <span className="font-serif italic font-normal text-white/80">in action?</span>
+                </h3>
+              </div>
 
-              {/* Description */}
-              <p className="text-white/60 font-body font-medium leading-relaxed text-base md:text-lg max-w-md">
-                See how Boon can replace your fragmented vendor stack with one unified leadership system.
-              </p>
-
-              {/* CTA */}
-              <Link
-                href="/demo"
-                className="inline-flex items-center gap-2 bg-boon-coral hover:scale-105 text-white px-8 py-4 rounded-xl font-sans font-bold text-base transition-all shadow-lg shadow-boon-coral/20 active:scale-95"
-              >
-                Book a Strategy Call
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+              {/* Right — description + CTA */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6 md:gap-10">
+                <p className="text-white/60 font-body font-medium leading-relaxed text-base max-w-xs">
+                  See how Boon can replace your fragmented vendor stack with one unified leadership system.
+                </p>
+                <Link
+                  href="/demo"
+                  className="inline-flex items-center gap-2 flex-shrink-0 bg-boon-coral hover:bg-boon-light-coral text-white px-7 py-3.5 rounded-xl font-sans font-bold text-base transition-all shadow-lg shadow-boon-coral/20 active:scale-95"
+                >
+                  Book a Strategy Call
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
 
             </div>
           </div>
