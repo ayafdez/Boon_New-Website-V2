@@ -1,220 +1,234 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { generatePageMetadata } from '@/lib/seo';
-import { HomeHero } from '@/components/home/HomeHero';
-import { TrustSection } from '@/components/home/TrustSection';
-import { BoonDifferenceVisual } from '@/components/home/BoonDifferenceVisual';
-import { SystemArchitectureSection } from '@/components/home/SystemArchitectureSection';
-import { CoachSection } from '@/components/home/CoachSection';
-import { LeadershipIntelligence } from '@/components/home/LeadershipIntelligence';
-import { TestimonialsSection } from '@/components/home/TestimonialsSection';
-import { BlogTeaser } from '@/components/home/BlogTeaser';
-import { ProblemCards } from '@/components/home/ProblemCards';
+import { generatePageMetadata, generateServiceJsonLd, siteUrl } from '@/lib/seo';
+import { SystemArchitect } from '@/components/solutions/SystemArchitect';
+import { PlatformShowcase } from '@/components/solutions/PlatformShowcase';
+import { AccordionSection } from '@/components/solutions/AccordionSection';
+import { GlobalCTA } from '@/components/layout/GlobalCTA';
+import { SolutionsProblemCards } from '@/components/solutions/SolutionsProblemCards';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'Boon | The Unified Leadership System',
+  title: 'Solutions - Coaching & Leadership Development',
   description:
-    'Boon provides scalable, human-centered leadership development through expert coaching. Transform your organization with our unified leadership system.',
-  path: '/',
-  ogTitle: 'Boon - The Unified Leadership System',
-  ogDescription: 'One system for coaching, leadership development, and executive support. Scalable, human-centered, and built to grow with your organization.',
+    'Boon is a unified talent development system. Coaching, leadership development, and executive support designed around where growth pressure shows up.',
+  path: '/solutions',
 });
 
-export default function HomePage() {
+
+export default function SolutionsPage() {
+  const jsonLd = generateServiceJsonLd({
+    name: 'Boon Leadership Development System',
+    description: 'Unified talent development system with coaching, leadership development, and executive support.',
+    url: `${siteUrl}/solutions`,
+  });
+
   return (
-    <div className="bg-white">
-      <HomeHero />
-      <TrustSection />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="bg-white">
+        {/* Hero Section */}
+        <section className="pt-40 pb-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
 
-      {/* THE TRUTH - Three Failure Modes */}
-      <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 bg-boon-navy relative overflow-hidden">
-        {/* Dotted texture overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(circle, rgba(70, 111, 246, 0.15) 1px, transparent 1px)',
-            backgroundSize: '20px 20px',
-            maskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
-            WebkitMaskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
-          }}
-        />
-        {/* Coral glow */}
-        <div
-          className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[60%] pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, transparent 70%)', filter: 'blur(60px)' }}
-        />
-
-        <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-stretch">
-
-          {/* Left — image */}
-          <div className="relative rounded-3xl overflow-hidden h-full min-h-[500px] lg:min-h-[700px] self-start">
+          {/* Background image — matches homepage pattern */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/leadership development.png"
-              alt="Leadership development challenge"
-              className="w-full h-auto object-contain"
+              src="/sp_hero_bg.png"
+              alt=""
+              fetchPriority="high"
+              decoding="async"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'fill',
+              }}
             />
           </div>
 
-          {/* Right — text + accordion */}
-          <div className="flex flex-col justify-center">
-            <p className="label-text text-[10px] text-boon-blue mb-6">The Problem</p>
-            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] text-white mb-10">
-              Leadership development fails <span className="font-serif italic text-boon-blue">for three predictable reasons.</span>
-            </h2>
-            <ProblemCards />
-          </div>
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-8 md:gap-16 items-center relative" style={{ zIndex: 2 }}>
 
-        </div>
-      </section>
-
-      {/* THE SHIFT - System Solution */}
-      <section className="py-32 px-6 md:px-12 lg:px-24 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 max-w-5xl mx-auto">
-            <p className="label-text text-[10px] text-boon-blue mb-8">
-              The Boon Difference
-            </p>
-            <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-10">
-              What if everyone got the development they needed, <span className="font-serif italic text-boon-blue">not just executives</span>?
-            </h2>
-            <p className="text-xl text-gray-500 font-body font-medium leading-relaxed max-w-3xl mx-auto">
-              Continuous, personalized development from day one. Not generic workshops for years, then suddenly, premium coaching.
-            </p>
-          </div>
-          <BoonDifferenceVisual />
-        </div>
-      </section>
-
-      <SystemArchitectureSection />
-
-      {/* Mid-page CTA */}
-      <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden" style={{ background: 'rgb(240, 243, 247)' }}>
-        <div className="max-w-7xl mx-auto">
-
-          {/* Card */}
-          <div
-            className="relative overflow-hidden rounded-3xl px-12 md:px-20 py-20 md:py-28"
-            style={{ background: 'linear-gradient(135deg, #1A253B 0%, #0D1628 60%, #1a1030 100%)' }}
-          >
-
-            {/* Gradient blobs */}
-            <div className="absolute top-0 right-0 w-[55%] h-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at top right, rgba(70,111,246,0.25) 0%, transparent 60%)', filter: 'blur(60px)' }} />
-            <div className="absolute bottom-0 left-0 w-[45%] h-[70%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at bottom left, rgba(255,141,128,0.20) 0%, transparent 65%)', filter: 'blur(60px)' }} />
-            <div className="absolute top-[20%] left-[35%] w-[40%] h-[60%] pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(208,119,210,0.12) 0%, transparent 65%)', filter: 'blur(80px)' }} />
-
-            {/* Content — centered */}
-            <div className="relative z-10 flex flex-col items-center text-center gap-8">
-
-              {/* Heading */}
-              <h3 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-bold text-white leading-[1.0] tracking-tight max-w-2xl">
-                Ready to see it{' '}
-                <span className="font-serif italic font-normal" style={{ color: '#FF8D80' }}>in action?</span>
-              </h3>
-
-              {/* Description */}
-              <p className="text-white/60 font-body font-medium leading-relaxed text-base md:text-lg max-w-md">
-                See how Boon can replace your fragmented vendor stack with one unified leadership system.
+            {/* Left — copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-boon-light-blue/50 text-boon-blue label-text text-[10px] px-4 py-2 rounded-full mb-10 border border-boon-light-blue">
+                How Boon Works
+              </div>
+              <h1 className="font-sans text-4xl md:text-6xl lg:text-[64px] font-bold tracking-tight leading-[0.9] text-boon-charcoal mb-10 max-w-xl">
+                One system. Configured to solve your <span className="font-serif italic text-boon-blue">problems</span>.
+              </h1>
+              <p className="text-base md:text-lg text-boon-charcoal font-body font-semibold leading-relaxed max-w-xl mb-4">
+                Coaching, manager development, and leadership programs in one system — built to scale as fast as you grow.
               </p>
-
-              {/* CTA */}
-              <Link
-                href="/demo"
-                className="inline-flex items-center gap-2 bg-boon-coral hover:scale-105 text-white px-8 py-4 rounded-xl font-sans font-bold text-base transition-all shadow-lg shadow-boon-coral/20 active:scale-95"
-              >
-                Book a Strategy Call
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-
+              <p className="text-sm md:text-base text-boon-charcoal/80 font-body font-medium leading-relaxed max-w-xl mb-16">
+                Start by fixing what&apos;s broken today, then adapt to solve new problems tomorrow.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Link
+                  href="/demo"
+                  className="bg-boon-blue text-white px-8 py-4 rounded-xl font-sans font-bold text-base shadow-lg hover:scale-105 hover:shadow-xl active:scale-95 transition-all text-center"
+                >
+                  Book a Strategy Call
+                </Link>
+                <Link
+                  href="#system"
+                  className="px-8 py-4 rounded-xl font-sans font-bold text-base active:scale-95 transition-all text-center text-boon-charcoal"
+                  style={{ background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.8)', boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+                >
+                  See the system
+                </Link>
+              </div>
             </div>
+
+            {/* Right — hero image */}
+            <div className="relative hidden lg:flex lg:justify-end lg:items-center">
+              {/* Glow accents */}
+              <div className="absolute -inset-12 z-0 pointer-events-none">
+                <div
+                  className="absolute -top-8 -right-8 w-[350px] h-[300px]"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.4) 0%, rgba(70, 111, 246, 0.15) 40%, transparent 70%)',
+                    filter: 'blur(40px)',
+                  }}
+                ></div>
+                <div
+                  className="absolute -bottom-8 -left-8 w-[300px] h-[280px]"
+                  style={{
+                    background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.4) 0%, rgba(255, 141, 128, 0.2) 40%, transparent 70%)',
+                    filter: 'blur(40px)',
+                  }}
+                ></div>
+              </div>
+
+              {/* Image container */}
+              <div className="w-full max-w-[392px] rounded-[20px] overflow-hidden shadow-2xl relative aspect-[4/5] bg-gray-50 z-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/hero bg solutions page.png"
+                  alt="Boon platform solutions overview"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-boon-navy/20 to-transparent"></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 1. Problem Statement */}
+        <section className="py-16 md:py-32 px-6 md:px-12 lg:px-24 bg-boon-navy relative overflow-hidden">
+          {/* Dotted texture overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage: 'radial-gradient(circle, rgba(70, 111, 246, 0.15) 1px, transparent 1px)',
+              backgroundSize: '20px 20px',
+              maskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at right, black 0%, transparent 70%)',
+            }}
+          />
+          {/* Coral glow */}
+          <div
+            className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[60%] pointer-events-none"
+            style={{ background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.2) 0%, transparent 70%)', filter: 'blur(60px)' }}
+          />
+
+          <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-stretch">
+
+            {/* Left — image */}
+            <div className="relative rounded-[20px] overflow-hidden h-full min-h-[500px] lg:min-h-[700px] self-start">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/sp_fragmentsupport.png"
+                alt="Fragmented leadership support"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+
+            {/* Right — text + cards */}
+            <div className="flex flex-col justify-center">
+              <p className="label-text text-[10px] text-boon-blue mb-6">The Problem</p>
+              <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold tracking-tight leading-[0.9] text-white mb-10">
+                Fragmented support is <span className="font-serif italic text-boon-blue">no support at all.</span>
+              </h2>
+              <SolutionsProblemCards />
+            </div>
+
+          </div>
+        </section>
+
+        {/* 2. System Architecture */}
+        <section className="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <SystemArchitect />
+          </div>
+        </section>
+
+        {/* 3. Platform in Action */}
+        <PlatformShowcase />
+
+        {/* 4. How The System Evolves Over Time */}
+        <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-boon-off-white/50 via-white to-white"></div>
+          <div className="relative z-10">
+            <AccordionSection />
+          </div>
+        </section>
+
+        {/* Getting Started */}
+        <section className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+          {/* Soft gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-boon-off-white via-white to-boon-light-blue/20"></div>
+
+          {/* Decorative gradient blob */}
+          <div className="absolute top-0 right-1/4 w-[500px] h-[400px] bg-gradient-to-bl from-boon-soft-coral/20 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+
+          <div className="max-w-5xl mx-auto text-center mb-20 relative z-10">
+            <p className="label-text text-[10px] text-boon-blue mb-6">
+              Getting Started
+            </p>
+            <h2 className="font-sans font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-boon-charcoal tracking-tight leading-[0.9]">
+              What to expect <span className="font-serif italic text-boon-blue">next</span>.
+            </h2>
           </div>
 
-        </div>
-      </section>
-
-      <CoachSection />
-      <LeadershipIntelligence />
-      <TestimonialsSection />
-      <BlogTeaser />
-
-      {/* Final CTA */}
-      <section className="py-24 md:py-48 px-6 text-center relative overflow-hidden" style={{ background: 'radial-gradient(rgb(68, 102, 221) 0%, rgb(51, 85, 204) 35%, rgb(31, 45, 93) 65%, #111827 100%)' }}>
-        {/* Grid line pattern */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-
-        <div className="max-w-3xl mx-auto relative z-10">
-          {/* Heading with inline avatars */}
-          <h2 className="font-sans text-3xl md:text-5xl lg:text-[52px] font-bold text-white tracking-tight leading-[0.95] mb-8">
-            {/* Line 1: "Built to help people" with avatars after */}
-            <span className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-2">
-              <span>Built to help people</span>
-              {/* Avatar cluster 1 */}
-              <span className="inline-flex items-center">
-                {[
-                  'https://storage.googleapis.com/boon-public-assets/lisa%20s.jpeg',
-                  'https://storage.googleapis.com/boon-public-assets/hamy.jpg',
-                  'https://storage.googleapis.com/boon-public-assets/nick.png',
-                ].map((src, i) => (
-                  <span
-                    key={i}
-                    className="inline-block rounded-full overflow-hidden border-2 border-white/30"
-                    style={{ width: 48, height: 48, marginLeft: i === 0 ? 0 : -12 }}
-                  >
-                    <img src={src} alt="" className="w-full h-full object-cover" />
-                  </span>
-                ))}
-              </span>
-            </span>
-            {/* Line 2: "and teams" */}
-            <span className="block mb-2">and teams</span>
-            {/* Line 3: italic "actually grow." with avatars after */}
-            <span className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-              <span className="font-serif italic font-normal">actually grow.</span>
-              {/* Avatar cluster 2 */}
-              <span className="inline-flex items-center">
-                {[
-                  'https://storage.googleapis.com/boon-public-assets/amykellylauer.jpg',
-                  'https://storage.googleapis.com/boon-public-assets/Olga%20Volgin_New.png',
-                ].map((src, i) => (
-                  <span
-                    key={i}
-                    className="inline-block rounded-full overflow-hidden border-2 border-white/30"
-                    style={{ width: 48, height: 48, marginLeft: i === 0 ? 0 : -12 }}
-                  >
-                    <img src={src} alt="" className="w-full h-full object-cover" />
-                  </span>
-                ))}
-              </span>
-            </span>
-          </h2>
-
-          <p className="text-base md:text-lg text-white/60 font-body font-medium mb-12 max-w-lg mx-auto leading-relaxed">
-            Boon delivers leadership infrastructure designed around real human behavior. Ready for a better leadership system? Get in touch today.
-          </p>
-
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/demo"
-              className="bg-boon-coral text-white px-8 py-4 rounded-xl font-sans font-bold text-base shadow-lg hover:scale-105 active:scale-95 transition-all"
-            >
-              Book a Strategy Call
-            </Link>
-            <Link
-              href="/solutions"
-              className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-sans font-bold text-base hover:bg-white/15 transition-all"
-            >
-              See how it works
-            </Link>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 relative z-10">
+            {[
+              {
+                num: '01',
+                title: 'Book a Demo',
+                desc: 'Tell us about your team and where you want to see change. We\'ll walk you through the system and show how companies like yours use Boon.',
+              },
+              {
+                num: '02',
+                title: 'Get a Quote',
+                desc: 'We\'ll build a custom proposal based on your goals, team size, and timeline. No templated packages, just what you need.',
+              },
+              {
+                num: '03',
+                title: 'See Results',
+                desc: 'Once live, you\'ll see engagement data and growth signals within weeks. We partner with you to iterate and expand as impact compounds.',
+              },
+            ].map((step) => (
+              <div
+                key={step.num}
+                className="p-8 rounded-[20px] border border-gray-100 text-left transition-all duration-300 hover:border-boon-blue/30 hover:shadow-lg hover:-translate-y-1 cursor-default"
+              >
+                <div className="w-8 h-8 rounded-full bg-boon-blue/10 flex items-center justify-center mb-6">
+                  <span className="label-text text-[10px] text-boon-blue">{step.num}</span>
+                </div>
+                <h3 className="font-sans text-xl md:text-2xl font-bold text-boon-charcoal mb-3">{step.title}</h3>
+                <p className="text-base font-body font-medium text-gray-500 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        <GlobalCTA />
+      </main>
+    </>
   );
 }
