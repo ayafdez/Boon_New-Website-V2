@@ -1,59 +1,84 @@
 import Link from 'next/link';
 
+const COACH_AVATARS = [
+  { src: '/sp_manager.png', alt: 'Boon coach' },
+  { src: '/sp_hr.png', alt: 'Boon coach' },
+  { src: '/sp_employee.png', alt: 'Boon coach' },
+];
+
 export function GlobalCTA() {
   return (
-    <section className="py-20 md:py-40 px-6 md:px-12 lg:px-24 bg-boon-navy text-white text-center relative overflow-hidden">
-      {/* Overlapping gradient blobs */}
-      <div
-        className="absolute top-[10%] right-[5%] w-[40%] h-[60%] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.3) 0%, rgba(70, 111, 246, 0.1) 40%, transparent 70%)',
-          filter: 'blur(80px)',
-        }}
-      ></div>
-      <div
-        className="absolute bottom-[10%] left-[10%] w-[45%] h-[55%] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(255, 141, 128, 0.25) 0%, rgba(255, 141, 128, 0.1) 40%, transparent 70%)',
-          filter: 'blur(80px)',
-        }}
-      ></div>
-
-      {/* Subtle grid line pattern */}
+    <section className="py-24 md:py-40 px-6 md:px-12 lg:px-24 text-white text-center relative overflow-hidden"
+      style={{ background: 'linear-gradient(160deg, #1e2f52 0%, #1A253B 50%, #162040 100%)' }}
+    >
+      {/* Grid line pattern — matches homepage hero */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
         }}
-      ></div>
+      />
 
-      <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="font-sans text-2xl md:text-4xl lg:text-[52px] font-bold mb-10 tracking-tight leading-tight lg:leading-[0.9]">
-          Built to help people<br className="hidden md:block" /> and teams <span className="font-serif italic text-boon-coral">actually grow</span>.
+      {/* Blue glow — top right */}
+      <div
+        className="absolute top-0 right-[10%] w-[45%] h-[70%] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(70, 111, 246, 0.28) 0%, rgba(70, 111, 246, 0.08) 50%, transparent 75%)',
+          filter: 'blur(60px)',
+        }}
+      />
+      {/* Coral glow — bottom left */}
+      <div
+        className="absolute bottom-0 left-[5%] w-[40%] h-[60%] pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(255, 109, 106, 0.2) 0%, rgba(255, 109, 106, 0.06) 50%, transparent 75%)',
+          filter: 'blur(70px)',
+        }}
+      />
+
+      <div className="max-w-3xl mx-auto relative z-10">
+
+        {/* Headline with inline avatars */}
+        <h2 className="font-sans text-3xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.05] mb-6">
+          Built for how people{' '}
+          <span className="inline-flex items-center gap-3 whitespace-nowrap">
+            <span className="font-serif italic text-white">actually grow.</span>
+            {/* Overlapping coach avatars */}
+            <span className="inline-flex items-center -space-x-3 ml-1 align-middle">
+              {COACH_AVATARS.map((avatar, i) => (
+                <span
+                  key={i}
+                  className="relative inline-block rounded-full overflow-hidden border-2 border-[#1A253B]"
+                  style={{
+                    width: 48,
+                    height: 48,
+                    zIndex: COACH_AVATARS.length - i,
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={avatar.src}
+                    alt={avatar.alt}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                  />
+                </span>
+              ))}
+            </span>
+          </span>
         </h2>
-        <p className="text-base md:text-lg mb-16 text-white/70 font-body font-medium max-w-2xl mx-auto leading-relaxed">
-          Boon delivers leadership infrastructure designed around real human behavior. Ready for a better leadership system? Get in touch today.
+
+        <p className="text-base md:text-lg text-white/65 font-body font-medium leading-relaxed max-w-xl mx-auto mb-12">
+          Boon is leadership infrastructure designed around human behavior, not tools or programs. So growth holds up as organizations scale.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/demo"
-            className="inline-block bg-boon-coral text-white px-8 py-4 rounded-xl font-sans font-bold text-base hover:scale-105 transition-all shadow-2xl shadow-boon-coral/30"
-          >
-            Book a Strategy Call
-          </Link>
-          <Link
-            href="/solutions"
-            className="inline-block px-8 py-4 rounded-xl font-sans font-bold text-base text-white transition-all hover:scale-105"
-            style={{
-              background: 'rgba(255,255,255,0.1)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255,255,255,0.2)',
-            }}
-          >
-            See how it works
-          </Link>
-        </div>
+
+        <Link
+          href="/demo"
+          className="inline-block bg-boon-coral text-white px-8 py-4 rounded-xl font-sans font-bold text-base hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-boon-coral/30"
+        >
+          Schedule a Conversation
+        </Link>
+
       </div>
     </section>
   );
