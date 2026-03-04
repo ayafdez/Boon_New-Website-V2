@@ -80,7 +80,7 @@ export async function BlogTeaser() {
                   </div>
                 </div>
                 {/* Title */}
-                <p className="text-sm font-sans font-semibold text-boon-charcoal leading-snug group-hover:text-boon-blue transition-colors">
+                <p className="text-base md:text-lg font-sans font-bold text-boon-charcoal leading-snug group-hover:text-boon-blue transition-colors">
                   {study.title}
                 </p>
               </Link>
