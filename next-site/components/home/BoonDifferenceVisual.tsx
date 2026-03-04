@@ -42,7 +42,7 @@ const content = {
 } as const;
 
 export function BoonDifferenceVisual() {
-  const [active, setActive] = useState<Tab>('WITHOUT BOON');
+  const [active, setActive] = useState<Tab>('WITH BOON');
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const c = content[active];
   const isWithBoon = active === 'WITH BOON';
