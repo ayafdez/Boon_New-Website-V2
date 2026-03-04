@@ -11,7 +11,7 @@ const testimonials = [
     name: 'Alicia Kiser',
     position: 'EVP of Human Resources',
     company: 'M3 Insurance',
-    headshot: 'https://ui-avatars.com/api/?name=Alicia+Kiser&background=466FF6&color=fff&size=104',
+    headshot: 'https://randomuser.me/api/portraits/women/65.jpg',
     highlight: 'Truly personalized match',
   },
   {

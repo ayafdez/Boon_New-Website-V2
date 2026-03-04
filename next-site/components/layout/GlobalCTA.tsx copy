@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 const COACH_AVATARS = [
-  { src: '/sp_manager.png', alt: 'Boon coach' },
-  { src: '/sp_hr.png', alt: 'Boon coach' },
-  { src: '/sp_employee.png', alt: 'Boon coach' },
+  { src: 'https://randomuser.me/api/portraits/men/32.jpg', alt: 'Boon coach' },
+  { src: 'https://randomuser.me/api/portraits/women/44.jpg', alt: 'Boon coach' },
+  { src: 'https://randomuser.me/api/portraits/men/76.jpg', alt: 'Boon coach' },
 ];
 
 export function GlobalCTA() {
