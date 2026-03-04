@@ -29,19 +29,31 @@ export function GlobalCTA() {
       ></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="font-sans text-2xl md:text-4xl lg:text-7xl font-bold mb-10 tracking-tight leading-tight lg:leading-[0.9]">
-          Built for how people <span className="font-serif italic text-boon-coral">actually grow</span>.
+        <h2 className="font-sans text-2xl md:text-4xl lg:text-[52px] font-bold mb-10 tracking-tight leading-tight lg:leading-[0.9]">
+          Built to help people<br className="hidden md:block" /> and teams <span className="font-serif italic text-boon-coral">actually grow</span>.
         </h2>
-        <p className="text-xl mb-16 text-white/70 font-body font-medium max-w-2xl mx-auto leading-relaxed">
-          Boon is leadership infrastructure designed around human behavior, not tools or programs.
-          So growth holds up as organizations scale.
+        <p className="text-base md:text-lg mb-16 text-white/70 font-body font-medium max-w-2xl mx-auto leading-relaxed">
+          Boon delivers leadership infrastructure designed around real human behavior. Ready for a better leadership system? Get in touch today.
         </p>
-        <Link
-          href="/demo"
-          className="inline-block bg-boon-coral text-white px-8 py-4 md:px-12 md:py-6 rounded-full font-sans font-bold text-lg md:text-2xl hover:scale-105 transition-all shadow-2xl shadow-boon-coral/30"
-        >
-          Schedule a Conversation
-        </Link>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/demo"
+            className="inline-block bg-boon-coral text-white px-8 py-4 rounded-xl font-sans font-bold text-base hover:scale-105 transition-all shadow-2xl shadow-boon-coral/30"
+          >
+            Book a Strategy Call
+          </Link>
+          <Link
+            href="/solutions"
+            className="inline-block px-8 py-4 rounded-xl font-sans font-bold text-base text-white transition-all hover:scale-105"
+            style={{
+              background: 'rgba(255,255,255,0.1)',
+              backdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255,255,255,0.2)',
+            }}
+          >
+            See how it works
+          </Link>
+        </div>
       </div>
     </section>
   );
